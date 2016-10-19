@@ -13,9 +13,6 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     //MARK: Properties
     
     @IBOutlet weak var tableView: UITableView!
-    
-
-    
     @IBOutlet weak var bookAndChapterButton: UIButton!
     
     static let storyboardIdentifier = "ChapterContentViewController"
@@ -40,18 +37,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         let sortedVerses = unsortedVerses.sorted(by: {$0.verseNumber < $1.verseNumber})
         self.verses = sortedVerses
         let titleOfButton = "\(bookName) \(chapterNumber)"
-       // bookAndChapterButton.setTitle(titleOfButton, for: .normal)
-        
-        
-//        if bookName != nil && chapter != nil {
-//           let titleOfButton = "\(bookName) \(chapterNumber)"
-//            bookAndChapterButton.setTitle(titleOfButton, for: .normal)
-//        } else {
-//            bookAndChapterButton.setTitle("Matthew 1", for: .normal)
-//            
-//        }
-
-        
+        bookAndChapterButton.setTitle(titleOfButton, for: .normal)
     }
     
     
@@ -63,22 +49,6 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   
-//        guard let bookName = bookName,
-//            let chapterNumber = chapterNumber else { return }
-//        BookController.fetchBook(bookName: bookName) { (book) in
-//            guard let unsortedVerses = book?.chapters[chapterNumber - 1].verses
-//                else { return }
-//            let sortedVerses = unsortedVerses.sorted(by: { ($0.verseNumber < $1.verseNumber)})
-//            self.verses = sortedVerses
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//                //creating dynamic resizing of table rows for custom cells
-//                self.tableView.estimatedRowHeight = 3
-//                self.tableView.rowHeight = UITableViewAutomaticDimension
-//                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
-        
         self.tableView.estimatedRowHeight = 3
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -89,14 +59,10 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         
         bookAndChapterButton.titleLabel?.adjustsFontSizeToFitWidth = true
         bookAndChapterButton.titleLabel?.numberOfLines = 1
-      
-        
-        
         
     }
         
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

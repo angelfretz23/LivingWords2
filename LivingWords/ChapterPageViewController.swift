@@ -36,27 +36,27 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         super.viewDidLoad()
         
         
-        if bookName != nil {
-            guard let bookName = bookName else { return }
-            BookController.fetchBook(bookName: bookName) { (book) in
-                guard let book = book else { return }
-                //setting the initial VC and setting th stage for the next VCs
-                DispatchQueue.main.async {
-                     self.chapters = book.chapters.sorted(by: { $0.chapterNumber < $1.chapterNumber })
-                }
-                
-            }
-        } else  {
-            BookController.fetchBook(bookName: "Matthew", completion: { (book) in
-                guard let book = book else {
-                    return
-                }
-                DispatchQueue.main.async {
-                   self.chapters = book.chapters.sorted(by: { $0.chapterNumber < $1.chapterNumber })
-                    //setting the initial VC and setting th stage for the next VCs
-                }
-            })
-        }
+//        if bookName != nil {
+//            guard let bookName = bookName else { return }
+//            BookController.fetchBook(bookName: bookName) { (book) in
+//                guard let book = book else { return }
+//                //setting the initial VC and setting th stage for the next VCs
+//                DispatchQueue.main.async {
+//                     self.chapters = book.chapters.sorted(by: { $0.chapterNumber < $1.chapterNumber })
+//                }
+//                
+//            }
+//        } else  {
+//            BookController.fetchBook(bookName: "Matthew", completion: { (book) in
+//                guard let book = book else {
+//                    return
+//                }
+//                DispatchQueue.main.async {
+//                   self.chapters = book.chapters.sorted(by: { $0.chapterNumber < $1.chapterNumber })
+//                    //setting the initial VC and setting th stage for the next VCs
+//                }
+//            })
+//        }
     
         self.dataSource = self
         self.delegate = self
@@ -94,7 +94,7 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
             //instantiate and configure a ChapterContentViewController for the Chapter
             guard let controller = storyboard?.instantiateViewController(withIdentifier: ChapterContentViewController.storyboardIdentifier) as? ChapterContentViewController else { fatalError("Unable to instantiate a ChapterContentViewController") }
             
-            
+    
             controller.configure(with: chapter)
             
             //cache the viewcontroller so it can be reused
