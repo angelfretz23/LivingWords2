@@ -126,7 +126,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h0W-C9-gwW" customClass="SermonCollectionViewCell" customModule="LivingWords" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mediaCell" id="h0W-C9-gwW" customClass="SermonCollectionViewCell" customModule="LivingWords" customModuleProvider="target">
                                                             <rect key="frame" x="48" y="0.0" width="243" height="197"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -134,11 +134,11 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-hr-dTP">
-                                                                        <frame key="frameInset" minX="-7" width="126" height="109"/>
+                                                                        <frame key="frameInset" minX="57.871515533755428" width="125.99999999999994" height="109"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-p4-gp3">
-                                                                        <frame key="frameInset" minY="121" width="46" height="30"/>
+                                                                        <frame key="frameInset" minX="98.032970193873098" minY="121" width="45.999999999999972" height="30"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <state key="normal" title="Button"/>
                                                                     </button>
@@ -200,6 +200,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mediaSegmentedControl" destination="wgp-l2-RHC" id="55n-Th-nIa"/>
                         <outlet property="tableView" destination="Bea-VG-wqs" id="U39-ak-MGu"/>
                     </connections>
                 </viewController>

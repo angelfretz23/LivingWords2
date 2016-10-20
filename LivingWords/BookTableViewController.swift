@@ -114,6 +114,10 @@ extension BookTableViewController: UICollectionViewDelegate, UICollectionViewDat
           cell?.backgroundColor = UIColor.white
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //self.performSegue(withIdentifier: "toPageViewController", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPageViewController" {
             if let collectionCell: ChapterCollectionViewCell = sender as? ChapterCollectionViewCell,
@@ -126,13 +130,14 @@ extension BookTableViewController: UICollectionViewDelegate, UICollectionViewDat
                 guard let indexPath = collectionView.indexPath(for: collectionCell) else { return }
             
                 let bookname = books[collectionView.tag].bookName
-                let chapters = books[collectionView.tag].chapters
-                let chapter = books[collectionView.tag].chapters[indexPath.item]
-               
+                let chapters = books[collectionView.tag].chapters.sorted { $0.chapterNumber < $1.chapterNumber }
+                let chapter = chapters[indexPath.item]
                 
+               
                 destinationVC.bookname = bookname
-                destinationVC.chapters = chapters
                 destinationVC.chapter = chapter
+                destinationVC.chapters = chapters
+               
                 
                 
                 

@@ -16,32 +16,29 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var bookAndChapterButton: UIButton!
     
     static let storyboardIdentifier = "ChapterContentViewController"
-
+    
     //property to populate the tableView
     var verses: [Verse] = []
     
     var chapter: Chapter?
     var bookName: String?
+    var chapterNumber: Int?
 
+    
+    
+    
     
     //configure function - passing a specific chapter into the view controller from page view controller
     func configure(with chapter: Chapter, bookName: String)
     {
         self.chapter = chapter
         self.bookName = bookName
-        let chapterNumber = chapter.chapterNumber
+        self.chapterNumber = chapter.chapterNumber
         let unsortedVerses = chapter.verses
         let sortedVerses = unsortedVerses.sorted(by: {$0.verseNumber < $1.verseNumber})
         self.verses = sortedVerses
-        self.navigationItem.title = "Test"
-      
     }
     
-    
-    @IBAction func bookAndChapterButtonTapped(_ sender: AnyObject) {
-        
-    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,15 +50,17 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
- 
-        
-    }
-        
+        guard let bookName = bookName, let chapter = chapter else { return } 
+        navigationItem.title = "\(bookName) \(chapter.chapterNumber)"
 
+
+    }
+
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        super.viewDidAppear(animated)
+        guard let bookName = bookName, let chapter = chapter else { return }
+        self.navigationItem.title =  "\(bookName) \(chapter.chapterNumber)"
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,19 +76,23 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     //MARK: - TableView Delegate function
-    //what happens when the user taps on the cell
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let bookName =
-        let chapterNumber =
-        let verseNumber = 
-        
-        SermonController.fetchSermon(bookName: bookName, chapterNumber: chapterNumber, verseNumber: verseNumber) { (sermons) in
-                
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let verseNumber = indexPath.row
+//        guard let bookName = bookName else { return }
+//        SermonController.fetchSermon(bookName: bookName, chapterNumber: chapterNumber, verseNumber: verseNumber) { (sermons) in
+//            self.performSegue(withIdentifier: ", sender: <#T##Any?#>)
+//        }
+//        
+//        
+//        
+//    }
+    
     
     
 }
+
+
+
 
 //
 //extension ChapterContentViewController: UIViewControllerTransitionDelegate {

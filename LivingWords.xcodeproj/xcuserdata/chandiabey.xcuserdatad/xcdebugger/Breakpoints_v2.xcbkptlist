@@ -25,38 +25,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LivingWords/BookTableViewController.swift"
-            timestampString = "498615941.335307"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LivingWords/BookTableViewController.swift"
-            timestampString = "498615941.335307"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -77,7 +45,7 @@
                   moduleName = "LivingWords"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/SermonController.swift"
-                  timestampString = "498673170.799935"
+                  timestampString = "498698205.752836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -92,7 +60,7 @@
                   moduleName = "LivingWords"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/SermonController.swift"
-                  timestampString = "498673170.803386"
+                  timestampString = "498698205.754836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -125,7 +93,7 @@
                   moduleName = "LivingWords"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/Sermon.swift"
-                  timestampString = "498673170.820352"
+                  timestampString = "498698205.760077"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -140,7 +108,7 @@
                   moduleName = "LivingWords"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/Sermon.swift"
-                  timestampString = "498673170.824002"
+                  timestampString = "498698205.763073"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -164,22 +132,6 @@
             endingLineNumber = "26"
             landmarkName = "fetchSermon(bookName:chapterNumber:verseNumber:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChapterContentViewController.swift"
-            timestampString = "498673922.572014"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "ChapterContentViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

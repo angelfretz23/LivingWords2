@@ -10,11 +10,13 @@ import UIKit
 
 class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+
     
     //create an array that we will be pulling chapters from the book the user selected
     var chapters: [Chapter] = [] {
         didSet {
-            let initialViewController = self.createCachedViewController(forPage: 0)
+            guard let chapter = chapter else { return }
+            let initialViewController = self.createContentViewController(forPage: chapter.chapterNumber - 1)
             self.setViewControllers([initialViewController], direction: .forward, animated: false, completion: nil)
         }
     }
@@ -34,7 +36,11 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.delegate = self
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let bookname = bookname, let chapter = chapter else { return }
+        
+    }
     
     //MARK:- Helper Methods for the datasource functions. Both datasource functions will need to return a VC at index array. we find the index value of the array of chapters returned by BookController. Reason for caching is otherwise would be creatinag a new instance of UIVC each time and creating memory leaks
 
@@ -54,8 +60,8 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
     
 
     //this function will either return a cached VC or create a new VC that will be cached
-    private func createCachedViewController(forPage pageIndex: Int) -> ChapterContentViewController {
-        let chapter = chapters[pageIndex]
+    private func createContentViewController(forPage pageIndex: Int) -> ChapterContentViewController {
+      let chapter = chapters[pageIndex]
         
         if let cachedController = chapterContentViewControllerCache.object(forKey: chapter.identifier as NSString) {
             //return the cached viewcontroller
@@ -88,7 +94,7 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         
         //if greater than 0, that means we are not on our very first VC and we can subtract 1 and still be able to go backwards to a previous VC
         if index > 0 {
-            return createCachedViewController(forPage: index - 1)
+            return createContentViewController(forPage: index - 1)
         } else {
             return nil
         }
@@ -102,7 +108,7 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         
         //- 1 will be the last vc in the array since index starts at 0, so assuming we are not at the very last one, the return the next vc which is index + 1
         if index < chapters.count - 1  {
-            return createCachedViewController(forPage: index + 1)
+            return createContentViewController(forPage: index + 1)
         } else {
             return nil
         }
@@ -117,10 +123,16 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         
         return indexOfChapter(forViewController: currentViewController)
     }
-        
+    
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard let bookname = bookname, let chapter = chapter else { return }
+        let viewController = pageViewController.viewControllers?[0]
+        self.navigationItem.title = viewController?.navigationItem.title
+    }
 
         
-       
+    
         
     
 }

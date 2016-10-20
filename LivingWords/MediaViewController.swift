@@ -16,7 +16,7 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
     
     
     override func viewDidLoad() {
