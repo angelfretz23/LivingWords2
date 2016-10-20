@@ -4,86 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LivingWords/MediaViewController.swift"
-            timestampString = "498525281.103187"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LivingWords/SermonController.swift"
-            timestampString = "498529768.393556"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "fetchSermon(bookName:chapterNumber:verseNumber:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static LivingWords.SermonController.(fetchSermon (bookName : Swift.String, chapterNumber : Swift.Optional&lt;Swift.Int&gt;, verseNumber : Swift.Optional&lt;Swift.Int&gt;, completion : (Swift.Array&lt;Swift.Optional&lt;LivingWords.Sermon&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "LivingWords"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chandiabey/Documents/LivingWords/LivingWords/SermonController.swift"
-                  timestampString = "498529693.477105"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "1555">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static LivingWords.SermonController.(fetchSermon (bookName : Swift.String, chapterNumber : Swift.Optional&lt;Swift.Int&gt;, verseNumber : Swift.Optional&lt;Swift.Int&gt;, completion : (Swift.Array&lt;Swift.Optional&lt;LivingWords.Sermon&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "LivingWords"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chandiabey/Documents/LivingWords/LivingWords/SermonController.swift"
-                  timestampString = "498529693.478567"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "13">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LivingWords/SermonController.swift"
-            timestampString = "498529768.393556"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "fetchSermon(bookName:chapterNumber:verseNumber:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.IDETestFailureBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -132,6 +52,134 @@
             endingLineNumber = "135"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LivingWords/SermonController.swift"
+            timestampString = "498672611.070726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetchSermon(bookName:chapterNumber:verseNumber:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static LivingWords.SermonController.(fetchSermon (bookName : Swift.String, chapterNumber : Swift.Optional&lt;Swift.Int&gt;, verseNumber : Swift.Optional&lt;Swift.Int&gt;, completion : (Swift.Array&lt;Swift.Optional&lt;LivingWords.Sermon&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "LivingWords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/SermonController.swift"
+                  timestampString = "498673170.799935"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "1670">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static LivingWords.SermonController.(fetchSermon (bookName : Swift.String, chapterNumber : Swift.Optional&lt;Swift.Int&gt;, verseNumber : Swift.Optional&lt;Swift.Int&gt;, completion : (Swift.Array&lt;Swift.Optional&lt;LivingWords.Sermon&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "LivingWords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/SermonController.swift"
+                  timestampString = "498673170.803386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "2234">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LivingWords/Sermon.swift"
+            timestampString = "498671148.880832"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LivingWords.Sermon.init (dictionary : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; Swift.Optional&lt;LivingWords.Sermon&gt;"
+                  moduleName = "LivingWords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/Sermon.swift"
+                  timestampString = "498673170.820352"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "975">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LivingWords.Sermon.init (dictionary : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; Swift.Optional&lt;LivingWords.Sermon&gt;"
+                  moduleName = "LivingWords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chandiabey/Documents/LivingWordsProject/LivingWords2/LivingWords/Sermon.swift"
+                  timestampString = "498673170.824002"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1435">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LivingWords/SermonController.swift"
+            timestampString = "498672520.445034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchSermon(bookName:chapterNumber:verseNumber:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChapterContentViewController.swift"
+            timestampString = "498673922.572014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "ChapterContentViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

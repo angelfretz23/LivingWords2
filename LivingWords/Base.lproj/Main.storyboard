@@ -11,16 +11,16 @@
         <scene sceneID="XmO-Xg-aGT">
             <objects>
                 <tableViewController id="10h-ZN-imP" customClass="BookTableViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="220" sectionHeaderHeight="28" sectionFooterHeight="28" id="juJ-0g-YqO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="28" sectionFooterHeight="28" id="juJ-0g-YqO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" rowHeight="220" id="ar2-md-dLK" customClass="BookTableViewCell" customModule="LivingWords" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="220"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" rowHeight="222" id="ar2-md-dLK" customClass="BookTableViewCell" customModule="LivingWords" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="222"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ar2-md-dLK" id="xEa-if-Tqg">
-                                    <frame key="frameInset" width="375" height="220"/>
+                                    <frame key="frameInset" width="375" height="222"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-Gi-rKJ">
@@ -93,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwF-mL-psz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1105" y="-1218"/>
+            <point key="canvasLocation" x="-1106.4000000000001" y="-1218.440779610195"/>
         </scene>
         <!--Media View Controller-->
         <scene sceneID="BFy-yr-v5U">
@@ -110,11 +110,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bea-VG-wqs">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="259" id="o0k-KR-qxh" customClass="MediaTableViewCell" customModule="LivingWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="259"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="368" id="o0k-KR-qxh" customClass="MediaTableViewCell" customModule="LivingWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="368"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0k-KR-qxh" id="9RH-dN-GNi">
-                                            <frame key="frameInset" width="375" height="259"/>
+                                            <frame key="frameInset" width="375" height="367"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Agz-RL-7Ki">
@@ -127,7 +127,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h0W-C9-gwW" customClass="SermonCollectionViewCell" customModule="LivingWords" customModuleProvider="target">
-                                                            <rect key="frame" x="47.5" y="0.0" width="243" height="197"/>
+                                                            <rect key="frame" x="48" y="0.0" width="243" height="197"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="243" height="197"/>
@@ -168,7 +168,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sermonTableCell" rowHeight="57" id="k1n-1V-tpS">
-                                        <rect key="frame" x="0.0" y="287" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="396" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k1n-1V-tpS" id="Ixi-xD-Kbu">
                                             <frame key="frameInset" width="375" height="57"/>
@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKD-Fy-Zlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="-1218.440779610195"/>
+            <point key="canvasLocation" x="344.80000000000001" y="-546.47676161919048"/>
         </scene>
         <!--Chapter Page View Controller-->
         <scene sceneID="8vb-Cy-b3s">
@@ -227,15 +227,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4W-KE-3iR">
-                                <frame key="frameInset" minY="117" width="375" height="550"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4W-KE-3iR">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="verseCell" rowHeight="63" id="hsj-Oa-L3c" customClass="VerseTableTableViewCell" customModule="LivingWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="63"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hsj-Oa-L3c" id="HXM-Hr-y4R">
-                                            <frame key="frameInset" width="375" height="63"/>
+                                            <frame key="frameInset" width="375" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-sk-njV">
@@ -262,38 +261,23 @@
                                     <outlet property="delegate" destination="N8P-Yh-tpt" id="e1I-Fw-PnW"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98A-eV-9Ph">
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="bookAndChapterButtonTapped:" destination="N8P-Yh-tpt" eventType="touchUpInside" id="aCs-lR-Jcw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leading" id="8Uh-Q0-s28"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="15" id="8wb-vX-HNt"/>
-                            <constraint firstAttribute="trailing" secondItem="Z4W-KE-3iR" secondAttribute="trailing" id="9jr-Qt-Glq"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="15" id="FCC-k0-hkF"/>
-                            <constraint firstItem="ZyN-dx-Jcp" firstAttribute="top" secondItem="Z4W-KE-3iR" secondAttribute="bottom" constant="-29" id="VR6-qY-XNz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="98A-eV-9Ph" secondAttribute="trailing" constant="119" id="Wl3-Kt-uaw"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="15" id="dOk-0P-Ztt"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leadingMargin" constant="100" id="hyc-b3-42e"/>
-                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="top" secondItem="98A-eV-9Ph" secondAttribute="bottom" constant="8" id="yvL-Vi-fx0"/>
+                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="bottom" secondItem="ZyN-dx-Jcp" secondAttribute="top" id="9LE-3J-xKe"/>
+                            <constraint firstAttribute="trailing" secondItem="Z4W-KE-3iR" secondAttribute="trailing" id="S3V-mh-lGI"/>
+                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leading" id="USh-7z-Oto"/>
+                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="30" id="arK-xC-8Ms"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tga-hZ-0eT"/>
                     <connections>
-                        <outlet property="bookAndChapterButton" destination="98A-eV-9Ph" id="Q7a-jU-3fL"/>
                         <outlet property="tableView" destination="Z4W-KE-3iR" id="f5F-qE-Trc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtg-fE-0kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2192.8000000000002" y="-1218.440779610195"/>
+            <point key="canvasLocation" x="344.80000000000001" y="-1218.440779610195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="as5-gA-6Go">
@@ -312,25 +296,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcp-zk-qE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1834" y="-1218"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="nzY-ED-Ui0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="463-zo-4g2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2WW-OU-5H7"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hDJ-zh-i64">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="N8P-Yh-tpt" kind="relationship" relationship="rootViewController" id="mkw-7t-omi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jxZ-XK-BqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1253.5999999999999" y="-1218.440779610195"/>
         </scene>
     </scenes>
 </document>

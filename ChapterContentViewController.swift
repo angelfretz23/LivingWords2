@@ -33,8 +33,8 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         let unsortedVerses = chapter.verses
         let sortedVerses = unsortedVerses.sorted(by: {$0.verseNumber < $1.verseNumber})
         self.verses = sortedVerses
-       // let titleOfButton = "\(bookName) \(chapterNumber)"
-        //bookAndChapterButton.setTitle(titleOfButton, for: .normal)
+        self.navigationItem.title = "Test"
+      
     }
     
     
@@ -54,8 +54,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        bookAndChapterButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        bookAndChapterButton.titleLabel?.numberOfLines = 1
+ 
         
     }
         
@@ -64,13 +63,6 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         super.viewWillAppear(animated)
         
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return verses.count
@@ -86,8 +78,24 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     //MARK: - TableView Delegate function
     //what happens when the user taps on the cell
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let bookName =
+        let chapterNumber =
+        let verseNumber = 
         
+        SermonController.fetchSermon(bookName: bookName, chapterNumber: chapterNumber, verseNumber: verseNumber) { (sermons) in
+                
+        }
     }
-
+    
+    
 }
+
+//
+//extension ChapterContentViewController: UIViewControllerTransitionDelegate {
+//    
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return PresentMenuAnimator() //your replacement
+//    }
+//    
+//}
