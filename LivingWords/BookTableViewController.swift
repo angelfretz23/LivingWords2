@@ -125,9 +125,14 @@ extension BookTableViewController: UICollectionViewDelegate, UICollectionViewDat
                 //find index that was tapped in tableView
                 guard let indexPath = collectionView.indexPath(for: collectionCell) else { return }
             
+                let bookname = books[collectionView.tag].bookName
+                let chapters = books[collectionView.tag].chapters
                 let chapter = books[collectionView.tag].chapters[indexPath.item]
+               
                 
-                destinationVC.chapterNumber = chapter.chapterNumber
+                destinationVC.bookname = bookname
+                destinationVC.chapters = chapters
+                destinationVC.chapter = chapter
                 
                 
                 

@@ -20,24 +20,21 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     //property to populate the tableView
     var verses: [Verse] = []
     
-    
-    
     var chapter: Chapter?
     var bookName: String?
-    
-    
+
     
     //configure function - passing a specific chapter into the view controller from page view controller
-    func configure(with chapter: Chapter)
+    func configure(with chapter: Chapter, bookName: String)
     {
         self.chapter = chapter
+        self.bookName = bookName
         let chapterNumber = chapter.chapterNumber
-        //let bookName = bookName
         let unsortedVerses = chapter.verses
         let sortedVerses = unsortedVerses.sorted(by: {$0.verseNumber < $1.verseNumber})
         self.verses = sortedVerses
-        let titleOfButton = "\(bookName) \(chapterNumber)"
-        bookAndChapterButton.setTitle(titleOfButton, for: .normal)
+       // let titleOfButton = "\(bookName) \(chapterNumber)"
+        //bookAndChapterButton.setTitle(titleOfButton, for: .normal)
     }
     
     

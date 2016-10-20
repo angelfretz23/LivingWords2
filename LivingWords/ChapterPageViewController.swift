@@ -11,7 +11,7 @@ import UIKit
 class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     
-    //create an array that we will be pulling data from in our case the API. an array of chapters.
+    //create an array that we will be pulling chapters from the book the user selected
     var chapters: [Chapter] = [] {
         didSet {
             let initialViewController = self.createCachedViewController(forPage: 0)
@@ -19,49 +19,21 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         }
     }
     
-    
     //passing in 2 values from the bible list segue to these values
-    var bookName: String?
-    var chapterNumber: Int?
+    var bookname: String?
+    var chapter: Chapter?
     
     
 
     //create a property that will hold the cached VCs
     private let chapterContentViewControllerCache = NSCache<NSString, ChapterContentViewController>()
     
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        if bookName != nil {
-//            guard let bookName = bookName else { return }
-//            BookController.fetchBook(bookName: bookName) { (book) in
-//                guard let book = book else { return }
-//                //setting the initial VC and setting th stage for the next VCs
-//                DispatchQueue.main.async {
-//                     self.chapters = book.chapters.sorted(by: { $0.chapterNumber < $1.chapterNumber })
-//                }
-//                
-//            }
-//        } else  {
-//            BookController.fetchBook(bookName: "Matthew", completion: { (book) in
-//                guard let book = book else {
-//                    return
-//                }
-//                DispatchQueue.main.async {
-//                   self.chapters = book.chapters.sorted(by: { $0.chapterNumber < $1.chapterNumber })
-//                    //setting the initial VC and setting th stage for the next VCs
-//                }
-//            })
-//        }
-    
         self.dataSource = self
         self.delegate = self
-
     }
+    
     
     
     //MARK:- Helper Methods for the datasource functions. Both datasource functions will need to return a VC at index array. we find the index value of the array of chapters returned by BookController. Reason for caching is otherwise would be creatinag a new instance of UIVC each time and creating memory leaks
@@ -70,7 +42,6 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
     //finding the index value of the array
     private func indexOfChapter(forViewController viewController: UIViewController) -> Int
     {
-        
         guard let contentViewController = viewController as? ChapterContentViewController else { fatalError("Unexpected view controller type in page view controller") }
         
         //NOTE: Had to unwrap this optional. Otherwise equatable protocol implemented on Chapter was not working.
@@ -94,8 +65,9 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
             //instantiate and configure a ChapterContentViewController for the Chapter
             guard let controller = storyboard?.instantiateViewController(withIdentifier: ChapterContentViewController.storyboardIdentifier) as? ChapterContentViewController else { fatalError("Unable to instantiate a ChapterContentViewController") }
             
-    
-            controller.configure(with: chapter)
+            guard let bookname = bookname else { return ChapterContentViewController() }
+            
+            controller.configure(with: chapter, bookName: bookname)
             
             //cache the viewcontroller so it can be reused
             chapterContentViewControllerCache.setObject(controller, forKey: chapter.identifier as NSString)

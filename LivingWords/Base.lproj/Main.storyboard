@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ar2-md-dLK" id="xEa-if-Tqg">
-                                    <frame key="frameInset" width="375" height="219"/>
+                                    <frame key="frameInset" width="375" height="220"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-Gi-rKJ">
@@ -114,7 +114,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="259"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0k-KR-qxh" id="9RH-dN-GNi">
-                                            <frame key="frameInset" width="375" height="258"/>
+                                            <frame key="frameInset" width="375" height="259"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Agz-RL-7Ki">
@@ -127,7 +127,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h0W-C9-gwW" customClass="SermonCollectionViewCell" customModule="LivingWords" customModuleProvider="target">
-                                                            <rect key="frame" x="48" y="0.0" width="243" height="197"/>
+                                                            <rect key="frame" x="47.5" y="0.0" width="243" height="197"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="243" height="197"/>
@@ -138,7 +138,7 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-p4-gp3">
-                                                                        <frame key="frameInset" minY="113" width="46" height="30"/>
+                                                                        <frame key="frameInset" minY="121" width="46" height="30"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <state key="normal" title="Button"/>
                                                                     </button>
@@ -171,7 +171,7 @@
                                         <rect key="frame" x="0.0" y="287" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k1n-1V-tpS" id="Ixi-xD-Kbu">
-                                            <frame key="frameInset" width="375" height="56"/>
+                                            <frame key="frameInset" width="375" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -181,6 +181,15 @@
                                     <outlet property="delegate" destination="YUR-fj-9jv" id="ztb-KT-780"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-l2-RHC">
+                                <frame key="frameInset" minY="28" width="375" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Sermons"/>
+                                    <segment title="Music"/>
+                                    <segment title="Books"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -196,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKD-Fy-Zlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="-1218"/>
+            <point key="canvasLocation" x="2964" y="-1218.440779610195"/>
         </scene>
         <!--Chapter Page View Controller-->
         <scene sceneID="8vb-Cy-b3s">
@@ -206,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="-324" y="-1218"/>
         </scene>
-        <!--Item-->
+        <!--Chapter Content View Controller-->
         <scene sceneID="UqN-H3-thv">
             <objects>
                 <viewController storyboardIdentifier="ChapterContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N8P-Yh-tpt" customClass="ChapterContentViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
@@ -218,23 +227,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98A-eV-9Ph">
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="bookAndChapterButtonTapped:" destination="N8P-Yh-tpt" eventType="touchUpInside" id="aCs-lR-Jcw"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4W-KE-3iR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4W-KE-3iR">
+                                <frame key="frameInset" minY="117" width="375" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="verseCell" rowHeight="63" id="hsj-Oa-L3c" customClass="VerseTableTableViewCell" customModule="LivingWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hsj-Oa-L3c" id="HXM-Hr-y4R">
-                                            <frame key="frameInset" width="375" height="62"/>
+                                            <frame key="frameInset" width="375" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-sk-njV">
@@ -261,21 +262,30 @@
                                     <outlet property="delegate" destination="N8P-Yh-tpt" id="e1I-Fw-PnW"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98A-eV-9Ph">
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookAndChapterButtonTapped:" destination="N8P-Yh-tpt" eventType="touchUpInside" id="aCs-lR-Jcw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Z4W-KE-3iR" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leading" id="8Uh-Q0-s28"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="-5" id="8wb-vX-HNt"/>
+                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="15" id="8wb-vX-HNt"/>
                             <constraint firstAttribute="trailing" secondItem="Z4W-KE-3iR" secondAttribute="trailing" id="9jr-Qt-Glq"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="-5" id="FCC-k0-hkF"/>
+                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="15" id="FCC-k0-hkF"/>
                             <constraint firstItem="ZyN-dx-Jcp" firstAttribute="top" secondItem="Z4W-KE-3iR" secondAttribute="bottom" constant="-29" id="VR6-qY-XNz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="98A-eV-9Ph" secondAttribute="trailing" constant="121" id="Wl3-Kt-uaw"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="-5" id="dOk-0P-Ztt"/>
-                            <constraint firstItem="98A-eV-9Ph" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leadingMargin" constant="98" id="hyc-b3-42e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="98A-eV-9Ph" secondAttribute="trailing" constant="119" id="Wl3-Kt-uaw"/>
+                            <constraint firstItem="98A-eV-9Ph" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="15" id="dOk-0P-Ztt"/>
+                            <constraint firstItem="98A-eV-9Ph" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leadingMargin" constant="100" id="hyc-b3-42e"/>
                             <constraint firstItem="Z4W-KE-3iR" firstAttribute="top" secondItem="98A-eV-9Ph" secondAttribute="bottom" constant="8" id="yvL-Vi-fx0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2WW-OU-5H7"/>
+                    <navigationItem key="navigationItem" id="tga-hZ-0eT"/>
                     <connections>
                         <outlet property="bookAndChapterButton" destination="98A-eV-9Ph" id="Q7a-jU-3fL"/>
                         <outlet property="tableView" destination="Z4W-KE-3iR" id="f5F-qE-Trc"/>
@@ -283,25 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtg-fE-0kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="-1218"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="0Mk-qF-6lw">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uax-7T-3vc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="2EL-Rv-AOD">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="N8P-Yh-tpt" kind="relationship" relationship="viewControllers" id="JSQ-jW-lS9"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LvP-SK-Q6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="487" y="-1218"/>
+            <point key="canvasLocation" x="2192.8000000000002" y="-1218.440779610195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="as5-gA-6Go">
@@ -320,6 +312,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcp-zk-qE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1834" y="-1218"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="nzY-ED-Ui0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="463-zo-4g2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="2WW-OU-5H7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hDJ-zh-i64">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="N8P-Yh-tpt" kind="relationship" relationship="rootViewController" id="mkw-7t-omi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxZ-XK-BqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5999999999999" y="-1218.440779610195"/>
         </scene>
     </scenes>
 </document>
