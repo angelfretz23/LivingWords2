@@ -34,6 +34,8 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
+        self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: (self.view.frame.size.height + 40))
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

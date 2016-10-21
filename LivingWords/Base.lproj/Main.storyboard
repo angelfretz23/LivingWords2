@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKD-Fy-Zlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344.80000000000001" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="345" y="-403"/>
         </scene>
         <!--Chapter Page View Controller-->
         <scene sceneID="8vb-Cy-b3s">
@@ -254,6 +254,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="verseLabel" destination="yX3-sk-njV" id="9Lv-2Z-0Bc"/>
+                                            <segue destination="YUR-fj-9jv" kind="custom" id="D9N-je-8kB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -266,9 +267,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z4W-KE-3iR" secondAttribute="trailing" id="07E-Kd-bel"/>
-                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="top" secondItem="icW-WY-0fy" secondAttribute="bottom" constant="47" id="0lW-sc-vjO"/>
                             <constraint firstItem="Z4W-KE-3iR" firstAttribute="leading" secondItem="g5M-9k-cwC" secondAttribute="leading" id="362-eF-1WY"/>
                             <constraint firstItem="Z4W-KE-3iR" firstAttribute="bottom" secondItem="ZyN-dx-Jcp" secondAttribute="top" id="OdC-GN-29Q"/>
+                            <constraint firstItem="Z4W-KE-3iR" firstAttribute="top" secondItem="g5M-9k-cwC" secondAttribute="top" constant="66" id="wnA-Pr-jrB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tga-hZ-0eT"/>

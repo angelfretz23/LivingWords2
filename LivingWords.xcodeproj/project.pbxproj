@@ -25,11 +25,15 @@
 		4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FAE1DAE99A20028D286 /* Book.swift */; };
 		4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */; };
 		4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB31DAEAC840028D286 /* BookController.swift */; };
-		4BAF1FDF1DAF4D450028D286 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FDE1DAF4D450028D286 /* FXBlurView.m */; };
 		4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */; };
 		4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */; };
 		4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */; };
 		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
+		4BEC772C1DB9E9AE00249B1F /* TransitionPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC772B1DB9E9AD00249B1F /* TransitionPresentationAnimator.swift */; };
+		4BEC772E1DB9E9E500249B1F /* TransitionDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC772D1DB9E9E500249B1F /* TransitionDismissAnimator.swift */; };
+		4BEC77301DB9EACD00249B1F /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC772F1DB9EACD00249B1F /* PresentationManager.swift */; };
+		4BEC77331DB9EB5A00249B1F /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77321DB9EB5A00249B1F /* FXBlurView.m */; };
+		4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77361DB9EEE200249B1F /* PresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,13 +57,16 @@
 		4BAF1FAE1DAE99A20028D286 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		4BAF1FB31DAEAC840028D286 /* BookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
-		4BAF1FDC1DAF4D430028D286 /* LivingWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivingWords-Bridging-Header.h"; sourceTree = "<group>"; };
-		4BAF1FDD1DAF4D450028D286 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
-		4BAF1FDE1DAF4D450028D286 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
+		4BEC772B1DB9E9AD00249B1F /* TransitionPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPresentationAnimator.swift; sourceTree = "<group>"; };
+		4BEC772D1DB9E9E500249B1F /* TransitionDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionDismissAnimator.swift; sourceTree = "<group>"; };
+		4BEC772F1DB9EACD00249B1F /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		4BEC77311DB9EB5A00249B1F /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		4BEC77321DB9EB5A00249B1F /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		4BEC77361DB9EEE200249B1F /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +109,8 @@
 		4BAF1F501DAD611E0028D286 /* LivingWords */ = {
 			isa = PBXGroup;
 			children = (
-				4BAF1FDD1DAF4D450028D286 /* FXBlurView.h */,
-				4BAF1FDE1DAF4D450028D286 /* FXBlurView.m */,
-				4BAF1FDC1DAF4D430028D286 /* LivingWords-Bridging-Header.h */,
+				4BEC77311DB9EB5A00249B1F /* FXBlurView.h */,
+				4BEC77321DB9EB5A00249B1F /* FXBlurView.m */,
 				4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */,
 				4BAF1F831DAD9C100028D286 /* NetworkController.swift */,
 				4BAF1FB51DAEB0480028D286 /* Model Controllers */,
@@ -149,6 +155,7 @@
 		4BAF1FB91DAEBA430028D286 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */,
 				4BEBC3C51DB6288E00A39D88 /* Media View Controllers */,
 				4BEBC3C61DB628AC00A39D88 /* Bible View Controller */,
 				4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */,
@@ -184,6 +191,18 @@
 				4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */,
 			);
 			name = "Bible View Controller";
+			sourceTree = "<group>";
+		};
+		4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4BEC772F1DB9EACD00249B1F /* PresentationManager.swift */,
+				4BEC77361DB9EEE200249B1F /* PresentationController.swift */,
+				4BEC772B1DB9E9AD00249B1F /* TransitionPresentationAnimator.swift */,
+				4BEC772D1DB9E9E500249B1F /* TransitionDismissAnimator.swift */,
+			);
+			name = "Custom Presentation Animation";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,18 +285,22 @@
 				4BAF1F841DAD9C100028D286 /* NetworkController.swift in Sources */,
 				4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
+				4BEC77331DB9EB5A00249B1F /* FXBlurView.m in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
 				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
 				4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */,
 				4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */,
 				4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */,
-				4BAF1FDF1DAF4D450028D286 /* FXBlurView.m in Sources */,
+				4BEC77301DB9EACD00249B1F /* PresentationManager.swift in Sources */,
 				4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */,
 				4BAF1F821DAD97340028D286 /* Verse.swift in Sources */,
+				4BEC772C1DB9E9AE00249B1F /* TransitionPresentationAnimator.swift in Sources */,
+				4BEC772E1DB9E9E500249B1F /* TransitionDismissAnimator.swift in Sources */,
 				4B5F38511DB8066400CA36F4 /* BookTableViewCell.swift in Sources */,
 				4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */,
 				4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */,
 				4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */,
+				4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */,
 				4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */,
 				4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */,
 			);
@@ -406,7 +429,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -422,7 +444,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
