@@ -50,14 +50,12 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        guard let bookName = bookName, let chapter = chapter else { return } 
-        navigationItem.title = "\(bookName) \(chapter.chapterNumber)"
-
-
     }
+    
+    
 
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let bookName = bookName, let chapter = chapter else { return }
         self.navigationItem.title =  "\(bookName) \(chapter.chapterNumber)"

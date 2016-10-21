@@ -113,16 +113,17 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
             return nil
         }
     }
-    
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return chapters.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let currentViewController = pageViewController.viewControllers?.first else { return 0 }
-        
-        return indexOfChapter(forViewController: currentViewController)
-    }
+
+    //remove these so we dont show the dots at the bottom 
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return chapters.count
+//    }
+//    
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        guard let currentViewController = pageViewController.viewControllers?.first else { return 0 }
+//        
+//        return indexOfChapter(forViewController: currentViewController)
+//    }
     
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {

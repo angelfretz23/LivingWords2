@@ -132,12 +132,12 @@ extension BookTableViewController: UICollectionViewDelegate, UICollectionViewDat
                 let bookname = books[collectionView.tag].bookName
                 let chapters = books[collectionView.tag].chapters.sorted { $0.chapterNumber < $1.chapterNumber }
                 let chapter = chapters[indexPath.item]
-                
+        
                
                 destinationVC.bookname = bookname
                 destinationVC.chapter = chapter
                 destinationVC.chapters = chapters
-               
+                destinationVC.navigationItem.title = "\(bookname) \(chapter.chapterNumber)"
                 
                 
                 
