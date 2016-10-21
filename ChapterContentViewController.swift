@@ -13,71 +13,35 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     //MARK: Properties
     
     @IBOutlet weak var tableView: UITableView!
-    
-
-    
     @IBOutlet weak var bookAndChapterButton: UIButton!
     
     static let storyboardIdentifier = "ChapterContentViewController"
-
+    
     //property to populate the tableView
     var verses: [Verse] = []
     
-    
-    
     var chapter: Chapter?
     var bookName: String?
+    var chapterNumber: Int?
+
+    
     
     
     
     //configure function - passing a specific chapter into the view controller from page view controller
-    func configure(with chapter: Chapter)
+    func configure(with chapter: Chapter, bookName: String)
     {
         self.chapter = chapter
-        let chapterNumber = chapter.chapterNumber
-        //let bookName = bookName
+        self.bookName = bookName
+        self.chapterNumber = chapter.chapterNumber
         let unsortedVerses = chapter.verses
         let sortedVerses = unsortedVerses.sorted(by: {$0.verseNumber < $1.verseNumber})
         self.verses = sortedVerses
-        let titleOfButton = "\(bookName) \(chapterNumber)"
-       // bookAndChapterButton.setTitle(titleOfButton, for: .normal)
-        
-        
-//        if bookName != nil && chapter != nil {
-//           let titleOfButton = "\(bookName) \(chapterNumber)"
-//            bookAndChapterButton.setTitle(titleOfButton, for: .normal)
-//        } else {
-//            bookAndChapterButton.setTitle("Matthew 1", for: .normal)
-//            
-//        }
-
-        
     }
     
-    
-    @IBAction func bookAndChapterButtonTapped(_ sender: AnyObject) {
-        
-    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   
-//        guard let bookName = bookName,
-//            let chapterNumber = chapterNumber else { return }
-//        BookController.fetchBook(bookName: bookName) { (book) in
-//            guard let unsortedVerses = book?.chapters[chapterNumber - 1].verses
-//                else { return }
-//            let sortedVerses = unsortedVerses.sorted(by: { ($0.verseNumber < $1.verseNumber)})
-//            self.verses = sortedVerses
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//                //creating dynamic resizing of table rows for custom cells
-//                self.tableView.estimatedRowHeight = 3
-//                self.tableView.rowHeight = UITableViewAutomaticDimension
-//                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
         
         self.tableView.estimatedRowHeight = 3
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -86,28 +50,16 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        bookAndChapterButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        bookAndChapterButton.titleLabel?.numberOfLines = 1
-      
-        
-        
-        
     }
-        
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let bookName = bookName, let chapter = chapter else { return }
+        self.navigationItem.title =  "\(bookName) \(chapter.chapterNumber)"
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return verses.count
@@ -122,9 +74,51 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     //MARK: - TableView Delegate function
-    //what happens when the user taps on the cell
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let verseNumber = indexPath.row
+        guard let bookName = bookName else { return }
+        SermonController.fetchSermon(bookName: bookName, chapterNumber: chapterNumber, verseNumber: verseNumber) { (sermons) in
+            
+//            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "MediaViewController")
+//            
+//            // For presentations which will use a custom presentation controller,
+//            // it is possible for that presentation controller to also be the
+//            // transitioningDelegate.  This avoids introducing another object
+//            // or implementing <UIViewControllerTransitioningDelegate> in the
+//            // source view controller.
+//            //
+//            // transitioningDelegate does not hold a strong reference to its
+//            // destination object.  To prevent presentationController from being
+//            // released prior to calling -presentViewController:animated:completion:
+//            // the NS_VALID_UNTIL_END_OF_SCOPE attribute is appended to the declaration.
+//            
+//            let presentationController = PresentationController(presentedViewController: secondViewController!, presentingViewController: self)
+//            
+//            secondViewController!.transitioningDelegate = presentationController
+//            
+//            self.present(secondViewController!, animated: true, completion: {
+//                let _ = presentationController
+//                
+//            
+//                self.presentingViewController(secondViewController!, animated: true, completion: {
+//                  let _ = presentationController
+//                })
+//        })
     }
+    
+    
+    
+}
 
+
+
+
+//
+//extension ChapterContentViewController: UIViewControllerTransitionDelegate {
+//    
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return PresentMenuAnimator() //your replacement
+//    }
+//    
+//}
 }

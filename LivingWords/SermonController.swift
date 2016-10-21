@@ -15,9 +15,10 @@ class SermonController {
     static let baseURL = URL(string: "https://api.sermonaudio.com/v1/node/sermons_by_bibref")
     //static let endpoint = baseURL?.appendingPathExtension("json")
     
-    static func fetchSermon(bookName: String, chapterNumber: Int?, verseNumber: Int?, completion: @escaping ([Sermon?])-> Void) {
+    static func fetchSermon(bookName: String, chapterNumber: Int? , verseNumber: Int?, completion: @escaping ([Sermon?])-> Void) {
         
-        let urlParameters = ["bibbook": "\(bookName)", "bibchapter": "\(chapterNumber)", "bibverse": "\(verseNumber)"]
+        guard let chapterNumber = chapterNumber, let verseNumber = verseNumber else { return }
+        let urlParameters = ["bibbook": bookName, "bibchapter": "\(chapterNumber)", "bibverse": "\(verseNumber)"]
         
         let apiHeader = "8053A751-10C1-4093-BFE9-0C00C3374AA6"
         let forHTTPHeaderField = "x-api-key"
@@ -42,14 +43,15 @@ class SermonController {
             print(data)
             
     
-            //check if error occurred
-//            if error != nil {
-//                print(error?.localizedDescription)
-//                completion([])
-//            } else if responseDataString.contains("error") {
-//              print("Error: (\(responseDataString)")
-//              completion([])
-//            }
+            
+            if error != nil {
+                print(error?.localizedDescription)
+//                print(error as! NSError) 
+                completion([])
+            } else if responseDataString.contains("error") {
+              print("Error: (\(responseDataString)")
+              completion([])
+            }
             
             //if there is no error but data returned, serialize the JSON data returned using the dataFromString above
             guard let jsonDictionary = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],

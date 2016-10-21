@@ -61,6 +61,7 @@ class NetworkController: NSObject {
         components?.queryItems = parameters?.flatMap({URLQueryItem(name: $0.0, value: $0.1)})
         
         if let url = components?.url {
+            print(url)
             return url
         } else {
             fatalError("URL optional is nil")
