@@ -25,6 +25,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     var chapterNumber: Int?
 
     
+    let transitionDelegate = TransitioningDelegate()
     
     
     
@@ -80,31 +81,32 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         SermonController.fetchSermon(bookName: bookName, chapterNumber: chapterNumber, verseNumber: verseNumber) { (sermons) in
             
 //            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "MediaViewController")
+
+            // For presentations which will use a custom presentation controller,
+            // it is possible for that presentation controller to also be the
+            // transitioningDelegate.  This avoids introducing another object
+            // or implementing <UIViewControllerTransitioningDelegate> in the
+            // source view controller.
+            //
+            // transitioningDelegate does not hold a strong reference to its
+            // destination object.  To prevent presentationController from being
+            // released prior to calling -presentViewController:animated:completion:
+            // the NS_VALID_UNTIL_END_OF_SCOPE attribute is appended to the declaration.
+            
+//            let presentationController = PresentationController(presentedViewController: secondViewController!, presenting: self)
 //            
-//            // For presentations which will use a custom presentation controller,
-//            // it is possible for that presentation controller to also be the
-//            // transitioningDelegate.  This avoids introducing another object
-//            // or implementing <UIViewControllerTransitioningDelegate> in the
-//            // source view controller.
-//            //
-//            // transitioningDelegate does not hold a strong reference to its
-//            // destination object.  To prevent presentationController from being
-//            // released prior to calling -presentViewController:animated:completion:
-//            // the NS_VALID_UNTIL_END_OF_SCOPE attribute is appended to the declaration.
-//            
-//            let presentationController = PresentationController(presentedViewController: secondViewController!, presentingViewController: self)
-//            
-//            secondViewController!.transitioningDelegate = presentationController
+//            secondViewController?.transitioningDelegate = presentationController
 //            
 //            self.present(secondViewController!, animated: true, completion: {
 //                let _ = presentationController
-//                
-//            
-//                self.presentingViewController(secondViewController!, animated: true, completion: {
-//                  let _ = presentationController
-//                })
-//        })
-    }
+        }
+        
+            transitioningDelegate = TransitioningDelegate()
+            var vc = MediaViewController()
+            vc.transitioningDelegate = transitioningDelegate
+            self.present(vc, animated: true, completion: nil)
+            
+        }
     
     
     
@@ -113,12 +115,4 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
 
 
 
-//
-//extension ChapterContentViewController: UIViewControllerTransitionDelegate {
-//    
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return PresentMenuAnimator() //your replacement
-//    }
-//    
-//}
-}
+

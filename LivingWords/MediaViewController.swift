@@ -9,12 +9,25 @@
 import UIKit
 
 
+/*presented with a modal Presentation Style if UIModalPresentationOverFullScreen rather than default UIModalPresentationFullScreen (configured on storyboard).
+
+ when a fullscreen view controller is presented, the corresponding presntation controller's shouldRemovePresentersView returns YES, the presentation Controller tempoarily relocates the presenting view controller's view to the presentation controller's containerView. 
+ 
+ when the fullscreen view controller is dismissed, the presentation controller places the presenting view controller's view back in its previous superview. 
+ 
+ the relocation of the presenting view controller's view poses a problem in this example because only the presenting view controller's view is relocated, not the intermedicate view hierarchy we setup to apply the rounded corner and shadow effect. The UIModalPresentationOverFullScreen presentation style, the presentation controller overrides shouldRemovePresentersView to NO.
+ 
+ 
+ 
+*/
+
+
 
 class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
 
-    
+    @IBOutlet private weak var slider: UISlider!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
     
@@ -26,14 +39,15 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-//        //
-//        //add the content of the nib file into this view, owner is viewcontroller, cast last object as settingsview
-//        settings = Bundle.main.loadNibNamed("Settings", owner: self, options: nil)?.last as? SettingsView
-//       //give this a frame, x position of 0 and y position will be height of view controller's view plus the height we want to see on the screen 
-//        settings.frame = CGRect(x: 0, y: (self.view.frame.size.height + 66), width: self.view.frame.size.width, height: self.view.frame.size.height)
-//        //add it as a subview to viewcontroller
-//        self.view.addSubview(settings)
-//        
+        
+    
+        
+        
+        //
+        
+     
+     
+
         
         //check sermon API fetch 
         SermonController.fetchSermon(bookName: "MAT", chapterNumber: 1, verseNumber: 12) { (sermons) in
@@ -45,6 +59,22 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
 
+    func updatePreferredCOntentSizeWithTraitCollection(traitCollection: UITraitCollection)
+    {
+        self.preferredContentSize = CGSize(width: self.view.bounds.size.width, height: traitCollection.verticalSizeClass == .compact ? 270: 350)
+        
+
+    
+        //to demonstrate how a presentation controller can dynamically respond to changes to its presented view controller's preferredContentSize, this view controller exposes a slider. Dragging this slider updates the preferredContentSize of this view controller in real time. Update the slider with appropriate min/max values and reset the current value to reflect the changed preferredContentSize 
+        
+        self.slider.maximumValue = Float(self.preferredContentSize.height)
+        self.slider.minimumValue = 220.0
+        self.slider.value = self.slider.maximumValue 
+        
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }

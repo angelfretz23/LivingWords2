@@ -29,11 +29,10 @@
 		4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */; };
 		4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */; };
 		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
-		4BEC772C1DB9E9AE00249B1F /* TransitionPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC772B1DB9E9AD00249B1F /* TransitionPresentationAnimator.swift */; };
-		4BEC772E1DB9E9E500249B1F /* TransitionDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC772D1DB9E9E500249B1F /* TransitionDismissAnimator.swift */; };
-		4BEC77301DB9EACD00249B1F /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC772F1DB9EACD00249B1F /* PresentationManager.swift */; };
 		4BEC77331DB9EB5A00249B1F /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77321DB9EB5A00249B1F /* FXBlurView.m */; };
 		4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77361DB9EEE200249B1F /* PresentationController.swift */; };
+		4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */; };
+		4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,12 +60,11 @@
 		4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
-		4BEC772B1DB9E9AD00249B1F /* TransitionPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPresentationAnimator.swift; sourceTree = "<group>"; };
-		4BEC772D1DB9E9E500249B1F /* TransitionDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionDismissAnimator.swift; sourceTree = "<group>"; };
-		4BEC772F1DB9EACD00249B1F /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
 		4BEC77311DB9EB5A00249B1F /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		4BEC77321DB9EB5A00249B1F /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		4BEC77361DB9EEE200249B1F /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,10 +194,9 @@
 		4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */ = {
 			isa = PBXGroup;
 			children = (
-				4BEC772F1DB9EACD00249B1F /* PresentationManager.swift */,
+				4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */,
+				4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */,
 				4BEC77361DB9EEE200249B1F /* PresentationController.swift */,
-				4BEC772B1DB9E9AD00249B1F /* TransitionPresentationAnimator.swift */,
-				4BEC772D1DB9E9E500249B1F /* TransitionDismissAnimator.swift */,
 			);
 			name = "Custom Presentation Animation";
 			path = ..;
@@ -286,16 +283,14 @@
 				4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
 				4BEC77331DB9EB5A00249B1F /* FXBlurView.m in Sources */,
+				4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
 				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
 				4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */,
 				4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */,
 				4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */,
-				4BEC77301DB9EACD00249B1F /* PresentationManager.swift in Sources */,
 				4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */,
 				4BAF1F821DAD97340028D286 /* Verse.swift in Sources */,
-				4BEC772C1DB9E9AE00249B1F /* TransitionPresentationAnimator.swift in Sources */,
-				4BEC772E1DB9E9E500249B1F /* TransitionDismissAnimator.swift in Sources */,
 				4B5F38511DB8066400CA36F4 /* BookTableViewCell.swift in Sources */,
 				4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */,
 				4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */,
@@ -303,6 +298,7 @@
 				4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */,
 				4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */,
 				4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */,
+				4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
