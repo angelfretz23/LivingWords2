@@ -11,7 +11,6 @@ import UIKit
 class TransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
 
     
-    
     //returns a presentation controller that manages the presentation of a view controller and return an instance of the presentation controller we created
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController!, sourceViewController source: UIViewController) -> UIPresentationController? {
         let presentationController = PresentationController(presentedViewController:presented, presenting:presenting)

@@ -29,6 +29,9 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
 
     //create a property that will hold the cached VCs
     private let chapterContentViewControllerCache = NSCache<NSString, ChapterContentViewController>()
+  
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -36,43 +36,78 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        
-    
-        
-        
-        //
-        
-     
-     
-
+        //self.tableView.delegate = self
+        //self.tableView.dataSource = self
         
         //check sermon API fetch 
         SermonController.fetchSermon(bookName: "MAT", chapterNumber: 1, verseNumber: 12) { (sermons) in
-            
         }
-            
-            
-            
+
     }
     
-
-    func updatePreferredCOntentSizeWithTraitCollection(traitCollection: UITraitCollection)
-    {
-        self.preferredContentSize = CGSize(width: self.view.bounds.size.width, height: traitCollection.verticalSizeClass == .compact ? 270: 350)
-        
-
     
-        //to demonstrate how a presentation controller can dynamically respond to changes to its presented view controller's preferredContentSize, this view controller exposes a slider. Dragging this slider updates the preferredContentSize of this view controller in real time. Update the slider with appropriate min/max values and reset the current value to reflect the changed preferredContentSize 
-        
-        self.slider.maximumValue = Float(self.preferredContentSize.height)
-        self.slider.minimumValue = 220.0
-        self.slider.value = self.slider.maximumValue 
-        
-    }
     
+    //create a handle to the interactor
+    var interactor: Interactor? = nil
+    
+    //pan gesture has different states such as began, ended and changed. we will translate these state changes to corresponding method calls on interactor
+//    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
+//        
+//        //sets how far up the user has to drag in order to trigger the modal presentation
+//        let percentThreshold: CGFloat = 0.3
+//        
+//        
+//        //convert y position to upward pull progress (percentage) 
+//        //converts pan gesture coordinate to modal view controller's coordinate space
+//        let translation = sender.translation(in: sender.view?.superview)
+//        
+//        //converts the vertical distance to a percentage based on the overall screen height
+//        let verticalMovement = translation.y/(view.bounds.height)
+//        //captures movement in upward direction. downward movement is ignored.
+//        let upwardMovement = fmaxf(Float(verticalMovement), 0.0)
+//        //caps percentage to a maximum of 100%
+//        let upwardMovementPercent = fminf(upwardMovement, 1.0)
+//        //casts the percentage as a CGFloat which is the number type that the interactor
+//        let progress = CGFloat(upwardMovementPercent)
+//        
+//        guard let interactor = interactor else { return }
+//        
+//        switch sender.state {
+//        case .began:
+//            interactor.hasStarted = true
+//            present(MediaViewController(), animated: true, completion: nil)
+//        case .changed:
+//            interactor.shouldFinish = progress > percentThreshold
+//            interactor.update(progress)
+//            
+//        case.cancelled:
+//            interactor.hasStarted = false
+//            interactor.cancel()
+//        case.ended:
+//            interactor.hasStarted = false
+//            interactor.shouldFinish
+//               ? interactor.finish()
+//               : interactor.cancel()
+//        default:
+//            break
+//            
+//        }
+//        
+    
+        
+        
+//        
+//        
+//        
+//        
+//        
+//        
+//        
+//    }
+
+        
+        
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,14 +121,7 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
 
  
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
- 
+   
 
 }
 

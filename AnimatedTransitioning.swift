@@ -9,6 +9,9 @@
 import UIKit
 
 
+//STEP 1: Since delegate's task is to manage the animator object that perfroms the actual animations, first create the animator class
+
+
 //protocol performs the custom animations for transitioning between view controllers
 class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
     
