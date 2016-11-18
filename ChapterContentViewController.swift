@@ -23,9 +23,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     static let storyboardIdentifier = "ChapterContentViewController"
     
-   
-    
-    
+
     
     //property to populate the tableView
     var verses: [Verse] = []
@@ -40,7 +38,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
-    var originalFrame: CGRect?
+    
     
     
     
@@ -88,9 +86,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        originalFrame = mediaContainerView.frame
-    }
+ 
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -164,57 +160,24 @@ extension ChapterContentViewController: UIGestureRecognizerDelegate
     func handlePan(recognizer: UIPanGestureRecognizer)//? = nil)
     {
         
-        let velocity = recognizer.velocity(in: recognizer.view?.superview).y
+        let translation = recognizer.translation(in: self.view)
         
-
-        
-        
-        
-        //sets how far up the user has to drag in order to trigger the modal presentation
-        let percentThreshold: CGFloat = 0.3
-        
-        
-        //convert y position to upward pull progress (percentage)
-        //converts pan gesture coordinate to modal view controller's coordinate space
-        let translation = recognizer.translation(in: recognizer.view?.superview)
-        
-        //converts the vertical distance to a percentage based on the overall screen height
-        let verticalMovement = translation.y/(view.bounds.height)
-        //captures movement in upward direction. downward movement is ignored.
-        let upwardMovement = fmaxf(Float(verticalMovement), 0.0)
-        //caps percentage to a maximum of 100%
-        let upwardMovementPercent = fminf(upwardMovement, 1.0)
-        //casts the percentage as a CGFloat which is the number type that the interactor
-        let progress = CGFloat(upwardMovementPercent)
-        
-        switch recognizer.state {
-        case .began:
-            interactor.hasStarted = true
-
-            
-        case .changed:
-            if (translation.y < 0) {
-                var newFrame = originalFrame
-                newFrame?.size.height += translation.y
-                self.mediaContainerView.frame = newFrame!
-            }
-            
-            //interactor.shouldFinish = progress > percentThreshold
-            //interactor.update(progress)
-            
-        case.cancelled, .ended:
-            interactor.hasStarted = false
-            interactor.cancel()
-
-        default:
-            break
-
+        if recognizer.view!.frame.size.height - translation.y > 100{ // Minimum size for view is 100
+        //NOTE: I did += translation and Angel changed this to -= translation
+            recognizer.view!.frame.size.height -= translation.y
+            //changed the center, otherwise the center remains the same as before while the frame is increasing
+            recognizer.view!.center = CGPoint(x: recognizer.view!.center.x, y: recognizer.view!.center.y + translation.y)
+            recognizer.setTranslation(CGPoint(), in: self.view)
         }
+
     }
-
-
 
 }
 
 
-   
+
+
+//[pgr setTranslation:CGPointZero inView:pgr.view];
+
+
+
