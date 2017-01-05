@@ -9,7 +9,9 @@
 import Foundation
 
 
-class Sermon {
+class Sermon: MediaSource {
+    
+    var sourceType: Provider = .sermon
     
     //Structure of JSON- {} -> [ ] results -> {}. {}
     //so model controller will be [[String:[String :Any]] and the any will be the individual dictionaries I'm trying to access

@@ -7,26 +7,25 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-
-/*presented with a modal Presentation Style if UIModalPresentationOverFullScreen rather than default UIModalPresentationFullScreen (configured on storyboard).
-
- when a fullscreen view controller is presented, the corresponding presntation controller's shouldRemovePresentersView returns YES, the presentation Controller tempoarily relocates the presenting view controller's view to the presentation controller's containerView. 
- 
- when the fullscreen view controller is dismissed, the presentation controller places the presenting view controller's view back in its previous superview. 
- 
- the relocation of the presenting view controller's view poses a problem in this example because only the presenting view controller's view is relocated, not the intermedicate view hierarchy we setup to apply the rounded corner and shadow effect. The UIModalPresentationOverFullScreen presentation style, the presentation controller overrides shouldRemovePresentersView to NO.
- 
- 
- 
-*/
-
-
-
-class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MediaViewController: UIViewController {
 
     
+    var selectedScripture: [MediaSource] = [] {
+        didSet {
+            
+            let notification = Notification(name: Notification.Name(rawValue: "ScriptureClicked"))
+            NotificationCenter.default.post(notification)
+        }
+        
+        
+    }
+    
 
+    
+    
+    @IBOutlet weak var mediaCollectionView: UICollectionView!
     @IBOutlet private weak var slider: UISlider!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
@@ -42,68 +41,19 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //check sermon API fetch 
         SermonController.fetchSermon(bookName: "MAT", chapterNumber: 1, verseNumber: 12) { (sermons) in
         }
+        //YouTubeVideoController.fetchYouTubeVideo(id: "XG347euXoTM") { (_: [YouTube?]) in
+            
+        }
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: Notification.Name(rawValue: "ScriptureHasChanged"), object: nil)
 
-    }
     
     
     
     //create a handle to the interactor
     var interactor: Interactor? = nil
     
-    //pan gesture has different states such as began, ended and changed. we will translate these state changes to corresponding method calls on interactor
-//    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
-//        
-//        //sets how far up the user has to drag in order to trigger the modal presentation
-//        let percentThreshold: CGFloat = 0.3
-//        
-//        
-//        //convert y position to upward pull progress (percentage) 
-//        //converts pan gesture coordinate to modal view controller's coordinate space
-//        let translation = sender.translation(in: sender.view?.superview)
-//        
-//        //converts the vertical distance to a percentage based on the overall screen height
-//        let verticalMovement = translation.y/(view.bounds.height)
-//        //captures movement in upward direction. downward movement is ignored.
-//        let upwardMovement = fmaxf(Float(verticalMovement), 0.0)
-//        //caps percentage to a maximum of 100%
-//        let upwardMovementPercent = fminf(upwardMovement, 1.0)
-//        //casts the percentage as a CGFloat which is the number type that the interactor
-//        let progress = CGFloat(upwardMovementPercent)
-//        
-//        guard let interactor = interactor else { return }
-//        
-//        switch sender.state {
-//        case .began:
-//            interactor.hasStarted = true
-//            present(MediaViewController(), animated: true, completion: nil)
-//        case .changed:
-//            interactor.shouldFinish = progress > percentThreshold
-//            interactor.update(progress)
-//            
-//        case.cancelled:
-//            interactor.hasStarted = false
-//            interactor.cancel()
-//        case.ended:
-//            interactor.hasStarted = false
-//            interactor.shouldFinish
-//               ? interactor.finish()
-//               : interactor.cancel()
-//        default:
-//            break
-//            
-//        }
-//        
-    
-        
-        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//    }
+
 
         
         
@@ -120,9 +70,35 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
 
- 
-   
+}
 
+
+extension MediaViewController: UICollectionViewDataSource, UICollectionViewDelegate
+{
+    
+    //also enter this string as the cell identifier in storyboard
+
+    
+    //tell the collection view how many cells to make
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return MusicController.sharedController.verseMusicArray.count
+    }
+    
+    //make a cell for each cell index path 
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        //get a reference to storyboard cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+        cell.youtubePlayer.load(withVideoId: MusicController.sharedController.verseMusicArray[indexPath.item].youTubeVideoId)
+        cell.youtubePlayer.playVideo()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //handle tap events
+    }
+    
 }
 
 

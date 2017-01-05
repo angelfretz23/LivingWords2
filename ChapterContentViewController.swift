@@ -7,8 +7,25 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseDatabase
 //STEP 2- declare the transitioning delegate and animatedtransitioning protocols in the class definition 
+
+
+
+
+enum Provider: String{ // enum to use as keys
+    case youtube = "YouTube"
+    case vimeo = "Vimeo"
+    case sermon = "Sermon"
+}
+
+protocol MediaSource{
+    // Protocol to for Youtube, Vimeo, and Sermon Objects to comform to
+    var sourceType: Provider { get set }
+}
+
+
 
 class ChapterContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
@@ -38,6 +55,23 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
+    
+    var verseMoviesArray: [String] = []
+    var verseSermonsArray: [String] = []
+    var verseMusicArray: [Music] = []
+    var verseBooksArray: [String] = []
+    
+    
+//    // Making an array to hold the objects using the protocol as the type
+    let arrayOfObjects: [MediaSource] = []
+//
+//    //Now when you pull from the array, you check what kind of object is it by using the variable in the protocol and then cast it back to that type
+//    
+//    arrayOfObjects.forEach { (object) in
+//    switch object.sourceType{
+//    default: ()
+//    }
+//    }
     
     
     
@@ -76,8 +110,8 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let bookName = bookName, let chapter = chapter else { return }
-        self.navigationItem.title =  "\(bookName) \(chapter.chapterNumber)"
+        guard let bookName = bookName, let chapter = chapter?.chapterNumber else { return }
+        self.navigationItem.title =  "\(bookName) \(chapter)"
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,29 +130,22 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         return cell ?? VerseTableTableViewCell()
     }
     
+    
     //MARK: - TableView Delegate function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let verseNumber = indexPath.row
-        if navigationItem.title == "Genesis 1" {
-            if verseNumber == 1 {
-            }
-        }
+        
+        
+        let verseNumber = indexPath.row + 1
+        guard let bookName = bookName,
+              let chapter = chapter?.chapterNumber else { return }
+        MusicController.sharedController.fetchVideoIdFromFireBase(bookName: bookName, chapter: String(chapter), verseNumber: String(verseNumber))
+        self.tableView.reloadData()
+            
+            
     }
     
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destinationViewController = segue.destination as? MediaViewController {
-//            //when you set the transitioning delegate, you can take manual control of animated transitions 
-//            destinationViewController.transitioningDelegate = self
-//            //passes interactor object so both VCs are using the same one
-//            destinationViewController.interactor = interactor
-//        }
-//    }
 }
-       
-        
-        
+           
 //extension ChapterContentViewController: UIViewControllerTransitioningDelegate
 //{
 //    
