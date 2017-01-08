@@ -26,7 +26,9 @@ class BookTableViewCell: UITableViewCell {
     }
     
     
-    func setCollectionViewDataSourceDelegate <D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>(dataSourceDelegate: D, forRow row: Int)
+    func setCollectionViewDataSourceDelegate
+        <D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>
+        (dataSourceDelegate: D, forRow row: Int)
     {
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate

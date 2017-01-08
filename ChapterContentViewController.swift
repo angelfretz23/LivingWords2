@@ -139,10 +139,13 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         guard let bookName = bookName,
               let chapter = chapter?.chapterNumber else { return }
         MusicController.sharedController.fetchVideoIdFromFireBase(bookName: bookName, chapter: String(chapter), verseNumber: String(verseNumber))
-        self.tableView.reloadData()
-            
-            
+        //pull from background thread to main thread
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
+    
+
     
 }
            
@@ -179,7 +182,7 @@ extension ChapterContentViewController: UIGestureRecognizerDelegate
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:)))
         panGesture.delegate = self
     mediaContainerView.isUserInteractionEnabled = true
-    tableView.isUserInteractionEnabled = false 
+    tableView.isUserInteractionEnabled = true
     mediaContainerView.addGestureRecognizer(panGesture)
     }
 

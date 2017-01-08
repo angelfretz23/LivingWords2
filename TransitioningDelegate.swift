@@ -20,14 +20,14 @@ class TransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
     
     // returns an animator object that will be used when a view controller is being presented,
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        var animationController = AnimatedTransitioning()
+        let animationController = AnimatedTransitioning()
         animationController.isPresentation = true
         return animationController
     }
     
     //returns the animation controller to be used in dismissing the view controller.
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        var animationController = AnimatedTransitioning()
+        let animationController = AnimatedTransitioning()
         animationController.isPresentation = false
         return animationController
     }

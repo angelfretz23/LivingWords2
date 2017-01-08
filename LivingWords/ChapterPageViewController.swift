@@ -43,7 +43,7 @@ class ChapterPageViewController: UIPageViewController, UIPageViewControllerDataS
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let bookname = bookname, let chapter = chapter else { return }
+        guard let _ = bookname, let chapter = chapter else { return }
         
     }
     

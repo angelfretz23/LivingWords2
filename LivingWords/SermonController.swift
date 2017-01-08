@@ -45,7 +45,7 @@ class SermonController {
     
             
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
 //                print(error as! NSError) 
                 completion([])
             } else if responseDataString.contains("error") {

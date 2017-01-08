@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B089FB41E1EED6400972991 /* GoogleService-Info.plist */; };
 		4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */; };
 		4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D201DD7DFF400D37656 /* YouTube.swift */; };
 		4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D221DD938E000D37656 /* PresentAnimator.swift */; };
@@ -41,15 +42,15 @@
 		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
 		4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77361DB9EEE200249B1F /* PresentationController.swift */; };
 		4BF3732D1DEA612B00725B1C /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */; };
-		4BF912771DFF94F000BB5049 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BF912761DFF94F000BB5049 /* GoogleService-Info.plist */; };
 		4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */; };
 		4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */; };
-		B94CAFBFDC8F333FD4BA6068 /* Pods_LivingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51695B80B13218AEB22E8BFB /* Pods_LivingWords.framework */; };
+		BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		260AB77E9FCDC41F9B26990C /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
-		3BA303F23E54A9BFE144B748 /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
+		23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
+		44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
+		4B089FB41E1EED6400972991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideoController.swift; sourceTree = "<group>"; };
 		4B188D201DD7DFF400D37656 /* YouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouTube.swift; path = ../YouTube.swift; sourceTree = "<group>"; };
 		4B188D221DD938E000D37656 /* PresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
@@ -88,10 +89,9 @@
 		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
 		4BEC77361DB9EEE200249B1F /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
-		4BF912761DFF94F000BB5049 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitioningDelegate.swift; sourceTree = "<group>"; };
-		51695B80B13218AEB22E8BFB /* Pods_LivingWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +99,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94CAFBFDC8F333FD4BA6068 /* Pods_LivingWords.framework in Frameworks */,
+				BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30187F4DFB0D03D3D3F79D27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +130,8 @@
 				4BAF1F501DAD611E0028D286 /* LivingWords */,
 				4BAF1F4F1DAD611E0028D286 /* Products */,
 				4B4586771DF9C35E0054778F /* Assets */,
-				FC6FB92DC1AF3550FF71F18D /* Pods */,
-				AFA6BD624FCEF2330B7E84A1 /* Frameworks */,
+				684EE1850698A731A0899569 /* Pods */,
+				30187F4DFB0D03D3D3F79D27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,7 +146,7 @@
 		4BAF1F501DAD611E0028D286 /* LivingWords */ = {
 			isa = PBXGroup;
 			children = (
-				4BF912761DFF94F000BB5049 /* GoogleService-Info.plist */,
+				4B089FB41E1EED6400972991 /* GoogleService-Info.plist */,
 				4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */,
 				4BAF1FB51DAEB0480028D286 /* Model Controllers */,
 				4BAF1F511DAD611E0028D286 /* AppDelegate.swift */,
@@ -244,19 +252,11 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		AFA6BD624FCEF2330B7E84A1 /* Frameworks */ = {
+		684EE1850698A731A0899569 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				51695B80B13218AEB22E8BFB /* Pods_LivingWords.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FC6FB92DC1AF3550FF71F18D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3BA303F23E54A9BFE144B748 /* Pods-LivingWords.debug.xcconfig */,
-				260AB77E9FCDC41F9B26990C /* Pods-LivingWords.release.xcconfig */,
+				23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */,
+				44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Chandi Abey ";
 				TargetAttributes = {
 					4BAF1F4D1DAD611E0028D286 = {
@@ -326,11 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4586781DF9C35E0054778F /* Assets in Resources */,
+				4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */,
 				4BAF1F5C1DAD611E0028D286 /* LaunchScreen.storyboard in Resources */,
 				4BAF1F591DAD611E0028D286 /* Assets.xcassets in Resources */,
 				4B5F384D1DB7E1CC00CA36F4 /* BibleJSON.json in Resources */,
 				4BAF1F571DAD611E0028D286 /* Main.storyboard in Resources */,
-				4BF912771DFF94F000BB5049 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AAD5CFF0F25763AD1D322D69 /* [CP] Embed Pods Frameworks */ = {
@@ -463,6 +463,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -512,6 +513,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -538,7 +540,7 @@
 		};
 		4BAF1F611DAD611E0028D286 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BA303F23E54A9BFE144B748 /* Pods-LivingWords.debug.xcconfig */;
+			baseConfigurationReference = 23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -556,45 +558,13 @@
 		};
 		4BAF1F621DAD611E0028D286 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 260AB77E9FCDC41F9B26990C /* Pods-LivingWords.release.xcconfig */;
+			baseConfigurationReference = 44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GU6XEEN2H9;
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"icucore\"",
-					"-l\"sqlite3\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AddressBook\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"FirebaseAnalytics\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseDatabase\"",
-					"-framework",
-					"\"FirebaseInstanceID\"",
-					"-framework",
-					"\"GoogleInterchangeUtilities\"",
-					"-framework",
-					"\"GoogleSymbolUtilities\"",
-					"-framework",
-					"\"GoogleToolboxForMac\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"StoreKit\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";

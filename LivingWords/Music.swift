@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct Music {
+class Music: NSObject {
     
     let key: String
     let artistName: String

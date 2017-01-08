@@ -12,14 +12,10 @@ import FirebaseDatabase
 class MediaViewController: UIViewController {
 
     
-    var selectedScripture: [MediaSource] = [] {
+    var selectedScripture: [Music] = [] {
         didSet {
-            
-            let notification = Notification(name: Notification.Name(rawValue: "ScriptureClicked"))
-            NotificationCenter.default.post(notification)
+            self.mediaCollectionView.reloadData()
         }
-        
-        
     }
     
 
@@ -33,14 +29,19 @@ class MediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "VideosHasChanged"), object: nil, queue: nil) { (notification) in
+            self.reloadCollectionView()
+        }
+        
+        
+       
         // Do any additional setup after loading the view.
         //self.tableView.delegate = self
         //self.tableView.dataSource = self
         
         //check sermon API fetch 
-        SermonController.fetchSermon(bookName: "MAT", chapterNumber: 1, verseNumber: 12) { (sermons) in
-        }
+        //SermonController.fetchSermon(bookName: "MAT", chapterNumber: 1, verseNumber: 12) { (sermons) in
+        //}
         //YouTubeVideoController.fetchYouTubeVideo(id: "XG347euXoTM") { (_: [YouTube?]) in
             
         }
@@ -57,7 +58,10 @@ class MediaViewController: UIViewController {
 
         
         
-
+    func reloadCollectionView()
+    {
+        mediaCollectionView.reloadData()
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,7 +95,7 @@ extension MediaViewController: UICollectionViewDataSource, UICollectionViewDeleg
         //get a reference to storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         cell.youtubePlayer.load(withVideoId: MusicController.sharedController.verseMusicArray[indexPath.item].youTubeVideoId)
-        cell.youtubePlayer.playVideo()
+        cell.youtubePlayer.play
         return cell
     }
     
