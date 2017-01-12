@@ -14,6 +14,9 @@ class MusicController
 {
     
     static let sharedController = MusicController()
+    let ref = FIRDatabase.database().reference()
+
+    var hasVideos: Bool?
     
     var verseMusicArray: [Music] = [] {
         didSet {
@@ -23,10 +26,28 @@ class MusicController
     }
     
     
+
+    func checkIfVerseHasVideos(bookName: String, chapter: String, verseNumber: String, completion: ((_: Bool) -> Void)? = nil)
+    {
+        let bookRef = ref.child(bookName)
+        let chapterRef = bookRef.child("Chapter \(chapter)")
+        let verseRef = chapterRef.child("Verse \(verseNumber)")
+        
+        
+        verseRef.observe(.childAdded, with: { (snapshot) in
+            if snapshot.hasChildren() {
+                self.hasVideos = true
+            } else {
+                self.hasVideos = false
+            }
+            completion?(true)
+        })
+    }
+    
+    
     
     func fetchVideoIdFromFireBase(bookName: String, chapter: String, verseNumber: String) {
         //establishes a connection to Firebase database using the provided path. In firebase documentation, Firebase properties are referred to as references because they refer to a location in your Firebase database. This property allows for saving and syncing data to the given lcoation.
-        let ref = FIRDatabase.database().reference()
         //using URL, you can create a reference to a child location in your Firebase database, use child to create a child reference by passing the child path
         let bookRef = ref.child(bookName)
         let chapterRef = bookRef.child("Chapter \(chapter)")

@@ -95,7 +95,7 @@ extension MediaViewController: UICollectionViewDataSource, UICollectionViewDeleg
         //get a reference to storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         cell.youtubePlayer.load(withVideoId: MusicController.sharedController.verseMusicArray[indexPath.item].youTubeVideoId)
-        cell.youtubePlayer.play
+        cell.youtubePlayer.playVideo()
         return cell
     }
     

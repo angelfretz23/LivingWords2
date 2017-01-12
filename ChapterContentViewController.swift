@@ -124,29 +124,66 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "verseCell", for: indexPath) as? VerseTableTableViewCell
+        cell?.imageView?.tintColor = UIColor.clear
         let verse = verses[indexPath.row]
         cell?.updateCell(verse: verse)
+        
+        
+        
+        let verseNumber = indexPath.row + 1
+        
+        
+        
+        if MusicController.sharedController.hasVideos == true {
+            DispatchQueue.main.async {
+                cell?.updateCellWithMusicImage()
+            }
+        }
         return cell ?? VerseTableTableViewCell()
+      
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        
+        if let verseCell = cell as? VerseTableTableViewCell {
+            verseCell.imageView?.tintColor = UIColor.clear
+            let verseNumber = String(indexPath.row + 1)
+            guard let bookName = bookName,
+                let chapter = chapter?.chapterNumber else { return }
+            MusicController.sharedController.checkIfVerseHasVideos(bookName: bookName, chapter: String(chapter), verseNumber: verseNumber, completion: { (hasVidoes) in
+                if MusicController.sharedController.hasVideos == true {
+                    verseCell.updateCellWithMusicImage()
+                }
+            })
+        }
     }
     
     
     //MARK: - TableView Delegate function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        MusicController.sharedController.verseMusicArray = []
         let verseNumber = indexPath.row + 1
         guard let bookName = bookName,
               let chapter = chapter?.chapterNumber else { return }
         MusicController.sharedController.fetchVideoIdFromFireBase(bookName: bookName, chapter: String(chapter), verseNumber: String(verseNumber))
-        //pull from background thread to main thread
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+            let cell = self.tableView.cellForRow(at: indexPath) as? VerseTableTableViewCell
+            cell?.isHighlighted = true
+
     }
-    
 
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.tableView.cellForRow(at: indexPath) as? VerseTableTableViewCell
+        cell?.isHighlighted = false
+    }
+    
+    
+    
+  
 }
            
 //extension ChapterContentViewController: UIViewControllerTransitioningDelegate

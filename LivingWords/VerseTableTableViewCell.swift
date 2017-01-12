@@ -11,8 +11,12 @@ import UIKit
 class VerseTableTableViewCell: UITableViewCell {
 
     
+    
+    
+    
     @IBOutlet weak var verseLabel: UILabel!
     
+    @IBOutlet weak var musicImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +32,17 @@ class VerseTableTableViewCell: UITableViewCell {
         if verse.verseText != "" {
             verseLabel.text = "\(verse.verseNumber) \(verse.verseText)"
         }
+        musicImage.image = musicImage.image!.withRenderingMode(.alwaysTemplate)
+        musicImage.tintColor = UIColor.clear
+    }
+   
+    func updateCellWithMusicImage()
+    {
+        musicImage.tintColor = UIColor.purple
+    }
+    
+    override func prepareForReuse() {
+        musicImage.tintColor = UIColor.clear 
     }
 
 }
