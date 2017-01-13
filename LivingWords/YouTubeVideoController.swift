@@ -32,7 +32,7 @@ class YouTubeVideoController
     
     func fetchYouTubeVideo(id: String,  completion: @escaping (YouTube?)-> Void) {
         
-        let urlParameters = ["part": "snippet" , "id": id, "key": "AIzaSyDALO35jMftLoKLppczRc-sx7vHX0TFdgQ"]
+        let urlParameters = ["part": "snippet" , "id": id, "key": "AIzaSyDALO35jMftLoKLppczRc-sx7vHX0TFdgQ", "playsinline": "1"]
 
         
         guard let url = baseURL else {

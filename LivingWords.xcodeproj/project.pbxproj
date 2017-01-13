@@ -36,6 +36,7 @@
 		4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FAE1DAE99A20028D286 /* Book.swift */; };
 		4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */; };
 		4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB31DAEAC840028D286 /* BookController.swift */; };
+		4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */; };
 		4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */; };
 		4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */; };
 		4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */; };
@@ -83,6 +84,7 @@
 		4BAF1FAE1DAE99A20028D286 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		4BAF1FB31DAEAC840028D286 /* BookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
+		4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				4B188D241DD941F600D37656 /* Interactor.swift */,
 				4B188D221DD938E000D37656 /* PresentAnimator.swift */,
 				4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */,
+				4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */,
 			);
 			name = "Bible View Controller";
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
 				4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */,
+				4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
 				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
 				4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */,

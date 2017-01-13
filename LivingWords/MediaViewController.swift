@@ -29,6 +29,7 @@ class MediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mediaSegmentedControl.removeBorders()
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "VideosHasChanged"), object: nil, queue: nil) { (notification) in
             self.reloadCollectionView()
         }
@@ -74,6 +75,25 @@ class MediaViewController: UIViewController {
     }
     
 
+    var bottomBorder = CALayer()
+    
+    func setupBorder() {
+        //Remove SuperLayer when segment is selected
+        self.bottomBorder.removeFromSuperlayer()
+        // Creating new layer for selection
+        self.bottomBorder = CALayer()
+        self.bottomBorder.borderColor = UIColor.brown.cgColor
+        self.bottomBorder.borderWidth = 6
+        // Calculating frame
+        let width: CGFloat = self.mediaSegmentedControl.frame.size.width / 2
+        let x: CGFloat = CGFloat(self.mediaSegmentedControl.selectedSegmentIndex)
+            * width
+        let y: CGFloat = self.mediaSegmentedControl.frame.size.height - self.bottomBorder.borderWidth
+        self.bottomBorder.frame = CGRect(x: x, y: y, width: width, height: self.bottomBorder.borderWidth)
+        // Adding selection to segment
+        self.mediaSegmentedControl.layer.addSublayer(self.bottomBorder)
+        
+    }
 }
 
 
@@ -94,14 +114,86 @@ extension MediaViewController: UICollectionViewDataSource, UICollectionViewDeleg
     {
         //get a reference to storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
-        cell.youtubePlayer.load(withVideoId: MusicController.sharedController.verseMusicArray[indexPath.item].youTubeVideoId)
+        
+        let musicVideo = MusicController.sharedController.verseMusicArray[indexPath.item]
+        cell.youtubePlayer.load(withVideoId: musicVideo.youTubeVideoId, playerVars: [ "playsinline" : 1 ])
+        cell.youtubePlayer.webView?.allowsInlineMediaPlayback = true
         cell.youtubePlayer.playVideo()
+        cell.youtubePlayer.webView?.allowsInlineMediaPlayback = true
+        let songName = musicVideo.songName
+        let songArtist = musicVideo.artistName
+        cell.updateVideoCell(songName: songName, songArtist: songArtist)
+        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //handle tap events
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        //handle tap events
+//        print("im supposed to print")
+//        let cell = collectionView.cellForItem(at: indexPath) as? MediaCollectionViewCell
+//        cell?.youtubePlayer.webView?.allowsInlineMediaPlayback = true
+//        
+//    }
+    
+    
+}
+
+
+
+
+//extension MediaViewController : UICollectionViewDelegateFlowLayout {
+//    
+//    func collectionView(_ sizeForItemAtcollectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let itemsPerRow:CGFloat = 10
+//        let hardCodedPadding:CGFloat = 5
+//        let itemWidth = (sizeForItemAtcollectionView.bounds.width / itemsPerRow) - hardCodedPadding
+//        let itemHeight = sizeForItemAtcollectionView.bounds.height - (2 * hardCodedPadding)
+//        return CGSize(width: itemWidth, height: itemHeight)
+//    }
+//    
+//}
+
+
+
+extension UISegmentedControl {
+    func removeBorders() {
+        setBackgroundImage(imageWithColor(color: UIColor.clear), for: .normal, barMetrics: .default)
+        setBackgroundImage(imageWithColor(color: UIColor.clear), for: .selected, barMetrics: .default)
+        setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
     }
+    
+    // create a 1x1 image with this color
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width: 2.0, height: 44.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
+    }
+    
+    
+    
+    
+    func setFontSize(fontSize: CGFloat) {
+        
+        let normalTextAttributes: [String : AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.brown,
+            NSFontAttributeName: UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightMedium)
+        ]
+        
+        let boldTextAttributes: [String : AnyObject] = [
+            NSForegroundColorAttributeName : UIColor.brown,
+            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightBold),
+            ]
+        
+        self.setTitleTextAttributes(normalTextAttributes, for: .normal)
+        self.setTitleTextAttributes(normalTextAttributes, for: .highlighted)
+        self.setTitleTextAttributes(boldTextAttributes, for: .selected)
+    }
+    
     
 }
 

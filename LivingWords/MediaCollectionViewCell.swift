@@ -14,5 +14,17 @@ class MediaCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var youtubePlayer: YTPlayerView!
 
+    @IBOutlet weak var songNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var songArtistLabel: UILabel!
 
+    
+    func updateVideoCell(songName: String, songArtist: String)
+    {
+        songNameLabel.text = songName
+        songArtistLabel.text = songArtist 
+        
+    }
+    
 }

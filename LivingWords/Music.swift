@@ -13,7 +13,7 @@ class Music: NSObject {
     
     let key: String
     let artistName: String
-    let releaseDate: String
+    let releaseDate: String?
     let relevantLyrics: String
     let songName: String
     let songStory: String
@@ -39,7 +39,7 @@ class Music: NSObject {
         key = snapshot.key
         let snapshotValue = snapshot.value as! [String: Any]
         artistName = snapshotValue["artist_name"] as! String
-        releaseDate = snapshotValue["release_date"] as! String
+        releaseDate = snapshotValue["release_date"] as? String
         relevantLyrics = snapshotValue["relevant_lyrics"] as! String
         songName = snapshotValue["song_name"] as! String
         songStory = snapshotValue["song_story"] as! String

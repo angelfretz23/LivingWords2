@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+
 //STEP 2- declare the transitioning delegate and animatedtransitioning protocols in the class definition 
 
 
@@ -131,8 +132,8 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         cell?.updateCell(verse: verse)
         
         
-        
-        let verseNumber = indexPath.row + 1
+
+  
         
         
         
@@ -147,7 +148,7 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        
+        MusicController.sharedController.verseMusicArray = []
         if let verseCell = cell as? VerseTableTableViewCell {
             verseCell.imageView?.tintColor = UIColor.clear
             let verseNumber = String(indexPath.row + 1)

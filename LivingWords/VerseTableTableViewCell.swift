@@ -38,9 +38,10 @@ class VerseTableTableViewCell: UITableViewCell {
    
     func updateCellWithMusicImage()
     {
-        musicImage.tintColor = UIColor.purple
+        musicImage.tintColor = UIColor.init(red: 0.36, green: 0.09, blue: 0.10, alpha: 1.0)
     }
     
+   
     override func prepareForReuse() {
         musicImage.tintColor = UIColor.clear 
     }

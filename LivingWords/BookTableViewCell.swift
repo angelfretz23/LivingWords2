@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import QuartzCore
 
 class BookTableViewCell: UITableViewCell {
 
     
     
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var bookLabel: UILabel!
     
     //add refernce to its collection view,  marked as private b/c our VC should not be accessing the collection view through the table view cell
@@ -38,6 +40,10 @@ class BookTableViewCell: UITableViewCell {
     
     func updateBookLabel(book: Book) {
         bookLabel.text = book.bookName
+        outerView.layer.cornerRadius = 5
+        outerView.layer.masksToBounds = true
+        outerView.layer.borderWidth = 10
+        outerView.layer.borderColor = UIColor.init(red: 93/255 , green: 24/255 , blue: 26/255, alpha: 0).cgColor
     }
     
     

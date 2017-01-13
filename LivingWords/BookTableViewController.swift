@@ -20,6 +20,7 @@ class BookTableViewController: UITableViewController {
         BookController.sharedController.serializeJSON { (books) in
             self.books = books
         }
+        tableView.separatorStyle = .none
     }
 
     
@@ -39,6 +40,28 @@ class BookTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as? BookTableViewCell
         let book = books[indexPath.row]
         cell?.updateBookLabel(book: book)
+        
+        
+        
+//        //creates a line of 3 pixels that will separate the cells
+//        let separator = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 3))
+//        
+//        separator.backgroundColor = UIColor.darkGray
+//        
+//        cell?.contentView.addSubview(separator)
+//        
+//        // and if you want the border do left and right add:
+//        let separatorRx = UIView(frame: CGRect(x: 318, y: 0, width: 2, height: (cell?.frame.size.height)!))
+//        separatorRx.backgroundColor = UIColor.darkGray
+//        cell?.contentView.addSubview(separatorRx)
+//        
+//        let separatorSx = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: (cell?.frame.size.height)!))
+//        separatorSx.backgroundColor = UIColor.darkGray
+//        cell?.contentView.addSubview(separatorSx)
+//        
+        
+        cell?.selectionStyle = .none
+        
         return cell ?? BookTableViewCell()
     }
     
@@ -51,6 +74,7 @@ class BookTableViewController: UITableViewController {
     
     //method to set the collection view's data source and delegate as this table view controller. conform to the required protocol methods in the extension below 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         var selectedRowIndex = indexPath
         currentRow = selectedRowIndex.row
         tableView.beginUpdates()
@@ -65,10 +89,10 @@ class BookTableViewController: UITableViewController {
                 return 220
             } else {
                 cellTapped = false
-                return 44
+                return 48
             }
         }
-        return 44
+        return 48
     }
     
     
