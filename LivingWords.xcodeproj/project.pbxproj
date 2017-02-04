@@ -13,6 +13,12 @@
 		4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D221DD938E000D37656 /* PresentAnimator.swift */; };
 		4B188D251DD941F600D37656 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D241DD941F600D37656 /* Interactor.swift */; };
 		4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */; };
+		4B38B19F1E41024C00168760 /* MediaContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B19E1E41024C00168760 /* MediaContainerViewController.swift */; };
+		4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A01E419E2400168760 /* MusicViewController.swift */; };
+		4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A21E419E5000168760 /* SermonsViewController.swift */; };
+		4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A41E419E8000168760 /* MoviesViewController.swift */; };
+		4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A61E419EBC00168760 /* BooksViewController.swift */; };
+		4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A81E419EE700168760 /* ArticlesViewController.swift */; };
 		4B4178CB1E1C2F1E0038D50D /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4178CA1E1C2F1E0038D50D /* Music.swift */; };
 		4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4178CC1E1E2AD30038D50D /* MusicController.swift */; };
 		4B4586761DF9C34B0054778F /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4586751DF9C34B0054778F /* YTPlayerView.m */; };
@@ -57,6 +63,12 @@
 		4B188D221DD938E000D37656 /* PresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
 		4B188D241DD941F600D37656 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnimator.swift; sourceTree = "<group>"; };
+		4B38B19E1E41024C00168760 /* MediaContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaContainerViewController.swift; sourceTree = "<group>"; };
+		4B38B1A01E419E2400168760 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		4B38B1A21E419E5000168760 /* SermonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonsViewController.swift; sourceTree = "<group>"; };
+		4B38B1A41E419E8000168760 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		4B38B1A61E419EBC00168760 /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		4B38B1A81E419EE700168760 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		4B4178CA1E1C2F1E0038D50D /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		4B4178CC1E1E2AD30038D50D /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		4B4586731DF9C3410054778F /* YTPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
@@ -188,6 +200,11 @@
 			isa = PBXGroup;
 			children = (
 				4BAF1F551DAD611E0028D286 /* Main.storyboard */,
+				4B38B1A81E419EE700168760 /* ArticlesViewController.swift */,
+				4B38B1A61E419EBC00168760 /* BooksViewController.swift */,
+				4B38B1A41E419E8000168760 /* MoviesViewController.swift */,
+				4B38B1A21E419E5000168760 /* SermonsViewController.swift */,
+				4B38B1A01E419E2400168760 /* MusicViewController.swift */,
 				4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */,
 			);
 			name = Views;
@@ -221,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */,
+				4B38B19E1E41024C00168760 /* MediaContainerViewController.swift */,
 				4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */,
 				4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */,
 				4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */,
@@ -392,6 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */,
+				4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */,
 				4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */,
 				4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */,
 				4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */,
@@ -400,10 +420,12 @@
 				4BAF1F841DAD9C100028D286 /* NetworkController.swift in Sources */,
 				4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */,
 				4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */,
+				4B38B19F1E41024C00168760 /* MediaContainerViewController.swift in Sources */,
 				4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
 				4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */,
 				4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */,
+				4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
 				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
 				4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */,
@@ -419,11 +441,13 @@
 				4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */,
 				4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */,
 				4BF3732D1DEA612B00725B1C /* MediaCollectionViewCell.swift in Sources */,
+				4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */,
 				4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */,
 				4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */,
 				4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */,
 				4B45867A1DFA3B270054778F /* Protocol.swift in Sources */,
 				4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */,
+				4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,6 +38,8 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var mediaContainerView: UIView!
     
     
+
+    
     
     static let storyboardIdentifier = "ChapterContentViewController"
     
@@ -181,6 +183,10 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         let cell = self.tableView.cellForRow(at: indexPath) as? VerseTableTableViewCell
         cell?.isHighlighted = false
     }
+    
+    
+    //attach the first View controller (music VC) directly to the container view in the storyboard, the others can be attached to the segented control that cause them to come to the foreground or attached to the primary VC directly 
+    //this function will be called in the custom segue class that knows how to handel the transition from one VC to another
     
     
     
