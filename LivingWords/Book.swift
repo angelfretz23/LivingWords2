@@ -16,16 +16,16 @@ class Book: Equatable {
     
     let bookName: String
     let chapters: [Chapter]
-
     
-   
     
-    //STEP 1 Model Objects: failable initializer. Create a chapter out of the flatmapped chapter dictionaries. Refer to failable initializer in Chapter Object. 
-    init?(jsonDictionary: [String: Any])
+    
+    
+    //STEP 1 Model Objects: failable initializer. Create a chapter out of the flatmapped chapter dictionaries. Refer to failable initializer in Chapter Object.
+    init?(dictionary: [String: Any])
     {
         //first level dictionary- on the first level we have the bookName and dictionary of chapters in {book}
-        guard let bookName = jsonDictionary[kBookName] as? String,
-            let chapterDictionaries = jsonDictionary[kChapterDictionaries] as? [String: [String: Any]] else { return nil }
+        guard let bookName = dictionary[kBookName] as? String,
+            let chapterDictionaries = dictionary[kChapterDictionaries] as? [String: [String: Any]] else { return nil }
         
         let chapters = chapterDictionaries.flatMap { Chapter(dictionary: $0.value) }
         

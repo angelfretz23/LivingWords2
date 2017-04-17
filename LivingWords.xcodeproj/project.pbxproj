@@ -7,16 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B089FB41E1EED6400972991 /* GoogleService-Info.plist */; };
+		4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */; };
+		4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D201DD7DFF400D37656 /* YouTube.swift */; };
+		4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D221DD938E000D37656 /* PresentAnimator.swift */; };
+		4B188D251DD941F600D37656 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D241DD941F600D37656 /* Interactor.swift */; };
+		4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */; };
+		4B38B19F1E41024C00168760 /* MediaContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B19E1E41024C00168760 /* MediaContainerViewController.swift */; };
+		4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A01E419E2400168760 /* MusicViewController.swift */; };
+		4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A21E419E5000168760 /* SermonsViewController.swift */; };
+		4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A41E419E8000168760 /* MoviesViewController.swift */; };
+		4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A61E419EBC00168760 /* BooksViewController.swift */; };
+		4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A81E419EE700168760 /* ArticlesViewController.swift */; };
+		4B4178CB1E1C2F1E0038D50D /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4178CA1E1C2F1E0038D50D /* Music.swift */; };
+		4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4178CC1E1E2AD30038D50D /* MusicController.swift */; };
+		4B4586761DF9C34B0054778F /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4586751DF9C34B0054778F /* YTPlayerView.m */; };
+		4B4586781DF9C35E0054778F /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4586771DF9C35E0054778F /* Assets */; };
+		4B45867A1DFA3B270054778F /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4586791DFA3B270054778F /* Protocol.swift */; };
 		4B5F384D1DB7E1CC00CA36F4 /* BibleJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */; };
+		4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F384E1DB7F7E900CA36F4 /* BookTableViewController.swift */; };
+		4B5F38511DB8066400CA36F4 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F38501DB8066400CA36F4 /* BookTableViewCell.swift */; };
 		4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E85C71DAFFD43008B2BCB /* ChapterPageViewController.swift */; };
-		4B8E85EE1DB0521C008B2BCB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E85ED1DB0521B008B2BCB /* RootViewController.swift */; };
 		4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E85EF1DB09475008B2BCB /* ChapterContentViewController.swift */; };
-		4B8E85F21DB0F00F008B2BCB /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E85F11DB0F00F008B2BCB /* ChapterTableViewCell.swift */; };
 		4B8E861A1DB17EA0008B2BCB /* VerseTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */; };
 		4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E861B1DB1A66B008B2BCB /* SermonController.swift */; };
-		4B8E861E1DB2678B008B2BCB /* ChapterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E861D1DB2678A008B2BCB /* ChapterController.swift */; };
 		4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E861F1DB286D1008B2BCB /* ChapterCollectionViewCell.swift */; };
-		4B8E86221DB3207C008B2BCB /* BookHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E86211DB3207C008B2BCB /* BookHeaderCollectionReusableView.swift */; };
 		4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1F511DAD611E0028D286 /* AppDelegate.swift */; };
 		4BAF1F571DAD611E0028D286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF1F551DAD611E0028D286 /* Main.storyboard */; };
 		4BAF1F591DAD611E0028D286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF1F581DAD611E0028D286 /* Assets.xcassets */; };
@@ -27,25 +42,48 @@
 		4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FAE1DAE99A20028D286 /* Book.swift */; };
 		4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */; };
 		4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB31DAEAC840028D286 /* BookController.swift */; };
-		4BAF1FB81DAEBA330028D286 /* BibleBooksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB71DAEBA330028D286 /* BibleBooksListTableViewController.swift */; };
-		4BAF1FDF1DAF4D450028D286 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FDE1DAF4D450028D286 /* FXBlurView.m */; };
+		4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */; };
 		4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */; };
 		4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */; };
 		4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */; };
 		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
+		4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77361DB9EEE200249B1F /* PresentationController.swift */; };
+		4BF3732D1DEA612B00725B1C /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */; };
+		4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */; };
+		4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */; };
+		BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
+		44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
+		4B089FB41E1EED6400972991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideoController.swift; sourceTree = "<group>"; };
+		4B188D201DD7DFF400D37656 /* YouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouTube.swift; path = ../YouTube.swift; sourceTree = "<group>"; };
+		4B188D221DD938E000D37656 /* PresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
+		4B188D241DD941F600D37656 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnimator.swift; sourceTree = "<group>"; };
+		4B38B19E1E41024C00168760 /* MediaContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaContainerViewController.swift; sourceTree = "<group>"; };
+		4B38B1A01E419E2400168760 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		4B38B1A21E419E5000168760 /* SermonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonsViewController.swift; sourceTree = "<group>"; };
+		4B38B1A41E419E8000168760 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		4B38B1A61E419EBC00168760 /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		4B38B1A81E419EE700168760 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		4B4178CA1E1C2F1E0038D50D /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		4B4178CC1E1E2AD30038D50D /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		4B4586731DF9C3410054778F /* YTPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		4B4586741DF9C34B0054778F /* LivingWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivingWords-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B4586751DF9C34B0054778F /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		4B4586771DF9C35E0054778F /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		4B4586791DFA3B270054778F /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BibleJSON.json; sourceTree = "<group>"; };
+		4B5F384E1DB7F7E900CA36F4 /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
+		4B5F38501DB8066400CA36F4 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		4B8E85C71DAFFD43008B2BCB /* ChapterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterPageViewController.swift; sourceTree = "<group>"; };
-		4B8E85ED1DB0521B008B2BCB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4B8E85EF1DB09475008B2BCB /* ChapterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChapterContentViewController.swift; path = ../ChapterContentViewController.swift; sourceTree = "<group>"; };
-		4B8E85F11DB0F00F008B2BCB /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
 		4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerseTableTableViewCell.swift; sourceTree = "<group>"; };
 		4B8E861B1DB1A66B008B2BCB /* SermonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonController.swift; sourceTree = "<group>"; };
-		4B8E861D1DB2678A008B2BCB /* ChapterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterController.swift; sourceTree = "<group>"; };
 		4B8E861F1DB286D1008B2BCB /* ChapterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterCollectionViewCell.swift; sourceTree = "<group>"; };
-		4B8E86211DB3207C008B2BCB /* BookHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		4BAF1F4E1DAD611E0028D286 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAF1F511DAD611E0028D286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BAF1F561DAD611E0028D286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,14 +96,16 @@
 		4BAF1FAE1DAE99A20028D286 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		4BAF1FB31DAEAC840028D286 /* BookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
-		4BAF1FB71DAEBA330028D286 /* BibleBooksListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleBooksListTableViewController.swift; sourceTree = "<group>"; };
-		4BAF1FDC1DAF4D430028D286 /* LivingWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivingWords-Bridging-Header.h"; sourceTree = "<group>"; };
-		4BAF1FDD1DAF4D450028D286 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
-		4BAF1FDE1DAF4D450028D286 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
+		4BEC77361DB9EEE200249B1F /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitioningDelegate.swift; sourceTree = "<group>"; };
+		A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +113,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30187F4DFB0D03D3D3F79D27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4B5F384E1DB7F7E900CA36F4 /* BookTableViewController.swift */,
+				4B5F38501DB8066400CA36F4 /* BookTableViewCell.swift */,
+				4B8E861F1DB286D1008B2BCB /* ChapterCollectionViewCell.swift */,
+			);
+			name = "Book Selection View Controller";
+			sourceTree = "<group>";
+		};
 		4BAF1F451DAD611E0028D286 = {
 			isa = PBXGroup;
 			children = (
 				4BAF1F501DAD611E0028D286 /* LivingWords */,
 				4BAF1F4F1DAD611E0028D286 /* Products */,
+				4B4586771DF9C35E0054778F /* Assets */,
+				684EE1850698A731A0899569 /* Pods */,
+				30187F4DFB0D03D3D3F79D27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +160,8 @@
 		4BAF1F501DAD611E0028D286 /* LivingWords */ = {
 			isa = PBXGroup;
 			children = (
-				4BAF1FDD1DAF4D450028D286 /* FXBlurView.h */,
-				4BAF1FDE1DAF4D450028D286 /* FXBlurView.m */,
-				4BAF1FDC1DAF4D430028D286 /* LivingWords-Bridging-Header.h */,
+				4B089FB41E1EED6400972991 /* GoogleService-Info.plist */,
 				4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */,
-				4BAF1F831DAD9C100028D286 /* NetworkController.swift */,
 				4BAF1FB51DAEB0480028D286 /* Model Controllers */,
 				4BAF1F511DAD611E0028D286 /* AppDelegate.swift */,
 				4BAF1FB61DAEBA080028D286 /* Views */,
@@ -119,10 +178,13 @@
 		4BAF1FB21DAE9B340028D286 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B4586791DFA3B270054778F /* Protocol.swift */,
 				4BAF1FAE1DAE99A20028D286 /* Book.swift */,
 				4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */,
 				4BAF1F811DAD97340028D286 /* Verse.swift */,
 				4BAF1F851DADA00E0028D286 /* Sermon.swift */,
+				4B188D201DD7DFF400D37656 /* YouTube.swift */,
+				4B4178CA1E1C2F1E0038D50D /* Music.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -138,7 +200,12 @@
 			isa = PBXGroup;
 			children = (
 				4BAF1F551DAD611E0028D286 /* Main.storyboard */,
-				4B8E85ED1DB0521B008B2BCB /* RootViewController.swift */,
+				4B38B1A81E419EE700168760 /* ArticlesViewController.swift */,
+				4B38B1A61E419EBC00168760 /* BooksViewController.swift */,
+				4B38B1A41E419E8000168760 /* MoviesViewController.swift */,
+				4B38B1A21E419E5000168760 /* SermonsViewController.swift */,
+				4B38B1A01E419E2400168760 /* MusicViewController.swift */,
+				4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -146,9 +213,10 @@
 		4BAF1FB91DAEBA430028D286 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */,
 				4BEBC3C51DB6288E00A39D88 /* Media View Controllers */,
 				4BEBC3C61DB628AC00A39D88 /* Bible View Controller */,
-				4BAF1FB71DAEBA330028D286 /* BibleBooksListTableViewController.swift */,
+				4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -156,8 +224,10 @@
 		4BEBC39D1DB513DD00A39D88 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4BAF1F831DAD9C100028D286 /* NetworkController.swift */,
+				4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */,
 				4BAF1FB31DAEAC840028D286 /* BookController.swift */,
-				4B8E861D1DB2678A008B2BCB /* ChapterController.swift */,
+				4B4178CC1E1E2AD30038D50D /* MusicController.swift */,
 				4B8E861B1DB1A66B008B2BCB /* SermonController.swift */,
 				4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */,
 			);
@@ -168,8 +238,13 @@
 			isa = PBXGroup;
 			children = (
 				4BEBC3C11DB621AB00A39D88 /* MediaViewController.swift */,
+				4B38B19E1E41024C00168760 /* MediaContainerViewController.swift */,
+				4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */,
 				4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */,
 				4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */,
+				4B4586731DF9C3410054778F /* YTPlayerView.h */,
+				4B4586751DF9C34B0054778F /* YTPlayerView.m */,
+				4B4586741DF9C34B0054778F /* LivingWords-Bridging-Header.h */,
 			);
 			name = "Media View Controllers";
 			sourceTree = "<group>";
@@ -179,12 +254,32 @@
 			children = (
 				4B8E85C71DAFFD43008B2BCB /* ChapterPageViewController.swift */,
 				4B8E85EF1DB09475008B2BCB /* ChapterContentViewController.swift */,
+				4B188D241DD941F600D37656 /* Interactor.swift */,
+				4B188D221DD938E000D37656 /* PresentAnimator.swift */,
 				4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */,
-				4B8E85F11DB0F00F008B2BCB /* ChapterTableViewCell.swift */,
-				4B8E861F1DB286D1008B2BCB /* ChapterCollectionViewCell.swift */,
-				4B8E86211DB3207C008B2BCB /* BookHeaderCollectionReusableView.swift */,
+				4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */,
 			);
 			name = "Bible View Controller";
+			sourceTree = "<group>";
+		};
+		4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */,
+				4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */,
+				4BEC77361DB9EEE200249B1F /* PresentationController.swift */,
+			);
+			name = "Custom Presentation Animation";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		684EE1850698A731A0899569 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */,
+				44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BAF1F601DAD611E0028D286 /* Build configuration list for PBXNativeTarget "LivingWords" */;
 			buildPhases = (
+				9D5E6CF0A20C1C764F674E2E /* [CP] Check Pods Manifest.lock */,
 				4BAF1F4A1DAD611E0028D286 /* Sources */,
 				4BAF1F4B1DAD611E0028D286 /* Frameworks */,
 				4BAF1F4C1DAD611E0028D286 /* Resources */,
+				AAD5CFF0F25763AD1D322D69 /* [CP] Embed Pods Frameworks */,
+				297E14EA797F036DAE540E89 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,11 +312,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Chandi Abey ";
 				TargetAttributes = {
 					4BAF1F4D1DAD611E0028D286 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = GU6XEEN2H9;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -247,6 +346,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4586781DF9C35E0054778F /* Assets in Resources */,
+				4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */,
 				4BAF1F5C1DAD611E0028D286 /* LaunchScreen.storyboard in Resources */,
 				4BAF1F591DAD611E0028D286 /* Assets.xcassets in Resources */,
 				4B5F384D1DB7E1CC00CA36F4 /* BibleJSON.json in Resources */,
@@ -256,33 +357,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		297E14EA797F036DAE540E89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D5E6CF0A20C1C764F674E2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAD5CFF0F25763AD1D322D69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BAF1F4A1DAD611E0028D286 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */,
+				4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */,
 				4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */,
+				4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */,
+				4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */,
+				4B188D251DD941F600D37656 /* Interactor.swift in Sources */,
 				4B8E861A1DB17EA0008B2BCB /* VerseTableTableViewCell.swift in Sources */,
 				4BAF1F841DAD9C100028D286 /* NetworkController.swift in Sources */,
+				4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */,
 				4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */,
+				4B38B19F1E41024C00168760 /* MediaContainerViewController.swift in Sources */,
+				4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
-				4B8E86221DB3207C008B2BCB /* BookHeaderCollectionReusableView.swift in Sources */,
-				4B8E85EE1DB0521C008B2BCB /* RootViewController.swift in Sources */,
+				4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */,
+				4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */,
+				4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
 				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
 				4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */,
-				4B8E85F21DB0F00F008B2BCB /* ChapterTableViewCell.swift in Sources */,
 				4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */,
 				4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */,
-				4BAF1FDF1DAF4D450028D286 /* FXBlurView.m in Sources */,
 				4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */,
+				4B4586761DF9C34B0054778F /* YTPlayerView.m in Sources */,
+				4B4178CB1E1C2F1E0038D50D /* Music.swift in Sources */,
 				4BAF1F821DAD97340028D286 /* Verse.swift in Sources */,
+				4B5F38511DB8066400CA36F4 /* BookTableViewCell.swift in Sources */,
 				4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */,
-				4BAF1FB81DAEBA330028D286 /* BibleBooksListTableViewController.swift in Sources */,
 				4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */,
-				4B8E861E1DB2678B008B2BCB /* ChapterController.swift in Sources */,
 				4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */,
+				4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */,
+				4BF3732D1DEA612B00725B1C /* MediaCollectionViewCell.swift in Sources */,
+				4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */,
 				4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */,
+				4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */,
+				4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */,
+				4B45867A1DFA3B270054778F /* Protocol.swift in Sources */,
+				4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */,
+				4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +491,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -375,6 +541,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -401,9 +568,11 @@
 		};
 		4BAF1F611DAD611E0028D286 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = GU6XEEN2H9;
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
@@ -411,20 +580,24 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4BAF1F621DAD611E0028D286 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = GU6XEEN2H9;
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

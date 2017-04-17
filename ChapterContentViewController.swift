@@ -7,77 +7,96 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class ChapterContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+//STEP 2- declare the transitioning delegate and animatedtransitioning protocols in the class definition 
+
+
+
+
+enum Provider: String{ // enum to use as keys
+    case youtube = "YouTube"
+    case vimeo = "Vimeo"
+    case sermon = "Sermon"
+}
+
+protocol MediaSource{
+    // Protocol to for Youtube, Vimeo, and Sermon Objects to comform to
+    var sourceType: Provider { get set }
+}
+
+
+
+class ChapterContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
 
     //MARK: Properties
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bookAndChapterButton: UIButton!
+    @IBOutlet weak var mediaContainerView: UIView!
+    
     
 
     
-    @IBOutlet weak var bookAndChapterButton: UIButton!
     
     static let storyboardIdentifier = "ChapterContentViewController"
+    
 
+    
     //property to populate the tableView
     var verses: [Verse] = []
     
-    
-    
     var chapter: Chapter?
     var bookName: String?
+    var chapterNumber: Int?
+
+    //add a property to track whether view controller is being presented or dismissed
+    var isPresenting: Bool = true
+    var interactiveTransition: UIPercentDrivenInteractiveTransition!
     
+    
+    
+    
+    var verseMoviesArray: [String] = []
+    var verseSermonsArray: [String] = []
+    var verseMusicArray: [Music] = []
+    var verseBooksArray: [String] = []
+    
+    
+//    // Making an array to hold the objects using the protocol as the type
+    let arrayOfObjects: [MediaSource] = []
+//
+//    //Now when you pull from the array, you check what kind of object is it by using the variable in the protocol and then cast it back to that type
+//    
+//    arrayOfObjects.forEach { (object) in
+//    switch object.sourceType{
+//    default: ()
+//    }
+//    }
+    
+    
+    
+    
+    //add interactor property same one used by both chapter and media view controller
+    let interactor = Interactor()
     
     
     //configure function - passing a specific chapter into the view controller from page view controller
-    func configure(with chapter: Chapter)
+    func configure(with chapter: Chapter, bookName: String)
     {
         self.chapter = chapter
-        let chapterNumber = chapter.chapterNumber
-        //let bookName = bookName
+        self.bookName = bookName
+        self.chapterNumber = chapter.chapterNumber
         let unsortedVerses = chapter.verses
         let sortedVerses = unsortedVerses.sorted(by: {$0.verseNumber < $1.verseNumber})
         self.verses = sortedVerses
-        let titleOfButton = "\(bookName) \(chapterNumber)"
-       // bookAndChapterButton.setTitle(titleOfButton, for: .normal)
-        
-        
-//        if bookName != nil && chapter != nil {
-//           let titleOfButton = "\(bookName) \(chapterNumber)"
-//            bookAndChapterButton.setTitle(titleOfButton, for: .normal)
-//        } else {
-//            bookAndChapterButton.setTitle("Matthew 1", for: .normal)
-//            
-//        }
-
-        
     }
     
-    
-    @IBAction func bookAndChapterButtonTapped(_ sender: AnyObject) {
-        
-    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   
-//        guard let bookName = bookName,
-//            let chapterNumber = chapterNumber else { return }
-//        BookController.fetchBook(bookName: bookName) { (book) in
-//            guard let unsortedVerses = book?.chapters[chapterNumber - 1].verses
-//                else { return }
-//            let sortedVerses = unsortedVerses.sorted(by: { ($0.verseNumber < $1.verseNumber)})
-//            self.verses = sortedVerses
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//                //creating dynamic resizing of table rows for custom cells
-//                self.tableView.estimatedRowHeight = 3
-//                self.tableView.rowHeight = UITableViewAutomaticDimension
-//                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
         
         self.tableView.estimatedRowHeight = 3
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -86,45 +105,153 @@ class ChapterContentViewController: UIViewController, UITableViewDelegate, UITab
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        bookAndChapterButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        bookAndChapterButton.titleLabel?.numberOfLines = 1
-      
-        
-        
-        
+        addPanGesture()
     }
-        
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let bookName = bookName, let chapter = chapter?.chapterNumber else { return }
+        self.navigationItem.title =  "\(bookName) \(chapter)"
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return verses.count
     }
     
     
+    
+ 
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "verseCell", for: indexPath) as? VerseTableTableViewCell
+        cell?.imageView?.tintColor = UIColor.clear
         let verse = verses[indexPath.row]
         cell?.updateCell(verse: verse)
+        
+        
+
+  
+        
+        
+        
+        if MusicController.sharedController.hasVideos == true {
+            DispatchQueue.main.async {
+                cell?.updateCellWithMusicImage()
+            }
+        }
         return cell ?? VerseTableTableViewCell()
+      
     }
     
-    //MARK: - TableView Delegate function
-    //what happens when the user taps on the cell
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+        MusicController.sharedController.verseMusicArray = []
+        if let verseCell = cell as? VerseTableTableViewCell {
+            verseCell.imageView?.tintColor = UIColor.clear
+            let verseNumber = String(indexPath.row + 1)
+            guard let bookName = bookName,
+                let chapter = chapter?.chapterNumber else { return }
+            MusicController.sharedController.checkIfVerseHasVideos(bookName: bookName, chapter: String(chapter), verseNumber: verseNumber, completion: { (hasVidoes) in
+                if MusicController.sharedController.hasVideos == true {
+                    verseCell.updateCellWithMusicImage()
+                }
+            })
+        }
+    }
+    
+    
+    //MARK: - TableView Delegate function
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        MusicController.sharedController.verseMusicArray = []
+        let verseNumber = indexPath.row + 1
+        guard let bookName = bookName,
+              let chapter = chapter?.chapterNumber else { return }
+        MusicController.sharedController.fetchVideoIdFromFireBase(bookName: bookName, chapter: String(chapter), verseNumber: String(verseNumber))
+            let cell = self.tableView.cellForRow(at: indexPath) as? VerseTableTableViewCell
+            cell?.isHighlighted = true
+
+    }
+
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.tableView.cellForRow(at: indexPath) as? VerseTableTableViewCell
+        cell?.isHighlighted = false
+    }
+    
+    
+    //attach the first View controller (music VC) directly to the container view in the storyboard, the others can be attached to the segented control that cause them to come to the foreground or attached to the primary VC directly 
+    //this function will be called in the custom segue class that knows how to handel the transition from one VC to another
+    
+    
+    
+  
+}
+           
+//extension ChapterContentViewController: UIViewControllerTransitioningDelegate
+//{
+//    
+//    //method overrides default transition with your custom animation
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        let animator = PresentAnimator()
+//        
+//        
+//    }
+//    
+//    
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        let animator = PresentAnimator()
+//        animator.initalY =
+//        animator.transitionType =
+//        //return animator
+//    }
+//    
+//    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//        return interactor.hasStarted ? interactor : nil 
+//    }
+//    
+//}
+
+extension ChapterContentViewController: UIGestureRecognizerDelegate
+{
+    
+    //create the pan gesture recognizer
+    func addPanGesture()
+    {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:)))
+        panGesture.delegate = self
+    mediaContainerView.isUserInteractionEnabled = true
+    tableView.isUserInteractionEnabled = true
+    mediaContainerView.addGestureRecognizer(panGesture)
+    }
+
+    
+    func handlePan(recognizer: UIPanGestureRecognizer)//? = nil)
+    {
+        
+        let translation = recognizer.translation(in: self.view)
+        
+        if recognizer.view!.frame.size.height - translation.y > 100{ // Minimum size for view is 100
+        //NOTE: I did += translation and Angel changed this to -= translation
+            recognizer.view!.frame.size.height -= translation.y
+            //changed the center, otherwise the center remains the same as before while the frame is increasing
+            recognizer.view!.center = CGPoint(x: recognizer.view!.center.x, y: recognizer.view!.center.y + translation.y)
+            recognizer.setTranslation(CGPoint(), in: self.view)
+        }
+
     }
 
 }
+
+
+
+
+//[pgr setTranslation:CGPointZero inView:pgr.view];
+
+
+
