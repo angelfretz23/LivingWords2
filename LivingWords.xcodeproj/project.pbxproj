@@ -168,10 +168,19 @@
 				4B089FB41E1EED6400972991 /* GoogleService-Info.plist */,
 				4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */,
 				4BAF1F511DAD611E0028D286 /* AppDelegate.swift */,
-				4BAF1FB61DAEBA080028D286 /* Views */,
-				4BEBC39D1DB513DD00A39D88 /* Model Controllers */,
-				4BAF1FB91DAEBA430028D286 /* View Controller */,
 				4BAF1FB21DAE9B340028D286 /* Model */,
+				4BAF1F551DAD611E0028D286 /* Main.storyboard */,
+				4B38B1A81E419EE700168760 /* ArticlesViewController.swift */,
+				4B38B1A61E419EBC00168760 /* BooksViewController.swift */,
+				4B38B1A41E419E8000168760 /* MoviesViewController.swift */,
+				4B38B1A21E419E5000168760 /* SermonsViewController.swift */,
+				4B38B1A01E419E2400168760 /* MusicViewController.swift */,
+				4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */,
+				4BEBC39D1DB513DD00A39D88 /* Model Controllers */,
+				4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */,
+				4BEBC3C51DB6288E00A39D88 /* Media View Controllers */,
+				4BEBC3C61DB628AC00A39D88 /* Bible View Controller */,
+				4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */,
 				4BAF1F581DAD611E0028D286 /* Assets.xcassets */,
 				4BAF1F5A1DAD611E0028D286 /* LaunchScreen.storyboard */,
 				4BAF1F5D1DAD611E0028D286 /* Info.plist */,
@@ -191,31 +200,6 @@
 				0F58F24F1EA5B34300DC04EA /* YouTube.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		4BAF1FB61DAEBA080028D286 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4BAF1F551DAD611E0028D286 /* Main.storyboard */,
-				4B38B1A81E419EE700168760 /* ArticlesViewController.swift */,
-				4B38B1A61E419EBC00168760 /* BooksViewController.swift */,
-				4B38B1A41E419E8000168760 /* MoviesViewController.swift */,
-				4B38B1A21E419E5000168760 /* SermonsViewController.swift */,
-				4B38B1A01E419E2400168760 /* MusicViewController.swift */,
-				4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		4BAF1FB91DAEBA430028D286 /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */,
-				4BEBC3C51DB6288E00A39D88 /* Media View Controllers */,
-				4BEBC3C61DB628AC00A39D88 /* Bible View Controller */,
-				4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */,
-			);
-			name = "View Controller";
 			sourceTree = "<group>";
 		};
 		4BEBC39D1DB513DD00A39D88 /* Model Controllers */ = {
