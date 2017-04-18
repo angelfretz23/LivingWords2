@@ -18,11 +18,15 @@
 		0F58F2341EA5B10C00DC04EA /* SermonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F22C1EA5B10C00DC04EA /* SermonCollectionViewCell.swift */; };
 		0F58F2351EA5B10C00DC04EA /* YTPlayerView.h in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F22D1EA5B10C00DC04EA /* YTPlayerView.h */; };
 		0F58F2361EA5B10C00DC04EA /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F22E1EA5B10C00DC04EA /* YTPlayerView.m */; };
+		0F58F23D1EA5B20700DC04EA /* ChapterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2371EA5B20700DC04EA /* ChapterContentViewController.swift */; };
+		0F58F23E1EA5B20700DC04EA /* ChapterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2381EA5B20700DC04EA /* ChapterPageViewController.swift */; };
+		0F58F23F1EA5B20700DC04EA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2391EA5B20700DC04EA /* Interactor.swift */; };
+		0F58F2401EA5B20700DC04EA /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F23A1EA5B20700DC04EA /* PresentAnimator.swift */; };
+		0F58F2411EA5B20700DC04EA /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F23B1EA5B20700DC04EA /* SegmentedControlViewController.swift */; };
+		0F58F2421EA5B20700DC04EA /* VerseTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F23C1EA5B20700DC04EA /* VerseTableTableViewCell.swift */; };
 		4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B089FB41E1EED6400972991 /* GoogleService-Info.plist */; };
 		4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */; };
 		4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D201DD7DFF400D37656 /* YouTube.swift */; };
-		4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D221DD938E000D37656 /* PresentAnimator.swift */; };
-		4B188D251DD941F600D37656 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D241DD941F600D37656 /* Interactor.swift */; };
 		4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */; };
 		4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A01E419E2400168760 /* MusicViewController.swift */; };
 		4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A21E419E5000168760 /* SermonsViewController.swift */; };
@@ -36,9 +40,6 @@
 		4B5F384D1DB7E1CC00CA36F4 /* BibleJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */; };
 		4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F384E1DB7F7E900CA36F4 /* BookTableViewController.swift */; };
 		4B5F38511DB8066400CA36F4 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F38501DB8066400CA36F4 /* BookTableViewCell.swift */; };
-		4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E85C71DAFFD43008B2BCB /* ChapterPageViewController.swift */; };
-		4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E85EF1DB09475008B2BCB /* ChapterContentViewController.swift */; };
-		4B8E861A1DB17EA0008B2BCB /* VerseTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */; };
 		4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E861B1DB1A66B008B2BCB /* SermonController.swift */; };
 		4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E861F1DB286D1008B2BCB /* ChapterCollectionViewCell.swift */; };
 		4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1F511DAD611E0028D286 /* AppDelegate.swift */; };
@@ -51,7 +52,6 @@
 		4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FAE1DAE99A20028D286 /* Book.swift */; };
 		4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */; };
 		4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB31DAEAC840028D286 /* BookController.swift */; };
-		4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */; };
 		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
 		BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */; };
 /* End PBXBuildFile section */
@@ -68,13 +68,17 @@
 		0F58F22C1EA5B10C00DC04EA /* SermonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SermonCollectionViewCell.swift; path = "Media View Controllers/SermonCollectionViewCell.swift"; sourceTree = "<group>"; };
 		0F58F22D1EA5B10C00DC04EA /* YTPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = "Media View Controllers/YTPlayerView.h"; sourceTree = "<group>"; };
 		0F58F22E1EA5B10C00DC04EA /* YTPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = "Media View Controllers/YTPlayerView.m"; sourceTree = "<group>"; };
+		0F58F2371EA5B20700DC04EA /* ChapterContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChapterContentViewController.swift; path = "Bible View Controller/ChapterContentViewController.swift"; sourceTree = "<group>"; };
+		0F58F2381EA5B20700DC04EA /* ChapterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChapterPageViewController.swift; path = "Bible View Controller/ChapterPageViewController.swift"; sourceTree = "<group>"; };
+		0F58F2391EA5B20700DC04EA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = "Bible View Controller/Interactor.swift"; sourceTree = "<group>"; };
+		0F58F23A1EA5B20700DC04EA /* PresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentAnimator.swift; path = "Bible View Controller/PresentAnimator.swift"; sourceTree = "<group>"; };
+		0F58F23B1EA5B20700DC04EA /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegmentedControlViewController.swift; path = "Bible View Controller/SegmentedControlViewController.swift"; sourceTree = "<group>"; };
+		0F58F23C1EA5B20700DC04EA /* VerseTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerseTableTableViewCell.swift; path = "Bible View Controller/VerseTableTableViewCell.swift"; sourceTree = "<group>"; };
 		23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
 		44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
 		4B089FB41E1EED6400972991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideoController.swift; sourceTree = "<group>"; };
 		4B188D201DD7DFF400D37656 /* YouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouTube.swift; path = ../YouTube.swift; sourceTree = "<group>"; };
-		4B188D221DD938E000D37656 /* PresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
-		4B188D241DD941F600D37656 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnimator.swift; sourceTree = "<group>"; };
 		4B38B1A01E419E2400168760 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		4B38B1A21E419E5000168760 /* SermonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonsViewController.swift; sourceTree = "<group>"; };
@@ -88,9 +92,6 @@
 		4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BibleJSON.json; sourceTree = "<group>"; };
 		4B5F384E1DB7F7E900CA36F4 /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
 		4B5F38501DB8066400CA36F4 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
-		4B8E85C71DAFFD43008B2BCB /* ChapterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterPageViewController.swift; sourceTree = "<group>"; };
-		4B8E85EF1DB09475008B2BCB /* ChapterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChapterContentViewController.swift; path = ../ChapterContentViewController.swift; sourceTree = "<group>"; };
-		4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerseTableTableViewCell.swift; sourceTree = "<group>"; };
 		4B8E861B1DB1A66B008B2BCB /* SermonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonController.swift; sourceTree = "<group>"; };
 		4B8E861F1DB286D1008B2BCB /* ChapterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BAF1F4E1DAD611E0028D286 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +106,6 @@
 		4BAF1FAE1DAE99A20028D286 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4BAF1FB01DAE9ACA0028D286 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		4BAF1FB31DAEAC840028D286 /* BookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
-		4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
 		A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -254,12 +254,12 @@
 		4BEBC3C61DB628AC00A39D88 /* Bible View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4B8E85C71DAFFD43008B2BCB /* ChapterPageViewController.swift */,
-				4B8E85EF1DB09475008B2BCB /* ChapterContentViewController.swift */,
-				4B188D241DD941F600D37656 /* Interactor.swift */,
-				4B188D221DD938E000D37656 /* PresentAnimator.swift */,
-				4B8E86191DB17EA0008B2BCB /* VerseTableTableViewCell.swift */,
-				4BCAC9541E280C0E000D0AAA /* SegmentedControlViewController.swift */,
+				0F58F2371EA5B20700DC04EA /* ChapterContentViewController.swift */,
+				0F58F2381EA5B20700DC04EA /* ChapterPageViewController.swift */,
+				0F58F2391EA5B20700DC04EA /* Interactor.swift */,
+				0F58F23A1EA5B20700DC04EA /* PresentAnimator.swift */,
+				0F58F23B1EA5B20700DC04EA /* SegmentedControlViewController.swift */,
+				0F58F23C1EA5B20700DC04EA /* VerseTableTableViewCell.swift */,
 			);
 			name = "Bible View Controller";
 			sourceTree = "<group>";
@@ -412,6 +412,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F58F23D1EA5B20700DC04EA /* ChapterContentViewController.swift in Sources */,
+				0F58F23E1EA5B20700DC04EA /* ChapterPageViewController.swift in Sources */,
+				0F58F23F1EA5B20700DC04EA /* Interactor.swift in Sources */,
+				0F58F2401EA5B20700DC04EA /* PresentAnimator.swift in Sources */,
+				0F58F2411EA5B20700DC04EA /* SegmentedControlViewController.swift in Sources */,
+				0F58F2421EA5B20700DC04EA /* VerseTableTableViewCell.swift in Sources */,
 				0F58F22F1EA5B10C00DC04EA /* LivingWords-Bridging-Header.h in Sources */,
 				0F58F2301EA5B10C00DC04EA /* MediaCollectionViewCell.swift in Sources */,
 				0F58F2311EA5B10C00DC04EA /* MediaContainerViewController.swift in Sources */,
@@ -428,25 +434,19 @@
 				4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */,
 				4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */,
 				4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */,
-				4B188D251DD941F600D37656 /* Interactor.swift in Sources */,
-				4B8E861A1DB17EA0008B2BCB /* VerseTableTableViewCell.swift in Sources */,
 				4BAF1F841DAD9C100028D286 /* NetworkController.swift in Sources */,
-				4B188D231DD938E000D37656 /* PresentAnimator.swift in Sources */,
 				4BAF1FB11DAE9ACA0028D286 /* Chapter.swift in Sources */,
 				4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
-				4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */,
 				4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
 				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
-				4B8E85F01DB09475008B2BCB /* ChapterContentViewController.swift in Sources */,
 				4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */,
 				4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */,
 				4B4178CB1E1C2F1E0038D50D /* Music.swift in Sources */,
 				4BAF1F821DAD97340028D286 /* Verse.swift in Sources */,
 				4B5F38511DB8066400CA36F4 /* BookTableViewCell.swift in Sources */,
 				4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */,
-				4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */,
 				4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */,
 				4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */,
 				4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */,
