@@ -40,6 +40,7 @@
 		0F58F2601EA5B42B00DC04EA /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F25A1EA5B42B00DC04EA /* NetworkController.swift */; };
 		0F58F2611EA5B42B00DC04EA /* SermonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F25B1EA5B42B00DC04EA /* SermonController.swift */; };
 		0F58F2621EA5B42B00DC04EA /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F25C1EA5B42B00DC04EA /* YouTubeVideoController.swift */; };
+		0F58F2651EA5DA4F00DC04EA /* BooksSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F58F2631EA5DA4F00DC04EA /* BooksSelection.storyboard */; };
 		4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B089FB41E1EED6400972991 /* GoogleService-Info.plist */; };
 		4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */; };
 		4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A01E419E2400168760 /* MusicViewController.swift */; };
@@ -90,6 +91,7 @@
 		0F58F25A1EA5B42B00DC04EA /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = "Model Controllers/NetworkController.swift"; sourceTree = "<group>"; };
 		0F58F25B1EA5B42B00DC04EA /* SermonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SermonController.swift; path = "Model Controllers/SermonController.swift"; sourceTree = "<group>"; };
 		0F58F25C1EA5B42B00DC04EA /* YouTubeVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YouTubeVideoController.swift; path = "Model Controllers/YouTubeVideoController.swift"; sourceTree = "<group>"; };
+		0F58F2641EA5DA4F00DC04EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BooksSelection.storyboard; sourceTree = "<group>"; };
 		23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
 		44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
 		4B089FB41E1EED6400972991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		4B5F38521DB815AD00CA36F4 /* Book Selection View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0F58F2631EA5DA4F00DC04EA /* BooksSelection.storyboard */,
 				0F58F2431EA5B27600DC04EA /* BookTableViewCell.swift */,
 				0F58F2441EA5B27600DC04EA /* BookTableViewController.swift */,
 				0F58F2451EA5B27600DC04EA /* ChapterCollectionViewCell.swift */,
@@ -164,7 +167,6 @@
 			children = (
 				4B089FB41E1EED6400972991 /* GoogleService-Info.plist */,
 				4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */,
-				4BAF1FB51DAEB0480028D286 /* Model Controllers */,
 				4BAF1F511DAD611E0028D286 /* AppDelegate.swift */,
 				4BAF1FB61DAEBA080028D286 /* Views */,
 				4BEBC39D1DB513DD00A39D88 /* Model Controllers */,
@@ -189,13 +191,6 @@
 				0F58F24F1EA5B34300DC04EA /* YouTube.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		4BAF1FB51DAEB0480028D286 /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		4BAF1FB61DAEBA080028D286 /* Views */ = {
@@ -350,6 +345,7 @@
 			files = (
 				4B4586781DF9C35E0054778F /* Assets in Resources */,
 				4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */,
+				0F58F2651EA5DA4F00DC04EA /* BooksSelection.storyboard in Resources */,
 				4BAF1F5C1DAD611E0028D286 /* LaunchScreen.storyboard in Resources */,
 				4BAF1F591DAD611E0028D286 /* Assets.xcassets in Resources */,
 				4B5F384D1DB7E1CC00CA36F4 /* BibleJSON.json in Resources */,
@@ -458,6 +454,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0F58F2631EA5DA4F00DC04EA /* BooksSelection.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F58F2641EA5DA4F00DC04EA /* Base */,
+			);
+			name = BooksSelection.storyboard;
+			sourceTree = "<group>";
+		};
 		4BAF1F551DAD611E0028D286 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
