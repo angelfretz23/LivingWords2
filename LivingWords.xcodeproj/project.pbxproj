@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F58F2241EA5AF9000DC04EA /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2211EA5AF9000DC04EA /* AnimatedTransitioning.swift */; };
+		0F58F2251EA5AF9000DC04EA /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2221EA5AF9000DC04EA /* PresentationController.swift */; };
+		0F58F2261EA5AF9000DC04EA /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2231EA5AF9000DC04EA /* TransitioningDelegate.swift */; };
 		4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B089FB41E1EED6400972991 /* GoogleService-Info.plist */; };
 		4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */; };
 		4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D201DD7DFF400D37656 /* YouTube.swift */; };
@@ -47,14 +50,14 @@
 		4BEBC3C41DB624DC00A39D88 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */; };
 		4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */; };
 		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
-		4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEC77361DB9EEE200249B1F /* PresentationController.swift */; };
 		4BF3732D1DEA612B00725B1C /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */; };
-		4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */; };
-		4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */; };
 		BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F58F2211EA5AF9000DC04EA /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimatedTransitioning.swift; path = "LivingWords/Custom Presentation Animation/AnimatedTransitioning.swift"; sourceTree = "<group>"; };
+		0F58F2221EA5AF9000DC04EA /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentationController.swift; path = "LivingWords/Custom Presentation Animation/PresentationController.swift"; sourceTree = "<group>"; };
+		0F58F2231EA5AF9000DC04EA /* TransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitioningDelegate.swift; path = "LivingWords/Custom Presentation Animation/TransitioningDelegate.swift"; sourceTree = "<group>"; };
 		23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
 		44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
 		4B089FB41E1EED6400972991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -101,10 +104,7 @@
 		4BEBC3C31DB624DC00A39D88 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C71DB62A8300A39D88 /* SermonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
-		4BEC77361DB9EEE200249B1F /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		4BF3732C1DEA612B00725B1C /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
-		4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
-		4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitioningDelegate.swift; sourceTree = "<group>"; };
 		A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -265,9 +265,9 @@
 		4BEC772A1DB9CCD400249B1F /* Custom Presentation Animation */ = {
 			isa = PBXGroup;
 			children = (
-				4BF9221D1DBD70D1000FC64A /* AnimatedTransitioning.swift */,
-				4BF9221F1DBD7C20000FC64A /* TransitioningDelegate.swift */,
-				4BEC77361DB9EEE200249B1F /* PresentationController.swift */,
+				0F58F2211EA5AF9000DC04EA /* AnimatedTransitioning.swift */,
+				0F58F2221EA5AF9000DC04EA /* PresentationController.swift */,
+				0F58F2231EA5AF9000DC04EA /* TransitioningDelegate.swift */,
 			);
 			name = "Custom Presentation Animation";
 			path = ..;
@@ -410,6 +410,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F58F2241EA5AF9000DC04EA /* AnimatedTransitioning.swift in Sources */,
+				0F58F2251EA5AF9000DC04EA /* PresentationController.swift in Sources */,
+				0F58F2261EA5AF9000DC04EA /* TransitioningDelegate.swift in Sources */,
 				4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */,
 				4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */,
 				4BAF1FAF1DAE99A20028D286 /* Book.swift in Sources */,
@@ -423,7 +426,6 @@
 				4B38B19F1E41024C00168760 /* MediaContainerViewController.swift in Sources */,
 				4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */,
 				4BAF1F861DADA00E0028D286 /* Sermon.swift in Sources */,
-				4BF922201DBD7C20000FC64A /* TransitioningDelegate.swift in Sources */,
 				4BCAC9551E280C0E000D0AAA /* SegmentedControlViewController.swift in Sources */,
 				4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */,
 				4B8E86201DB286D1008B2BCB /* ChapterCollectionViewCell.swift in Sources */,
@@ -439,14 +441,12 @@
 				4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */,
 				4B8E85C81DAFFD43008B2BCB /* ChapterPageViewController.swift in Sources */,
 				4BEBC3C81DB62A8300A39D88 /* SermonCollectionViewCell.swift in Sources */,
-				4BEC77371DB9EEE200249B1F /* PresentationController.swift in Sources */,
 				4BF3732D1DEA612B00725B1C /* MediaCollectionViewCell.swift in Sources */,
 				4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */,
 				4BEBC3C21DB621AC00A39D88 /* MediaViewController.swift in Sources */,
 				4B188D211DD7DFF400D37656 /* YouTube.swift in Sources */,
 				4B5F384F1DB7F7E900CA36F4 /* BookTableViewController.swift in Sources */,
 				4B45867A1DFA3B270054778F /* Protocol.swift in Sources */,
-				4BF9221E1DBD70D1000FC64A /* AnimatedTransitioning.swift in Sources */,
 				4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
