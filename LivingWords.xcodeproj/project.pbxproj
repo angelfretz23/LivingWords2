@@ -34,25 +34,25 @@
 		0F58F2541EA5B34300DC04EA /* Sermon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F24D1EA5B34300DC04EA /* Sermon.swift */; };
 		0F58F2551EA5B34300DC04EA /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F24E1EA5B34300DC04EA /* Verse.swift */; };
 		0F58F2561EA5B34300DC04EA /* YouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F24F1EA5B34300DC04EA /* YouTube.swift */; };
+		0F58F25D1EA5B42B00DC04EA /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2571EA5B42B00DC04EA /* AVAudioPlayer.swift */; };
+		0F58F25E1EA5B42B00DC04EA /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2581EA5B42B00DC04EA /* BookController.swift */; };
+		0F58F25F1EA5B42B00DC04EA /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2591EA5B42B00DC04EA /* MusicController.swift */; };
+		0F58F2601EA5B42B00DC04EA /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F25A1EA5B42B00DC04EA /* NetworkController.swift */; };
+		0F58F2611EA5B42B00DC04EA /* SermonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F25B1EA5B42B00DC04EA /* SermonController.swift */; };
+		0F58F2621EA5B42B00DC04EA /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F25C1EA5B42B00DC04EA /* YouTubeVideoController.swift */; };
 		4B089FB51E1EED6400972991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B089FB41E1EED6400972991 /* GoogleService-Info.plist */; };
-		4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */; };
 		4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */; };
 		4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A01E419E2400168760 /* MusicViewController.swift */; };
 		4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A21E419E5000168760 /* SermonsViewController.swift */; };
 		4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A41E419E8000168760 /* MoviesViewController.swift */; };
 		4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A61E419EBC00168760 /* BooksViewController.swift */; };
 		4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38B1A81E419EE700168760 /* ArticlesViewController.swift */; };
-		4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4178CC1E1E2AD30038D50D /* MusicController.swift */; };
 		4B4586781DF9C35E0054778F /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4586771DF9C35E0054778F /* Assets */; };
 		4B5F384D1DB7E1CC00CA36F4 /* BibleJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */; };
-		4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E861B1DB1A66B008B2BCB /* SermonController.swift */; };
 		4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1F511DAD611E0028D286 /* AppDelegate.swift */; };
 		4BAF1F571DAD611E0028D286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF1F551DAD611E0028D286 /* Main.storyboard */; };
 		4BAF1F591DAD611E0028D286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF1F581DAD611E0028D286 /* Assets.xcassets */; };
 		4BAF1F5C1DAD611E0028D286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF1F5A1DAD611E0028D286 /* LaunchScreen.storyboard */; };
-		4BAF1F841DAD9C100028D286 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1F831DAD9C100028D286 /* NetworkController.swift */; };
-		4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF1FB31DAEAC840028D286 /* BookController.swift */; };
-		4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */; };
 		BF3DEF5A27AA9200F8738B67 /* Pods_LivingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,29 +84,29 @@
 		0F58F24D1EA5B34300DC04EA /* Sermon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sermon.swift; path = Models/Sermon.swift; sourceTree = "<group>"; };
 		0F58F24E1EA5B34300DC04EA /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Verse.swift; path = Models/Verse.swift; sourceTree = "<group>"; };
 		0F58F24F1EA5B34300DC04EA /* YouTube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YouTube.swift; path = Models/YouTube.swift; sourceTree = "<group>"; };
+		0F58F2571EA5B42B00DC04EA /* AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AVAudioPlayer.swift; path = "Model Controllers/AVAudioPlayer.swift"; sourceTree = "<group>"; };
+		0F58F2581EA5B42B00DC04EA /* BookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookController.swift; path = "Model Controllers/BookController.swift"; sourceTree = "<group>"; };
+		0F58F2591EA5B42B00DC04EA /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MusicController.swift; path = "Model Controllers/MusicController.swift"; sourceTree = "<group>"; };
+		0F58F25A1EA5B42B00DC04EA /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = "Model Controllers/NetworkController.swift"; sourceTree = "<group>"; };
+		0F58F25B1EA5B42B00DC04EA /* SermonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SermonController.swift; path = "Model Controllers/SermonController.swift"; sourceTree = "<group>"; };
+		0F58F25C1EA5B42B00DC04EA /* YouTubeVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YouTubeVideoController.swift; path = "Model Controllers/YouTubeVideoController.swift"; sourceTree = "<group>"; };
 		23F4CB1F8DC47AE32714F79D /* Pods-LivingWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.debug.xcconfig"; sourceTree = "<group>"; };
 		44F1F55C7D33A54B7B273808 /* Pods-LivingWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWords/Pods-LivingWords.release.xcconfig"; sourceTree = "<group>"; };
 		4B089FB41E1EED6400972991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideoController.swift; sourceTree = "<group>"; };
 		4B188D281DDA1DFE00D37656 /* BaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnimator.swift; sourceTree = "<group>"; };
 		4B38B1A01E419E2400168760 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		4B38B1A21E419E5000168760 /* SermonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonsViewController.swift; sourceTree = "<group>"; };
 		4B38B1A41E419E8000168760 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		4B38B1A61E419EBC00168760 /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		4B38B1A81E419EE700168760 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
-		4B4178CC1E1E2AD30038D50D /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		4B4586771DF9C35E0054778F /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		4B5F384C1DB7E1CC00CA36F4 /* BibleJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BibleJSON.json; sourceTree = "<group>"; };
-		4B8E861B1DB1A66B008B2BCB /* SermonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SermonController.swift; sourceTree = "<group>"; };
 		4BAF1F4E1DAD611E0028D286 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAF1F511DAD611E0028D286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BAF1F561DAD611E0028D286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BAF1F581DAD611E0028D286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BAF1F5B1DAD611E0028D286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BAF1F5D1DAD611E0028D286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BAF1F831DAD9C100028D286 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
-		4BAF1FB31DAEAC840028D286 /* BookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
-		4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
 		A84A5E04557CBBC48363B3CA /* Pods_LivingWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,12 +226,12 @@
 		4BEBC39D1DB513DD00A39D88 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4BAF1F831DAD9C100028D286 /* NetworkController.swift */,
-				4B188D1E1DD7DCCF00D37656 /* YouTubeVideoController.swift */,
-				4BAF1FB31DAEAC840028D286 /* BookController.swift */,
-				4B4178CC1E1E2AD30038D50D /* MusicController.swift */,
-				4B8E861B1DB1A66B008B2BCB /* SermonController.swift */,
-				4BEBC3C91DB62DC700A39D88 /* AVAudioPlayer.swift */,
+				0F58F2571EA5B42B00DC04EA /* AVAudioPlayer.swift */,
+				0F58F2581EA5B42B00DC04EA /* BookController.swift */,
+				0F58F2591EA5B42B00DC04EA /* MusicController.swift */,
+				0F58F25A1EA5B42B00DC04EA /* NetworkController.swift */,
+				0F58F25B1EA5B42B00DC04EA /* SermonController.swift */,
+				0F58F25C1EA5B42B00DC04EA /* YouTubeVideoController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -412,6 +412,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F58F25D1EA5B42B00DC04EA /* AVAudioPlayer.swift in Sources */,
+				0F58F25E1EA5B42B00DC04EA /* BookController.swift in Sources */,
+				0F58F25F1EA5B42B00DC04EA /* MusicController.swift in Sources */,
+				0F58F2601EA5B42B00DC04EA /* NetworkController.swift in Sources */,
+				0F58F2611EA5B42B00DC04EA /* SermonController.swift in Sources */,
+				0F58F2621EA5B42B00DC04EA /* YouTubeVideoController.swift in Sources */,
 				0F58F2501EA5B34300DC04EA /* Book.swift in Sources */,
 				0F58F2511EA5B34300DC04EA /* Chapter.swift in Sources */,
 				0F58F2521EA5B34300DC04EA /* Music.swift in Sources */,
@@ -441,15 +447,9 @@
 				0F58F2261EA5AF9000DC04EA /* TransitioningDelegate.swift in Sources */,
 				4B38B1A71E419EBC00168760 /* BooksViewController.swift in Sources */,
 				4B38B1A91E419EE700168760 /* ArticlesViewController.swift in Sources */,
-				4B4178CD1E1E2AD30038D50D /* MusicController.swift in Sources */,
-				4B188D1F1DD7DCCF00D37656 /* YouTubeVideoController.swift in Sources */,
-				4BAF1F841DAD9C100028D286 /* NetworkController.swift in Sources */,
 				4B188D291DDA1DFE00D37656 /* BaseAnimator.swift in Sources */,
 				4B38B1A31E419E5000168760 /* SermonsViewController.swift in Sources */,
-				4BAF1FB41DAEAC840028D286 /* BookController.swift in Sources */,
-				4B8E861C1DB1A66B008B2BCB /* SermonController.swift in Sources */,
 				4BAF1F521DAD611E0028D286 /* AppDelegate.swift in Sources */,
-				4BEBC3CA1DB62DC700A39D88 /* AVAudioPlayer.swift in Sources */,
 				4B38B1A11E419E2400168760 /* MusicViewController.swift in Sources */,
 				4B38B1A51E419E8000168760 /* MoviesViewController.swift in Sources */,
 			);
