@@ -14,6 +14,7 @@
 		2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93EF1EA795E6007464F0 /* LaunchScreen.storyboard */; };
 		2B2A93FC1EA795E6007464F0 /* BibleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93FB1EA795E6007464F0 /* BibleAppTests.swift */; };
 		2B2A94071EA795E6007464F0 /* BibleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */; };
+		2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A94171EA79B1B007464F0 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2B2A94021EA795E6007464F0 /* BibleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppUITests.swift; sourceTree = "<group>"; };
 		2B2A94081EA795E6007464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B2A94171EA79B1B007464F0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,10 @@
 		2B2A93E51EA795E6007464F0 /* BibleApp */ = {
 			isa = PBXGroup;
 			children = (
+				2B2A941C1EA79B4A007464F0 /* Managers */,
+				2B2A941B1EA79B42007464F0 /* Extensions */,
+				2B2A94151EA79ABB007464F0 /* BissnesLogic */,
+				2B2A94141EA79AA7007464F0 /* PresentationLogic */,
 				2B2A93E61EA795E6007464F0 /* AppDelegate.swift */,
 				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
 				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
@@ -123,6 +129,67 @@
 				2B2A94081EA795E6007464F0 /* Info.plist */,
 			);
 			path = BibleAppUITests;
+			sourceTree = "<group>";
+		};
+		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
+			isa = PBXGroup;
+			children = (
+				2B2A941D1EA79B6C007464F0 /* Search */,
+				2B2A94161EA79AED007464F0 /* Login */,
+			);
+			name = PresentationLogic;
+			sourceTree = "<group>";
+		};
+		2B2A94151EA79ABB007464F0 /* BissnesLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BissnesLogic;
+			sourceTree = "<group>";
+		};
+		2B2A94161EA79AED007464F0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2B2A941A1EA79B35007464F0 /* Views */,
+				2B2A94191EA79B28007464F0 /* Controllers */,
+				2B2A94171EA79B1B007464F0 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		2B2A94191EA79B28007464F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2B2A941A1EA79B35007464F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2B2A941B1EA79B42007464F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		2B2A941C1EA79B4A007464F0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		2B2A941D1EA79B6C007464F0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
