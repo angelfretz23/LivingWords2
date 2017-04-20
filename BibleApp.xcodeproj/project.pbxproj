@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
+		04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04148D891EA8C2140056D18E /* GoogleService-Info.plist */; };
 		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E61EA795E6007464F0 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		04148D871EA899A60056D18E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		04148D891EA8C2140056D18E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				2B2A93ED1EA795E6007464F0 /* Assets.xcassets */,
 				2B2A93EF1EA795E6007464F0 /* LaunchScreen.storyboard */,
 				2B2A93F21EA795E6007464F0 /* Info.plist */,
+				04148D891EA8C2140056D18E /* GoogleService-Info.plist */,
 			);
 			path = BibleApp;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
+				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
 			);

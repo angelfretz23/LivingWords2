@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import Google
+import GoogleSignIn
 
 class SignInViewController: UIViewController {
 
@@ -20,13 +22,16 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var googleSignIn: UIButton!
     @IBOutlet weak var facebookSignIn: FBSDKLoginButton!
     
-    @IBOutlet weak var forgotPassword: UIButton!
-    @IBOutlet weak var signUp: UIButton!
+
 
     
     // MARK: - Properties
     
-
+    let googleLoginButton: GIDSignInButton = {
+        let button = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 100, height: 150))
+        //button.isHidden = true
+        return button
+    }()
     
     // MARK: - Sign In view controller`s life cycle
     
@@ -34,23 +39,22 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         facebookSignIn.delegate = self
+        googleSingInConfiguration()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
     // MARK: - Actions
     
     @IBAction func signUpbyEmailAction(_ sender: UIButton) {
-        facebookSignIn.publishPermissions = ["email"]
+    
     }
     
 }
 
 private typealias FacebookDelegate = SignInViewController
-
 extension FacebookDelegate: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
@@ -64,4 +68,32 @@ extension FacebookDelegate: FBSDKLoginButtonDelegate {
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
         return true
     }
+}
+
+private typealias GoogleDelegate = SignInViewController
+extension GoogleDelegate: GIDSignInUIDelegate, GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("📧 \(user.profile.email)")
+    }
+
+}
+
+private typealias ConfigurationSingInController = SignInViewController
+extension ConfigurationSingInController {
+    fileprivate func googleSingInConfiguration() {
+        
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        
+        if configureError != nil {
+            print("🚨🚨🚨 Error with GGLContext")
+        }
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        
+        view.addSubview(googleLoginButton)
+    }
+    
 }
