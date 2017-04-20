@@ -10,6 +10,7 @@
 		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
 		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
+		2B005BC21EA8C675000CD94D /* LoginWithEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B005BC11EA8C675000CD94D /* LoginWithEmail.storyboard */; };
 		2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E61EA795E6007464F0 /* AppDelegate.swift */; };
 		2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E81EA795E6007464F0 /* ViewController.swift */; };
 		2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93EA1EA795E6007464F0 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2B005BC11EA8C675000CD94D /* LoginWithEmail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginWithEmail.storyboard; sourceTree = "<group>"; };
 		2B2A93E31EA795E6007464F0 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2A93E61EA795E6007464F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B2A93E81EA795E6007464F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B005BC01EA8C659000CD94D /* LoginWithEmail */ = {
+			isa = PBXGroup;
+			children = (
+				2B005BC31EA8C67D000CD94D /* Controllers */,
+				2B005BC11EA8C675000CD94D /* LoginWithEmail.storyboard */,
+			);
+			name = LoginWithEmail;
+			sourceTree = "<group>";
+		};
+		2B005BC31EA8C67D000CD94D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		2B2A93DA1EA795E6007464F0 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +171,7 @@
 		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				2B005BC01EA8C659000CD94D /* LoginWithEmail */,
 				2B2A941D1EA79B6C007464F0 /* Search */,
 				2B2A94161EA79AED007464F0 /* Login */,
 			);
@@ -354,6 +373,7 @@
 			files = (
 				2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
+				2B005BC21EA8C675000CD94D /* LoginWithEmail.storyboard in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
 			);
