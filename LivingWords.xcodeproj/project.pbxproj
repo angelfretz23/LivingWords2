@@ -61,7 +61,7 @@
 		0F58F2211EA5AF9000DC04EA /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimatedTransitioning.swift; path = "LivingWords/Custom Presentation Animation/AnimatedTransitioning.swift"; sourceTree = "<group>"; };
 		0F58F2221EA5AF9000DC04EA /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentationController.swift; path = "LivingWords/Custom Presentation Animation/PresentationController.swift"; sourceTree = "<group>"; };
 		0F58F2231EA5AF9000DC04EA /* TransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitioningDelegate.swift; path = "LivingWords/Custom Presentation Animation/TransitioningDelegate.swift"; sourceTree = "<group>"; };
-		0F58F2271EA5B10C00DC04EA /* LivingWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LivingWords-Bridging-Header.h"; path = "Media View Controllers/LivingWords-Bridging-Header.h"; sourceTree = "<group>"; };
+		0F58F2271EA5B10C00DC04EA /* LivingWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LivingWords-Bridging-Header.h"; path = "LivingWords/Media View Controllers/LivingWords-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		0F58F2281EA5B10C00DC04EA /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaCollectionViewCell.swift; path = "Media View Controllers/MediaCollectionViewCell.swift"; sourceTree = "<group>"; };
 		0F58F2291EA5B10C00DC04EA /* MediaContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaContainerViewController.swift; path = "Media View Controllers/MediaContainerViewController.swift"; sourceTree = "<group>"; };
 		0F58F22A1EA5B10C00DC04EA /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaTableViewCell.swift; path = "Media View Controllers/MediaTableViewCell.swift"; sourceTree = "<group>"; };
@@ -569,7 +569,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/Media View Controllers/LivingWords-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -587,7 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LivingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/Media View Controllers/LivingWords-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
