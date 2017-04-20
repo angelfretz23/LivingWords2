@@ -10,6 +10,9 @@ import UIKit
 
 class ScriptureTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var scriptureText: UILabel!
+    @IBOutlet weak var labelOne: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

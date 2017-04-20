@@ -6,4 +6,12 @@
 //  Copyright © 2017 Igor Makara. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Scripture {
+    let text: String?
+    
+    init(text: String?) {
+        self.text = text
+    }
+}

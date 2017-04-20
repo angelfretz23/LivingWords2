@@ -18,6 +18,11 @@
 		2B2A93FC1EA795E6007464F0 /* BibleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93FB1EA795E6007464F0 /* BibleAppTests.swift */; };
 		2B2A94071EA795E6007464F0 /* BibleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */; };
 		2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A94171EA79B1B007464F0 /* Login.storyboard */; };
+		3A7CB4491EA8D050006EA091 /* MainTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7CB4481EA8D050006EA091 /* MainTableView.storyboard */; };
+		3A7CB44B1EA8D082006EA091 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CB44A1EA8D082006EA091 /* MainTableViewController.swift */; };
+		3A7CB44E1EA8D223006EA091 /* ScriptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CB44C1EA8D223006EA091 /* ScriptureTableViewCell.swift */; };
+		3A7CB44F1EA8D223006EA091 /* ScriptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7CB44D1EA8D223006EA091 /* ScriptureTableViewCell.xib */; };
+		3A7CB4531EA8D8CC006EA091 /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CB4521EA8D8CC006EA091 /* Scripture.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +64,11 @@
 		2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppUITests.swift; sourceTree = "<group>"; };
 		2B2A94081EA795E6007464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B2A94171EA79B1B007464F0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3A7CB4481EA8D050006EA091 /* MainTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTableView.storyboard; sourceTree = "<group>"; };
+		3A7CB44A1EA8D082006EA091 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		3A7CB44C1EA8D223006EA091 /* ScriptureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureTableViewCell.swift; sourceTree = "<group>"; };
+		3A7CB44D1EA8D223006EA091 /* ScriptureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptureTableViewCell.xib; sourceTree = "<group>"; };
+		3A7CB4521EA8D8CC006EA091 /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +130,7 @@
 			children = (
 				2B2A941C1EA79B4A007464F0 /* Managers */,
 				2B2A941B1EA79B42007464F0 /* Extensions */,
-				2B2A94151EA79ABB007464F0 /* BissnesLogic */,
+				2B2A94151EA79ABB007464F0 /* BusinessLogic */,
 				2B2A94141EA79AA7007464F0 /* PresentationLogic */,
 				2B2A93E61EA795E6007464F0 /* AppDelegate.swift */,
 				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
@@ -153,17 +163,18 @@
 		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				3A7CB4471EA8CFE1006EA091 /* MainTableView */,
 				2B2A941D1EA79B6C007464F0 /* Search */,
 				2B2A94161EA79AED007464F0 /* Login */,
 			);
 			name = PresentationLogic;
 			sourceTree = "<group>";
 		};
-		2B2A94151EA79ABB007464F0 /* BissnesLogic */ = {
+		2B2A94151EA79ABB007464F0 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = BissnesLogic;
+			name = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		2B2A94161EA79AED007464F0 /* Login */ = {
@@ -210,6 +221,18 @@
 			children = (
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		3A7CB4471EA8CFE1006EA091 /* MainTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3A7CB4481EA8D050006EA091 /* MainTableView.storyboard */,
+				3A7CB44A1EA8D082006EA091 /* MainTableViewController.swift */,
+				3A7CB44C1EA8D223006EA091 /* ScriptureTableViewCell.swift */,
+				3A7CB44D1EA8D223006EA091 /* ScriptureTableViewCell.xib */,
+				3A7CB4521EA8D8CC006EA091 /* Scripture.swift */,
+			);
+			name = MainTableView;
 			sourceTree = "<group>";
 		};
 		C84B09BE911FB0CC574E25B5 /* Pods */ = {
@@ -353,9 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */,
+				3A7CB44F1EA8D223006EA091 /* ScriptureTableViewCell.xib in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
+				3A7CB4491EA8D050006EA091 /* MainTableView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,9 +543,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7CB44B1EA8D082006EA091 /* MainTableViewController.swift in Sources */,
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
+				3A7CB44E1EA8D223006EA091 /* ScriptureTableViewCell.swift in Sources */,
+				3A7CB4531EA8D8CC006EA091 /* Scripture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
