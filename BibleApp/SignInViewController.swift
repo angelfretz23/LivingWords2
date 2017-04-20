@@ -21,10 +21,12 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInbyEmail: UIButton!
     @IBOutlet weak var googleSignIn: UIButton!
     @IBOutlet weak var facebookSignIn: FBSDKLoginButton!
-    
 
 
-    
+    @IBOutlet weak var bluerEffectView: UIView!
+    @IBOutlet weak var underlinedView: UIView!
+    @IBOutlet  var underlinedViewAllignCenterToSignUpButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var signUpWithEmailView: UIView!
     // MARK: - Properties
     
     let googleLoginButton: GIDSignInButton = {
@@ -40,12 +42,42 @@ class SignInViewController: UIViewController {
         
         facebookSignIn.delegate = self
         googleSingInConfiguration()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        
+        setUpBlurEffect()
+        
+      
+        signUpWithEmailView.isHidden = true
     }
     
+    
+    func setUpBlurEffect(){
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bluerEffectView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        bluerEffectView.addSubview(blurEffectView)
+    }
+    
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: [.allowAnimatedContent], animations: {
+            self.underlinedViewAllignCenterToSignUpButtonConstraint.priority = 20
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
+    @IBAction func signUpButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: [.allowAnimatedContent], animations: {
+            self.underlinedViewAllignCenterToSignUpButtonConstraint.priority = 998
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
+    @IBAction func signUpByEmailButtonPressed(_ sender: Any) {
+        signUpWithEmailView.isHidden = false
+    }
+
     // MARK: - Actions
     
     @IBAction func signUpbyEmailAction(_ sender: UIButton) {
