@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
+		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
+		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E61EA795E6007464F0 /* AppDelegate.swift */; };
 		2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E81EA795E6007464F0 /* ViewController.swift */; };
 		2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93EA1EA795E6007464F0 /* Main.storyboard */; };
@@ -15,6 +18,7 @@
 		2B2A93FC1EA795E6007464F0 /* BibleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93FB1EA795E6007464F0 /* BibleAppTests.swift */; };
 		2B2A94071EA795E6007464F0 /* BibleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */; };
 		2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A94171EA79B1B007464F0 /* Login.storyboard */; };
+		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B2A93E31EA795E6007464F0 /* BibleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		04148D871EA899A60056D18E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
+		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2B2A93E31EA795E6007464F0 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2A93E61EA795E6007464F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B2A93E81EA795E6007464F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B2A93EB1EA795E6007464F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +59,10 @@
 		2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppUITests.swift; sourceTree = "<group>"; };
 		2B2A94081EA795E6007464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B2A94171EA79B1B007464F0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,13 +100,15 @@
 				2B2A93FA1EA795E6007464F0 /* BibleAppTests */,
 				2B2A94051EA795E6007464F0 /* BibleAppUITests */,
 				2B2A93E41EA795E6007464F0 /* Products */,
+				C84B09BE911FB0CC574E25B5 /* Pods */,
+				CFF91B489692E0089DAF9ED7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		2B2A93E41EA795E6007464F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B2A93E31EA795E6007464F0 /* BibleApp.app */,
+				2B2A93E31EA795E6007464F0 /* LivingWords.app */,
 				2B2A93F71EA795E6007464F0 /* BibleAppTests.xctest */,
 				2B2A94021EA795E6007464F0 /* BibleAppUITests.xctest */,
 			);
@@ -160,6 +179,7 @@
 		2B2A94191EA79B28007464F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04148D871EA899A60056D18E /* SignInViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +212,29 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		C84B09BE911FB0CC574E25B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */,
+				133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */,
+				01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */,
+				75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */,
+				0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */,
+				5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CFF91B489692E0089DAF9ED7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */,
+				D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */,
+				6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B2A940B1EA795E6007464F0 /* Build configuration list for PBXNativeTarget "BibleApp" */;
 			buildPhases = (
+				386E36DB36B1F8D6BDCDBB71 /* [CP] Check Pods Manifest.lock */,
 				2B2A93DF1EA795E6007464F0 /* Sources */,
 				2B2A93E01EA795E6007464F0 /* Frameworks */,
 				2B2A93E11EA795E6007464F0 /* Resources */,
+				078467C94C58B6B3FB4C16B1 /* [CP] Embed Pods Frameworks */,
+				26933A0E8863016598A0732C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,16 +255,19 @@
 			);
 			name = BibleApp;
 			productName = BibleApp;
-			productReference = 2B2A93E31EA795E6007464F0 /* BibleApp.app */;
+			productReference = 2B2A93E31EA795E6007464F0 /* LivingWords.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2B2A93F61EA795E6007464F0 /* BibleAppTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B2A940E1EA795E6007464F0 /* Build configuration list for PBXNativeTarget "BibleAppTests" */;
 			buildPhases = (
+				C23632A35535D4DC7C55AA8A /* [CP] Check Pods Manifest.lock */,
 				2B2A93F31EA795E6007464F0 /* Sources */,
 				2B2A93F41EA795E6007464F0 /* Frameworks */,
 				2B2A93F51EA795E6007464F0 /* Resources */,
+				6158A55FF3100D76DE9D6DC1 /* [CP] Embed Pods Frameworks */,
+				89818798A3AB6A9A7FAC1E05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B2A94111EA795E6007464F0 /* Build configuration list for PBXNativeTarget "BibleAppUITests" */;
 			buildPhases = (
+				690A6952EB341C8F64989CB7 /* [CP] Check Pods Manifest.lock */,
 				2B2A93FE1EA795E6007464F0 /* Sources */,
 				2B2A93FF1EA795E6007464F0 /* Frameworks */,
 				2B2A94001EA795E6007464F0 /* Resources */,
+				D01D7576BE308494AF2B2679 /* [CP] Embed Pods Frameworks */,
+				53E16F37473FACF521BF21C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,6 +375,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		078467C94C58B6B3FB4C16B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26933A0E8863016598A0732C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		386E36DB36B1F8D6BDCDBB71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		53E16F37473FACF521BF21C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6158A55FF3100D76DE9D6DC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		690A6952EB341C8F64989CB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		89818798A3AB6A9A7FAC1E05 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C23632A35535D4DC7C55AA8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D01D7576BE308494AF2B2679 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B2A93DF1EA795E6007464F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -330,6 +520,7 @@
 			files = (
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
+				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,32 +670,35 @@
 		};
 		2B2A940C1EA795E6007464F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6Y5S54D52;
 				INFOPLIST_FILE = BibleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BibleApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LivingWords;
+				PRODUCT_NAME = LivingWords;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		2B2A940D1EA795E6007464F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6Y5S54D52;
 				INFOPLIST_FILE = BibleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BibleApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LivingWords;
+				PRODUCT_NAME = LivingWords;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		2B2A940F1EA795E6007464F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +713,7 @@
 		};
 		2B2A94101EA795E6007464F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +728,7 @@
 		};
 		2B2A94121EA795E6007464F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = BibleAppUITests/Info.plist;
@@ -546,6 +742,7 @@
 		};
 		2B2A94131EA795E6007464F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = BibleAppUITests/Info.plist;
@@ -576,6 +773,7 @@
 				2B2A940D1EA795E6007464F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B2A940E1EA795E6007464F0 /* Build configuration list for PBXNativeTarget "BibleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +782,7 @@
 				2B2A94101EA795E6007464F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B2A94111EA795E6007464F0 /* Build configuration list for PBXNativeTarget "BibleAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +791,7 @@
 				2B2A94131EA795E6007464F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
