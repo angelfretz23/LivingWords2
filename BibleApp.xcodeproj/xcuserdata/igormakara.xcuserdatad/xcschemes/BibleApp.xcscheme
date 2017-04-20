@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B2A93E21EA795E6007464F0"
-               BuildableName = "BibleApp.app"
+               BuildableName = "LivingWords.app"
                BlueprintName = "BibleApp"
                ReferencedContainer = "container:BibleApp.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B2A93E21EA795E6007464F0"
-            BuildableName = "BibleApp.app"
+            BuildableName = "LivingWords.app"
             BlueprintName = "BibleApp"
             ReferencedContainer = "container:BibleApp.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B2A93E21EA795E6007464F0"
-            BuildableName = "BibleApp.app"
+            BuildableName = "LivingWords.app"
             BlueprintName = "BibleApp"
             ReferencedContainer = "container:BibleApp.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B2A93E21EA795E6007464F0"
-            BuildableName = "BibleApp.app"
+            BuildableName = "LivingWords.app"
             BlueprintName = "BibleApp"
             ReferencedContainer = "container:BibleApp.xcodeproj">
          </BuildableReference>

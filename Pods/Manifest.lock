@@ -52,11 +52,13 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
+  - SnapKit (3.2.0)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - Google/SignIn
+  - SnapKit (~> 3.2)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -72,7 +74,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: c46f8a247b8cad2066b447782d330c19ab69ef1c
+PODFILE CHECKSUM: 89355bb2fbb6c2c8f37dcd8149c63aa1e1d44cac
 
 COCOAPODS: 1.2.1
