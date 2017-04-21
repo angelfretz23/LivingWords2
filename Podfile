@@ -10,6 +10,7 @@ target 'BibleApp' do
     pod 'FacebookLogin'
     pod 'Google/SignIn'
     pod 'SnapKit', '~> 3.2'
+    pod 'Alamofire', '~> 4.4'
 
   target 'BibleAppTests' do
     inherit! :search_paths
