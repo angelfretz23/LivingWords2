@@ -11,7 +11,6 @@
 		04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04148D891EA8C2140056D18E /* GoogleService-Info.plist */; };
 		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
-		2B005BC71EA90FF6000CD94D /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC61EA90FF6000CD94D /* SignUpWithEmailViewController.swift */; };
 		2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC81EA91EC6000CD94D /* RoundedButton.swift */; };
 		2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E61EA795E6007464F0 /* AppDelegate.swift */; };
 		2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E81EA795E6007464F0 /* ViewController.swift */; };
@@ -54,7 +53,6 @@
 		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		2B005BC61EA90FF6000CD94D /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
 		2B005BC81EA91EC6000CD94D /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2B2A93E31EA795E6007464F0 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2A93E61EA795E6007464F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 		2B2A94191EA79B28007464F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2B005BC61EA90FF6000CD94D /* SignUpWithEmailViewController.swift */,
 				04148D871EA899A60056D18E /* SignInViewController.swift */,
 			);
 			name = Controllers;
@@ -576,7 +573,6 @@
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
-				2B005BC71EA90FF6000CD94D /* SignUpWithEmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

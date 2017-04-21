@@ -139,14 +139,14 @@ class MainTableViewController: UITableViewController {
     
     // This method was created for testing only!!!
     func loadSampleScriptures() {
-    
-    let scripture1 = Scripture(text: "In the beginning God created the heaven and the earth.")
-    let scripture2 = Scripture(text: "And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moves upon the face of the waters.")
-    let scripture3 = Scripture(text: "And God said, Let there be light: and there was light.")
         
-    
-    scriptures = [scripture1, scripture2, scripture3]
-    
+        let scripture1 = Scripture(text: "In the beginning God created the heaven and the earth.")
+        let scripture2 = Scripture(text: "And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moves upon the face of the waters.")
+        let scripture3 = Scripture(text: "And God said, Let there be light: and there was light.")
+        
+        
+        scriptures = [scripture1, scripture2, scripture3]
+        
     }
 
 }
