@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScriptureCellID" id="KGk-i7-Jjw" customClass="ScriptureTableViewCell" customModule="LivingWords" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUA-gV-aEP">
+                        <rect key="frame" x="10" y="8" width="302" height="28.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="fKi-g5-hdH"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgK-dN-AwB">
+                        <rect key="frame" x="8" y="0.0" width="14" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="2qM-BM-1Zb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hgK-dN-AwB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="9pz-e0-vE2"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="hgK-dN-AwB" secondAttribute="leading" id="E1f-To-ode"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FUA-gV-aEP" secondAttribute="bottom" id="ObP-6Y-Ebl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FUA-gV-aEP" secondAttribute="trailing" id="Vve-Uj-zSg"/>
+                    <constraint firstItem="FUA-gV-aEP" firstAttribute="top" secondItem="hgK-dN-AwB" secondAttribute="bottom" constant="-18" id="bfx-EX-CJ7"/>
+                    <constraint firstItem="hgK-dN-AwB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dQ9-rq-MKy"/>
+                    <constraint firstItem="FUA-gV-aEP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dXb-bE-ax4"/>
+                    <constraint firstItem="hgK-dN-AwB" firstAttribute="leading" secondItem="FUA-gV-aEP" secondAttribute="leading" constant="-2" id="hHY-ve-hsC"/>
+                    <constraint firstItem="FUA-gV-aEP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="jVN-b7-rP8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelOne" destination="hgK-dN-AwB" id="9de-4m-aa1"/>
+                <outlet property="scriptureText" destination="FUA-gV-aEP" id="AY8-RV-CHW"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="53.5"/>
+        </tableViewCell>
+    </objects>
+</document>
