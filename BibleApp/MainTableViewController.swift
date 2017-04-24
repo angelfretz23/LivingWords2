@@ -8,10 +8,23 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var mainTableView: UITableView!
     var scriptures = [Scripture?]()
+    
+    var expandSearch: Bool = false {
+        didSet{
+            if expandSearch {
+                searchViewHeightConstraint.constant = 40
+            }else {
+                searchViewHeightConstraint.constant = 0
+            }
+            
+        }
+    }
 
+    @IBOutlet var searchViewHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,36 +41,42 @@ class MainTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: IBActions
+    
+    @IBAction func searchBarButtonPresseed(_ sender: Any) {
+        if expandSearch {
+            expandSearch = false
+        }else {
+            expandSearch = true
+        }
+        
     }
 
     // MARK: - Table view data source
 
     // Register my xib
     func registerXib(){
-        tableView.register(UINib(nibName: "ScriptureTableViewCell", bundle: nil), forCellReuseIdentifier: "ScriptureCellID")
+        mainTableView.register(UINib(nibName: "ScriptureTableViewCell", bundle: nil), forCellReuseIdentifier: "ScriptureCellID")
     }
     
     // Automatically channges the size of the row
     func configureTableView(){
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 45
+        mainTableView.rowHeight = UITableViewAutomaticDimension
+        mainTableView.estimatedRowHeight = 45
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return scriptures.count
     }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = "ScriptureCellID"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
         

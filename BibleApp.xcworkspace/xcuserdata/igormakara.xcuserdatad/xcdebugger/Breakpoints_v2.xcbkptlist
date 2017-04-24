@@ -10,7 +10,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BibleApp/SignInViewController.swift"
-            timestampString = "514488125.922999"
+            timestampString = "514724265.558647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "loginWithEmail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BibleApp/SignInViewController.swift"
+            timestampString = "514724185.959035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"

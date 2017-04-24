@@ -33,8 +33,6 @@ extension User {
     static func login(withEmail email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void)  {
         let api = LivingWordsAPI()
         
-        api.login(withEmail: email, password: password) { user, error in
-       
-        }
+        api.login(withEmail: email, password: password, completion: completion)
     }
 }
