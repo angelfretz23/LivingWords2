@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018701EADE30000745DED /* AlamofireObjectMapper.swift */; };
 		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
 		04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04148D891EA8C2140056D18E /* GoogleService-Info.plist */; };
 		0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */; };
@@ -28,7 +29,6 @@
 		2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E51EA9E6F6006AB9CF /* Scripture.swift */; };
 		2B4423EA1EAA502D006AB9CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E91EAA502D006AB9CF /* User.swift */; };
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
-		2B4423EE1EAA6635006AB9CF /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423ED1EAA6635006AB9CF /* AlamofireObjectMapper.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,7 @@
 /* Begin PBXFileReference section */
 		00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		041018701EADE30000745DED /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		04148D871EA899A60056D18E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04148D891EA8C2140056D18E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingWordsAPI.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		2B4423E51EA9E6F6006AB9CF /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		2B4423E91EAA502D006AB9CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
-		2B4423ED1EAA6635006AB9CF /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireObjectMapper.swift; path = ../../../Downloads/AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 		2B472ED21EADD32F004084F1 /* ExternalLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				2B4423ED1EAA6635006AB9CF /* AlamofireObjectMapper.swift */,
+				041018701EADE30000745DED /* AlamofireObjectMapper.swift */,
 			);
 			name = ExternalLibraries;
 			sourceTree = "<group>";
@@ -634,7 +634,7 @@
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
-				2B4423EE1EAA6635006AB9CF /* AlamofireObjectMapper.swift in Sources */,
+				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 			);
