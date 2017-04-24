@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        NetworkManager.instance.signUp(with: "oleh@mail.ru", password: 11111)
         
         return true
     }

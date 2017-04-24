@@ -12,8 +12,10 @@ import Google
 import GoogleSignIn
 
 class SignInViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
+    
+    var userInfo: User?
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -21,7 +23,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInbyEmail: UIButton!
     @IBOutlet weak var googleSignIn: UIButton!
     @IBOutlet weak var facebookSignIn: RoundedButton!
-
+    
     @IBOutlet weak var bluerEffectView: UIView!
     @IBOutlet weak var underlinedView: UIView!
     @IBOutlet var underlinedViewAllignCenterToSignUpButtonConstraint: NSLayoutConstraint!
@@ -65,6 +67,22 @@ class SignInViewController: UIViewController {
     
     // MARK: - Actions
     
+    func loginWithEmail(){
+        
+        User.login(withEmail:  "", password:  "", completion: {userInfo, error in
+            
+            
+            if let user = userInfo {
+                self.userInfo = user
+                print(self.userInfo)
+                
+            } else {
+                
+                
+            }
+        })
+    }
+    
     // actually it is 'Sign Up'
     @IBAction func loginButtonPressed(_ sender: Any) {
         UIView.animate(withDuration: 0.5, delay: 0.1, options: [.allowAnimatedContent], animations: {
@@ -78,15 +96,14 @@ class SignInViewController: UIViewController {
             
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
-
+        loginWithEmail()
     }
-
+    
     // actually it is 'Log In'
     @IBAction func signUpButtonPressed(_ sender: Any) {
         UIView.animate(withDuration: 0.5, delay: 0.3, options: [.allowAnimatedContent], animations: {
             self.underlinedViewAllignCenterToSignUpButtonConstraint.priority = 998
-           
+            
             self.loginInViewLeadings.constant = 0
             self.loginInViewTrailings.constant = 0
             
@@ -96,9 +113,10 @@ class SignInViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
-
+    
     @IBAction func signUpbyEmailAction(_ sender: UIButton) {
         signUpWithEmailView.isHidden = signUpWithEmailView.isHidden ? false : true
+        
     }
     
     @IBAction func facebookSignInAction(_ sender: UIButton) {
@@ -108,18 +126,18 @@ class SignInViewController: UIViewController {
     @IBAction func googleSignInAction(_ sender: UIButton) {
         googleLoginButton.sendActions(for: .touchUpInside)
     }
-
+    
 }
 
 private typealias FacebookDelegate = SignInViewController
 extension FacebookDelegate: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-    
+        
     }
-
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
     
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
     }
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
@@ -133,10 +151,10 @@ extension GoogleDelegate: GIDSignInUIDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if let userEmail = user?.profile.email {
-                print("📧 \(userEmail)")
+            print("📧 \(userEmail)")
         }
     }
-
+    
 }
 
 private typealias ConfigurationSingInController = SignInViewController
@@ -158,14 +176,14 @@ extension ConfigurationSingInController {
     }
     
     
-   fileprivate func setUpBlurEffect(){
-    
+    fileprivate func setUpBlurEffect(){
+        
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-    
+        
         blurEffectView.frame = bluerEffectView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
+        
         bluerEffectView.addSubview(blurEffectView)
     }
 }
