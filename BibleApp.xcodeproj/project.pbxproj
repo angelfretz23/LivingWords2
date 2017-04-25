@@ -270,11 +270,11 @@
 		2B4423E81EA9E729006AB9CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */,
 				2B472F0F1EAE17BD004084F1 /* CustomView.swift */,
+				2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */,
 				2B4423E31EA9E6F0006AB9CF /* ScriptureTableViewCell.swift */,
 				2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */,
-				2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */,
-				2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";

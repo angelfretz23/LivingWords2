@@ -22,6 +22,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet var searchViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var searchIconView: UIView!
+    @IBOutlet weak var seseparatorView: UIView!
     //MARK: Variables
 
     var scriptures = [Scripture?]()
@@ -30,11 +32,13 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var expandSearch: Bool = false {
         didSet {
             if expandSearch {
+                seseparatorView.isHidden = !expandSearch
                 UIView.animate(withDuration: 0.5, delay: 0.1, options: .transitionFlipFromTop, animations: {
                 self.searchViewHeightConstraint.constant = 40
                     self.view.layoutIfNeeded()
                 }, completion: nil)
             } else {
+                seseparatorView.isHidden = !expandSearch
                 UIView.animate(withDuration: 0.5, delay: 0.1, options: .transitionFlipFromTop, animations: {
                     self.searchViewHeightConstraint.constant = 0
                     self.view.layoutIfNeeded()
@@ -75,6 +79,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }else {
             expandSearch = true
         }
+        updateDataSourceIfNeeded()
     }
 
     func registerForNotifications(){
@@ -105,7 +110,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return scriptures.count
+        return search.count
     }
     
     
@@ -116,18 +121,20 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
         
         
-        let scripture = scriptures[indexPath.row]
+        let scripture = search[indexPath.row]
         
         var attributedScriptureText = NSMutableAttributedString()
         
         if (indexPath.row == 0) {
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
+            cell.labelOne.isHidden = false
+            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
         } else {
             cell.labelOne.isHidden = true
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
+            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
         }
         
-        attributedScriptureText.append(NSAttributedString(string: " \((scripture?.text)!)", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
+        let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
+          attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
         
         
         cell.scriptureText.attributedText = attributedScriptureText
@@ -153,8 +160,8 @@ extension MainTableViewController {
         fetchSearch { success in
             if success {
                 
-                //self.tableView.reloadData()
-                //self.tableView.stopPullRefreshEver()
+                self.mainTableView.reloadData()
+                //self.mainTableView.stopPullRefreshEver()
             }
         }
     }
@@ -189,5 +196,10 @@ extension MainTableViewController: UITextFieldDelegate {
         }
     
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        searchIconView.isHidden = true
+        seseparatorView.isHidden = true
     }
 }

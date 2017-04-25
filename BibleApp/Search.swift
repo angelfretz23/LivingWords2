@@ -10,10 +10,10 @@ import ObjectMapper
 
 class Search: NSObject, Mappable {
     
-    var matchingData: String?
+    var matchingData: Search?
     var bookOfBible: String?
     var chapterNumberOfBook: String?
-    var bibleBookVerse: String?
+    var bibleBookVerse: Search?
     var verse: String?
     
     func mapping(map: Map) {

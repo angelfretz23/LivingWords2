@@ -29,7 +29,7 @@ extension LivingWordsAPI {
         
         
         private var baseURLString: String {
-            return "http://www.omdbapi.com/?t=Game+of+Thrones"
+            return "http://trying-buffalo-5901.vagrantshare.com/api"
         }
         
         private var path: String {
@@ -39,7 +39,7 @@ extension LivingWordsAPI {
                 
                 
                 case .getBible:
-                return ""
+                return "/bible"
             }
             
             
