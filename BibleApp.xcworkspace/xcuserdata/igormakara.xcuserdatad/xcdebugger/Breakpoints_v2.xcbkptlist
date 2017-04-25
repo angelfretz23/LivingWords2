@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BibleApp/MainTableViewController.swift"
-            timestampString = "514790663.433958"
+            filePath = "BibleApp/CustomSearchBar.swift"
+            timestampString = "514790187.799094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "fetchSearch(completion:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(frame:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BibleApp/CustomSearchBar.swift"
-            timestampString = "514790187.799094"
+            filePath = "BibleApp/MainTableViewController.swift"
+            timestampString = "514808533.24519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "init(frame:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "unregisterFotNotifications()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

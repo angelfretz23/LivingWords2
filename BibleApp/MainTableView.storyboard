@@ -55,31 +55,122 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SG-4D-Vfe" userLabel="SearchView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="guX-hC-ASC" customClass="CustomSearchBar" customModule="LivingWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-2" width="375" height="4"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqD-nC-rsu">
+                                        <rect key="frame" x="10" y="5" width="355" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cek-kC-coJ" userLabel="PlaceholderView">
+                                        <rect key="frame" x="10" y="5" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Book " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-cv-19D">
+                                                <rect key="frame" x="14" y="4.5" width="48" height="21"/>
+                                                <color key="backgroundColor" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Chapter " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pju-bb-nwd">
+                                                <rect key="frame" x="72" y="4.5" width="70.5" height="21"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Verse " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBk-dQ-R9c" userLabel="Book">
+                                                <rect key="frame" x="157.5" y="4.5" width="52.5" height="21"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbn-4l-RMD">
+                                                <rect key="frame" x="147.5" y="4.5" width="5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="pju-bb-nwd" firstAttribute="leading" secondItem="L0L-cv-19D" secondAttribute="trailing" constant="10" id="AUy-Vy-e6B"/>
+                                            <constraint firstItem="hBk-dQ-R9c" firstAttribute="leading" secondItem="bbn-4l-RMD" secondAttribute="trailing" constant="5" id="E9C-qG-JtE"/>
+                                            <constraint firstItem="pju-bb-nwd" firstAttribute="centerY" secondItem="L0L-cv-19D" secondAttribute="centerY" id="Mon-EA-TDT"/>
+                                            <constraint firstItem="bbn-4l-RMD" firstAttribute="leading" secondItem="pju-bb-nwd" secondAttribute="trailing" constant="5" id="ZWJ-fY-rLN"/>
+                                            <constraint firstItem="L0L-cv-19D" firstAttribute="centerY" secondItem="cek-kC-coJ" secondAttribute="centerY" id="buO-8D-gzb"/>
+                                            <constraint firstItem="hBk-dQ-R9c" firstAttribute="centerY" secondItem="bbn-4l-RMD" secondAttribute="centerY" id="i47-E9-XPh"/>
+                                            <constraint firstItem="bbn-4l-RMD" firstAttribute="centerY" secondItem="pju-bb-nwd" secondAttribute="centerY" id="jTl-Lb-umq"/>
+                                            <constraint firstItem="L0L-cv-19D" firstAttribute="leading" secondItem="cek-kC-coJ" secondAttribute="leading" constant="14" id="tc8-TT-RQx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-xW-Iew" customClass="CustomTextField" customModule="LivingWords" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="355" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
+                                        <connections>
+                                            <outlet property="delegate" destination="G2e-Fm-WI2" id="0L3-qN-ByI"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.76862745098039209" green="0.76078431372549016" blue="0.78823529411764703" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="guX-hC-ASC" secondAttribute="trailing" id="GFl-mg-qz6"/>
-                                    <constraint firstItem="guX-hC-ASC" firstAttribute="top" secondItem="4SG-4D-Vfe" secondAttribute="top" constant="-2" id="IIh-Qu-909"/>
-                                    <constraint firstAttribute="height" id="KHb-we-OIM"/>
-                                    <constraint firstItem="guX-hC-ASC" firstAttribute="leading" secondItem="4SG-4D-Vfe" secondAttribute="leading" id="a22-Oi-fSO"/>
-                                    <constraint firstAttribute="bottom" secondItem="guX-hC-ASC" secondAttribute="bottom" constant="-2" id="qjR-0X-0CD"/>
+                                    <constraint firstItem="VMy-xW-Iew" firstAttribute="leading" secondItem="4SG-4D-Vfe" secondAttribute="leading" constant="10" id="2Ib-BY-6aH"/>
+                                    <constraint firstItem="VMy-xW-Iew" firstAttribute="top" secondItem="4SG-4D-Vfe" secondAttribute="top" constant="5" id="AeO-qH-rn2"/>
+                                    <constraint firstItem="sqD-nC-rsu" firstAttribute="trailing" secondItem="cek-kC-coJ" secondAttribute="trailing" id="BFm-xK-4FY"/>
+                                    <constraint firstItem="cek-kC-coJ" firstAttribute="trailing" secondItem="VMy-xW-Iew" secondAttribute="trailing" id="DuT-K1-Ggk"/>
+                                    <constraint firstAttribute="height" constant="40" id="KHb-we-OIM"/>
+                                    <constraint firstItem="cek-kC-coJ" firstAttribute="leading" secondItem="VMy-xW-Iew" secondAttribute="leading" id="Qlu-FB-hDS"/>
+                                    <constraint firstItem="sqD-nC-rsu" firstAttribute="bottom" secondItem="cek-kC-coJ" secondAttribute="bottom" id="TRw-sU-RbD"/>
+                                    <constraint firstAttribute="trailing" secondItem="VMy-xW-Iew" secondAttribute="trailing" constant="10" id="WxY-bm-eYD"/>
+                                    <constraint firstItem="cek-kC-coJ" firstAttribute="bottom" secondItem="VMy-xW-Iew" secondAttribute="bottom" id="YuA-LI-r86"/>
+                                    <constraint firstItem="cek-kC-coJ" firstAttribute="top" secondItem="VMy-xW-Iew" secondAttribute="top" id="cG4-TT-Hh7"/>
+                                    <constraint firstItem="sqD-nC-rsu" firstAttribute="leading" secondItem="cek-kC-coJ" secondAttribute="leading" id="rCX-IP-cdc"/>
+                                    <constraint firstItem="sqD-nC-rsu" firstAttribute="top" secondItem="cek-kC-coJ" secondAttribute="top" id="tFW-Ar-i12"/>
+                                    <constraint firstAttribute="bottom" secondItem="VMy-xW-Iew" secondAttribute="bottom" constant="5" id="zVm-DP-vxz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-Qq-KIJ" customClass="CustomView" customModule="LivingWords" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Qgm-8s-swq"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2uL-cL-Z1t">
-                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="G2e-Fm-WI2" id="AgI-hb-62M"/>
@@ -87,7 +178,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4w-aV-hPQ">
-                                <rect key="frame" x="164" y="73" width="47" height="21"/>
+                                <rect key="frame" x="164" y="113" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -118,8 +209,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mainSearchBar" destination="guX-hC-ASC" id="49j-O6-eEQ"/>
                         <outlet property="mainTableView" destination="2uL-cL-Z1t" id="fN3-aD-41t"/>
+                        <outlet property="placeholderView" destination="cek-kC-coJ" id="HFx-th-ZB0"/>
+                        <outlet property="searchTextField" destination="VMy-xW-Iew" id="lwc-If-5Nm"/>
                         <outlet property="searchViewHeightConstraint" destination="KHb-we-OIM" id="s0b-L1-LXH"/>
                     </connections>
                 </viewController>

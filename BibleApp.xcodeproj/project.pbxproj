@@ -23,6 +23,7 @@
 		2B2A94071EA795E6007464F0 /* BibleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */; };
 		2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A94171EA79B1B007464F0 /* Login.storyboard */; };
 		2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */; };
+		2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */; };
 		2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */; };
 		2B4423E01EA9E6E1006AB9CF /* MainTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4423DF1EA9E6E1006AB9CF /* MainTableView.storyboard */; };
 		2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E11EA9E6E9006AB9CF /* MainTableViewController.swift */; };
@@ -78,6 +79,7 @@
 		2B2A94081EA795E6007464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B2A94171EA79B1B007464F0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptureTableViewCell.xib; sourceTree = "<group>"; };
 		2B4423DF1EA9E6E1006AB9CF /* MainTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTableView.storyboard; sourceTree = "<group>"; };
 		2B4423E11EA9E6E9006AB9CF /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				2B4423E31EA9E6F0006AB9CF /* ScriptureTableViewCell.swift */,
 				2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */,
 				2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */,
+				2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				2B472F101EAE17BD004084F1 /* CustomView.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
+				2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

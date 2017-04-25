@@ -29,7 +29,7 @@ extension LivingWordsAPI {
         
         
         private var baseURLString: String {
-            return "http://itty-bitty-hog-1386.vagrantshare.com/api"
+            return "http://www.omdbapi.com/?t=Game+of+Thrones"
         }
         
         private var path: String {
@@ -39,7 +39,7 @@ extension LivingWordsAPI {
                 
                 
                 case .getBible:
-                return "/bible"
+                return ""
             }
             
             
@@ -74,7 +74,7 @@ extension LivingWordsAPI {
         private func addHeadersForRequest( request: inout URLRequest) {
             //request.setValue(token, forHTTPHeaderField: "token")
            // request.setValue(String(id), forHTTPHeaderField: "user-id")
-            // request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {

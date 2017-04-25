@@ -10,10 +10,18 @@ import UIKit
 
 class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: IBoutlets
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var mainSearchBar: UISearchBar!
     
+    @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBOutlet var searchViewHeightConstraint: NSLayoutConstraint!
+    
+    //MARK: Variables
     var scriptures = [Scripture?]()
+    var search: [Search] = []
     
     var expandSearch: Bool = false {
         didSet{
@@ -25,25 +33,30 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
             
         }
     }
-    var search: [Search] = []
-
-    @IBOutlet var searchViewHeightConstraint: NSLayoutConstraint!
+    
+    //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // This method is being called for testing only!!! Delete it, if the app is finished!!!
         loadSampleScriptures()
         
         registerXib()
+        
         configureTableView()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        registerForNotifications()
+      
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        registerForNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterFotNotifications()
+    }
+    
     //MARK: IBActions
     
     @IBAction func searchBarButtonPresseed(_ sender: Any) {
@@ -55,8 +68,14 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         updateDataSourceIfNeeded()
         
     }
-
-    // MARK: - Table view data source
+    
+    func registerForNotifications(){
+    NotificationCenter.default.addObserver(self, selector: #selector(userDidPressClearButton(_:)), name: Notification.Name("UserDidPressedClearButton"), object: nil)
+    }
+    
+    func unregisterFotNotifications(){
+        NotificationCenter.default.removeObserver(self)
+    }
 
     // Register my xib
     func registerXib(){
@@ -68,6 +87,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         mainTableView.rowHeight = UITableViewAutomaticDimension
         mainTableView.estimatedRowHeight = 45
     }
+    
+    // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -127,14 +148,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 }
 extension MainTableViewController {
-    
-    func searchBarAttributetPlaceholderText(){
-        let myAttribute = [ NSForegroundColorAttributeName: UIColor.blue ]
-        let myAttrString = NSAttributedString(string: "", attributes: myAttribute)
 
-    }
-    
-    
     func updateDataSourceIfNeeded() {
         fetchSearch { success in
             if success {
@@ -147,7 +161,7 @@ extension MainTableViewController {
     private func fetchSearch(completion: @escaping (_ sucess: Bool)-> Void){
         Search.getBible{searchResult, error in
             if let fetchedSearch = searchResult{
-                //self.search = fetchedSearch
+                self.search = fetchedSearch
             
                     //print(self.search[0].matchingData!)
                 
@@ -157,4 +171,24 @@ extension MainTableViewController {
             }
         }
     }
+}
+extension MainTableViewController: UITextFieldDelegate {
+    
+    func userDidPressClearButton(_ notification: NSNotification){
+        if searchTextField.text == "" {
+            placeholderView.isHidden = false
+        }
+    }
+
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if searchTextField.text?.characters.count ?? 0 == 0 {
+            placeholderView.isHidden = true
+        }else if searchTextField.text == "" {
+           //placeholderView.isHidden = false
+        }
+    
+        return true
+    }
+    
 }
