@@ -12,6 +12,9 @@ class ScriptureTableViewCell: UITableViewCell {
 
     @IBOutlet weak var scriptureText: UILabel!
     @IBOutlet weak var labelOne: UILabel!
+    @IBOutlet weak var mediaWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mediaView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

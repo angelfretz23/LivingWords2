@@ -29,7 +29,7 @@
 		2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E51EA9E6F6006AB9CF /* Scripture.swift */; };
 		2B4423EA1EAA502D006AB9CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E91EAA502D006AB9CF /* User.swift */; };
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
-		2B472F101EAE17BD004084F1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F0F1EAE17BD004084F1 /* CustomView.swift */; };
+		3ADD57DE1EAE256700A3B5F4 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADD57DD1EAE256700A3B5F4 /* CustomView.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,7 @@
 		2B4423E51EA9E6F6006AB9CF /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		2B4423E91EAA502D006AB9CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
-		2B472F0F1EAE17BD004084F1 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomView.swift; path = ../../CurveViewProject/CurveViewProject/CustomView.swift; sourceTree = "<group>"; };
+		3ADD57DD1EAE256700A3B5F4 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 		2B4423E81EA9E729006AB9CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B472F0F1EAE17BD004084F1 /* CustomView.swift */,
+				3ADD57DD1EAE256700A3B5F4 /* CustomView.swift */,
 				2B4423E31EA9E6F0006AB9CF /* ScriptureTableViewCell.swift */,
 				2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */,
 			);
@@ -635,10 +635,10 @@
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
+				3ADD57DE1EAE256700A3B5F4 /* CustomView.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
-				2B472F101EAE17BD004084F1 /* CustomView.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 			);
