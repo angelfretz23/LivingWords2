@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z0x-f1-v5h">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Media View Controller-->
+        <scene sceneID="li2-kA-8Oy">
+            <objects>
+                <viewController id="Ev6-gm-iUA" customClass="MainMediaViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oZE-Yj-5H8"/>
+                        <viewControllerLayoutGuide type="bottom" id="8SY-2P-L5C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Zb-O3-Dv0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TF6-BX-YnH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56O-Y1-NaC">
+                                        <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAk-IZ-HCH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ut9-gc-58n">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8d-qZ-9JX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEv-zh-oli">
+                                                        <rect key="frame" x="0.0" y="33" width="375" height="33"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-qE-M13">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-mP-ztK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="33"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="All Media">
+                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qe-qU-o9V">
+                                                                        <rect key="frame" x="75" y="0.0" width="75" height="33"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Music">
+                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-UA-2BL">
+                                                                        <rect key="frame" x="150" y="0.0" width="75" height="33"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Movies">
+                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ol-8h-jc6">
+                                                                        <rect key="frame" x="225" y="0.0" width="75" height="33"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Sermons">
+                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yI-rH-2Pq">
+                                                                        <rect key="frame" x="300" y="0.0" width="75" height="33"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Books">
+                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Koc-qE-M13" secondAttribute="trailing" id="cXl-cn-wGg"/>
+                                                            <constraint firstItem="Koc-qE-M13" firstAttribute="leading" secondItem="MEv-zh-oli" secondAttribute="leading" id="hyD-pP-IOx"/>
+                                                            <constraint firstItem="Koc-qE-M13" firstAttribute="top" secondItem="MEv-zh-oli" secondAttribute="top" id="ngl-b9-Ip9"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Koc-qE-M13" secondAttribute="bottom" id="qJf-zk-ZmF"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ut9-gc-58n" firstAttribute="top" secondItem="XAk-IZ-HCH" secondAttribute="top" id="Rmf-Db-UjK"/>
+                                            <constraint firstAttribute="trailing" secondItem="ut9-gc-58n" secondAttribute="trailing" id="aLg-U5-JDI"/>
+                                            <constraint firstAttribute="bottom" secondItem="ut9-gc-58n" secondAttribute="bottom" id="gat-1a-Yps"/>
+                                            <constraint firstItem="ut9-gc-58n" firstAttribute="leading" secondItem="XAk-IZ-HCH" secondAttribute="leading" id="rh5-p2-FaT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="56O-Y1-NaC" firstAttribute="top" secondItem="XAk-IZ-HCH" secondAttribute="bottom" constant="0.5" id="8CC-fT-Gx2"/>
+                                    <constraint firstAttribute="bottom" secondItem="56O-Y1-NaC" secondAttribute="bottom" id="Ith-M1-KsY"/>
+                                    <constraint firstItem="56O-Y1-NaC" firstAttribute="height" secondItem="TF6-BX-YnH" secondAttribute="height" multiplier="0.9" id="SUU-zH-msq"/>
+                                    <constraint firstAttribute="trailing" secondItem="56O-Y1-NaC" secondAttribute="trailing" id="buj-Oj-GdV"/>
+                                    <constraint firstItem="XAk-IZ-HCH" firstAttribute="leading" secondItem="TF6-BX-YnH" secondAttribute="leading" id="mmH-5C-W33"/>
+                                    <constraint firstAttribute="trailing" secondItem="XAk-IZ-HCH" secondAttribute="trailing" id="ru3-3S-T7H"/>
+                                    <constraint firstItem="56O-Y1-NaC" firstAttribute="leading" secondItem="TF6-BX-YnH" secondAttribute="leading" id="sBC-yd-pPM"/>
+                                    <constraint firstItem="XAk-IZ-HCH" firstAttribute="top" secondItem="TF6-BX-YnH" secondAttribute="top" id="xdx-Mc-rwR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TF6-BX-YnH" secondAttribute="trailing" id="dyD-TI-i1o"/>
+                            <constraint firstItem="TF6-BX-YnH" firstAttribute="top" secondItem="0Zb-O3-Dv0" secondAttribute="top" id="gsv-z8-SdC"/>
+                            <constraint firstItem="TF6-BX-YnH" firstAttribute="leading" secondItem="0Zb-O3-Dv0" secondAttribute="leading" id="t5g-hO-vFf"/>
+                            <constraint firstItem="8SY-2P-L5C" firstAttribute="top" secondItem="TF6-BX-YnH" secondAttribute="bottom" id="ts8-WT-bJB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="56O-Y1-NaC" id="sll-dc-McX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sdc-ww-hwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-464.80000000000001" y="-396.25187406296857"/>
+        </scene>
+        <!--You Tube PlayerVC-->
+        <scene sceneID="QHb-Hp-C9e">
+            <objects>
+                <viewController id="Z0x-f1-v5h" customClass="YouTubePlayerVC" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JyD-w2-oOa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ky8-uY-qZR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zXn-ij-uip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av8-WO-hJY" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-is-SV3">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="Z0x-f1-v5h" eventType="touchUpInside" id="xTd-0x-YVa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="youTubePlayer" destination="Av8-WO-hJY" id="6MS-zD-MMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdm-QK-gGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="317.60000000000002" y="-388.15592203898052"/>
+        </scene>
+    </scenes>
+</document>

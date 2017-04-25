@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MediaCell" id="gTV-IL-0wX" customClass="MediaCollectionViewCell" customModule="LivingWords" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7V8-pu-6X7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miracles from Heaven" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-6Y-BaH">
+                        <rect key="frame" x="8" y="167" width="304" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="7V8-pu-6X7" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.85" id="8f8-Mu-6qc"/>
+                <constraint firstItem="7cd-6Y-BaH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="99n-x0-hju"/>
+                <constraint firstAttribute="trailing" secondItem="7cd-6Y-BaH" secondAttribute="trailing" constant="8" id="LH3-xu-Yy2"/>
+                <constraint firstAttribute="bottom" secondItem="7cd-6Y-BaH" secondAttribute="bottom" id="M7A-SY-j8n"/>
+                <constraint firstItem="7V8-pu-6X7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QLD-ES-tJ6"/>
+                <constraint firstItem="7V8-pu-6X7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sf8-XN-ZFz"/>
+                <constraint firstAttribute="trailing" secondItem="7V8-pu-6X7" secondAttribute="trailing" id="t3s-i4-1MY"/>
+                <constraint firstItem="7cd-6Y-BaH" firstAttribute="top" secondItem="7V8-pu-6X7" secondAttribute="bottom" constant="1" id="tiB-4Q-atq"/>
+            </constraints>
+            <size key="customSize" width="320" height="188"/>
+            <connections>
+                <outlet property="image" destination="7V8-pu-6X7" id="JqQ-B3-QJd"/>
+                <outlet property="title" destination="7cd-6Y-BaH" id="yIz-Th-gy0"/>
+            </connections>
+            <point key="canvasLocation" x="160" y="109.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
