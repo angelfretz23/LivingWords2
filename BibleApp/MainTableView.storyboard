@@ -57,7 +57,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SG-4D-Vfe" userLabel="SearchView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="guX-hC-ASC">
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="guX-hC-ASC" customClass="CustomSearchBar" customModule="LivingWords" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-2" width="375" height="4"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
@@ -87,7 +87,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4w-aV-hPQ">
-                                <rect key="frame" x="164" y="73" width="46.5" height="21"/>
+                                <rect key="frame" x="164" y="73" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -118,6 +118,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mainSearchBar" destination="guX-hC-ASC" id="49j-O6-eEQ"/>
                         <outlet property="mainTableView" destination="2uL-cL-Z1t" id="fN3-aD-41t"/>
                         <outlet property="searchViewHeightConstraint" destination="KHb-we-OIM" id="s0b-L1-LXH"/>
                     </connections>

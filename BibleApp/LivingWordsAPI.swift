@@ -18,16 +18,6 @@ class LivingWordsAPI {
     var service: ServiceProtocol = AlamofireService()
     
     
-    
-    // MARK: - Public methods
-    public func signUp(with email: String, password: Int) {
-        
-        Alamofire.request(URL(string: "dreadful-hog-5591.vagrantshare.com/api/users/login")!, method: .post, parameters: ["email": email, "password": password], encoding: JSONEncoding.default, headers: nil).response { (response) in
-            print("Response 🚁🏵🎯 \(response)")
-        }
-        
-    }
-    
 }
 extension LivingWordsAPI {
     fileprivate enum Router: URLRequestConvertible {
@@ -35,22 +25,32 @@ extension LivingWordsAPI {
         // User authorization
         
         case loginWithEmail(parameters: Parameters)
+        case getBible()
         
         
         private var baseURLString: String {
-            return "https://dreadful-hog-5591.vagrantshare.com/api"
+            return "http://itty-bitty-hog-1386.vagrantshare.com/api"
         }
         
         private var path: String {
             switch self{
             case .loginWithEmail:
                 return "/users/login"
+                
+                
+                case .getBible:
+                return "/bible"
             }
+            
+            
+            
             
         }
         
         private var method: HTTPMethod {
             switch self {
+            case .getBible:
+                return .get
             case .loginWithEmail:
                 return .post
             }
@@ -59,21 +59,22 @@ extension LivingWordsAPI {
         
         private var token: String {
             switch self {
-            case .loginWithEmail:
+            case .loginWithEmail, .getBible:
                 return ""
             }
         }
         
         private var id: Int {
             switch self {
-            case  .loginWithEmail:
+            case  .loginWithEmail, .getBible:
                 return 0
             }
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
-            request.setValue(token, forHTTPHeaderField: "token")
-            request.setValue(String(id), forHTTPHeaderField: "user-id")
+            //request.setValue(token, forHTTPHeaderField: "token")
+           // request.setValue(String(id), forHTTPHeaderField: "user-id")
+            // request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -81,6 +82,8 @@ extension LivingWordsAPI {
             switch self {
             case .loginWithEmail(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+            case .getBible():
+                request = try URLEncoding.httpBody.encode(request, with: [:])
             }
             return request
         }
@@ -113,4 +116,15 @@ extension LivingWordsAPI {
         })
     }
        
+}
+extension LivingWordsAPI {
+    func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest{
+        let request = Router.getBible()
+        
+        return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Search]>) in
+            completion(response.result.value, response.result.error)
+
+            
+        })
+    }
 }
