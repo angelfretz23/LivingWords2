@@ -29,6 +29,10 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var scriptures = [Scripture?]()
     var search: [Search] = []
     
+    var book: String?
+    var chapter: String?
+    var verse: String?
+    
     var expandSearch: Bool = false {
         didSet {
             if expandSearch {
@@ -160,16 +164,41 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
 extension MainTableViewController{
     func getParametersWordsFromSearchFieldForRequest(_ searchString: String){
-        var searchParameters = searchString.components(separatedBy: " ")
-        var book: String = searchParameters[0]
-        var chapter: String = searchParameters[1]
-        var verse: String = searchParameters[2]
+        if searchString == "" {return}
+        let searchParameters = searchString.components(separatedBy: " ")
+        let book1: String = searchParameters[0]
+        let chapter1: String = searchParameters[1]
+        let verse1: String = searchParameters[2]
         
-        print(book)
+        book = book1
+        chapter = chapter1
+        verse = verse1
+        
+        updateSearch()
+     
     }
 }
 extension MainTableViewController {
+    
+    func updateSearch(){
+        getSearchResults { success in
+            if success {
+            
+            }
+        }
+    }
 
+    func getSearchResults(completion: @escaping (_ sucess: Bool)-> Void){
+        Search.searchBible(book: book ?? "", chapter: chapter ?? "", verse: verse ?? "", completion:  {search, error  in
+            if let seachResult = search {
+                mainTableView.reloadData()
+                completion(true)
+            }else {
+                completion(false)
+            }
+        })
+    }
+        
     func updateDataSourceIfNeeded() {
         fetchSearch { success in
             if success {

@@ -33,6 +33,7 @@
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
 		2B472F121EAE2E8B004084F1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F111EAE2E8B004084F1 /* Search.swift */; };
 		784D52291EB2394600A27112 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D52281EB2394600A27112 /* CustomView.swift */; };
+		784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D522A1EB23E5E00A27112 /* CustomCurveView.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		784D52281EB2394600A27112 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		784D522A1EB23E5E00A27112 /* CustomCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCurveView.swift; sourceTree = "<group>"; };
 		D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -275,6 +277,7 @@
 				2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */,
 				2B4423E31EA9E6F0006AB9CF /* ScriptureTableViewCell.swift */,
 				2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */,
+				784D522A1EB23E5E00A27112 /* CustomCurveView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
+				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
