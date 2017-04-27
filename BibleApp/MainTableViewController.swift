@@ -79,7 +79,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }else {
             expandSearch = true
         }
-        updateDataSourceIfNeeded()
+        //updateDataSourceIfNeeded()
+        getParametersWordsFromSearchFieldForRequest(searchTextField.text ?? "")
     }
 
     func registerForNotifications(){
@@ -153,6 +154,19 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         scriptures = [scripture1, scripture2, scripture3]
     }
 
+}
+
+//Private
+
+extension MainTableViewController{
+    func getParametersWordsFromSearchFieldForRequest(_ searchString: String){
+        var searchParameters = searchString.components(separatedBy: " ")
+        var book: String = searchParameters[0]
+        var chapter: String = searchParameters[1]
+        var verse: String = searchParameters[2]
+        
+        print(book)
+    }
 }
 extension MainTableViewController {
 

@@ -13,7 +13,7 @@ class LivingWordsAPI {
     
     // singelton
     static let instance = LivingWordsAPI()
-     init(){}
+    init(){}
     
     var service: ServiceProtocol = AlamofireService()
     
@@ -27,6 +27,9 @@ extension LivingWordsAPI {
         case loginWithEmail(parameters: Parameters)
         case getBible()
         
+        // Search
+        case searchBible(parameters: Parameters)
+        
         
         private var baseURLString: String {
             return "http://trying-buffalo-5901.vagrantshare.com/api"
@@ -37,8 +40,10 @@ extension LivingWordsAPI {
             case .loginWithEmail:
                 return "/users/login"
                 
+            case .getBible:
+                return "/bible"
                 
-                case .getBible:
+            case .searchBible:
                 return "/bible"
             }
             
@@ -51,7 +56,7 @@ extension LivingWordsAPI {
             switch self {
             case .getBible:
                 return .get
-            case .loginWithEmail:
+            case .loginWithEmail, .searchBible:
                 return .post
             }
         }
@@ -59,22 +64,22 @@ extension LivingWordsAPI {
         
         private var token: String {
             switch self {
-            case .loginWithEmail, .getBible:
+            case .loginWithEmail, .getBible, .searchBible:
                 return ""
             }
         }
         
         private var id: Int {
             switch self {
-            case  .loginWithEmail, .getBible:
+            case  .loginWithEmail, .getBible, .searchBible:
                 return 0
             }
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
             //request.setValue(token, forHTTPHeaderField: "token")
-           // request.setValue(String(id), forHTTPHeaderField: "user-id")
-             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            // request.setValue(String(id), forHTTPHeaderField: "user-id")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -84,7 +89,13 @@ extension LivingWordsAPI {
                 request = try JSONEncoding.default.encode(request, with: parameters)
             case .getBible():
                 request = try URLEncoding.httpBody.encode(request, with: [:])
+                
+            // Search
+            case .searchBible(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
+            
+           
             return request
         }
         
@@ -115,16 +126,36 @@ extension LivingWordsAPI {
             completion(response.result.value, response.result.error)
         })
     }
-       
+    
 }
 extension LivingWordsAPI {
+    @discardableResult
     func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest{
         let request = Router.getBible()
         
         return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Search]>) in
             completion(response.result.value, response.result.error)
-
+            
             
         })
     }
+}
+//completion: @escaping(_ posts: [Post]?, _ error: Error?) -> Void) ->DataRequest? {
+//    let request = Router.searchPosts(parameters: ["phrase": phrase])
+//    
+//    return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Post]>) in
+//        completion(response.result.value, response.result.error)
+//    })
+extension LivingWordsAPI {
+    @discardableResult
+    func searchBible(book: String, chapter: String, verse: String, completion: @escaping(_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest{
+        let request = Router.searchBible(parameters: ["book"    : book,
+                                                      "chapter" : chapter,
+                                                      "verse"   : verse])
+        
+        return service.request(request: request).responseArray(completionHandler:{ (response: DataResponse<[Search]>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
+    
 }

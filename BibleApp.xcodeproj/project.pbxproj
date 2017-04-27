@@ -31,8 +31,8 @@
 		2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E51EA9E6F6006AB9CF /* Scripture.swift */; };
 		2B4423EA1EAA502D006AB9CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E91EAA502D006AB9CF /* User.swift */; };
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
-		2B472F101EAE17BD004084F1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F0F1EAE17BD004084F1 /* CustomView.swift */; };
 		2B472F121EAE2E8B004084F1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F111EAE2E8B004084F1 /* Search.swift */; };
+		784D52291EB2394600A27112 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D52281EB2394600A27112 /* CustomView.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,11 +87,11 @@
 		2B4423E51EA9E6F6006AB9CF /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		2B4423E91EAA502D006AB9CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
-		2B472F0F1EAE17BD004084F1 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomView.swift; path = ../../CurveViewProject/CurveViewProject/CustomView.swift; sourceTree = "<group>"; };
 		2B472F111EAE2E8B004084F1 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		784D52281EB2394600A27112 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -271,7 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */,
-				2B472F0F1EAE17BD004084F1 /* CustomView.swift */,
+				784D52281EB2394600A27112 /* CustomView.swift */,
 				2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */,
 				2B4423E31EA9E6F0006AB9CF /* ScriptureTableViewCell.swift */,
 				2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */,
@@ -538,7 +538,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		53E16F37473FACF521BF21C8 /* [CP] Copy Pods Resources */ = {
@@ -583,7 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		89818798A3AB6A9A7FAC1E05 /* [CP] Copy Pods Resources */ = {
@@ -613,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D01D7576BE308494AF2B2679 /* [CP] Embed Pods Frameworks */ = {
@@ -638,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784D52291EB2394600A27112 /* CustomView.swift in Sources */,
 				2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */,
 				2B472F121EAE2E8B004084F1 /* Search.swift in Sources */,
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
@@ -649,7 +650,6 @@
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
-				2B472F101EAE17BD004084F1 /* CustomView.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 				2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */,
