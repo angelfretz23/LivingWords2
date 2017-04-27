@@ -59,7 +59,7 @@ class CustomView: UIView {
         
         path.move(to: CGPoint(x: -10, y: -10))
         
-        path.addLine(to: CGPoint(x: xPositionOfView + self.frame.width, y: yPositionOfView - 10))
+        path.addLine(to: CGPoint(x:yPositionOfView + self.frame.width, y:yPositionOfView - 10))
         
         path.addLine(to: CGPoint(x: self.frame.size.width, y: 10))
         
