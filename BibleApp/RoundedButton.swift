@@ -17,3 +17,12 @@ class RoundedButton: UIButton {
     }
 
 }
+
+class RoundedTextField: UITextField {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = layer.frame.height/2
+        clipsToBounds = true
+    }
+}

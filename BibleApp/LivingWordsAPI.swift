@@ -16,9 +16,8 @@ class LivingWordsAPI {
     init(){}
     
     var service: ServiceProtocol = AlamofireService()
-    
-    
 }
+
 extension LivingWordsAPI {
     fileprivate enum Router: URLRequestConvertible {
         
@@ -30,48 +29,69 @@ extension LivingWordsAPI {
         // Search
         case searchBible(parameters: Parameters)
         
+        case confirmEmail(parameters: Parameters)
+        
+        case checkThePassCode(parameters: Parameters)
+        
+        case confirmNewPassword(parameters: Parameters)
         
         private var baseURLString: String {
-            return "http://trying-buffalo-5901.vagrantshare.com/api"
+            return ""
         }
         
+        //https://dreadful-hog-5591.vagrantshare.com/api
+        
         private var path: String {
-            switch self{
+            switch self {
             case .loginWithEmail:
                 return "/users/login"
                 
+
             case .getBible:
                 return "/bible"
                 
             case .searchBible:
                 return "/bible"
+            
+            
+            case .confirmEmail:
+                return "/users/reset"
+                
+            case .checkThePassCode:
+                return "/users/check"
+                
+            case .confirmNewPassword:
+                return "/users/success"
             }
-            
-            
-            
-            
+          
+
         }
         
         private var method: HTTPMethod {
             switch self {
+
             case .getBible:
                 return .get
-            case .loginWithEmail, .searchBible:
+
+            case .loginWithEmail, .confirmEmail, .checkThePassCode, .confirmNewPassword, .searchBible:
+
                 return .post
+                
             }
         }
         
-        
         private var token: String {
             switch self {
-            case .loginWithEmail, .getBible, .searchBible:
+            case .loginWithEmail, .confirmEmail, .checkThePassCode, .confirmNewPassword, .loginWithEmail, .getBible, .searchBible:
+
                 return ""
             }
         }
         
         private var id: Int {
             switch self {
-            case  .loginWithEmail, .getBible, .searchBible:
+        case  .loginWithEmail, .confirmEmail, .checkThePassCode, .confirmNewPassword, .loginWithEmail, .getBible, .searchBible:
+
                 return 0
             }
         }
@@ -87,17 +107,31 @@ extension LivingWordsAPI {
             switch self {
             case .loginWithEmail(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+
             case .getBible():
                 request = try URLEncoding.httpBody.encode(request, with: [:])
                 
             // Search
             case .searchBible(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+
+                
+            case .confirmEmail(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .checkThePassCode(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .confirmNewPassword(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+        
+
             }
             
            
             return request
         }
+        
         
         
         //MARK: URLRequestConvertible
@@ -115,6 +149,7 @@ extension LivingWordsAPI {
         
     }
 }
+
 extension LivingWordsAPI {
     @discardableResult
     func login(withEmail email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
@@ -157,5 +192,31 @@ extension LivingWordsAPI {
             completion(response.result.value, response.result.error)
         })
     }
+
+    func confirmEmail(email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.confirmEmail(parameters: ["email" : email])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
+    
+    func checkThePassCode(code: Int, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.confirmEmail(parameters: ["code" : code])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
+    
+    func confirmNewPassword(id: Int, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.confirmEmail(parameters: ["id" : id, "password": password])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+
+            completion(response.result.value, response.result.error)
+        })
+    }
     
 }
+
