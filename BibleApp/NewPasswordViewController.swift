@@ -9,9 +9,23 @@
 import UIKit
 
 class NewPasswordViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var newPasswordTxtFld: UITextField!
+    @IBOutlet weak var confirmNewPasswordTxtFld: UITextField!
+    @IBOutlet weak var blurEffectView: UIView!
+    @IBOutlet weak var createNewPassword: RoundedButton!
+    
+    // MARK: - Properties
+    var userData: User?
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // styling
+        setUpBlurEffect()
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +35,29 @@ class NewPasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - IBActions
+    @IBAction func createNewPasswordPressed(_ sender: UIButton) {
+        self.displayAlert(userMessage: "You've just creted a new password!")
+        
+        if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
+        
+        User.confirmNewPassword(id: User.value(forKey: "id") as! Int , password: newPasswordTxtFld.text!, completion : { userInfo, error in
+            
+            if let user = userInfo {
+                
+                self.userData = user
+    
+            } else {
+                self.displayAlert(userMessage: "Something went wrong!")
+            }
+        })
+        } else {
+            
+            self.displayAlert(userMessage: "The passwords do not match! Try again!")
+            
+        }
+
+    }
 
     /*
     // MARK: - Navigation
@@ -32,4 +69,28 @@ class NewPasswordViewController: UIViewController {
     }
     */
 
+}
+
+extension NewPasswordViewController {
+    
+    fileprivate func setUpBlurEffect() {
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.frame = self.blurEffectView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.blurEffectView.addSubview(blurEffectView)
+    }
+    
+    fileprivate func displayAlert(userMessage: String) {
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        alert.addAction(okAction)
+
+        self.present(alert, animated: true, completion: nil)
+    }
 }

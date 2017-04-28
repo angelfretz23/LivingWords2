@@ -24,6 +24,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var googleSignIn: UIButton!
     @IBOutlet weak var facebookSignIn: RoundedButton!
     
+    @IBOutlet weak var forgotPassword: UIButton!
+    
     @IBOutlet weak var bluerEffectView: UIView!
     @IBOutlet weak var underlinedView: UIView!
     @IBOutlet var underlinedViewAllignCenterToSignUpButtonConstraint: NSLayoutConstraint!
@@ -69,12 +71,12 @@ class SignInViewController: UIViewController {
     
     func loginWithEmail(){
         
-        User.login(withEmail:  "", password:  "", completion: {userInfo, error in
+        User.login(withEmail:  "oleh@mail.ru", password:  "11111", completion: {userInfo, error in
             
             
             if let user = userInfo {
                 self.userInfo = user
-                print(self.userInfo)
+                //print(self.userInfo?.email)
                 
             } else {
                 
@@ -176,7 +178,7 @@ extension ConfigurationSingInController {
     }
     
     
-    fileprivate func setUpBlurEffect(){
+    fileprivate func setUpBlurEffect() {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
