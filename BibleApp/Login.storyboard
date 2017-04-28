@@ -1059,11 +1059,20 @@
                         <outlet property="confirmNewPasswordTxtFld" destination="0jJ-Dh-zYf" id="cMN-xm-hVF"/>
                         <outlet property="createNewPassword" destination="q9e-cQ-Phs" id="bkv-up-MoA"/>
                         <outlet property="newPasswordTxtFld" destination="OPj-cI-s46" id="AEX-MP-t8Y"/>
+                        <segue destination="hz3-yP-vLq" kind="show" identifier="MainStoryboardPushSegueID" id="O6L-pl-E5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ep-KI-bdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2245.5999999999999" y="-396.25187406296857"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="iUA-Hw-K85">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="hz3-yP-vLq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpn-Uc-9pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="-381"/>
         </scene>
     </scenes>
     <resources>

@@ -39,6 +39,8 @@ class NewPasswordViewController: UIViewController {
     @IBAction func createNewPasswordPressed(_ sender: UIButton) {
         self.displayAlert(userMessage: "You've just creted a new password!")
         
+        self.performSegue(withIdentifier: "MainStoryboardPushSegueID", sender: self)
+        
         if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
             if let id = userID, let password = newPasswordTxtFld.text {
                 User.confirmNewPassword(id: id, password: password, completion : { userInfo, error in
@@ -54,6 +56,8 @@ class NewPasswordViewController: UIViewController {
             self.displayAlert(userMessage: "The passwords do not match! Try again!")
             
         }
+        
+        
     }
 
     /*
