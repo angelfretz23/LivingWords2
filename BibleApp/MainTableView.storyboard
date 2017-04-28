@@ -180,7 +180,7 @@
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-uN-QFO" userLabel="SeparatorView">
                                         <rect key="frame" x="0.0" y="40" width="375" height="0.0"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="kgl-i2-Cwk"/>
                                         </constraints>
@@ -273,7 +273,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QwL-nW-9w2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Kd-eG-Gjh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1Kd-eG-Gjh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -291,7 +291,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ckW-uj-xRD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0pi-ID-8B9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0pi-ID-8B9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

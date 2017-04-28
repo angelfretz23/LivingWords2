@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -62,6 +63,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         configureTableView()
         
         registerForNotifications()
+        
+        updateDataSourceIfNeeded()
         
         self.tabBarController?.tabBar.items![1].image = UIImage(named: "BookTabBarIcon")
     }
@@ -167,14 +170,26 @@ extension MainTableViewController{
     func getParametersWordsFromSearchFieldForRequest(_ searchString: String){
         if searchString == "" {return}
         let searchParameters = searchString.components(separatedBy: " ")
-        let book1: String = searchParameters[0]
-        let chapter1: String = searchParameters[1]
-        let verse1: String = searchParameters[2]
-        
-        book = book1
-        chapter = chapter1
-        verse = verse1
-        
+        switch searchParameters.count {
+        case 0:
+            book = ""
+            chapter = ""
+            verse = ""
+        case 1:
+            book = searchParameters[0]
+            chapter = ""
+            verse = ""
+        case 2:
+            book = searchParameters[0]
+            chapter = searchParameters[1]
+            verse = ""
+        case 3:
+            book = searchParameters[0]
+            chapter = searchParameters[1]
+            verse = searchParameters[2]
+        default:
+            break
+        }
         updateSearch()
      
     }
@@ -182,9 +197,12 @@ extension MainTableViewController{
 extension MainTableViewController {
     
     func updateSearch(){
+        SVProgressHUD.show()
+        SVProgressHUD.setBackgroundColor(UIColor.init(red: 195/255, green: 194/255, blue: 201/255, alpha: 1))
         getSearchResults { success in
             if success {
-            
+                SVProgressHUD.dismiss()
+            self.mainTableView.reloadData()
             }
         }
     }
@@ -192,7 +210,7 @@ extension MainTableViewController {
     func getSearchResults(completion: @escaping (_ sucess: Bool)-> Void){
         Search.searchBible(book: book ?? "", chapter: chapter ?? "", verse: verse ?? "", completion:  {search, error  in
             if let seachResult = search {
-                self.mainTableView.reloadData()
+                self.search = seachResult
                 completion(true)
             }else {
                 completion(false)
@@ -201,9 +219,11 @@ extension MainTableViewController {
     }
         
     func updateDataSourceIfNeeded() {
+        SVProgressHUD.show()
+        SVProgressHUD.setBackgroundColor(UIColor.init(red: 195/255, green: 194/255, blue: 201/255, alpha: 1))
         fetchSearch { success in
             if success {
-                
+                SVProgressHUD.dismiss()
                 self.mainTableView.reloadData()
                 //self.mainTableView.stopPullRefreshEver()
             }
