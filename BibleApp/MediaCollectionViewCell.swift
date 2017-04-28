@@ -11,8 +11,10 @@ import UIKit
 class MediaCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOutllets
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var titleBottom: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

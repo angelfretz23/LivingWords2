@@ -8,8 +8,13 @@
 
 import Foundation
 
-struct MediaModel {
-    var imagePath: String
+enum MediaCellType {
+    case Book
+    case Other
+}
+
+public struct MediaModel {
     var title: String
-    
+    var items:[MediaModelCell]
+    var typeOfMedia: MediaCellType
 }

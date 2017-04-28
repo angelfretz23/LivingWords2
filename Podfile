@@ -13,6 +13,7 @@ target 'BibleApp' do
     pod 'Alamofire'
     pod 'ObjectMapper', '~> 2.2.1’
     pod 'YouTubePlayer', '~> 0.4'
+    pod 'youtube-ios-player-helper', '~> 0.1'
 
   target 'BibleAppTests' do
     inherit! :search_paths

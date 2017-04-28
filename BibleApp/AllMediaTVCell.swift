@@ -16,7 +16,10 @@ class AllMediaTVCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    fileprivate lazy var mediaData = [MediaModel]()
+    
+    fileprivate lazy var mediaData = [MediaModelCell]()
+    fileprivate var mediaController: UIViewController?
+    fileprivate var typeOfCell = MediaCellType.Other
     
     // MARK:- AllMediaTVCell`s life cycle
     
@@ -48,21 +51,38 @@ extension CollectionDataSource: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
             cell.image.image = #imageLiteral(resourceName: "testImage")
             cell.title.text = mediaData[indexPath.row].title
+
+        // if cell has books
+        if mediaData[indexPath.row].titleBotton != "" && cell.titleBottom.text == "" {
+            cell.titleBottom.text = mediaData[indexPath.row].titleBotton
+        }
         
+        cell.setNeedsLayout()
         return cell
     }
 }
 
 private typealias CollectionDelegate = AllMediaTVCell
 extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: 200, height: 155)
+        let heightView = collectionView.bounds.height
+        let heightCell = heightView
+        let widthCell = heightCell * 1.7
+        let heightBook = heightView
+        let widthBook = heightView * 0.7
+  
+        if typeOfCell == .Book {
+            return CGSize(width: widthBook, height: heightBook)
+        }
+        
+        return CGSize(width: widthCell, height: heightCell)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
-        let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let edgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 0)
         return edgeInsets
     }
     
@@ -70,11 +90,34 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
     {
         return 10.0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        var youTubeId = "JxWfvtnHtS0"
+        
+        if indexPath.row == 1 {
+            youTubeId = "tsFeIVJfKsA"
+        }
+        
+        if indexPath.row == 2 {
+            youTubeId = "ZcEFXDVzHYk"
+        }
+        
+        YTFPlayer.initYTF(videoID: youTubeId)
+
+        YTFPlayer.showYTFView(viewController: mediaController!)
+
+    }
 }
 
 private typealias PublicMethod = AllMediaTVCell
 extension PublicMethod {
-    public func fillData(mediaData: [MediaModel]) {
+    
+    public func fillData(mediaData: [MediaModelCell], controller: UIViewController, type: MediaCellType) {
         self.mediaData = mediaData
+        mediaController = controller
+        typeOfCell = type
+        
+        collectionView.reloadData()
     }
 }
