@@ -60,20 +60,34 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5FA-XB-Nj7" kind="relationship" relationship="viewControllers" id="xI2-7b-n68"/>
-                        <segue destination="hsM-ET-DrU" kind="relationship" relationship="viewControllers" id="1Y0-f5-TTf"/>
-                        <segue destination="B3z-Is-Gdj" kind="relationship" relationship="viewControllers" id="wTs-f8-j49"/>
-                        <segue destination="rID-MD-Gkc" kind="relationship" relationship="viewControllers" id="O1f-xK-3zg"/>
+                        <segue destination="hsM-ET-DrU" kind="relationship" relationship="viewControllers" id="Mgh-OI-5Xv"/>
+                        <segue destination="5FA-XB-Nj7" kind="relationship" relationship="viewControllers" id="bsx-wn-YgH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4f-51-ihN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="820" y="81"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="xFQ-Wp-7Iw">
+            <objects>
+                <viewControllerPlaceholder id="Nym-vG-39h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgj-nq-xIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677" y="-226"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="kaB-Hf-Ud4">
+            <objects>
+                <viewControllerPlaceholder id="gMZ-32-9yC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMd-4p-lY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="-131"/>
+        </scene>
         <!--Home-->
         <scene sceneID="tFL-a1-O5U">
             <objects>
-                <viewController id="5FA-XB-Nj7" customClass="HomeViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5FA-XB-Nj7" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ta-sf-uvU"/>
                         <viewControllerLayoutGuide type="bottom" id="omW-Tb-8FI"/>
@@ -87,79 +101,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rB4-QL-WYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="1090"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="f37-tI-LxJ">
-            <objects>
-                <viewController id="rID-MD-Gkc" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N4X-th-me6"/>
-                        <viewControllerLayoutGuide type="bottom" id="lFL-ZC-ic8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wbH-Ap-eqC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUt-Av-ZwA">
-                                <rect key="frame" x="166" y="323" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileTabBarIcon" id="qwb-fL-SwG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lUR-bj-Db6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1646" y="306"/>
+            <point key="canvasLocation" x="1609" y="341"/>
         </scene>
         <!--MainTableView-->
         <scene sceneID="xY9-lS-dcw">
             <objects>
                 <viewControllerPlaceholder storyboardName="MainTableView" id="hsM-ET-DrU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Read" id="wxW-Sk-WKX"/>
+                    <tabBarItem key="tabBarItem" title="Read" image="HomaTabBarIcon" id="wxW-Sk-WKX"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl1-O2-NW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="-954"/>
-        </scene>
-        <!--Subscriptions-->
-        <scene sceneID="WIr-Ys-Oyq">
-            <objects>
-                <viewController id="B3z-Is-Gdj" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zv5-Fn-wZN"/>
-                        <viewControllerLayoutGuide type="bottom" id="iHi-12-94f"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ucu-ac-G5K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subscripts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuO-He-DJj">
-                                <rect key="frame" x="155" y="300" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Subscriptions" image="SubscriptsTabBarIcon" id="smj-up-dsb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bke-HD-mfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1646" y="-396"/>
+            <point key="canvasLocation" x="1406" y="-291"/>
         </scene>
     </scenes>
     <resources>
-        <image name="HomaTabBarIcon" width="40" height="32"/>
-        <image name="ProfileTabBarIcon" width="35" height="39"/>
-        <image name="SubscriptsTabBarIcon" width="35" height="35"/>
+        <image name="HomaTabBarIcon" width="50" height="40"/>
         <image name="bible-300" width="300" height="258"/>
     </resources>
 </document>

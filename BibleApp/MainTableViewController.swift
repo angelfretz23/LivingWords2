@@ -62,7 +62,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         configureTableView()
         
         registerForNotifications()
-      
+        
+        self.tabBarController?.tabBar.items![1].image = UIImage(named: "BookTabBarIcon")
     }
     
     override func viewWillAppear(_ animated: Bool) {

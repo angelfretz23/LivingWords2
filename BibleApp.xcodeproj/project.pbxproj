@@ -49,6 +49,7 @@
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
 		2B472F121EAE2E8B004084F1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F111EAE2E8B004084F1 /* Search.swift */; };
 		7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7825EAF11EB32EF600C1D180 /* Login.storyboard */; };
+		7825EAFB1EB352BA00C1D180 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */; };
 		784D52291EB2394600A27112 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D52281EB2394600A27112 /* CustomView.swift */; };
 		784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D522A1EB23E5E00A27112 /* CustomCurveView.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
@@ -126,6 +127,7 @@
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7825EAF11EB32EF600C1D180 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		784D52281EB2394600A27112 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		784D522A1EB23E5E00A27112 /* CustomCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCurveView.swift; sourceTree = "<group>"; };
 		D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,9 +239,7 @@
 				2B2A94141EA79AA7007464F0 /* PresentationLogic */,
 				2B2A94151EA79ABB007464F0 /* BussinessLogic */,
 				2B472ED11EADD301004084F1 /* Resources */,
-				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
 				2B2A93E61EA795E6007464F0 /* AppDelegate.swift */,
-				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
 				2B2A93ED1EA795E6007464F0 /* Assets.xcassets */,
 				2B2A93EF1EA795E6007464F0 /* LaunchScreen.storyboard */,
 				2B2A93F21EA795E6007464F0 /* Info.plist */,
@@ -269,6 +269,7 @@
 		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				7825EAF31EB3329700C1D180 /* Main */,
 				041018721EAE31CB00745DED /* Media */,
 				2B4423DC1EA9E6C0006AB9CF /* MainTableView */,
 				2B2A941D1EA79B6C007464F0 /* Search */,
@@ -413,6 +414,24 @@
 				041018701EADE30000745DED /* AlamofireObjectMapper.swift */,
 			);
 			name = ExternalLibraries;
+			sourceTree = "<group>";
+		};
+		7825EAF31EB3329700C1D180 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7825EAF41EB333C300C1D180 /* Controllers */,
+				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		7825EAF41EB333C300C1D180 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
+				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		C84B09BE911FB0CC574E25B5 /* Pods */ = {
@@ -748,6 +767,7 @@
 				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
+				7825EAFB1EB352BA00C1D180 /* HomeViewController.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
 				04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
