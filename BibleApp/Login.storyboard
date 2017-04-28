@@ -437,6 +437,7 @@
                         <outlet property="loginInViewLeadings" destination="wil-Aw-Shr" id="0jt-4y-xse"/>
                         <outlet property="loginInViewTrailings" destination="VgA-SH-5Tt" id="b6o-sQ-D1q"/>
                         <outlet property="password" destination="DYD-6N-79p" id="647-3z-6WA"/>
+                        <outlet property="phone" destination="EvJ-Yi-CF2" id="DDD-nA-u0r"/>
                         <outlet property="signInbyEmail" destination="jFy-Gl-f4J" id="3rf-0v-IzR"/>
                         <outlet property="signUpViewLeadings" destination="HlQ-cq-Eiy" id="U41-xc-JZe"/>
                         <outlet property="signUpViewTrailings" destination="MEU-tV-gI3" id="Yi7-Mm-NjL"/>

@@ -13,7 +13,7 @@
         <!--Main Media View Controller-->
         <scene sceneID="li2-kA-8Oy">
             <objects>
-                <viewController id="Ev6-gm-iUA" customClass="MainMediaViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMediaViewControllerID" id="Ev6-gm-iUA" customClass="MainMediaViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oZE-Yj-5H8"/>
                         <viewControllerLayoutGuide type="bottom" id="8SY-2P-L5C"/>

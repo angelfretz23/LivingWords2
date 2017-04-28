@@ -15,10 +15,10 @@ class SignInViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    var userInfo: User?
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var phone: UITextField!
     
     @IBOutlet weak var signInbyEmail: UIButton!
     @IBOutlet weak var googleSignIn: UIButton!
@@ -39,6 +39,8 @@ class SignInViewController: UIViewController {
     
     // MARK: - Properties
     
+     var userInfo: User?
+    
     let googleLoginButton: GIDSignInButton = {
         let button = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         return button
@@ -48,6 +50,8 @@ class SignInViewController: UIViewController {
         let button = FBSDKLoginButton()
         return button
     }()
+    
+    var isUserLoginIn = true
     
     // MARK: - Sign In view controller`s life cycle
     
@@ -67,10 +71,20 @@ class SignInViewController: UIViewController {
         signUpViewTrailings.constant = -view.frame.width
     }
     
+
+    
     // MARK: - Actions
     
     // actually it is 'Sign Up'
     @IBAction func loginButtonPressed(_ sender: Any) {
+        isUserLoginIn = false
+        
+        if email.text != "" && password.text != ""{
+            signUpWithEmail()
+            
+            return
+        }
+        
         UIView.animate(withDuration: 0.5, delay: 0.1, options: [.allowAnimatedContent], animations: {
             self.underlinedViewAllignCenterToSignUpButtonConstraint.priority = 20
             
@@ -87,12 +101,12 @@ class SignInViewController: UIViewController {
     
     // actually it is 'Log In'
     @IBAction func signUpButtonPressed(_ sender: Any) {
+        isUserLoginIn = true
         
         if email.text != "" && password.text != ""{
             enterInSystemByEmail()
             return
         }
-        
         
         UIView.animate(withDuration: 0.5, delay: 0.3, options: [.allowAnimatedContent], animations: {
             self.underlinedViewAllignCenterToSignUpButtonConstraint.priority = 998
@@ -127,6 +141,18 @@ extension FacebookDelegate: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
+        if let token = FBSDKAccessToken.current() {
+            User.loginFacebook(token: token.tokenString, completion: { (userInfo, error) in
+                
+                if let user = userInfo {
+                    self.userInfo = user
+                    self.loadApp()
+                }
+                
+            })
+        }
+        
+
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -143,8 +169,16 @@ extension GoogleDelegate: GIDSignInUIDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
-        if let userEmail = user?.profile.email {
-            print("📧 \(userEmail)")
+        User.loginGoogle(id: signIn.clientID, email: user.profile.email) { (userInfo, error) in
+            
+            if error != nil {
+                print("Error in Google")
+            }
+            
+            if let user = userInfo {
+                self.userInfo = user
+                self.loadApp()
+            }
         }
 
     }
@@ -193,20 +227,40 @@ extension TextFieldDelegate: UITextFieldDelegate {
 private typealias OtherHelpfullMethods = SignInViewController
 extension OtherHelpfullMethods {
     fileprivate func enterInSystemByEmail() {
-        User.login(withEmail:  "olehhovanets@mail.ru", password:  "11111", completion: {userInfo, error in
+        
+        User.login(withEmail:  email.text!, password:  password.text! , completion: {userInfo, error in
             
             if let user = userInfo {
                 self.userInfo = user
                 
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyBoard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
-                
-                self.show(controller, sender: self)
-                
+                self.loadApp()
             } else {
                 
                 
             }
         })
+    }
+    
+    fileprivate func signUpWithEmail() {
+        
+        User.signUpWithEmail(email: email.text!, password: password.text!, phone: phone.text ?? "0000000012", completion: { (userInfo, error) in
+            if error != nil {
+                print("Sign Up with email is fail")
+            }
+            
+            if let user = userInfo {
+                self.userInfo = user
+                
+                self.loadApp()
+            }
+        })
+        
+    }
+    
+    fileprivate func loadApp() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        
+        self.show(controller, sender: self)
     }
 }

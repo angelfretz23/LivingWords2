@@ -35,8 +35,14 @@ extension LivingWordsAPI {
         
         case confirmNewPassword(parameters: Parameters)
         
+        case signUpWithEmail(parameters: Parameters)
+        
+        case loginFacebook(parameters: Parameters)
+        
+        case loginGoogle(parameters: Parameters)
+        
         private var baseURLString: String {
-            return "http://superb-mustang-1404.vagrantshare.com/api"
+            return "http://bible.binariks.com/api"
         }
         
         //https://dreadful-hog-5591.vagrantshare.com/api
@@ -46,13 +52,11 @@ extension LivingWordsAPI {
             case .loginWithEmail:
                 return "/users/login"
                 
-
             case .getBible:
                 return "/bible"
                 
             case .searchBible:
                 return "/bible"
-            
             
             case .confirmEmail:
                 return "/users/reset"
@@ -62,6 +66,16 @@ extension LivingWordsAPI {
                 
             case .confirmNewPassword:
                 return "/users/success"
+                
+            case .signUpWithEmail:
+                return "/users/register"
+                
+            case .loginFacebook:
+                return "/users/facebook"
+                
+            case .loginGoogle:
+                return "users/google"
+                
             }
           
 
@@ -73,7 +87,9 @@ extension LivingWordsAPI {
             case .getBible:
                 return .get
 
-            case .loginWithEmail, .confirmEmail, .checkThePassCode, .confirmNewPassword, .searchBible:
+            case .loginWithEmail, .confirmEmail, .checkThePassCode,
+                 .confirmNewPassword, .searchBible, .signUpWithEmail,
+                 .loginFacebook, .loginGoogle:
 
                 return .post
                 
@@ -82,7 +98,9 @@ extension LivingWordsAPI {
         
         private var token: String {
             switch self {
-            case .loginWithEmail, .confirmEmail, .checkThePassCode, .confirmNewPassword, .loginWithEmail, .getBible, .searchBible:
+            case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
+                 .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
+                 .loginFacebook, .loginGoogle:
 
                 return ""
             }
@@ -90,7 +108,9 @@ extension LivingWordsAPI {
         
         private var id: Int {
             switch self {
-        case  .loginWithEmail, .confirmEmail, .checkThePassCode, .confirmNewPassword, .loginWithEmail, .getBible, .searchBible:
+        case .confirmEmail, .checkThePassCode, .confirmNewPassword,
+              .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
+              .loginFacebook, .loginGoogle:
 
                 return 0
             }
@@ -115,7 +135,6 @@ extension LivingWordsAPI {
             case .searchBible(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
 
-                
             case .confirmEmail(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
                 
@@ -124,8 +143,15 @@ extension LivingWordsAPI {
                 
             case .confirmNewPassword(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
-        
-
+                
+            case .signUpWithEmail(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+              
+            case .loginFacebook(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .loginGoogle(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
             
            
@@ -156,12 +182,39 @@ extension LivingWordsAPI {
         let request = Router.loginWithEmail(parameters: ["email"     : email,
                                                          "password"  : password])
         
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
+    
+    func signUpWithEmail( email: String, password: String, phone: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
+        let request = Router.signUpWithEmail(parameters: ["email"     : email,
+                                                         "password"  : password,
+                                                         "phone" : phone])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
         })
     }
     
+    func loginFacebook(token: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.loginFacebook(parameters: ["token" : token,
+                                                        "type" : 1 ])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
+    
+    func loginGoogle(id: String, email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.loginGoogle(parameters: ["id" : id,
+                                                      "type" : 2,
+                                                      "email" : email ])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
 }
 extension LivingWordsAPI {
     @discardableResult

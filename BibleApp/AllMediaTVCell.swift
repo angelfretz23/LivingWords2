@@ -18,7 +18,7 @@ class AllMediaTVCell: UITableViewCell {
     // MARK: - Properties
     
     fileprivate lazy var mediaData = [MediaModelCell]()
-    fileprivate var mediaController: UIViewController?
+    fileprivate var mediaController: MainMediaViewController?
     fileprivate var typeOfCell = MediaCellType.Other
     
     // MARK:- AllMediaTVCell`s life cycle
@@ -102,6 +102,9 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
             YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: mediaController as! UITableViewDataSource)
             
             YTFPlayer.showYTFView(viewController: mediaController!)
+            
+            mediaController?.dismiss(animated: false, completion: nil)
+            
         }
         
 
@@ -111,7 +114,7 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
 private typealias PublicMethod = AllMediaTVCell
 extension PublicMethod {
     
-    public func fillData(mediaData: [MediaModelCell], controller: UIViewController, type: MediaCellType) {
+    public func fillData(mediaData: [MediaModelCell], controller: MainMediaViewController, type: MediaCellType) {
         self.mediaData = mediaData
         mediaController = controller
         typeOfCell = type

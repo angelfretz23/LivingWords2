@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainTableViewController: UIViewController {
     
 
     @IBOutlet weak var switchMedia: UISwitch!
@@ -110,49 +110,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         mainTableView.estimatedRowHeight = 45
     }
     
-    // MARK: - Table view data source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return search.count
-    }
-    
-    
-    
-
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseIdentifier = "ScriptureCellID"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
-        
-        
-        let scripture = search[indexPath.row]
-        
-        var attributedScriptureText = NSMutableAttributedString()
-        
-        if (indexPath.row == 0) {
-            cell.labelOne.isHidden = false
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
-        } else {
-            cell.labelOne.isHidden = true
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
-        }
-        
-        let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
-          attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
-        
-        
-        cell.scriptureText.attributedText = attributedScriptureText
-        
-
-        return cell
-    }
- 
-
     func loadSampleScriptures() {
         
         let scripture1 = Scripture(text: "In the beginning God created the heaven and the earth.")
@@ -194,6 +151,61 @@ extension MainTableViewController{
      
     }
 }
+
+fileprivate typealias TableDataSource = MainTableViewController
+extension TableDataSource : UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return search.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reuseIdentifier = "ScriptureCellID"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
+        
+        
+        let scripture = search[indexPath.row]
+        
+        var attributedScriptureText = NSMutableAttributedString()
+        
+        if (indexPath.row == 0) {
+            cell.labelOne.isHidden = false
+            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
+        } else {
+            cell.labelOne.isHidden = true
+            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
+        }
+        
+        let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
+        attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
+        
+        
+        cell.scriptureText.attributedText = attributedScriptureText
+        
+        
+        return cell
+    }
+}
+
+fileprivate typealias TableDelegate = MainTableViewController
+extension TableDelegate: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Media", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
+
+        // show(controller, sender: self)
+        present(controller, animated: true, completion: nil)
+        
+        
+    }
+}
+
 extension MainTableViewController {
     
     func updateSearch(){

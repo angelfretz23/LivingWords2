@@ -17,7 +17,7 @@ class User: NSObject, Mappable{
     var email: String?
     var password: String?
     var code: Int?
-    
+    var phone: String?
     
     func mapping(map: Map) {
         self.id             <- map["id"]
@@ -26,7 +26,7 @@ class User: NSObject, Mappable{
         self.email          <- map["email"]
         self.password       <- map["password"]
         self.code           <- map["code"]
-        
+        self.phone          <- map["phone"]
     }
     
     required init?(map: Map) {
@@ -62,5 +62,19 @@ extension User {
         api.confirmNewPassword(id: id, password: password, completion: completion)
         
     }
+    static func signUpWithEmail( email: String, password: String, phone: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
+        let api = LivingWordsAPI()
     
+        api.signUpWithEmail(email: email, password: password, phone: phone, completion: completion)
+    }
+    
+    static func loginGoogle(id: String, email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
+        let api = LivingWordsAPI()
+        api.loginGoogle(id: id, email: email, completion: completion)
+    }
+    
+    static func loginFacebook(token: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
+        let api = LivingWordsAPI()
+        api.loginFacebook(token: token, completion: completion)
+    }
 }
