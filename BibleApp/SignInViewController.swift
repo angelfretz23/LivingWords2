@@ -71,7 +71,7 @@ class SignInViewController: UIViewController {
     
     func loginWithEmail(){
         
-        User.login(withEmail:  "oleh@mail.ru", password:  "11111", completion: {userInfo, error in
+        User.login(withEmail:email.text!, password: password.text!, completion: {userInfo, error in
           
             if let user = userInfo {
                 self.userInfo = user

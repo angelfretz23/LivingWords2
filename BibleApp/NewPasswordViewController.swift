@@ -18,8 +18,8 @@ class NewPasswordViewController: UIViewController {
     
     // MARK: - Properties
     var userData: User?
+    var userID: Int?
     
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,23 +40,20 @@ class NewPasswordViewController: UIViewController {
         self.displayAlert(userMessage: "You've just creted a new password!")
         
         if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
-        
-        User.confirmNewPassword(id: User.value(forKey: "id") as! Int , password: newPasswordTxtFld.text!, completion : { userInfo, error in
-            
-            if let user = userInfo {
-                
-                self.userData = user
-    
-            } else {
-                self.displayAlert(userMessage: "Something went wrong!")
+            if let id = userID, let password = newPasswordTxtFld.text {
+                User.confirmNewPassword(id: id, password: password, completion : { userInfo, error in
+//                    if let user = userInfo {
+//                        self.userData = user
+//                    } else {
+//                        self.displayAlert(userMessage: "Something went wrong!")
+//                    }
+                })
             }
-        })
         } else {
             
             self.displayAlert(userMessage: "The passwords do not match! Try again!")
             
         }
-
     }
 
     /*

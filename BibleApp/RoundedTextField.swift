@@ -1,20 +1,18 @@
 //
-//  RoundedButton.swift
+//  RoundedTextField.swift
 //  BibleApp
 //
-//  Created by Igor Makara on 4/20/17.
+//  Created by Ostap Romaniv on 4/28/17.
 //  Copyright © 2017 Igor Makara. All rights reserved.
 //
 
 import UIKit
 
-class RoundedButton: UIButton {
-
+class RoundedTextField: UITextField {
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = layer.frame.height/2
         clipsToBounds = true
     }
-
 }
-
