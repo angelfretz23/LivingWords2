@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BibleApp/LivingWordsAPI.swift"
-            timestampString = "514972048.879146"
+            timestampString = "515068806.218539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143">
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "login(withEmail:password:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
