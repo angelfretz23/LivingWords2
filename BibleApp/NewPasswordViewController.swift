@@ -37,13 +37,14 @@ class NewPasswordViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func createNewPasswordPressed(_ sender: UIButton) {
-        self.displayAlert(userMessage: "You've just creted a new password!")
-        
         self.performSegue(withIdentifier: "MainStoryboardPushSegueID", sender: self)
-        
+        self.displayAlert(userMessage: "You've just creted a new password!")
+    
         if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
             if let id = userID, let password = newPasswordTxtFld.text {
                 User.confirmNewPassword(id: id, password: password, completion : { userInfo, error in
+                    
+                    
 //                    if let user = userInfo {
 //                        self.userData = user
 //                    } else {
@@ -59,6 +60,14 @@ class NewPasswordViewController: UIViewController {
         
         
     }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
 
     /*
     // MARK: - Navigation

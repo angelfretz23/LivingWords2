@@ -564,6 +564,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="OyY-YE-YIy" id="mTW-Q0-WDI"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -877,6 +880,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="bzg-o0-1Vf" id="SYS-nf-7Yd"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih2-9l-WmI" userLabel="SeparatorView">
                                         <rect key="frame" x="3" y="33" width="367" height="1"/>
@@ -891,6 +897,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="bzg-o0-1Vf" id="25f-dg-iej"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ9-8Y-My4">
                                         <rect key="frame" x="251" y="6" width="116" height="21"/>
@@ -1059,7 +1068,7 @@
                         <outlet property="confirmNewPasswordTxtFld" destination="0jJ-Dh-zYf" id="cMN-xm-hVF"/>
                         <outlet property="createNewPassword" destination="q9e-cQ-Phs" id="bkv-up-MoA"/>
                         <outlet property="newPasswordTxtFld" destination="OPj-cI-s46" id="AEX-MP-t8Y"/>
-                        <segue destination="hz3-yP-vLq" kind="show" identifier="MainStoryboardPushSegueID" id="O6L-pl-E5y"/>
+                        <segue destination="hz3-yP-vLq" kind="show" identifier="MainStoryboardPushSegueID" id="hLe-Ex-hfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ep-KI-bdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
