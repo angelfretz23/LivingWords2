@@ -8,9 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018701EADE30000745DED /* AlamofireObjectMapper.swift */; };
+		041018741EAE31E800745DED /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041018731EAE31E800745DED /* Media.storyboard */; };
+		041018781EAE336100745DED /* AllMediaTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018761EAE336100745DED /* AllMediaTVCell.swift */; };
+		041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041018771EAE336100745DED /* AllMediaTVCell.xib */; };
+		0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410187A1EAE3BE900745DED /* MediaCollectionViewCell.swift */; };
+		0410187D1EAE3BE900745DED /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410187B1EAE3BE900745DED /* MediaCollectionViewCell.xib */; };
+		041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410187F1EAE3DE000745DED /* MainMediaViewController.swift */; };
+		041018831EAE47C800745DED /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018821EAE47C800745DED /* MediaModel.swift */; };
 		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
 		04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04148D891EA8C2140056D18E /* GoogleService-Info.plist */; };
 		0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */; };
+		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
+		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
+		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
+		04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */; };
+		04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CC1EB0921A0034360D /* YTFPlayerControls.swift */; };
+		04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CD1EB0921A0034360D /* YTFPopupCloseButton.swift */; };
+		04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CE1EB0921A0034360D /* YTFViewController.swift */; };
+		04F8E9D61EB092200034360D /* YTFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F8E9D51EB092200034360D /* YTFViewController.xib */; };
 		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC81EA91EC6000CD94D /* RoundedButton.swift */; };
@@ -21,7 +36,6 @@
 		2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93EF1EA795E6007464F0 /* LaunchScreen.storyboard */; };
 		2B2A93FC1EA795E6007464F0 /* BibleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93FB1EA795E6007464F0 /* BibleAppTests.swift */; };
 		2B2A94071EA795E6007464F0 /* BibleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */; };
-		2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A94171EA79B1B007464F0 /* Login.storyboard */; };
 		2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */; };
 		2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */; };
 		2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */; };
@@ -32,6 +46,7 @@
 		2B4423EA1EAA502D006AB9CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E91EAA502D006AB9CF /* User.swift */; };
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
 		2B472F121EAE2E8B004084F1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F111EAE2E8B004084F1 /* Search.swift */; };
+		7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7825EAF11EB32EF600C1D180 /* Login.storyboard */; };
 		784D52291EB2394600A27112 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D52281EB2394600A27112 /* CustomView.swift */; };
 		784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D522A1EB23E5E00A27112 /* CustomCurveView.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
@@ -58,9 +73,24 @@
 		00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		041018701EADE30000745DED /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
+		041018731EAE31E800745DED /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		041018761EAE336100745DED /* AllMediaTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMediaTVCell.swift; sourceTree = "<group>"; };
+		041018771EAE336100745DED /* AllMediaTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllMediaTVCell.xib; sourceTree = "<group>"; };
+		0410187A1EAE3BE900745DED /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		0410187B1EAE3BE900745DED /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCollectionViewCell.xib; sourceTree = "<group>"; };
+		0410187F1EAE3DE000745DED /* MainMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMediaViewController.swift; sourceTree = "<group>"; };
+		041018821EAE47C800745DED /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		04148D871EA899A60056D18E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04148D891EA8C2140056D18E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingWordsAPI.swift; sourceTree = "<group>"; };
+		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
+		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
+		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
+		04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPlayer.swift; sourceTree = "<group>"; };
+		04F8E9CC1EB0921A0034360D /* YTFPlayerControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPlayerControls.swift; sourceTree = "<group>"; };
+		04F8E9CD1EB0921A0034360D /* YTFPopupCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPopupCloseButton.swift; sourceTree = "<group>"; };
+		04F8E9CE1EB0921A0034360D /* YTFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFViewController.swift; sourceTree = "<group>"; };
+		04F8E9D51EB092200034360D /* YTFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTFViewController.xib; sourceTree = "<group>"; };
 		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +108,6 @@
 		2B2A94021EA795E6007464F0 /* BibleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2A94061EA795E6007464F0 /* BibleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppUITests.swift; sourceTree = "<group>"; };
 		2B2A94081EA795E6007464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B2A94171EA79B1B007464F0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2B3BEC611EAF118700BD1BE0 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		2B3BEC631EAF4EF500BD1BE0 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2B4423DD1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptureTableViewCell.xib; sourceTree = "<group>"; };
@@ -92,6 +121,7 @@
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		7825EAF11EB32EF600C1D180 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		784D52281EB2394600A27112 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		784D522A1EB23E5E00A27112 /* CustomCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCurveView.swift; sourceTree = "<group>"; };
 		D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +155,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041018721EAE31CB00745DED /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				041018811EAE45EC00745DED /* Models */,
+				041018751EAE321900745DED /* Views */,
+				0410187E1EAE3D8A00745DED /* Controllers */,
+				041018731EAE31E800745DED /* Media.storyboard */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		041018751EAE321900745DED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				041018761EAE336100745DED /* AllMediaTVCell.swift */,
+				041018771EAE336100745DED /* AllMediaTVCell.xib */,
+				0410187A1EAE3BE900745DED /* MediaCollectionViewCell.swift */,
+				0410187B1EAE3BE900745DED /* MediaCollectionViewCell.xib */,
+				04F8E9CE1EB0921A0034360D /* YTFViewController.swift */,
+				04F8E9D51EB092200034360D /* YTFViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0410187E1EAE3D8A00745DED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0410187F1EAE3DE000745DED /* MainMediaViewController.swift */,
+				04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */,
+				04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */,
+				04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */,
+				04F8E9CC1EB0921A0034360D /* YTFPlayerControls.swift */,
+				04F8E9CD1EB0921A0034360D /* YTFPopupCloseButton.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		041018811EAE45EC00745DED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				041018821EAE47C800745DED /* MediaModel.swift */,
+				044491681EB1D24E0048BB05 /* MediaModelCell.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		2B2A93DA1EA795E6007464F0 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +263,7 @@
 		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				041018721EAE31CB00745DED /* Media */,
 				2B4423DC1EA9E6C0006AB9CF /* MainTableView */,
 				2B2A941D1EA79B6C007464F0 /* Search */,
 				2B2A94161EA79AED007464F0 /* Login */,
@@ -208,7 +285,7 @@
 			children = (
 				2B2A941A1EA79B35007464F0 /* Views */,
 				2B2A94191EA79B28007464F0 /* Controllers */,
-				2B2A94171EA79B1B007464F0 /* Login.storyboard */,
+				7825EAF11EB32EF600C1D180 /* Login.storyboard */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -472,13 +549,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B2A94181EA79B1B007464F0 /* Login.storyboard in Resources */,
+				04F8E9D61EB092200034360D /* YTFViewController.xib in Resources */,
+				0410187D1EAE3BE900745DED /* MediaCollectionViewCell.xib in Resources */,
 				2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */,
+				041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */,
 				2B4423E01EA9E6E1006AB9CF /* MainTableView.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
 				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
+				041018741EAE31E800745DED /* Media.storyboard in Resources */,
+				7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,14 +728,25 @@
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
 				2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */,
 				2B4423E41EA9E6F0006AB9CF /* ScriptureTableViewCell.swift in Sources */,
+				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
+				04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */,
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
+				04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
+				04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */,
+				041018831EAE47C800745DED /* MediaModel.swift in Sources */,
+				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
+				04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
+				041018781EAE336100745DED /* AllMediaTVCell.swift in Sources */,
+				04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */,
+				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
+				04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 				2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */,
 			);
@@ -811,6 +903,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6Y5S54D52;
 				INFOPLIST_FILE = BibleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LivingWords;
 				PRODUCT_NAME = LivingWords;
@@ -825,6 +918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6Y5S54D52;
 				INFOPLIST_FILE = BibleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LivingWords;
 				PRODUCT_NAME = LivingWords;

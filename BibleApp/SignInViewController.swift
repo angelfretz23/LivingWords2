@@ -71,10 +71,8 @@ class SignInViewController: UIViewController {
         
         User.login(withEmail:  "oleh@mail.ru", password:  "11111", completion: {userInfo, error in
             
-            
             if let user = userInfo {
                 self.userInfo = user
-                print(self.userInfo)
                 
             } else {
                 
@@ -153,6 +151,7 @@ extension GoogleDelegate: GIDSignInUIDelegate, GIDSignInDelegate {
         if let userEmail = user?.profile.email {
             print("📧 \(userEmail)")
         }
+
     }
     
 }

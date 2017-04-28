@@ -191,7 +191,7 @@ extension MainTableViewController {
     func getSearchResults(completion: @escaping (_ sucess: Bool)-> Void){
         Search.searchBible(book: book ?? "", chapter: chapter ?? "", verse: verse ?? "", completion:  {search, error  in
             if let seachResult = search {
-                mainTableView.reloadData()
+                self.mainTableView.reloadData()
                 completion(true)
             }else {
                 completion(false)
