@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BibleApp/LivingWordsAPI.swift"
-            timestampString = "515072901.62838"
+            filePath = "BibleApp/NewPasswordViewController.swift"
+            timestampString = "515090542.701337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "addParametersForRequest(request:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BibleApp/LivingWordsAPI.swift"
-            timestampString = "515072901.62838"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "addParametersForRequest(request:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "createNewPasswordPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

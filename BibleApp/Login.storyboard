@@ -498,7 +498,6 @@
                                         </state>
                                         <connections>
                                             <action selector="checkPassCodePressed:" destination="OyY-YE-YIy" eventType="touchUpInside" id="c8U-WX-fdL"/>
-                                            <segue destination="bzg-o0-1Vf" kind="show" id="aGA-Yk-3Zb"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfI-Ye-2qL">
@@ -822,6 +821,7 @@
                         <outlet property="email" destination="QYR-F2-T91" id="0IH-EF-PC4"/>
                         <outlet property="passCodeViewLeadingConstraint" destination="pem-cR-sZD" id="wak-Zz-U3l"/>
                         <outlet property="passCodeViewTrailingConstraint" destination="Peg-xj-mfb" id="WWY-Ya-lsU"/>
+                        <segue destination="bzg-o0-1Vf" kind="show" identifier="checkPassCodeID" id="cb2-Vn-Df0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TW3-UU-WYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -883,7 +883,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih2-9l-WmI" userLabel="SeparatorView">
                                         <rect key="frame" x="3" y="33" width="367" height="1"/>
@@ -897,7 +897,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ9-8Y-My4">
                                         <rect key="frame" x="251" y="6" width="116" height="21"/>
@@ -1066,11 +1066,20 @@
                         <outlet property="confirmNewPasswordTxtFld" destination="0jJ-Dh-zYf" id="cMN-xm-hVF"/>
                         <outlet property="createNewPassword" destination="q9e-cQ-Phs" id="bkv-up-MoA"/>
                         <outlet property="newPasswordTxtFld" destination="OPj-cI-s46" id="AEX-MP-t8Y"/>
+                        <segue destination="hz3-yP-vLq" kind="show" identifier="MainStoryboardPushSegueID" id="O6L-pl-E5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ep-KI-bdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2245.5999999999999" y="-396.25187406296857"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="iUA-Hw-K85">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="hz3-yP-vLq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpn-Uc-9pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="-381"/>
         </scene>
     </scenes>
     <resources>

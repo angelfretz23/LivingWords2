@@ -45,13 +45,12 @@ extension LivingWordsAPI {
             return "http://bible.binariks.com/api"
         }
         
-        //https://dreadful-hog-5591.vagrantshare.com/api
         
         private var path: String {
             switch self {
             case .loginWithEmail:
                 return "/users/login"
-                
+
             case .getBible:
                 return "/bible"
                 
@@ -119,7 +118,7 @@ extension LivingWordsAPI {
         private func addHeadersForRequest( request: inout URLRequest) {
             //request.setValue(token, forHTTPHeaderField: "token")
             // request.setValue(String(id), forHTTPHeaderField: "user-id")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -245,7 +244,7 @@ extension LivingWordsAPI {
             completion(response.result.value, response.result.error)
         })
     }
-
+@discardableResult
     func confirmEmail(email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.confirmEmail(parameters: ["email" : email])
         
@@ -253,15 +252,16 @@ extension LivingWordsAPI {
             completion(response.result.value, response.result.error)
         })
     }
-    
-    func checkThePassCode(code: Int, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
-        let request = Router.confirmEmail(parameters: ["code" : code])
+    @discardableResult
+    func checkThePassCode(code: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
+        let request = Router.loginWithEmail(parameters: ["code" : code])
+        
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
-            completion(response.result.value, response.result.error)
+            completion(response.result.value, response.result.error)            
         })
     }
-    
+    @discardableResult
     func confirmNewPassword(id: Int, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.confirmEmail(parameters: ["id" : id, "password": password])
         

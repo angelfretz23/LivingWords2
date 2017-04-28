@@ -32,8 +32,9 @@ class ForgotPasswordViewController: UIViewController {
     
     // MARK: - Properties
     var userData: User?
-    
+    var userID: Int?
  
+    
     // MARK: - ViewControllerLifeCicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,42 +65,55 @@ class ForgotPasswordViewController: UIViewController {
         self.displayAlert(userMessage: "The passcode was sent to you email, check it and write in!")
         
         User.confirmEmail(email: email.text!, completion : { userInfo, error in
-        
             
+        
             self.animateForgotPasswordScreen()
-//            if let user = userInfo {
-//                self.userData = user
-//                print(self.userData?.email ?? "No email")
-//                self.animateForgotPasswordScreen()
-//            } else {
-//                print("No response came!")
-//            }
-        })
+            if let user = userInfo {
+                self.userData = user
+                self.userID = user.id
+            }
+            
+            })
     }
     
     @IBAction func checkPassCodePressed(_ sender: UIButton) {
         
         if let num1 = checkPassCodeTxtFld_1.text, let num2 = checkPassCodeTxtFld_2.text, let num3 = checkPassCodeTxtFld_3.text, let num4 = checkPassCodeTxtFld_4.text {
-        User.checkThePassCode(code: Int(num1 + num2 + num3 + num4)!, completion: { userInfo, error  in
-            if let user = userInfo {
-                self.userData = user
+            if ((num1 == "") || (num2 == "") || (num3 == "") || (num4 == "")) {
+                
+                self.displayAlert(userMessage: "Enter The Confirmation Code!")
+                
             } else {
-                self.displayAlert(userMessage: "Something went wrong!")
+                
+                
+                User.checkThePassCode(code: num1+num2+num3+num4, completion: { userInfo, error  in
+                    
+                    self.performSegue(withIdentifier: "checkPassCodeID", sender: self)
+                    
+//                    if let user = userInfo {
+//                        self.userData = user
+//                        self.userID = user.id
+//                        self.performSegue(withIdentifier: "checkPassCodeID", sender: self)
+//                    
+//                    } else {
+//                        
+//                        self.displayAlert(userMessage: "Something went wrong!")
+//                    }
+                })
             }
-        })
-        } else {
-            self.displayAlert(userMessage: "Enter The Confirmation Code!")
         }
     }
-    /*
+    
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "checkPassCodeID" {
+            
+          let newPasswordViewController = segue.destination as! NewPasswordViewController
+            newPasswordViewController.userID = self.userID
+            
+        }
     }
-    */
     
 }
 

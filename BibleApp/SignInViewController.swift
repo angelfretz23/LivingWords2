@@ -72,6 +72,16 @@ class SignInViewController: UIViewController {
     }
     
 
+    // MARK: - Actions
+    
+    func loginWithEmail(){
+        
+        User.login(withEmail:email.text!, password: password.text!, completion: {userInfo, error in
+          
+            if let user = userInfo {
+                self.userInfo = user
+
+
     
     // MARK: - Actions
     

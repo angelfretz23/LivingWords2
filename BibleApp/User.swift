@@ -16,8 +16,13 @@ class User: NSObject, Mappable{
     var token: String?
     var email: String?
     var password: String?
+
     var code: Int?
     var phone: String?
+
+    var code: String?
+    
+
     
     func mapping(map: Map) {
         self.id             <- map["id"]
@@ -49,7 +54,7 @@ extension User {
         
     }
     
-    static func checkThePassCode(code: Int, completion: @escaping (_ user: User?, _ error: Error?) -> Void)  {
+    static func checkThePassCode(code: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void)  {
         let api = LivingWordsAPI()
         
         api.checkThePassCode(code: code, completion: completion)

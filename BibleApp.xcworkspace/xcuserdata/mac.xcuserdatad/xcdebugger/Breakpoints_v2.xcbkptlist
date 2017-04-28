@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "signUpButtonPressed(_:)"
+            landmarkName = "loginButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +94,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "loginButton(_:didCompleteWith:error:)"
-            landmarkType = "7">
+            endingLineNumber = "149">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
