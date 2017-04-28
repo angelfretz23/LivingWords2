@@ -20,6 +20,8 @@
 		0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */; };
 		04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */; };
 		04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */; };
+		04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */; };
+		04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */; };
 		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
 		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
 		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
@@ -88,6 +90,8 @@
 		0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingWordsAPI.swift; sourceTree = "<group>"; };
 		04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTypeCollectionVCell.swift; sourceTree = "<group>"; };
 		04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookTypeCollectionVCell.xib; sourceTree = "<group>"; };
+		04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
 		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
 		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				04148D871EA899A60056D18E /* SignInViewController.swift */,
+				04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */,
+				04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -760,6 +766,7 @@
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
 				04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
+				04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */,
 				04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */,
@@ -774,6 +781,7 @@
 				041018781EAE336100745DED /* AllMediaTVCell.swift in Sources */,
 				04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */,
 				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
+				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,
 				04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 				2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */,

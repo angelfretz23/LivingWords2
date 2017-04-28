@@ -36,7 +36,7 @@ extension LivingWordsAPI {
         case confirmNewPassword(parameters: Parameters)
         
         private var baseURLString: String {
-            return ""
+            return "http://superb-mustang-1404.vagrantshare.com/api"
         }
         
         //https://dreadful-hog-5591.vagrantshare.com/api

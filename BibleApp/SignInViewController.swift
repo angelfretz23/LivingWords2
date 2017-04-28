@@ -69,21 +69,6 @@ class SignInViewController: UIViewController {
     
     // MARK: - Actions
     
-    func loginWithEmail(){
-        
-        User.login(withEmail:  "oleh@mail.ru", password:  "11111", completion: {userInfo, error in
-          
-            if let user = userInfo {
-                self.userInfo = user
-
-                
-            } else {
-                
-                
-            }
-        })
-    }
-    
     // actually it is 'Sign Up'
     @IBAction func loginButtonPressed(_ sender: Any) {
         UIView.animate(withDuration: 0.5, delay: 0.1, options: [.allowAnimatedContent], animations: {
@@ -97,11 +82,18 @@ class SignInViewController: UIViewController {
             
             self.view.layoutIfNeeded()
         }, completion: nil)
-        loginWithEmail()
+        
     }
     
     // actually it is 'Log In'
     @IBAction func signUpButtonPressed(_ sender: Any) {
+        
+        if email.text != "" && password.text != ""{
+            enterInSystemByEmail()
+            return
+        }
+        
+        
         UIView.animate(withDuration: 0.5, delay: 0.3, options: [.allowAnimatedContent], animations: {
             self.underlinedViewAllignCenterToSignUpButtonConstraint.priority = 998
             
@@ -187,5 +179,34 @@ extension ConfigurationSingInController {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         bluerEffectView.addSubview(blurEffectView)
+    }
+}
+
+private typealias TextFieldDelegate = SignInViewController
+extension TextFieldDelegate: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+private typealias OtherHelpfullMethods = SignInViewController
+extension OtherHelpfullMethods {
+    fileprivate func enterInSystemByEmail() {
+        User.login(withEmail:  "olehhovanets@mail.ru", password:  "11111", completion: {userInfo, error in
+            
+            if let user = userInfo {
+                self.userInfo = user
+                
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyBoard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+                
+                self.show(controller, sender: self)
+                
+            } else {
+                
+                
+            }
+        })
     }
 }
