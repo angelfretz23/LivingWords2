@@ -29,17 +29,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miracles from Heaven" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-6Y-BaH">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="37"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXU-jp-1fL">
-                                        <rect key="frame" x="0.0" y="19" width="314" height="18"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -70,7 +63,6 @@
             <connections>
                 <outlet property="image" destination="7V8-pu-6X7" id="JqQ-B3-QJd"/>
                 <outlet property="title" destination="7cd-6Y-BaH" id="yIz-Th-gy0"/>
-                <outlet property="titleBottom" destination="sXU-jp-1fL" id="CAk-IV-eCY"/>
             </connections>
             <point key="canvasLocation" x="160" y="109.5"/>
         </collectionViewCell>

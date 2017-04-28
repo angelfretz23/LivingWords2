@@ -54,7 +54,7 @@ class YTFViewController: UIViewController {
                         ], typeOfMedia: .Book)
     ]
 
-    
+    var tableViewDataSource: UITableViewDataSource?
     
     var videoID: String?
     var customView: UIView?
@@ -185,7 +185,7 @@ class YTFViewController: UIViewController {
     func initMediaTableView() {
         
         tableViewMedia.delegate = self
-        tableViewMedia.dataSource = self
+        tableViewMedia.dataSource = tableViewDataSource
         
         tableViewMedia.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
     }
@@ -252,7 +252,7 @@ extension YTFViewController: UITableViewDelegate {
         let viewHeight = tableView.bounds.height
         let heightOther = viewHeight / 2
         
-        if mediaData[indexPath.row].typeOfMedia == .Book {
+        if indexPath.row == 3 {
             return viewHeight / 1.5
         }
         
@@ -264,21 +264,3 @@ extension YTFViewController: UITableViewDelegate {
     }
 }
 
-extension YTFViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mediaData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllMediaTVCellIdentifier", for: indexPath) as! AllMediaTVCell
-        cell.title.text = mediaData[indexPath.row].title
- 
-        cell.fillData(mediaData: mediaData[indexPath.row].items,
-                      controller: self,
-                      type: mediaData[indexPath.row].typeOfMedia)
-        
-        return cell
-    }
-}

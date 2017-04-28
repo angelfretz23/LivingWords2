@@ -11,5 +11,13 @@ import Foundation
 public struct MediaModelCell {
     var imagePath: String
     var title: String
-    var titleBotton: String
+    var youtubeID: String?
+    var titleBotton: String?
+    
+    init(imagePath: String, title: String, youtubeID: String? = nil, titleBotton: String? = nil) {
+        self.imagePath = imagePath
+        self.title = title
+        self.youtubeID = youtubeID
+        self.titleBotton = titleBotton
+    }
 }

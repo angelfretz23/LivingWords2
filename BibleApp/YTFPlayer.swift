@@ -60,14 +60,15 @@ public struct YTFPlayer {
         }
     }
     
-    public static func initYTF (videoID: String) {
+    public static func initYTF (videoID: String, tableViewDataSource: UITableViewDataSource) {
         
         if dragViewController == nil {
             
             dragViewController = YTFViewController(nibName: "YTFViewController", bundle: nil)
             
             dragViewController?.videoID = videoID
-
+            dragViewController?.tableViewDataSource = tableViewDataSource
+            
         } else {
             if dragViewController?.videoID != videoID {
                 dragViewController?.videoID = videoID
@@ -75,6 +76,7 @@ public struct YTFPlayer {
             }
             
             dragViewController?.expandViews()
+            dragViewController?.tableViewDataSource = tableViewDataSource
         }
         
         

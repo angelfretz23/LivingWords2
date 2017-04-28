@@ -18,6 +18,8 @@
 		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
 		04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04148D891EA8C2140056D18E /* GoogleService-Info.plist */; };
 		0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */; };
+		04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */; };
+		04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */; };
 		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
 		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
 		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
@@ -83,6 +85,8 @@
 		04148D871EA899A60056D18E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04148D891EA8C2140056D18E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingWordsAPI.swift; sourceTree = "<group>"; };
+		04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTypeCollectionVCell.swift; sourceTree = "<group>"; };
+		04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookTypeCollectionVCell.xib; sourceTree = "<group>"; };
 		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
 		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
 		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				0410187B1EAE3BE900745DED /* MediaCollectionViewCell.xib */,
 				04F8E9CE1EB0921A0034360D /* YTFViewController.swift */,
 				04F8E9D51EB092200034360D /* YTFViewController.xib */,
+				04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */,
+				04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */,
 				2B4423E01EA9E6E1006AB9CF /* MainTableView.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
+				04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */,
 				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
@@ -734,6 +741,7 @@
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
 				04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
+				04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
 				04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */,
 				041018831EAE47C800745DED /* MediaModel.swift in Sources */,

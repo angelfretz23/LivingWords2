@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookTypeCollectionVCellID" id="gTV-IL-0wX" customClass="BookTypeCollectionVCell" customModule="LivingWords" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="260"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nVO-LS-Nfj">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="208"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game of Thrones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnH-64-Ctp">
+                        <rect key="frame" x="8" y="209" width="152" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Martin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ0-GB-RWp">
+                        <rect key="frame" x="8" y="229" width="152" height="31"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="nVO-LS-Nfj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5v4-Mt-zcI"/>
+                <constraint firstAttribute="trailing" secondItem="QZ0-GB-RWp" secondAttribute="trailing" id="6e4-Y7-as3"/>
+                <constraint firstItem="QZ0-GB-RWp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="7Vd-BA-ail"/>
+                <constraint firstAttribute="trailing" secondItem="nVO-LS-Nfj" secondAttribute="trailing" id="E38-vi-JSM"/>
+                <constraint firstAttribute="bottom" secondItem="QZ0-GB-RWp" secondAttribute="bottom" id="Gn9-DN-BNh"/>
+                <constraint firstItem="SnH-64-Ctp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="L9r-xP-5iU"/>
+                <constraint firstItem="SnH-64-Ctp" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.075" id="VZU-XG-mer"/>
+                <constraint firstItem="nVO-LS-Nfj" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="cfo-bt-Brx"/>
+                <constraint firstItem="nVO-LS-Nfj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hdu-ua-NPe"/>
+                <constraint firstItem="QZ0-GB-RWp" firstAttribute="top" secondItem="SnH-64-Ctp" secondAttribute="bottom" id="ldG-O8-Usa"/>
+                <constraint firstItem="SnH-64-Ctp" firstAttribute="top" secondItem="nVO-LS-Nfj" secondAttribute="bottom" constant="1" id="nqC-Cx-uKU"/>
+                <constraint firstAttribute="trailing" secondItem="SnH-64-Ctp" secondAttribute="trailing" id="rtb-S4-dM3"/>
+            </constraints>
+            <connections>
+                <outlet property="imageBook" destination="nVO-LS-Nfj" id="rFw-2m-0NG"/>
+                <outlet property="title" destination="SnH-64-Ctp" id="qg7-G6-Abn"/>
+                <outlet property="titleBottom" destination="QZ0-GB-RWp" id="sNH-wK-0Zo"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

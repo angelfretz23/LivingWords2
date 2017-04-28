@@ -30,6 +30,7 @@ class AllMediaTVCell: UITableViewCell {
         collectionView.delegate = self
     
         collectionView.register(UINib(nibName: "MediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MediaCell")
+        collectionView.register(UINib(nibName: "BookTypeCollectionVCell", bundle: nil), forCellWithReuseIdentifier: "BookTypeCollectionVCellID")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,16 +49,20 @@ extension CollectionDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
-            cell.image.image = #imageLiteral(resourceName: "testImage")
-            cell.title.text = mediaData[indexPath.row].title
-
-        // if cell has books
-        if mediaData[indexPath.row].titleBotton != "" && cell.titleBottom.text == "" {
-            cell.titleBottom.text = mediaData[indexPath.row].titleBotton
+        
+        if typeOfCell == .Other {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+                cell.image.image = #imageLiteral(resourceName: "image-slider-2")
+                cell.title.text = mediaData[indexPath.row].title
+            
+                return cell
         }
         
-        cell.setNeedsLayout()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookTypeCollectionVCellID", for: indexPath) as! BookTypeCollectionVCell
+                cell.title.text = mediaData[indexPath.row].title
+                cell.imageBook.image = #imageLiteral(resourceName: "great-gatsby-coverjpg")
+                cell.titleBottom.text = mediaData[indexPath.row].titleBotton
+        
         return cell
     }
 }
@@ -92,20 +97,13 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        var youTubeId = "JxWfvtnHtS0"
         
-        if indexPath.row == 1 {
-            youTubeId = "tsFeIVJfKsA"
+        if let youTubeId = mediaData[indexPath.row].youtubeID {
+            YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: mediaController as! UITableViewDataSource)
+            
+            YTFPlayer.showYTFView(viewController: mediaController!)
         }
         
-        if indexPath.row == 2 {
-            youTubeId = "ZcEFXDVzHYk"
-        }
-        
-        YTFPlayer.initYTF(videoID: youTubeId)
-
-        YTFPlayer.showYTFView(viewController: mediaController!)
 
     }
 }

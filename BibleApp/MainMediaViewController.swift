@@ -16,17 +16,17 @@ class MainMediaViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     
     // MARK:- Properties
-    let labels = [MediaModel(title: "Movies", items: [MediaModelCell(imagePath: "", title: "Chris Tomlin - I Will Follow", titleBotton: ""),
-                                                      MediaModelCell(imagePath: "", title: "MercyMe - I Can Only Imagine", titleBotton: ""),
-                                                      MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", titleBotton: "")
+    let labels = [MediaModel(title: "Movies", items: [MediaModelCell(imagePath: "", title: "Home App — Welcome Home" , youtubeID: "4nbhfrQfRRE"),
+                                                      MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),
+                                                      MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")
                     ], typeOfMedia: .Other),
-                  MediaModel(title: "Sermous", items: [MediaModelCell(imagePath: "", title: "Chris Tomlin - I Will Follow", titleBotton: ""),
-                                                      MediaModelCell(imagePath: "", title: "MercyMe - I Can Only Imagine", titleBotton: ""),
-                                                      MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", titleBotton: "")
+                  MediaModel(title: "Sermous", items: [MediaModelCell(imagePath: "", title: "iPhone 7 — Midnight", youtubeID: "R27KHLQ0cIU"),
+                                                      MediaModelCell(imagePath: "", title: "The all-new Apple Music.", youtubeID: "CQY3KUR3VzM"),
+                                                      MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", youtubeID: "")
                     ], typeOfMedia: .Other),
-                  MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Chris Tomlin - I Will Follow", titleBotton: ""),
-                                                      MediaModelCell(imagePath: "", title: "MercyMe - I Can Only Imagine", titleBotton: ""),
-                                                      MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", titleBotton: "")
+                  MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Chris Tomlin - I Will Follow", youtubeID: ""),
+                                                      MediaModelCell(imagePath: "", title: "MercyMe - I Can Only Imagine", youtubeID: ""),
+                                                      MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", youtubeID: "")
                     ], typeOfMedia: .Other),
                   MediaModel(title: "Books", items: [MediaModelCell(imagePath: "", title: "I Will Follow", titleBotton: "Ivan"),
                                                      MediaModelCell(imagePath: "", title: "I Can Only Imagine", titleBotton: "Orest"),
@@ -34,14 +34,6 @@ class MainMediaViewController: UIViewController {
                                                      MediaModelCell(imagePath: "", title: "I Will Follow", titleBotton: "Ivan"),
                                                      MediaModelCell(imagePath: "", title: "I Can Only Imagine", titleBotton: "Orest"),
                                                      MediaModelCell(imagePath: "", title: "Momentum", titleBotton: "Nazar")
-                    ], typeOfMedia: .Book),
-                  MediaModel(title: "Ivan", items: [MediaModelCell(imagePath: "", title: "Dota", titleBotton: "Easy Katka"),
-                                                       MediaModelCell(imagePath: "", title: "Perfect World", titleBotton: "I am lox"),
-                                                       MediaModelCell(imagePath: "", title: "HeartSrone", titleBotton: "I am lox too")
-                    ], typeOfMedia: .Book),
-                  MediaModel(title: "Orest", items: [MediaModelCell(imagePath: "", title: "Breaking Bad", titleBotton: "Vince Giligan"),
-                                                    MediaModelCell(imagePath: "", title: "Game of Thrones", titleBotton: "Gorge Martin"),
-                                                    MediaModelCell(imagePath: "", title: "Fargo", titleBotton: "Cool TV")
                     ], typeOfMedia: .Book)
                   ]
     
@@ -58,15 +50,15 @@ class MainMediaViewController: UIViewController {
 
     override var shouldAutorotate: Bool {
         // FIXME: should fix it and transfer to an other views
-        if YTFPlayer.isOpen() && (UIDevice.current.orientation == .landscapeLeft){
-            
-            let controller = YTFPlayer.getYTFViewController() as! YTFViewController
-            controller.expandViews()
-            controller.setPlayerToFullscreen()
-            
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
-        }
+//        if YTFPlayer.isOpen() && (UIDevice.current.orientation == .landscapeLeft){
+//            
+//            let controller = YTFPlayer.getYTFViewController() as! YTFViewController
+//            controller.expandViews()
+//            controller.setPlayerToFullscreen()
+//            
+//            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//            UIDevice.current.setValue(value, forKey: "orientation")
+//        }
         
         return false
     }
