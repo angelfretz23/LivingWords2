@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - IBOutlets
     @IBOutlet weak var blurEffectView: UIView!
@@ -102,6 +102,11 @@ class ForgotPasswordViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
