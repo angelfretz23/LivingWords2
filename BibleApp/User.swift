@@ -17,7 +17,7 @@ class User: NSObject, Mappable{
     var email: String?
     var password: String?
 
-    var code: Int?
+    //var code: Int?
     var phone: String?
 
     var code: String?

@@ -80,6 +80,10 @@ class SignInViewController: UIViewController {
           
             if let user = userInfo {
                 self.userInfo = user
+                self.loadApp()
+            }
+        })
+    }
 
 
     

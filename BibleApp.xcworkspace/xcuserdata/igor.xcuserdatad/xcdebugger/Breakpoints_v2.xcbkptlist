@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
             endingLineNumber = "157"
-            landmarkName = "login(withEmail:password:completion:)"
+            landmarkName = "addParametersForRequest(request:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
