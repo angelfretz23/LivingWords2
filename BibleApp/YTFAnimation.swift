@@ -280,7 +280,7 @@ extension YTFViewController {
             playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
             playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width / (16/9) //🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
             
-            let restrictY = initialFirstViewFrame!.size.height - playerView!.frame.size.height - 10
+            let restrictY = initialFirstViewFrame!.size.height - playerView!.frame.size.height + 100 // was 10 not 100 and also was minus
             
             if (self.detailsView.frame.origin.y < restrictY && self.detailsView.frame.origin.y > 0) {
                 UIView.animate(withDuration: 0.09, delay: 0.0, options: .curveEaseInOut, animations: {
@@ -370,7 +370,7 @@ extension YTFViewController {
         let trueOffset = initialFirstViewFrame!.size.height - 100
         let xOffset = initialFirstViewFrame!.size.width - 160
         
-        viewMinimizedFrame!.origin.y = trueOffset + 2
+        viewMinimizedFrame!.origin.y = trueOffset - 44 //🏹
         viewMinimizedFrame!.origin.x = xOffset - 6
         viewMinimizedFrame!.size.width = initialFirstViewFrame!.size.width
         
