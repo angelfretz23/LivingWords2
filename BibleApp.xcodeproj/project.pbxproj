@@ -23,6 +23,14 @@
 		04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */; };
 		04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */; };
 		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
+		0492715B1EC233A500021C0F /* UploadSermonesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492715A1EC233A500021C0F /* UploadSermonesVC.swift */; };
+		04DC1A391EC2FC89006AA6A8 /* UploadMusicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A381EC2FC89006AA6A8 /* UploadMusicTVC.swift */; };
+		04DC1A3D1EC30478006AA6A8 /* MusicUploadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A3B1EC30478006AA6A8 /* MusicUploadTVC.swift */; };
+		04DC1A3E1EC30478006AA6A8 /* MusicUploadTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC1A3C1EC30478006AA6A8 /* MusicUploadTVC.xib */; };
+		04DC1A471EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A451EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift */; };
+		04DC1A481EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC1A461EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib */; };
+		04DC1A4B1EC3580A006AA6A8 /* BottomUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A491EC3580A006AA6A8 /* BottomUploadMusicCell.swift */; };
+		04DC1A4C1EC3580A006AA6A8 /* BottomUploadMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC1A4A1EC3580A006AA6A8 /* BottomUploadMusicCell.xib */; };
 		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
 		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
 		04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */; };
@@ -94,6 +102,14 @@
 		04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
+		0492715A1EC233A500021C0F /* UploadSermonesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadSermonesVC.swift; sourceTree = "<group>"; };
+		04DC1A381EC2FC89006AA6A8 /* UploadMusicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMusicTVC.swift; sourceTree = "<group>"; };
+		04DC1A3B1EC30478006AA6A8 /* MusicUploadTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicUploadTVC.swift; sourceTree = "<group>"; };
+		04DC1A3C1EC30478006AA6A8 /* MusicUploadTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicUploadTVC.xib; sourceTree = "<group>"; };
+		04DC1A451EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCellUploadMusicCell.swift; sourceTree = "<group>"; };
+		04DC1A461EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopCellUploadMusicCell.xib; sourceTree = "<group>"; };
+		04DC1A491EC3580A006AA6A8 /* BottomUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomUploadMusicCell.swift; sourceTree = "<group>"; };
+		04DC1A4A1EC3580A006AA6A8 /* BottomUploadMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomUploadMusicCell.xib; sourceTree = "<group>"; };
 		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
 		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
 		04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPlayer.swift; sourceTree = "<group>"; };
@@ -213,6 +229,19 @@
 				044491681EB1D24E0048BB05 /* MediaModelCell.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		04DC1A3A1EC303E7006AA6A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04DC1A3B1EC30478006AA6A8 /* MusicUploadTVC.swift */,
+				04DC1A3C1EC30478006AA6A8 /* MusicUploadTVC.xib */,
+				04DC1A451EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift */,
+				04DC1A461EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib */,
+				04DC1A491EC3580A006AA6A8 /* BottomUploadMusicCell.swift */,
+				04DC1A4A1EC3580A006AA6A8 /* BottomUploadMusicCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2B2A93DA1EA795E6007464F0 = {
@@ -428,6 +457,7 @@
 		7825EAF31EB3329700C1D180 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				04DC1A3A1EC303E7006AA6A8 /* Views */,
 				7825EAF41EB333C300C1D180 /* Controllers */,
 				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
 			);
@@ -439,6 +469,8 @@
 			children = (
 				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
 				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
+				0492715A1EC233A500021C0F /* UploadSermonesVC.swift */,
+				04DC1A381EC2FC89006AA6A8 /* UploadMusicTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -588,12 +620,15 @@
 				2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */,
 				041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */,
 				2B4423E01EA9E6E1006AB9CF /* MainTableView.storyboard in Resources */,
+				04DC1A3E1EC30478006AA6A8 /* MusicUploadTVC.xib in Resources */,
+				04DC1A4C1EC3580A006AA6A8 /* BottomUploadMusicCell.xib in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
 				04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */,
 				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
 				041018741EAE31E800745DED /* Media.storyboard in Resources */,
+				04DC1A481EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib in Resources */,
 				7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,10 +792,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DC1A4B1EC3580A006AA6A8 /* BottomUploadMusicCell.swift in Sources */,
 				784D52291EB2394600A27112 /* CustomView.swift in Sources */,
 				2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */,
 				2B472F121EAE2E8B004084F1 /* Search.swift in Sources */,
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
+				04DC1A391EC2FC89006AA6A8 /* UploadMusicTVC.swift in Sources */,
 				2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */,
 				2B4423E41EA9E6F0006AB9CF /* ScriptureTableViewCell.swift in Sources */,
 				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
@@ -773,6 +810,7 @@
 				04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */,
 				04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
+				0492715B1EC233A500021C0F /* UploadSermonesVC.swift in Sources */,
 				04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */,
 				041018831EAE47C800745DED /* MediaModel.swift in Sources */,
 				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
@@ -783,10 +821,12 @@
 				04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				041018781EAE336100745DED /* AllMediaTVCell.swift in Sources */,
+				04DC1A471EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift in Sources */,
 				04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */,
 				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
 				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,
 				04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */,
+				04DC1A3D1EC30478006AA6A8 /* MusicUploadTVC.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 				2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */,
 			);

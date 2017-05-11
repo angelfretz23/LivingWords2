@@ -10,86 +10,113 @@ import UIKit
 
 class UploadMusicTVC: UITableViewController {
 
+    var names = ["Ivan", "Rostik", "Nazar", "Ivan", "Rostik", "Nazar"]
+    fileprivate var selectedIndex: IndexPath?
+    fileprivate var isExpanded = false
+    fileprivate var allowExpanded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        tableView.register(UINib.init(nibName: "MusicUploadTVC", bundle: nil), forCellReuseIdentifier: "ExpandableCell")
+        tableView.register(UINib.init(nibName: "TopCellUploadMusicCell", bundle: nil), forCellReuseIdentifier: "TopCellUploadMusicCellID")
+        tableView.register(UINib.init(nibName: "BottomUploadMusicCell", bundle: nil), forCellReuseIdentifier: "BottomUploadMusicCellID")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    fileprivate func makeExpandedCell() {
+        isExpanded = !isExpanded
+        tableView.reloadRows(at: [selectedIndex!], with: .automatic)
     }
+    
+    // MARK: Actions
+    
+    @IBAction func cancellAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
-    // MARK: - Table view data source
+extension TableDataSource {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        if section == 0 || section == 2 {
+            return 1
+        }
+        
+        
+        return names.count
+        
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        if indexPath.section == 0 {
+          return topUploadMusicCell(tableView, cellForRowAt: indexPath)
+        }
+       
+        if indexPath.section == 2 {
+            return bottomUploadMusicCell(tableView, cellForRowAt: indexPath)
+        }
+        
+         return expandedCell(tableView, cellForRowAt: indexPath)
+    }
+    
+}
 
-        // Configure the cell...
+extension TableDelegate {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath
+        makeExpandedCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 || indexPath.section == 2 {
+            return 311
+        } else {
+            
+            if isExpanded && selectedIndex == indexPath {
+                return 150
+            }else {
+                return 48
+            }
+        }
+   
+      
+    }
+}
+
+extension UploadMusicCells {
+    
+    fileprivate func expandedCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandableCell", for: indexPath) as! MusicUploadTVC
+        
+        if names[indexPath.row] != "" {
+            cell.titleScripture.text = names[indexPath.row]
+            cell.selectionStyle = .none
+        }
 
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    fileprivate func topUploadMusicCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopCellUploadMusicCellID", for: indexPath) as! TopCellUploadMusicCell
+            cell.selectionStyle = .none
+        return cell
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    fileprivate func bottomUploadMusicCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BottomUploadMusicCellID", for: indexPath) as! BottomUploadMusicCell
+        cell.selectionStyle = .none
+        return cell
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+private typealias TableDataSource = UploadMusicTVC
+private typealias TableDelegate = UploadMusicTVC
+private typealias UploadMusicCells = UploadMusicTVC

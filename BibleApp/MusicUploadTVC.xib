@@ -1,19 +1,91 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MusicUploadTVC" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandableCell" rowHeight="150" id="KGk-i7-Jjw" customClass="MusicUploadTVC" customModule="LivingWords" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbT-Pf-syJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Binariks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V4-oO-QOs">
+                                <rect key="frame" x="8" y="8" width="48" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="I21-8t-eoX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DisclosureIndicator_Down" translatesAutoresizingMaskIntoConstraints="NO" id="Ar8-vg-K8Q">
+                                <rect key="frame" x="64" y="21" width="13" height="9"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9V4-oO-QOs" secondAttribute="bottom" constant="8" id="3N1-eJ-C1n"/>
+                            <constraint firstAttribute="height" constant="50" id="7WJ-9z-HvL"/>
+                            <constraint firstItem="Ar8-vg-K8Q" firstAttribute="leading" secondItem="9V4-oO-QOs" secondAttribute="trailing" constant="8" id="AjB-oF-dEl"/>
+                            <constraint firstAttribute="bottom" secondItem="Ar8-vg-K8Q" secondAttribute="bottom" constant="20" id="GsR-ou-IOz"/>
+                            <constraint firstItem="9V4-oO-QOs" firstAttribute="top" secondItem="sbT-Pf-syJ" secondAttribute="top" constant="8" id="X4N-EX-Z7X"/>
+                            <constraint firstItem="Ar8-vg-K8Q" firstAttribute="top" secondItem="sbT-Pf-syJ" secondAttribute="top" constant="21" id="sJG-Nt-ivi"/>
+                            <constraint firstItem="9V4-oO-QOs" firstAttribute="leading" secondItem="sbT-Pf-syJ" secondAttribute="leading" constant="8" id="xN0-NA-4Kg"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ4-Th-cM0">
+                        <rect key="frame" x="0.0" y="49" width="320" height="100"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2xW-jS-yrn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2xW-jS-yrn" secondAttribute="bottom" id="HU4-PA-5ri"/>
+                            <constraint firstAttribute="height" constant="100" id="TM1-tc-d7i"/>
+                            <constraint firstAttribute="trailing" secondItem="2xW-jS-yrn" secondAttribute="trailing" id="kVE-CO-YxK"/>
+                            <constraint firstItem="2xW-jS-yrn" firstAttribute="top" secondItem="HJ4-Th-cM0" secondAttribute="top" id="lDo-vd-Omw"/>
+                            <constraint firstItem="2xW-jS-yrn" firstAttribute="leading" secondItem="HJ4-Th-cM0" secondAttribute="leading" id="uep-0d-DzJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="HJ4-Th-cM0" secondAttribute="trailing" id="68q-IX-3dV"/>
+                    <constraint firstItem="HJ4-Th-cM0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ArV-MU-RrQ"/>
+                    <constraint firstAttribute="trailing" secondItem="sbT-Pf-syJ" secondAttribute="trailing" id="G8v-Xd-zCc"/>
+                    <constraint firstItem="sbT-Pf-syJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IiK-lC-Oqj"/>
+                    <constraint firstAttribute="bottom" secondItem="HJ4-Th-cM0" secondAttribute="bottom" id="VFK-2E-nrK"/>
+                    <constraint firstItem="sbT-Pf-syJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d1X-P9-EPD"/>
+                    <constraint firstItem="HJ4-Th-cM0" firstAttribute="top" secondItem="sbT-Pf-syJ" secondAttribute="bottom" constant="-1" id="nQY-BH-yTX"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="textScripture" destination="2xW-jS-yrn" id="Vmv-Jj-NQv"/>
+                <outlet property="titleScripture" destination="9V4-oO-QOs" id="oDj-w0-1eo"/>
+                <outlet property="upDownImage" destination="Ar8-vg-K8Q" id="jxo-bW-YWC"/>
+            </connections>
+            <point key="canvasLocation" x="18" y="34"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="DisclosureIndicator_Down" width="13" height="9"/>
+    </resources>
 </document>
