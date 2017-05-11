@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewPasswordViewController: UIViewController {
     
@@ -20,9 +21,11 @@ class NewPasswordViewController: UIViewController {
     var userData: User?
     var userID: Int?
     
-    
+    // MARK: - New Password View Controller`s life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // functions called
         
         // styling
         setUpBlurEffect()
@@ -37,37 +40,76 @@ class NewPasswordViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func createNewPasswordPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "MainStoryboardPushSegueID", sender: self)
-        self.displayAlert(userMessage: "You've just creted a new password!")
-    
-        if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
-            if let id = userID, let password = newPasswordTxtFld.text {
-                User.confirmNewPassword(id: id, password: password, completion : { userInfo, error in
-                    
-                    
-//                    if let user = userInfo {
-//                        self.userData = user
-//                    } else {
-//                        self.displayAlert(userMessage: "Something went wrong!")
-//                    }
-                })
-            }
+        
+        if newPasswordTxtFld.text == "" || confirmNewPasswordTxtFld.text == "" {
+            
+            self.displayAlert(userMessage: "Type in the password and confirm it!")
+            
         } else {
-            
-            self.displayAlert(userMessage: "The passwords do not match! Try again!")
-            
+            if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
+                if let id = self.userID, let newPassword = self.newPasswordTxtFld.text {
+                    User.confirmNewPassword(user_id: id, newPassword: newPassword, completion: { userInfo, error in
+                        
+                        if let user = userInfo {
+                            print("🔴\(user.message)")
+                            self.loadApp()
+                            
+                            
+                        } else if let error = error {
+                            
+                            self.displayAlert(userMessage: "An Error occurred! Look to the Debug Area!")
+                            print("🔴🔴🔴 \(error) 🔴🔴🔴")
+                        }
+                    })
+                }
+            } else {
+                self.displayAlert(userMessage: "The passwords do not match! Try again!")
+            }
         }
-        
-        
     }
     
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        return true
-    }
-    
+//        let URL = "http://bible.binariks.com/api/users/success"
+//        guard let url = NSURL(string: URL) else { print("Error: cannot create URL"); return }
+//        
+//        if newPasswordTxtFld.text == "" || confirmNewPasswordTxtFld.text == "" {
+//            
+//            self.displayAlert(userMessage: "Type in the password and confirm it!")
+//            
+//        } else {
+//            
+//            if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
+//                if let id = self.userID, let password = self.newPasswordTxtFld.text {
+//                    
+//                    let dict: [String:String] = ["user_id": String(id), "new_password": password]
+//                    
+//                    Alamofire.request((url as URL), method: .post, parameters: dict, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+//                        
+//                        switch(response.result) {
+//                        case .success(let JSON):
+//                            
+//                            let response = JSON as! NSDictionary
+//                            
+//                            if let message = response.object(forKey: "message") {
+//                            
+//                                print("🔴🔴🔴 \(message) 🔴🔴🔴")
+//                                self.loadApp()
+//                            }
+//                            
+//                        
+//                        case .failure(let error):
+//                            self.displayAlert(userMessage: "Something went wrong!")
+//                            print("🔴🔴🔴 \(error) 🔴🔴🔴")
+//                            break
+//                        }
+//                    }
+//                } else {
+//                    self.displayAlert(userMessage: "The problem with source code occured!!! It's a question for developers")
+//                }
+//            } else {
+//                self.displayAlert(userMessage: "The passwords do not match! Try again!")
+//            }
+//        }
+//    }
 
     /*
     // MARK: - Navigation
@@ -78,9 +120,10 @@ class NewPasswordViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
+
+// MARK: - Extensions
 extension NewPasswordViewController {
     
     fileprivate func setUpBlurEffect() {
@@ -102,5 +145,18 @@ extension NewPasswordViewController {
         alert.addAction(okAction)
 
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func loadApp() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        
+        self.show(controller, sender: self)
+    }
+    
+    fileprivate func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

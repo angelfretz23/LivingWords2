@@ -187,9 +187,9 @@ extension LivingWordsAPI {
     }
     
     func signUpWithEmail( email: String, password: String, phone: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
-        let request = Router.signUpWithEmail(parameters: ["email"     : email,
-                                                         "password"  : password,
-                                                         "phone" : phone])
+        let request = Router.signUpWithEmail(parameters: ["email"   : email,
+                                                         "password" : password,
+                                                         "phone"    : phone])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
@@ -198,7 +198,7 @@ extension LivingWordsAPI {
     
     func loginFacebook(token: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.loginFacebook(parameters: ["token" : token,
-                                                        "type" : 1 ])
+                                                         "type" : 1 ])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
@@ -207,67 +207,74 @@ extension LivingWordsAPI {
     
     func loginGoogle(id: String, email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.loginGoogle(parameters: ["id" : id,
-                                                      "type" : 2,
-                                                      "email" : email ])
+                                                    "type" : 2,
+                                                   "email" : email ])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
         })
     }
 }
+
 extension LivingWordsAPI {
+    
     @discardableResult
-    func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest{
+    func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest {
+        
         let request = Router.getBible()
         
         return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Search]>) in
             completion(response.result.value, response.result.error)
             
-            
         })
     }
-}
-//completion: @escaping(_ posts: [Post]?, _ error: Error?) -> Void) ->DataRequest? {
-//    let request = Router.searchPosts(parameters: ["phrase": phrase])
-//    
-//    return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Post]>) in
-//        completion(response.result.value, response.result.error)
-//    })
-extension LivingWordsAPI {
+    
+    
     @discardableResult
     func searchBible(book: String, chapter: String, verse: String, completion: @escaping(_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest{
-        let request = Router.searchBible(parameters: ["book"    : book,
-                                                      "chapter" : chapter,
-                                                      "verse"   : verse])
+        
+        let request = Router.searchBible(parameters: ["book" : book,
+                                                   "chapter" : chapter,
+                                                     "verse" : verse])
         
         return service.request(request: request).responseArray(completionHandler:{ (response: DataResponse<[Search]>) in
             completion(response.result.value, response.result.error)
         })
     }
-@discardableResult
+    
+    @discardableResult
     func confirmEmail(email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        
         let request = Router.confirmEmail(parameters: ["email" : email])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
         })
     }
+    
     @discardableResult
-    func checkThePassCode(code: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
-        let request = Router.loginWithEmail(parameters: ["code" : code])
+    func checkThePassCode(code: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         
+        let request = Router.checkThePassCode(parameters: ["code" : code])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
-            completion(response.result.value, response.result.error)            
+            completion(response.result.value, response.result.error)
+            
+            print(response.response?.statusCode ?? "No response🔴")
         })
     }
+    
     @discardableResult
-    func confirmNewPassword(id: Int, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
-        let request = Router.confirmEmail(parameters: ["id" : id, "password": password])
+    func confirmNewPassword(user_id: Int, newPassword: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.confirmNewPassword(parameters: ["user_id" : user_id,
+                                                    "new_password": newPassword])
+        
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
-
             completion(response.result.value, response.result.error)
+            
+            print(response.response?.statusCode ?? "No response🔴")
+            
         })
     }
     

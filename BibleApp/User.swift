@@ -9,29 +9,34 @@
 
 import ObjectMapper
 
-class User: NSObject, Mappable{
+class User: NSObject, Mappable {
     
     var id: Int?
+    var user_id: Int?
     var username: String?
     var token: String?
     var email: String?
     var password: String?
-
-    //var code: Int?
     var phone: String?
-
     var code: String?
+    var message: Int?
+    var messageStr: String?
+    var newPassword: String?
     
-
     
     func mapping(map: Map) {
         self.id             <- map["id"]
+        self.user_id        <- map["user_id"]
         self.username       <- map["username"]
-        self.token          <- map["token"]
+        self.token          <- map["access_token"]
         self.email          <- map["email"]
         self.password       <- map["password"]
         self.code           <- map["code"]
         self.phone          <- map["phone"]
+        self.message        <- map["message"]
+        self.messageStr     <- map["messageStr"]
+        self.newPassword    <- map["new_password"]
+        
     }
     
     required init?(map: Map) {
@@ -58,15 +63,16 @@ extension User {
         let api = LivingWordsAPI()
         
         api.checkThePassCode(code: code, completion: completion)
-
+    
     }
     
-    static func confirmNewPassword(id: Int, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void)  {
+    static func confirmNewPassword(user_id: Int, newPassword: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void)  {
         let api = LivingWordsAPI()
         
-        api.confirmNewPassword(id: id, password: password, completion: completion)
+        api.confirmNewPassword(user_id: user_id, newPassword: newPassword, completion: completion)
         
     }
+    
     static func signUpWithEmail( email: String, password: String, phone: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
         let api = LivingWordsAPI()
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ib-eW-Fh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ib-eW-Fh8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -141,7 +141,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="OyY-YE-YIy" kind="show" id="Dj8-ll-29L"/>
+                                                    <segue destination="OyY-YE-YIy" kind="show" identifier="forgotPasswordID" id="Dj8-ll-29L"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -170,16 +170,20 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKY-nY-NZs" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="261" height="56"/>
-                                                <color key="backgroundColor" red="0.46458548307418823" green="0.8378034234046936" blue="0.99992316961288452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Facebook Sing in"/>
+                                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Log In With Facebook "/>
                                                 <connections>
                                                     <action selector="facebookSignInAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="iTb-yD-qr2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-Sg-t4x" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="68" width="261" height="56"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Google Sing In"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Log In With Google">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -192,8 +196,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-Gl-f4J" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136" width="261" height="56"/>
-                                                <color key="backgroundColor" white="1" alpha="0.32684075342465752" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Sign in by Email"/>
+                                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Log In With Email"/>
                                                 <connections>
                                                     <action selector="signUpbyEmailAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="kjk-4J-zKJ"/>
                                                 </connections>
@@ -245,16 +250,20 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwF-b3-DfA" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="56"/>
-                                                <color key="backgroundColor" red="0.46458548309999997" green="0.83780342340000002" blue="0.99992316960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Facebook Sing Up"/>
+                                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Sing Up With Facebook"/>
                                                 <connections>
                                                     <action selector="facebookSignInAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="Nfb-af-gNR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aw-IU-684" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="68" width="263" height="56"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Google Sing Up"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Sing Up With Google ">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -267,8 +276,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-oG-rpx" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136" width="263" height="56"/>
-                                                <color key="backgroundColor" white="1" alpha="0.32684075340000002" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Sign Up by Email"/>
+                                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Sign Up With Email"/>
                                                 <connections>
                                                     <action selector="signUpbyEmailAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="wEI-cf-FLz"/>
                                                 </connections>
@@ -317,7 +327,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUpButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="b0l-dJ-fpy"/>
+                                            <action selector="loginButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="zCy-do-Q1a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5i-JG-VpI">
@@ -327,7 +337,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="jHo-y3-pIy"/>
+                                            <action selector="signUpButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="HRW-iS-Ucq"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyq-Y1-WKr">
@@ -439,6 +449,7 @@
                         <outlet property="password" destination="DYD-6N-79p" id="647-3z-6WA"/>
                         <outlet property="phone" destination="EvJ-Yi-CF2" id="DDD-nA-u0r"/>
                         <outlet property="signInbyEmail" destination="jFy-Gl-f4J" id="3rf-0v-IzR"/>
+                        <outlet property="signUpByEmail" destination="7N1-oG-rpx" id="sCV-Oe-CCC"/>
                         <outlet property="signUpViewLeadings" destination="HlQ-cq-Eiy" id="U41-xc-JZe"/>
                         <outlet property="signUpViewTrailings" destination="MEU-tV-gI3" id="Yi7-Mm-NjL"/>
                         <outlet property="signUpWithEmailView" destination="aLY-eO-4WB" id="5dh-gW-vVK"/>
@@ -492,7 +503,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdw-3D-flt" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                         <rect key="frame" x="56" y="82" width="263" height="71"/>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Check">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
