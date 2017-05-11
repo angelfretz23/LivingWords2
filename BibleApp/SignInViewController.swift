@@ -20,8 +20,13 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var signUpByEmail: UIButton!
     @IBOutlet weak var signInbyEmail: UIButton!
-    @IBOutlet weak var googleSignIn: UIButton!
-    @IBOutlet weak var facebookSignIn: RoundedButton!
+    
+    @IBOutlet weak var googleSignUp: RoundedButton!
+    @IBOutlet weak var googleSignIn: RoundedButton!
+    
+    
+    @IBOutlet weak var facebookLogIn: RoundedButton!
+    @IBOutlet weak var facebookSignUp: RoundedButton!
     
     @IBOutlet weak var forgotPassword: UIButton!
     
@@ -65,8 +70,10 @@ class SignInViewController: UIViewController {
         googleSingInConfiguration()
         
         // styling
-        setUpBlurEffect()
-        styleTheButton()
+        self.setUpBlurEffect()
+        self.styleTheButton()
+        styleTheLoginView()
+        self.buttonText()
         signUpWithEmailView.isHidden = true
         
         // init values for constraints
@@ -293,21 +300,68 @@ extension OtherHelpfullMethods {
     }
     
     fileprivate func styleTheButton() {
+        
         self.signInbyEmail.layer.borderWidth = 1
         self.signInbyEmail.layer.borderColor = UIColor.lightGray.cgColor
         self.signUpByEmail.layer.borderWidth = 1
         self.signUpByEmail.layer.borderColor = UIColor.lightGray.cgColor
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        
+//        let blurEffect2 = UIBlurEffect(style: UIBlurEffectStyle.dark)
+//        let blurEffectView2 = UIVisualEffectView(effect: blurEffect2)
+//        
+//        blurEffectView2.frame = signUpByEmail.bounds
+//        blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        
+//        blurEffectView.frame = signInbyEmail.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        
+//        self.signInbyEmail.addSubview(blurEffectView)
+//        self.signUpByEmail.addSubview(blurEffectView2)
         
-        blurEffectView.frame = bluerEffectView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    fileprivate func buttonText() {
+        
+        var attributedGoogleButtonText1 = NSMutableAttributedString()
+        var attributedGoogleButtonText2 = NSMutableAttributedString()
+        var attributedFacebookButtonText1 = NSMutableAttributedString()
+        var attributedFacebookButtonText2 = NSMutableAttributedString()
+        
+        //if googleSignIn.becomeFirstResponder()
+        
+        attributedGoogleButtonText1 = NSMutableAttributedString(string: "Sign Up With ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.black])
+        
+        attributedGoogleButtonText2 = NSMutableAttributedString(string: "Log In With ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.black])
+        
+        attributedGoogleButtonText1.append(NSAttributedString(string: "G+", attributes : [NSFontAttributeName: UIFont(name: "Arial", size: 30.0)!, NSForegroundColorAttributeName: UIColor.red]))
+        
+        attributedGoogleButtonText2.append(NSAttributedString(string: "G+", attributes : [NSFontAttributeName: UIFont(name: "Arial", size: 30.0)!, NSForegroundColorAttributeName: UIColor.red]))
         
         
+        attributedFacebookButtonText1 = NSMutableAttributedString(string: "f", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 35),  NSForegroundColorAttributeName: UIColor.white])
         
-        self.signInbyEmail.addSubview(blurEffectView)
-        self.signUpByEmail.addSubview(blurEffectView)
+        attributedFacebookButtonText2 = NSMutableAttributedString(string: "f", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 35), NSForegroundColorAttributeName: UIColor.white])
+        
+        attributedFacebookButtonText1.append(NSAttributedString(string: " Sign Up With Facebook", attributes : [NSFontAttributeName: UIFont.systemFont(ofSize: 22),  NSForegroundColorAttributeName: UIColor.white]))
+        
+        attributedFacebookButtonText2.append(NSAttributedString(string: " Login With Facebook", attributes : [NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.white]))
+        
+        
+        self.googleSignUp.setAttributedTitle(attributedGoogleButtonText1, for: .normal)
+        self.googleSignIn.setAttributedTitle(attributedGoogleButtonText2, for: .normal)
+        self.facebookSignUp.setAttributedTitle(attributedFacebookButtonText1, for: .normal)
+        self.facebookLogIn.setAttributedTitle(attributedFacebookButtonText2, for: .normal)
+       
+    }
+    
+    fileprivate func styleTheLoginView() {
+        self.email.attributedPlaceholder = NSMutableAttributedString(string: "Email", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        self.password.attributedPlaceholder = NSMutableAttributedString(string: "Password", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        self.phone.attributedPlaceholder = NSMutableAttributedString(string: "Phone", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        
     }
 
 }
