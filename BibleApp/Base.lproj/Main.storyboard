@@ -818,10 +818,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="videoSelectedImage" destination="5Jv-mh-ikU" id="WG8-cL-ad5"/>
-                        <outlet property="videoSelectedName" destination="OFv-7R-Yt8" id="eY3-1l-5Wk"/>
-                        <outlet property="vimeoImage" destination="O5i-M6-WH0" id="pvz-qq-dUa"/>
-                        <outlet property="youTubeImage" destination="M1g-l4-Yna" id="HQl-aX-bdM"/>
+                        <outlet property="videoSelectedImage" destination="5Jv-mh-ikU" id="SNe-lz-NLq"/>
+                        <outlet property="videoSelectedName" destination="OFv-7R-Yt8" id="Jzf-Tf-IWr"/>
+                        <outlet property="vimeoImage" destination="O5i-M6-WH0" id="GIt-IV-q5a"/>
+                        <outlet property="youTubeImage" destination="M1g-l4-Yna" id="RRm-dh-meJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wt3-k1-0Uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
