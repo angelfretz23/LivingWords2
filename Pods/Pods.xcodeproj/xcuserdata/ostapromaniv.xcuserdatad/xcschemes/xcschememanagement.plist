@@ -7,7 +7,7 @@
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
@@ -52,12 +52,12 @@
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-BibleApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-BibleAppTests.xcscheme</key>
 		<dict>
@@ -69,6 +69,11 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -77,16 +82,21 @@
 		<key>YouTubePlayer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>7</integer>
 		</dict>
 		<key>youtube-ios-player-helper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>021F3BCF26E6EA995E77B2CD13255436</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>03151AA728F14C7633BAE7D7720B3A30</key>
 		<dict>
 			<key>primary</key>
@@ -132,6 +142,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>75C722BECC8EB6553E878EE2E4A8E610</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7A1F18056DA16482BD9E00547D5203D8</key>
 		<dict>
 			<key>primary</key>
@@ -157,6 +172,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A4CF55873163792EFE8E9EECE0F356EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7A6168F14036A021EA5A9E06CCAA861</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
@@ -173,6 +198,11 @@
 			<true/>
 		</dict>
 		<key>CADCFF4FC48A7F40F8E3423F8307F493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB4FF2539C9E37BE8CBA50559E86D850</key>
 		<dict>
 			<key>primary</key>
 			<true/>

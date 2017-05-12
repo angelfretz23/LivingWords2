@@ -14,15 +14,19 @@ import GoogleSignIn
 class SignInViewController: UIViewController {
     
     // MARK: - IBOutlets
-    
-    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phone: UITextField!
     
+    @IBOutlet weak var signUpByEmail: UIButton!
     @IBOutlet weak var signInbyEmail: UIButton!
-    @IBOutlet weak var googleSignIn: UIButton!
-    @IBOutlet weak var facebookSignIn: RoundedButton!
+    
+    @IBOutlet weak var googleSignUp: RoundedButton!
+    @IBOutlet weak var googleSignIn: RoundedButton!
+    
+    
+    @IBOutlet weak var facebookLogIn: RoundedButton!
+    @IBOutlet weak var facebookSignUp: RoundedButton!
     
     @IBOutlet weak var forgotPassword: UIButton!
     
@@ -37,9 +41,12 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var loginInViewTrailings: NSLayoutConstraint!
     @IBOutlet weak var loginInViewLeadings: NSLayoutConstraint!
     
-    // MARK: - Properties
     
-     var userInfo: User?
+    // MARK: - Properties
+    var userData: User?
+    var userID: Int?
+    let defaults = UserDefaults.standard
+    var isUserLoginIn = true
     
     let googleLoginButton: GIDSignInButton = {
         let button = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -51,49 +58,35 @@ class SignInViewController: UIViewController {
         return button
     }()
     
-    var isUserLoginIn = true
-    
-    // MARK: - Sign In view controller`s life cycle
-    
+
+    // MARK: - Sign In View Controller`s life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // functions called
         
         // configuration for login systems
         facebookLoginButton.delegate = self
         googleSingInConfiguration()
         
-        //
-        setUpBlurEffect()
+        // styling
+        self.setUpBlurEffect()
+        self.styleTheButton()
+        styleTheLoginView()
+        self.buttonText()
         signUpWithEmailView.isHidden = true
         
         // init values for constraints
         signUpViewLeadings.constant = view.frame.width
         signUpViewTrailings.constant = -view.frame.width
     }
-    
-
-    // MARK: - Actions
-    
-    func loginWithEmail(){
-        
-        User.login(withEmail:email.text!, password: password.text!, completion: {userInfo, error in
-          
-            if let user = userInfo {
-                self.userInfo = user
-                self.loadApp()
-            }
-        })
-    }
-
 
     
-    // MARK: - Actions
-    
-    // actually it is 'Sign Up'
-    @IBAction func loginButtonPressed(_ sender: Any) {
+    // MARK: - IBActions
+    @IBAction func signUpButtonPressed(_ sender: UIButton) {
         isUserLoginIn = false
         
-        if email.text != "" && password.text != ""{
+        if email.text != "" && password.text != "" {
             signUpWithEmail()
             
             return
@@ -113,13 +106,16 @@ class SignInViewController: UIViewController {
         
     }
     
-    // actually it is 'Log In'
-    @IBAction func signUpButtonPressed(_ sender: Any) {
-        isUserLoginIn = true
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        //isUserLoginIn = true
         
-        if email.text != "" && password.text != ""{
+        if email.text == "" || password.text == "" {
+            
+            self.displayAlert(userMessage: "Enter email adress and password to login, please")
+            
+        } else {
+            
             enterInSystemByEmail()
-            return
         }
         
         UIView.animate(withDuration: 0.5, delay: 0.3, options: [.allowAnimatedContent], animations: {
@@ -137,7 +133,6 @@ class SignInViewController: UIViewController {
     
     @IBAction func signUpbyEmailAction(_ sender: UIButton) {
         signUpWithEmailView.isHidden = signUpWithEmailView.isHidden ? false : true
-        
     }
     
     @IBAction func facebookSignInAction(_ sender: UIButton) {
@@ -148,8 +143,17 @@ class SignInViewController: UIViewController {
         googleLoginButton.sendActions(for: .touchUpInside)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "forgotPasswordID" {
+            let forgotPasswordViewController = segue.destination as! ForgotPasswordViewController
+            forgotPasswordViewController.userData = self.userData
+            forgotPasswordViewController.userID = self.userID
+        }
+    }
+    
 }
 
+// MARK: - Extensions
 private typealias FacebookDelegate = SignInViewController
 extension FacebookDelegate: FBSDKLoginButtonDelegate {
     
@@ -159,14 +163,11 @@ extension FacebookDelegate: FBSDKLoginButtonDelegate {
             User.loginFacebook(token: token.tokenString, completion: { (userInfo, error) in
                 
                 if let user = userInfo {
-                    self.userInfo = user
+                    self.userData = user
                     self.loadApp()
                 }
-                
             })
         }
-        
-
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -190,11 +191,10 @@ extension GoogleDelegate: GIDSignInUIDelegate, GIDSignInDelegate {
             }
             
             if let user = userInfo {
-                self.userInfo = user
+                self.userData = user
                 self.loadApp()
             }
         }
-
     }
     
 }
@@ -242,28 +242,38 @@ private typealias OtherHelpfullMethods = SignInViewController
 extension OtherHelpfullMethods {
     fileprivate func enterInSystemByEmail() {
         
-        User.login(withEmail:  email.text!, password:  password.text! , completion: {userInfo, error in
+        User.login(withEmail: email.text!, password:  password.text! , completion: { userInfo, error in
             
-            if let user = userInfo {
-                self.userInfo = user
+            if let user = userInfo, let email = userInfo?.email  {
+                self.userData = user
+                self.userID = user.id
                 
-                self.loadApp()
+                //let savedToken = self.defaults.string(forKey: "userToken")
+                
+            
+                if (email == self.email.text!) {
+                    self.loadApp()
+                } else {
+                    self.displayAlert(userMessage: "Password or email is incorrect!!! \n Try Once More!")
+                }
             } else {
-                
-                
+                self.displayAlert(userMessage: "You need to sign up first! There was no user with such username!")
             }
         })
     }
     
     fileprivate func signUpWithEmail() {
         
-        User.signUpWithEmail(email: email.text!, password: password.text!, phone: phone.text ?? "0000000012", completion: { (userInfo, error) in
+        User.signUpWithEmail(email: email.text!, password: password.text!, phone: phone.text ?? "00000000", completion: { (userInfo, error) in
             if error != nil {
                 print("Sign Up with email is fail")
             }
             
-            if let user = userInfo {
-                self.userInfo = user
+            if let user = userInfo, let token = userInfo?.token {
+                self.userData = user
+                
+                
+                self.defaults.set(token, forKey: "userToken")
                 
                 self.loadApp()
             }
@@ -277,4 +287,81 @@ extension OtherHelpfullMethods {
         
         self.show(controller, sender: self)
     }
+    
+    fileprivate func displayAlert(userMessage: String) {
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func styleTheButton() {
+        
+        self.signInbyEmail.layer.borderWidth = 1
+        self.signInbyEmail.layer.borderColor = UIColor.lightGray.cgColor
+        self.signUpByEmail.layer.borderWidth = 1
+        self.signUpByEmail.layer.borderColor = UIColor.lightGray.cgColor
+        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        
+//        let blurEffect2 = UIBlurEffect(style: UIBlurEffectStyle.dark)
+//        let blurEffectView2 = UIVisualEffectView(effect: blurEffect2)
+//        
+//        blurEffectView2.frame = signUpByEmail.bounds
+//        blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        
+//        blurEffectView.frame = signInbyEmail.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        
+//        self.signInbyEmail.addSubview(blurEffectView)
+//        self.signUpByEmail.addSubview(blurEffectView2)
+        
+    }
+    
+    fileprivate func buttonText() {
+        
+        var attributedGoogleButtonText1 = NSMutableAttributedString()
+        var attributedGoogleButtonText2 = NSMutableAttributedString()
+        var attributedFacebookButtonText1 = NSMutableAttributedString()
+        var attributedFacebookButtonText2 = NSMutableAttributedString()
+        
+        //if googleSignIn.becomeFirstResponder()
+        
+        attributedGoogleButtonText1 = NSMutableAttributedString(string: "Sign Up With ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.black])
+        
+        attributedGoogleButtonText2 = NSMutableAttributedString(string: "Log In With ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.black])
+        
+        attributedGoogleButtonText1.append(NSAttributedString(string: "G+", attributes : [NSFontAttributeName: UIFont(name: "Arial", size: 30.0)!, NSForegroundColorAttributeName: UIColor.red]))
+        
+        attributedGoogleButtonText2.append(NSAttributedString(string: "G+", attributes : [NSFontAttributeName: UIFont(name: "Arial", size: 30.0)!, NSForegroundColorAttributeName: UIColor.red]))
+        
+        
+        attributedFacebookButtonText1 = NSMutableAttributedString(string: "f", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 35),  NSForegroundColorAttributeName: UIColor.white])
+        
+        attributedFacebookButtonText2 = NSMutableAttributedString(string: "f", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 35), NSForegroundColorAttributeName: UIColor.white])
+        
+        attributedFacebookButtonText1.append(NSAttributedString(string: " Sign Up With Facebook", attributes : [NSFontAttributeName: UIFont.systemFont(ofSize: 22),  NSForegroundColorAttributeName: UIColor.white]))
+        
+        attributedFacebookButtonText2.append(NSAttributedString(string: " Login With Facebook", attributes : [NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.white]))
+        
+        
+        self.googleSignUp.setAttributedTitle(attributedGoogleButtonText1, for: .normal)
+        self.googleSignIn.setAttributedTitle(attributedGoogleButtonText2, for: .normal)
+        self.facebookSignUp.setAttributedTitle(attributedFacebookButtonText1, for: .normal)
+        self.facebookLogIn.setAttributedTitle(attributedFacebookButtonText2, for: .normal)
+       
+    }
+    
+    fileprivate func styleTheLoginView() {
+        self.email.attributedPlaceholder = NSMutableAttributedString(string: "Email", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        self.password.attributedPlaceholder = NSMutableAttributedString(string: "Password", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        self.phone.attributedPlaceholder = NSMutableAttributedString(string: "Phone", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        
+    }
+
 }

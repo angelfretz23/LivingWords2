@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ib-eW-Fh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ib-eW-Fh8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,30 +35,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLY-eO-4WB" userLabel="SignUpEithEmailView">
-                                <rect key="frame" x="0.0" y="232" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="231" width="375" height="96"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-Yi-CF2">
-                                        <rect key="frame" x="10" y="69" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="70" width="355" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvt-Oe-N7F">
-                                        <rect key="frame" x="300.5" y="69.5" width="64.5" height="20.5"/>
+                                        <rect key="frame" x="300.5" y="70.5" width="64.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXF-l7-w92" userLabel="SeparatorView">
-                                        <rect key="frame" x="10" y="31" width="355" height="1"/>
+                                        <rect key="frame" x="10" y="32" width="355" height="1"/>
                                         <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="l4D-31-ERO"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-6N-79p">
-                                        <rect key="frame" x="10" y="37" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="38" width="355" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,36 +68,36 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at least 6 characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-7a-kMM">
-                                        <rect key="frame" x="208.5" y="37.5" width="156.5" height="20.5"/>
+                                        <rect key="frame" x="208.5" y="38.5" width="156.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DB-YT-HXU" userLabel="SeparatorView">
-                                        <rect key="frame" x="10" y="63" width="355" height="1"/>
+                                        <rect key="frame" x="10" y="64" width="355" height="1"/>
                                         <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="B6U-U9-brx"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzN-yX-3aI">
-                                        <rect key="frame" x="10" y="5" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="5" width="355" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                         <connections>
                                             <outlet property="delegate" destination="1ib-eW-Fh8" id="4lz-zW-lsV"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-RE-eW8">
-                                        <rect key="frame" x="257" y="5.5" width="108" height="20.5"/>
+                                        <rect key="frame" x="257" y="6.5" width="108" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yXF-l7-w92" firstAttribute="top" secondItem="qzN-yX-3aI" secondAttribute="bottom" constant="5" id="0ly-pN-4WW"/>
                                     <constraint firstItem="EvJ-Yi-CF2" firstAttribute="top" secondItem="3DB-YT-HXU" secondAttribute="bottom" constant="5" id="1so-dD-NLO"/>
@@ -141,7 +141,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="OyY-YE-YIy" kind="show" id="Dj8-ll-29L"/>
+                                                    <segue destination="OyY-YE-YIy" kind="show" identifier="forgotPasswordID" id="Dj8-ll-29L"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -168,18 +168,114 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-1r-XYb">
                                         <rect key="frame" x="57" y="24" width="261" height="192"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKY-nY-NZs" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKY-nY-NZs" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="261" height="56"/>
-                                                <color key="backgroundColor" red="0.46458548307418823" green="0.8378034234046936" blue="0.99992316961288452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Facebook Sing in"/>
+                                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Text is added from code!">
+                                                            <attributes>
+                                                                <font key="NSFont" size="11" name="LiGothicMed"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                    <tabStops>
+                                                                        <textTab alignment="left" location="28">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="56">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="84">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="112">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="140">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="168">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="196">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="224">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="252">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="280">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="308">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="336">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                    </tabStops>
+                                                                </paragraphStyle>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <connections>
                                                     <action selector="facebookSignInAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="iTb-yD-qr2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-Sg-t4x" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-Sg-t4x" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="68" width="261" height="56"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Google Sing In"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Text is added from code!">
+                                                            <attributes>
+                                                                <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                    <tabStops>
+                                                                        <textTab alignment="left" location="28">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="56">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="84">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="112">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="140">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="168">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="196">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="224">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="252">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="280">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="308">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="336">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                    </tabStops>
+                                                                </paragraphStyle>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -192,8 +288,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-Gl-f4J" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136" width="261" height="56"/>
-                                                <color key="backgroundColor" white="1" alpha="0.32684075342465752" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Sign in by Email"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Log In With Email"/>
                                                 <connections>
                                                     <action selector="signUpbyEmailAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="kjk-4J-zKJ"/>
                                                 </connections>
@@ -243,18 +340,75 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="mDm-ZL-or7">
                                         <rect key="frame" x="56" y="24" width="263" height="192"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwF-b3-DfA" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EwF-b3-DfA" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="56"/>
-                                                <color key="backgroundColor" red="0.46458548309999997" green="0.83780342340000002" blue="0.99992316960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Facebook Sing Up"/>
+                                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Text is added from code!">
+                                                            <attributes>
+                                                                <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                    <tabStops>
+                                                                        <textTab alignment="left" location="28">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="56">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="84">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="112">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="140">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="168">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="196">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="224">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="252">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="280">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="308">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                        <textTab alignment="left" location="336">
+                                                                            <options/>
+                                                                        </textTab>
+                                                                    </tabStops>
+                                                                </paragraphStyle>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <connections>
                                                     <action selector="facebookSignInAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="Nfb-af-gNR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aw-IU-684" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aw-IU-684" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="68" width="263" height="56"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Google Sing Up"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Text is added from code!">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="smallSystem"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -267,8 +421,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-oG-rpx" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136" width="263" height="56"/>
-                                                <color key="backgroundColor" white="1" alpha="0.32684075340000002" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Sign Up by Email"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Sign Up With Email"/>
                                                 <connections>
                                                     <action selector="signUpbyEmailAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="wEI-cf-FLz"/>
                                                 </connections>
@@ -317,7 +472,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUpButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="b0l-dJ-fpy"/>
+                                            <action selector="loginButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="zCy-do-Q1a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5i-JG-VpI">
@@ -327,7 +482,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="jHo-y3-pIy"/>
+                                            <action selector="signUpButtonPressed:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="HRW-iS-Ucq"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyq-Y1-WKr">
@@ -432,13 +587,17 @@
                     <connections>
                         <outlet property="bluerEffectView" destination="Hoj-xL-a4f" id="TdH-ga-cuh"/>
                         <outlet property="email" destination="qzN-yX-3aI" id="qbE-gH-fm9"/>
-                        <outlet property="facebookSignIn" destination="vKY-nY-NZs" id="eoj-wP-ubr"/>
+                        <outlet property="facebookLogIn" destination="vKY-nY-NZs" id="W7c-50-OOk"/>
+                        <outlet property="facebookSignUp" destination="EwF-b3-DfA" id="SyQ-Ce-lcp"/>
                         <outlet property="forgotPassword" destination="TtI-l9-mmQ" id="0fn-uA-u7n"/>
+                        <outlet property="googleSignIn" destination="DX6-Sg-t4x" id="xmS-CO-rc3"/>
+                        <outlet property="googleSignUp" destination="2aw-IU-684" id="Etq-XE-s2z"/>
                         <outlet property="loginInViewLeadings" destination="wil-Aw-Shr" id="0jt-4y-xse"/>
                         <outlet property="loginInViewTrailings" destination="VgA-SH-5Tt" id="b6o-sQ-D1q"/>
                         <outlet property="password" destination="DYD-6N-79p" id="647-3z-6WA"/>
                         <outlet property="phone" destination="EvJ-Yi-CF2" id="DDD-nA-u0r"/>
                         <outlet property="signInbyEmail" destination="jFy-Gl-f4J" id="3rf-0v-IzR"/>
+                        <outlet property="signUpByEmail" destination="7N1-oG-rpx" id="sCV-Oe-CCC"/>
                         <outlet property="signUpViewLeadings" destination="HlQ-cq-Eiy" id="U41-xc-JZe"/>
                         <outlet property="signUpViewTrailings" destination="MEU-tV-gI3" id="Yi7-Mm-NjL"/>
                         <outlet property="signUpWithEmailView" destination="aLY-eO-4WB" id="5dh-gW-vVK"/>
@@ -448,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwR-1t-WrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573.60000000000002" y="-396.25187406296857"/>
+            <point key="canvasLocation" x="636" y="-396"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="Ac3-r3-Par">
@@ -492,7 +651,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdw-3D-flt" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
                                         <rect key="frame" x="56" y="82" width="263" height="71"/>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Check">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1080,7 +1239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ep-KI-bdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2245.5999999999999" y="-396.25187406296857"/>
+            <point key="canvasLocation" x="2190" y="-397"/>
         </scene>
         <!--Main-->
         <scene sceneID="iUA-Hw-K85">
@@ -1088,7 +1247,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="hz3-yP-vLq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpn-Uc-9pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838" y="-381"/>
+            <point key="canvasLocation" x="2763" y="-397"/>
         </scene>
     </scenes>
     <resources>
