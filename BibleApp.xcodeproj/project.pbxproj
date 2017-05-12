@@ -32,6 +32,7 @@
 		044EEBBE1EC5FA280092CFD3 /* UploadMusicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBBD1EC5FA280092CFD3 /* UploadMusicTVC.swift */; };
 		044EEBC11EC5FA720092CFD3 /* MusicUploadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */; };
 		044EEBC21EC5FA720092CFD3 /* MusicUploadTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */; };
+		044EEBC71EC6034E0092CFD3 /* UploadMovieTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBC61EC6034E0092CFD3 /* UploadMovieTVC.swift */; };
 		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
 		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
 		04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */; };
@@ -127,6 +128,7 @@
 		044EEBBD1EC5FA280092CFD3 /* UploadMusicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMusicTVC.swift; sourceTree = "<group>"; };
 		044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicUploadTVC.swift; sourceTree = "<group>"; };
 		044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicUploadTVC.xib; sourceTree = "<group>"; };
+		044EEBC61EC6034E0092CFD3 /* UploadMovieTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMovieTVC.swift; sourceTree = "<group>"; };
 		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
 		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
 		04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPlayer.swift; sourceTree = "<group>"; };
@@ -261,6 +263,19 @@
 				044491681EB1D24E0048BB05 /* MediaModelCell.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		044EEBC31EC602440092CFD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */,
+				044EEBB41EC5F9B30092CFD3 /* BottomUploadMusicCell.xib */,
+				044EEBB51EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift */,
+				044EEBB61EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib */,
+				044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */,
+				044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2B2A93DA1EA795E6007464F0 = {
@@ -477,12 +492,7 @@
 		7825EAF31EB3329700C1D180 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */,
-				044EEBB41EC5F9B30092CFD3 /* BottomUploadMusicCell.xib */,
-				044EEBB51EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift */,
-				044EEBB61EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib */,
-				044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */,
-				044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */,
+				044EEBC31EC602440092CFD3 /* Views */,
 				7825EAF41EB333C300C1D180 /* Controllers */,
 				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
 			);
@@ -497,6 +507,7 @@
 				044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */,
 				044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */,
 				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
+				044EEBC61EC6034E0092CFD3 /* UploadMovieTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -952,6 +963,7 @@
 				04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */,
 				FC3EFCA81EC49CF000C46837 /* TagScriptureTableViewCell.swift in Sources */,
 				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
+				044EEBC71EC6034E0092CFD3 /* UploadMovieTVC.swift in Sources */,
 				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,
 				FC3EFCB21EC4A1E100C46837 /* TagsTableViewCell.swift in Sources */,
 				04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */,
