@@ -18,16 +18,24 @@ class ScriptureSelectionViewController: UIViewController {
     }
     
     @IBOutlet weak var scriptureSelectionTableView: UITableView!
-    @IBOutlet weak var placeholderView: UITableView!
+    
+    @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var searchIconView: UIView!
+    
+    @IBOutlet weak var tagScriptureLabel: UILabel!
     
     @IBOutlet weak var searchTextField: CustomTextField!
-    @IBOutlet weak var searchIconView: UIView!
+   
     var search: [Search] = []
     
     var book: String?
     var chapter: String?
     var verse: String?
     
+    @IBAction func saveTagScriptureButtonPressed(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,36 +134,53 @@ extension TableDataSource : UITableViewDataSource {
         
         
         let scripture = search[indexPath.row]
+        cell.scriptureLabel.attributedText = setAttributedIndexForRows(indexPath: indexPath, scripture: (scripture.matchingData?.bibleBookVerse?.verse)!)
         
-        
-        cell.scriptureLabel.text = (scripture.matchingData?.bibleBookVerse?.verse)!
-        
-        var attributedScriptureText = NSMutableAttributedString()
-        
-        if (indexPath.row == 0) {
-          //  cell.labelOne.isHidden = false
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
-        } else {
-            //cell.labelOne.isHidden = true
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
+        if indexPath.row == 0 {
+            cell.firstIndexLabel.isHidden = false
+        }else {
+            cell.firstIndexLabel.isHidden = true
         }
         
-        let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
-        attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
-        
-        
-        //cell.scriptureText.attributedText = attributedScriptureText
-        
-        
         return cell
+    }
+    
+    func setAttributedIndexForRows(indexPath: IndexPath, scripture: String) -> NSMutableAttributedString{
+        
+        let indexAttributes = [NSForegroundColorAttributeName: UIColor.blue]
+        let scriptureAttributes =  [NSForegroundColorAttributeName: UIColor.black]
+        
+        let attributedIndexText = NSAttributedString(string: "\(indexPath.row + 1)" + " ", attributes: indexAttributes)
+        let attributedSctipture = NSAttributedString(string:scripture, attributes: scriptureAttributes)
+        
+        let result = NSMutableAttributedString()
+        
+        if indexPath.row == 0 {
+            let attributedSctiptureFirstIndex = NSAttributedString(string:"   " + scripture, attributes: scriptureAttributes)
+            result.append(attributedSctiptureFirstIndex)
+            return result
+        }
+            result.append(attributedIndexText)
+            result.append(attributedSctipture)
+            return result
+        
     }
 }
 
 extension ScriptureSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard  let cell = tableView.cellForRow(at: indexPath) as? ScriptureSelectionTableViewCell else{return}
-  
-        cell.userSelectScripture = true
+        cell.cellIsSelected = true
+        
+        let scripture = search[indexPath.row]
+        
+        let index = indexPath.row + 1
+        
+        tagScriptureLabel.text = book! + " " + chapter! + ":" + "\(index)"
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+      
     }
 }
 
@@ -213,6 +238,12 @@ extension ScriptureSelectionViewController: UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        getParametersWordsFromSearchFieldForRequest(searchTextField.text!)
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if searchTextField.text?.characters.count ?? 0 == 0 {

@@ -14,21 +14,27 @@ class ScriptureSelectionTableViewCell: UITableViewCell {
     @IBOutlet weak var selectionImageView: UIImageView!
     @IBOutlet weak var scriptureLabel: UILabel!
     
+    @IBOutlet weak var firstIndexLabel: UILabel!
+    var cellIsSelected: Bool = false
+    
+    
     var userSelectScripture: Bool = false {
         didSet{
-            let image = userSelectScripture ? UIImage(named: "SelectScripture") : UIImage(named: "")
-            selectionImageView.image = image
+        //    let image = userSelectScripture ? UIImage(named: "SelectScripture") : UIImage(named: "")
+          //  selectionImageView.image = image
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        firstIndexLabel.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        let image = selected ? UIImage(named: "SelectScripture") : UIImage(named: "")
+          selectionImageView.image = image
+        
     }
 
 }

@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScriptureSelectionTableViewCellID" rowHeight="52" id="QeJ-1U-eiC" customClass="ScriptureSelectionTableViewCell" customModule="LivingWords" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="420" height="52"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScriptureSelectionTableViewCellID" rowHeight="157" id="QeJ-1U-eiC" customClass="ScriptureSelectionTableViewCell" customModule="LivingWords" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="157"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QeJ-1U-eiC" id="n31-uZ-ZKk">
-                <rect key="frame" x="0.0" y="0.0" width="420" height="51.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="156.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04L-QV-99O">
-                        <rect key="frame" x="49" y="8" width="343" height="35.5"/>
+                        <rect key="frame" x="38" y="8" width="374" height="150.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" id="0BH-lz-Cdu"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MN1-WA-xWa">
-                        <rect key="frame" x="8" y="16" width="20" height="20"/>
+                        <rect key="frame" x="8" y="68.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="XPo-3Y-a4d"/>
                             <constraint firstAttribute="width" constant="20" id="edm-Zk-czx"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhH-SO-en1">
+                        <rect key="frame" x="32" y="-8" width="16" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="04L-QV-99O" secondAttribute="bottom" id="5qn-fT-byh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="04L-QV-99O" secondAttribute="bottom" constant="-10" id="5qn-fT-byh"/>
                     <constraint firstAttribute="leadingMargin" secondItem="MN1-WA-xWa" secondAttribute="leading" id="CKN-34-am7"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="04L-QV-99O" secondAttribute="trailing" constant="20" id="jMn-1f-odI"/>
+                    <constraint firstItem="04L-QV-99O" firstAttribute="top" secondItem="JhH-SO-en1" secondAttribute="bottom" constant="-25" id="gPk-dn-7tJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="04L-QV-99O" secondAttribute="trailing" id="jMn-1f-odI"/>
                     <constraint firstItem="04L-QV-99O" firstAttribute="top" secondItem="n31-uZ-ZKk" secondAttribute="topMargin" id="mod-PK-Uhg"/>
                     <constraint firstItem="MN1-WA-xWa" firstAttribute="centerY" secondItem="n31-uZ-ZKk" secondAttribute="centerY" id="paC-Bw-jqu"/>
-                    <constraint firstItem="04L-QV-99O" firstAttribute="leading" secondItem="MN1-WA-xWa" secondAttribute="trailing" constant="21" id="xGT-eS-6WN"/>
+                    <constraint firstItem="04L-QV-99O" firstAttribute="leading" secondItem="MN1-WA-xWa" secondAttribute="trailing" constant="10" id="xGT-eS-6WN"/>
+                    <constraint firstItem="04L-QV-99O" firstAttribute="leading" secondItem="JhH-SO-en1" secondAttribute="trailing" constant="-10" id="ztM-D4-3xi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="firstIndexLabel" destination="JhH-SO-en1" id="7KX-db-6vT"/>
                 <outlet property="scriptureLabel" destination="04L-QV-99O" id="RsJ-u2-LF7"/>
                 <outlet property="selectionImageView" destination="MN1-WA-xWa" id="FNJ-Lz-H4R"/>
             </connections>
-            <point key="canvasLocation" x="-135" y="-60"/>
+            <point key="canvasLocation" x="-135" y="-7.5"/>
         </tableViewCell>
     </objects>
 </document>
