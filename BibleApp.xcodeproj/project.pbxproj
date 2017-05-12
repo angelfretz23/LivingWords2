@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040666AA1EC49AFC0058B2C3 /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040666A91EC49AFC0058B2C3 /* LinkViewController.swift */; };
 		041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018701EADE30000745DED /* AlamofireObjectMapper.swift */; };
 		041018741EAE31E800745DED /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041018731EAE31E800745DED /* Media.storyboard */; };
 		041018781EAE336100745DED /* AllMediaTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018761EAE336100745DED /* AllMediaTVCell.swift */; };
@@ -24,14 +23,6 @@
 		04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */; };
 		04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */; };
 		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
-		0492715B1EC233A500021C0F /* UploadSermonesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492715A1EC233A500021C0F /* UploadSermonesVC.swift */; };
-		04DC1A391EC2FC89006AA6A8 /* UploadMusicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A381EC2FC89006AA6A8 /* UploadMusicTVC.swift */; };
-		04DC1A3D1EC30478006AA6A8 /* MusicUploadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A3B1EC30478006AA6A8 /* MusicUploadTVC.swift */; };
-		04DC1A3E1EC30478006AA6A8 /* MusicUploadTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC1A3C1EC30478006AA6A8 /* MusicUploadTVC.xib */; };
-		04DC1A471EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A451EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift */; };
-		04DC1A481EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC1A461EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib */; };
-		04DC1A4B1EC3580A006AA6A8 /* BottomUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC1A491EC3580A006AA6A8 /* BottomUploadMusicCell.swift */; };
-		04DC1A4C1EC3580A006AA6A8 /* BottomUploadMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC1A4A1EC3580A006AA6A8 /* BottomUploadMusicCell.xib */; };
 		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
 		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
 		04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */; };
@@ -65,6 +56,21 @@
 		784D52291EB2394600A27112 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D52281EB2394600A27112 /* CustomView.swift */; };
 		784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D522A1EB23E5E00A27112 /* CustomCurveView.swift */; };
 		A8151FD2FEADD86FADB49607 /* Pods_BibleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */; };
+		FC3EFC981EC4898000C46837 /* BookUpload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFC971EC4898000C46837 /* BookUpload.storyboard */; };
+		FC3EFC9A1EC48C7B00C46837 /* AuthorNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFC991EC48C7B00C46837 /* AuthorNameTableViewCell.swift */; };
+		FC3EFC9D1EC48CB500C46837 /* AuthorNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFC9C1EC48CB500C46837 /* AuthorNameTableViewCell.xib */; };
+		FC3EFC9F1EC48D6100C46837 /* BookUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFC9E1EC48D6100C46837 /* BookUploadViewController.swift */; };
+		FC3EFCA31EC4972500C46837 /* UploadBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCA21EC4972500C46837 /* UploadBookTableViewCell.swift */; };
+		FC3EFCA51EC4974200C46837 /* UploadBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFCA41EC4974200C46837 /* UploadBookTableViewCell.xib */; };
+		FC3EFCA81EC49CF000C46837 /* TagScriptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCA71EC49CEF00C46837 /* TagScriptureTableViewCell.swift */; };
+		FC3EFCAA1EC49D0D00C46837 /* TagScriptureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFCA91EC49D0D00C46837 /* TagScriptureTableViewCell.xib */; };
+		FC3EFCAD1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCAC1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift */; };
+		FC3EFCAF1EC4A14200C46837 /* BookDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFCAE1EC4A14200C46837 /* BookDescriptionTableViewCell.xib */; };
+		FC3EFCB21EC4A1E100C46837 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCB11EC4A1E100C46837 /* TagsTableViewCell.swift */; };
+		FC3EFCB41EC4A21500C46837 /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFCB31EC4A21500C46837 /* TagsTableViewCell.xib */; };
+		FC3EFCB61EC4CAAE00C46837 /* ScriptureSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCB51EC4CAAE00C46837 /* ScriptureSelectionViewController.swift */; };
+		FC3EFCB91EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCB81EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift */; };
+		FC3EFCBB1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFCBA1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +93,6 @@
 /* Begin PBXFileReference section */
 		00904AFE42544FD65EB14C33 /* Pods_BibleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01EE202EC68D66D91CD0C9FF /* Pods-BibleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		040666A91EC49AFC0058B2C3 /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
 		041018701EADE30000745DED /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		041018731EAE31E800745DED /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		041018761EAE336100745DED /* AllMediaTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMediaTVCell.swift; sourceTree = "<group>"; };
@@ -104,14 +109,6 @@
 		04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
-		0492715A1EC233A500021C0F /* UploadSermonesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadSermonesVC.swift; sourceTree = "<group>"; };
-		04DC1A381EC2FC89006AA6A8 /* UploadMusicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMusicTVC.swift; sourceTree = "<group>"; };
-		04DC1A3B1EC30478006AA6A8 /* MusicUploadTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicUploadTVC.swift; sourceTree = "<group>"; };
-		04DC1A3C1EC30478006AA6A8 /* MusicUploadTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicUploadTVC.xib; sourceTree = "<group>"; };
-		04DC1A451EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCellUploadMusicCell.swift; sourceTree = "<group>"; };
-		04DC1A461EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopCellUploadMusicCell.xib; sourceTree = "<group>"; };
-		04DC1A491EC3580A006AA6A8 /* BottomUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomUploadMusicCell.swift; sourceTree = "<group>"; };
-		04DC1A4A1EC3580A006AA6A8 /* BottomUploadMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomUploadMusicCell.xib; sourceTree = "<group>"; };
 		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
 		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
 		04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPlayer.swift; sourceTree = "<group>"; };
@@ -155,6 +152,21 @@
 		784D52281EB2394600A27112 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		784D522A1EB23E5E00A27112 /* CustomCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCurveView.swift; sourceTree = "<group>"; };
 		D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3EFC971EC4898000C46837 /* BookUpload.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookUpload.storyboard; sourceTree = "<group>"; };
+		FC3EFC991EC48C7B00C46837 /* AuthorNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorNameTableViewCell.swift; sourceTree = "<group>"; };
+		FC3EFC9C1EC48CB500C46837 /* AuthorNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthorNameTableViewCell.xib; sourceTree = "<group>"; };
+		FC3EFC9E1EC48D6100C46837 /* BookUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookUploadViewController.swift; sourceTree = "<group>"; };
+		FC3EFCA21EC4972500C46837 /* UploadBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadBookTableViewCell.swift; sourceTree = "<group>"; };
+		FC3EFCA41EC4974200C46837 /* UploadBookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadBookTableViewCell.xib; sourceTree = "<group>"; };
+		FC3EFCA71EC49CEF00C46837 /* TagScriptureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagScriptureTableViewCell.swift; sourceTree = "<group>"; };
+		FC3EFCA91EC49D0D00C46837 /* TagScriptureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagScriptureTableViewCell.xib; sourceTree = "<group>"; };
+		FC3EFCAC1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		FC3EFCAE1EC4A14200C46837 /* BookDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		FC3EFCB11EC4A1E100C46837 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		FC3EFCB31EC4A21500C46837 /* TagsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
+		FC3EFCB51EC4CAAE00C46837 /* ScriptureSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureSelectionViewController.swift; sourceTree = "<group>"; };
+		FC3EFCB81EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		FC3EFCBA1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptureSelectionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,19 +245,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		04DC1A3A1EC303E7006AA6A8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				04DC1A3B1EC30478006AA6A8 /* MusicUploadTVC.swift */,
-				04DC1A3C1EC30478006AA6A8 /* MusicUploadTVC.xib */,
-				04DC1A451EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift */,
-				04DC1A461EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib */,
-				04DC1A491EC3580A006AA6A8 /* BottomUploadMusicCell.swift */,
-				04DC1A4A1EC3580A006AA6A8 /* BottomUploadMusicCell.xib */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		2B2A93DA1EA795E6007464F0 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +305,7 @@
 		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				FC3EFC941EC4894A00C46837 /* BookUpload */,
 				7825EAF31EB3329700C1D180 /* Main */,
 				041018721EAE31CB00745DED /* Media */,
 				2B4423DC1EA9E6C0006AB9CF /* MainTableView */,
@@ -459,7 +459,6 @@
 		7825EAF31EB3329700C1D180 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				04DC1A3A1EC303E7006AA6A8 /* Views */,
 				7825EAF41EB333C300C1D180 /* Controllers */,
 				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
 			);
@@ -471,9 +470,6 @@
 			children = (
 				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
 				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
-				0492715A1EC233A500021C0F /* UploadSermonesVC.swift */,
-				04DC1A381EC2FC89006AA6A8 /* UploadMusicTVC.swift */,
-				040666A91EC49AFC0058B2C3 /* LinkViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -499,6 +495,92 @@
 				6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC3EFC941EC4894A00C46837 /* BookUpload */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFC961EC4896500C46837 /* Views */,
+				FC3EFC951EC4895700C46837 /* Controllers */,
+				FC3EFC971EC4898000C46837 /* BookUpload.storyboard */,
+			);
+			name = BookUpload;
+			sourceTree = "<group>";
+		};
+		FC3EFC951EC4895700C46837 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFC9E1EC48D6100C46837 /* BookUploadViewController.swift */,
+				FC3EFCB51EC4CAAE00C46837 /* ScriptureSelectionViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FC3EFC961EC4896500C46837 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFCB71EC4CEBF00C46837 /* ScriptureSelectionCell */,
+				FC3EFCB01EC4A1B300C46837 /* TagsCell */,
+				FC3EFCAB1EC4A10A00C46837 /* BookDescriptionCell */,
+				FC3EFCA61EC49CCC00C46837 /* TagScriptureCell */,
+				FC3EFCA11EC496FB00C46837 /* UploadBookCell */,
+				FC3EFC9B1EC48C8200C46837 /* AuthorNameCell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FC3EFC9B1EC48C8200C46837 /* AuthorNameCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFC991EC48C7B00C46837 /* AuthorNameTableViewCell.swift */,
+				FC3EFC9C1EC48CB500C46837 /* AuthorNameTableViewCell.xib */,
+			);
+			name = AuthorNameCell;
+			sourceTree = "<group>";
+		};
+		FC3EFCA11EC496FB00C46837 /* UploadBookCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFCA21EC4972500C46837 /* UploadBookTableViewCell.swift */,
+				FC3EFCA41EC4974200C46837 /* UploadBookTableViewCell.xib */,
+			);
+			name = UploadBookCell;
+			sourceTree = "<group>";
+		};
+		FC3EFCA61EC49CCC00C46837 /* TagScriptureCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFCA71EC49CEF00C46837 /* TagScriptureTableViewCell.swift */,
+				FC3EFCA91EC49D0D00C46837 /* TagScriptureTableViewCell.xib */,
+			);
+			name = TagScriptureCell;
+			sourceTree = "<group>";
+		};
+		FC3EFCAB1EC4A10A00C46837 /* BookDescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFCAC1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift */,
+				FC3EFCAE1EC4A14200C46837 /* BookDescriptionTableViewCell.xib */,
+			);
+			name = BookDescriptionCell;
+			sourceTree = "<group>";
+		};
+		FC3EFCB01EC4A1B300C46837 /* TagsCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFCB11EC4A1E100C46837 /* TagsTableViewCell.swift */,
+				FC3EFCB31EC4A21500C46837 /* TagsTableViewCell.xib */,
+			);
+			name = TagsCell;
+			sourceTree = "<group>";
+		};
+		FC3EFCB71EC4CEBF00C46837 /* ScriptureSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EFCB81EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift */,
+				FC3EFCBA1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib */,
+			);
+			name = ScriptureSelectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,17 +704,21 @@
 				0410187D1EAE3BE900745DED /* MediaCollectionViewCell.xib in Resources */,
 				2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */,
 				041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */,
+				FC3EFCB41EC4A21500C46837 /* TagsTableViewCell.xib in Resources */,
 				2B4423E01EA9E6E1006AB9CF /* MainTableView.storyboard in Resources */,
-				04DC1A3E1EC30478006AA6A8 /* MusicUploadTVC.xib in Resources */,
-				04DC1A4C1EC3580A006AA6A8 /* BottomUploadMusicCell.xib in Resources */,
+				FC3EFC981EC4898000C46837 /* BookUpload.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
 				04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */,
 				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
 				041018741EAE31E800745DED /* Media.storyboard in Resources */,
-				04DC1A481EC34CD7006AA6A8 /* TopCellUploadMusicCell.xib in Resources */,
+				FC3EFCBB1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib in Resources */,
 				7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */,
+				FC3EFCA51EC4974200C46837 /* UploadBookTableViewCell.xib in Resources */,
+				FC3EFCAA1EC49D0D00C46837 /* TagScriptureTableViewCell.xib in Resources */,
+				FC3EFC9D1EC48CB500C46837 /* AuthorNameTableViewCell.xib in Resources */,
+				FC3EFCAF1EC4A14200C46837 /* BookDescriptionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,13 +881,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DC1A4B1EC3580A006AA6A8 /* BottomUploadMusicCell.swift in Sources */,
 				784D52291EB2394600A27112 /* CustomView.swift in Sources */,
 				2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */,
 				2B472F121EAE2E8B004084F1 /* Search.swift in Sources */,
-				040666AA1EC49AFC0058B2C3 /* LinkViewController.swift in Sources */,
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
-				04DC1A391EC2FC89006AA6A8 /* UploadMusicTVC.swift in Sources */,
+				FC3EFCA31EC4972500C46837 /* UploadBookTableViewCell.swift in Sources */,
 				2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */,
 				2B4423E41EA9E6F0006AB9CF /* ScriptureTableViewCell.swift in Sources */,
 				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
@@ -812,25 +896,29 @@
 				7825EAFD1EB3C50F00C1D180 /* RoundedTextField.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
 				04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */,
+				FC3EFCAD1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift in Sources */,
 				04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
-				0492715B1EC233A500021C0F /* UploadSermonesVC.swift in Sources */,
+				FC3EFCB91EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift in Sources */,
+				FC3EFC9F1EC48D6100C46837 /* BookUploadViewController.swift in Sources */,
 				04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */,
+				FC3EFC9A1EC48C7B00C46837 /* AuthorNameTableViewCell.swift in Sources */,
 				041018831EAE47C800745DED /* MediaModel.swift in Sources */,
 				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
+				FC3EFCB61EC4CAAE00C46837 /* ScriptureSelectionViewController.swift in Sources */,
 				7825EAFB1EB352BA00C1D180 /* HomeViewController.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
 				04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */,
 				2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */,
 				041018781EAE336100745DED /* AllMediaTVCell.swift in Sources */,
-				04DC1A471EC34CD7006AA6A8 /* TopCellUploadMusicCell.swift in Sources */,
 				04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */,
+				FC3EFCA81EC49CF000C46837 /* TagScriptureTableViewCell.swift in Sources */,
 				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
 				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,
+				FC3EFCB21EC4A1E100C46837 /* TagsTableViewCell.swift in Sources */,
 				04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */,
-				04DC1A3D1EC30478006AA6A8 /* MusicUploadTVC.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 				2B3BEC641EAF4EF500BD1BE0 /* CustomTextField.swift in Sources */,
 			);
