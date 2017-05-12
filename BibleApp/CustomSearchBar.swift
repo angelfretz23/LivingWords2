@@ -9,15 +9,14 @@
 import UIKit
 
 class CustomSearchBar: UISearchBar {
-
+    
     override init(frame: CGRect) {
+        
         super.init(frame: frame)
-        
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
+        
         super.init(coder: aDecoder)
     }
     
@@ -25,13 +24,12 @@ class CustomSearchBar: UISearchBar {
         super.layoutSubviews()
         
         configureAppearance()
-        
     }
+    
 }
 
 private extension CustomSearchBar {
     func configureAppearance() {
-
         
         for subView in subviews {
             for subsubView in subView.subviews {
@@ -62,19 +60,19 @@ private extension CustomSearchBar {
                     result.append(myAttrString3)
                     
                     textField.attributedPlaceholder = result
-             
+                    
                     textField.textAlignment = .left
                     
                     textField.leftViewMode = .never
                     
                     //textField.textColor = UIColor.customDarkBrownColor()
-//                    textField.borderStyle = .line
-//                    textField.backgroundColor = UIColor.customLightGrayColor()
-//                    textField.layer.borderWidth = 1.0
-//
+                    //                    textField.borderStyle = .line
+                    //                    textField.backgroundColor = UIColor.customLightGrayColor()
+                    //                    textField.layer.borderWidth = 1.0
+                    //
                 }
             }
         }
-        
-}
+    }
+    
 }

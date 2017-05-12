@@ -12,7 +12,7 @@ class CustomTextField: UITextField {
 
     override func deleteBackward() {
         super.deleteBackward()
-        NotificationCenter.default.post(name: Notification.Name("UserDidPressedClearButton"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("UserPressedClearButton"), object: nil)
     }
 
 }

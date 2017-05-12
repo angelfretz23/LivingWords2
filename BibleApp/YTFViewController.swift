@@ -95,6 +95,7 @@ class YTFViewController: UIViewController {
     var minimizeImage: UIImage?
     
     var subviewForDetailsView: UIView?
+    var helper: MainMediaViewController?
     
     enum UIPanGestureRecognizerDirection {
         case Undefined
@@ -233,10 +234,17 @@ class YTFViewController: UIViewController {
         }
     }
     
+    
+    // MARK: - IBActions
     @IBAction func minimizeButtonTouched(sender: AnyObject) {
         
         minimizeViews()
     }
+    
+    @IBAction func closeMediaView(_ sender: UIButton) {
+        removeViews()
+    }
+    
     
     func setupSlider(with duration: Double, currentTime: Float = 0.0) {
         
@@ -244,6 +252,8 @@ class YTFViewController: UIViewController {
         slider.maximumValue = Float(duration)
         slider.value = currentTime
     }
+    
+    
 }
 
 extension YTFViewController: UITableViewDelegate {

@@ -29,10 +29,11 @@ class NewPasswordViewController: UIViewController {
         
         // styling
         setUpBlurEffect()
-
+        styleNewPasswordTxtFld()
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,48 +69,10 @@ class NewPasswordViewController: UIViewController {
         }
     }
     
-//        let URL = "http://bible.binariks.com/api/users/success"
-//        guard let url = NSURL(string: URL) else { print("Error: cannot create URL"); return }
-//        
-//        if newPasswordTxtFld.text == "" || confirmNewPasswordTxtFld.text == "" {
-//            
-//            self.displayAlert(userMessage: "Type in the password and confirm it!")
-//            
-//        } else {
-//            
-//            if newPasswordTxtFld.text == confirmNewPasswordTxtFld.text {
-//                if let id = self.userID, let password = self.newPasswordTxtFld.text {
-//                    
-//                    let dict: [String:String] = ["user_id": String(id), "new_password": password]
-//                    
-//                    Alamofire.request((url as URL), method: .post, parameters: dict, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-//                        
-//                        switch(response.result) {
-//                        case .success(let JSON):
-//                            
-//                            let response = JSON as! NSDictionary
-//                            
-//                            if let message = response.object(forKey: "message") {
-//                            
-//                                print("🔴🔴🔴 \(message) 🔴🔴🔴")
-//                                self.loadApp()
-//                            }
-//                            
-//                        
-//                        case .failure(let error):
-//                            self.displayAlert(userMessage: "Something went wrong!")
-//                            print("🔴🔴🔴 \(error) 🔴🔴🔴")
-//                            break
-//                        }
-//                    }
-//                } else {
-//                    self.displayAlert(userMessage: "The problem with source code occured!!! It's a question for developers")
-//                }
-//            } else {
-//                self.displayAlert(userMessage: "The passwords do not match! Try again!")
-//            }
-//        }
-//    }
+    @IBAction func navigateBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -143,7 +106,7 @@ extension NewPasswordViewController {
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
         alert.addAction(okAction)
-
+        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -159,4 +122,10 @@ extension NewPasswordViewController {
         
         return true
     }
+    
+    fileprivate func styleNewPasswordTxtFld() {
+        self.newPasswordTxtFld.attributedPlaceholder = NSMutableAttributedString(string: "New Password", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+        self.confirmNewPasswordTxtFld.attributedPlaceholder = NSMutableAttributedString(string: "Confirm Password", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
+    }
+    
 }

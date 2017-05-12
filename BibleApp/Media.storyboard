@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ev6-gm-iUA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ev6-gm-iUA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,10 +44,10 @@
                                                         <rect key="frame" x="0.0" y="33" width="375" height="33"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-qE-M13">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="33"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-mP-ztK">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="All Media">
@@ -54,7 +55,7 @@
                                                                         </state>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qe-qU-o9V">
-                                                                        <rect key="frame" x="75" y="0.0" width="75" height="33"/>
+                                                                        <rect key="frame" x="69" y="0.0" width="69" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Music">
@@ -62,23 +63,23 @@
                                                                         </state>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-UA-2BL">
-                                                                        <rect key="frame" x="150" y="0.0" width="75" height="33"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                        <state key="normal" title="Movies">
-                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </state>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ol-8h-jc6">
-                                                                        <rect key="frame" x="225" y="0.0" width="75" height="33"/>
+                                                                        <rect key="frame" x="138" y="0.0" width="69" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Sermons">
                                                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                     </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ol-8h-jc6">
+                                                                        <rect key="frame" x="207" y="0.0" width="69" height="33"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Movies">
+                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                    </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yI-rH-2Pq">
-                                                                        <rect key="frame" x="300" y="0.0" width="75" height="33"/>
+                                                                        <rect key="frame" x="276" y="0.0" width="69" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Books">
@@ -87,12 +88,26 @@
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHB-Qr-jwZ">
+                                                                <rect key="frame" x="344" y="1" width="31" height="31"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="PHB-Qr-jwZ" secondAttribute="height" multiplier="1:1" id="jeo-EA-4Oa"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="close"/>
+                                                                <connections>
+                                                                    <action selector="dismissMediaView:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="5cG-Pj-3hf"/>
+                                                                    <segue destination="M5L-S8-r8g" kind="show" identifier="backToTheBible" id="M2u-2E-FP1"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="Koc-qE-M13" secondAttribute="trailing" id="cXl-cn-wGg"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PHB-Qr-jwZ" secondAttribute="trailing" id="NMG-S1-zRH"/>
+                                                            <constraint firstItem="PHB-Qr-jwZ" firstAttribute="top" secondItem="MEv-zh-oli" secondAttribute="top" constant="1" id="VYR-Pe-Ug8"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Koc-qE-M13" secondAttribute="trailing" constant="30" id="cXl-cn-wGg"/>
                                                             <constraint firstItem="Koc-qE-M13" firstAttribute="leading" secondItem="MEv-zh-oli" secondAttribute="leading" id="hyD-pP-IOx"/>
                                                             <constraint firstItem="Koc-qE-M13" firstAttribute="top" secondItem="MEv-zh-oli" secondAttribute="top" id="ngl-b9-Ip9"/>
+                                                            <constraint firstAttribute="bottom" secondItem="PHB-Qr-jwZ" secondAttribute="bottom" constant="1" id="nib-cl-Ke3"/>
                                                             <constraint firstAttribute="bottom" secondItem="Koc-qE-M13" secondAttribute="bottom" id="qJf-zk-ZmF"/>
                                                         </constraints>
                                                     </view>
@@ -138,5 +153,16 @@
             </objects>
             <point key="canvasLocation" x="-464.80000000000001" y="-396.25187406296857"/>
         </scene>
+        <!--MainTableView-->
+        <scene sceneID="Scy-IB-sIB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainTableView" id="M5L-S8-r8g" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GA5-9O-31h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-407"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="close" width="29" height="29"/>
+    </resources>
 </document>

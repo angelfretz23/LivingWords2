@@ -46,6 +46,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         
         // styling
         setUpBlurEffect()
+        styleEmailTxtFld() 
         
         // initial values for constraints
         initialConstraints()
@@ -83,30 +84,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             })
         }
     }
-//        let URL = "http://bible.binariks.com/api/users/reset"
-//        guard let url = NSURL(string: URL) else { print("Error: cannot create URL"); return }
-//        
-//        
-//        let dict: [String:String] = ["email": self.email.text!]
-//        
-//        Alamofire.request((url as URL), method: .post, parameters: dict, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-//            self.animateForgotPasswordScreen()
-//            
-//            switch(response.result) {
-//            case .success(let JSON):
-//                
-//                let response = JSON as! NSDictionary
-//                
-//                if let message = response.object(forKey: "message") {
-//                print("🔴🔴🔴 \(message) 🔴🔴🔴")
-//                }
-//            case .failure(let error):
-//                print("🔴🔴🔴 \(error) 🔴🔴🔴")
-//                
-//            }
-//            
-//        }
-    
+
 
     @IBAction func checkPassCodePressed(_ sender: UIButton) {
         
@@ -139,45 +117,9 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
-//        let URL = "http://bible.binariks.com/api/users/check"
-//        guard let url = NSURL(string: URL) else { print("Error: cannot create URL"); return }
-//        
-//        if let num1 = checkPassCodeTxtFld_1.text, let num2 = checkPassCodeTxtFld_2.text, let num3 = checkPassCodeTxtFld_3.text, let num4 = checkPassCodeTxtFld_4.text {
-//            if ((num1 == "") || (num2 == "") || (num3 == "") || (num4 == "")) {
-//                
-//                self.displayAlert(userMessage: "Enter The Confirmation Code!")
-//                
-//            } else {
-//                
-//                let code = num1+num2+num3+num4
-//                
-//                let dict: [String:String] = ["code": code]
-//                
-//                Alamofire.request((url as URL), method: .post, parameters: dict, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-//                    self.animateForgotPasswordScreen()
-//                    
-//                    switch(response.result) {
-//                    case .success(let JSON):
-//                        
-//                        let response = JSON as! NSDictionary
-//                        
-//                        if let message = response.object(forKey: "message") {
-//                            print("🔴🔴🔴 USER_ID \(message) 🔴🔴🔴")
-//                            self.userID = message as? Int
-//                            self.performSegue(withIdentifier: "checkPassCodeID", sender: self)
-//                        }
-//                        
-//                    case .failure(let error):
-//                        self.displayAlert(userMessage: "Something went wrong!")
-//                        print("🔴🔴🔴 \(error) 🔴🔴🔴")
-//
-//                    }
-//                }
-//            }
-//        }
-    
-    
+    @IBAction func comeBackToLogIn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -249,5 +191,9 @@ extension ForgotPasswordViewController {
         
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func styleEmailTxtFld() {
+        self.email.attributedPlaceholder = NSMutableAttributedString(string: "Email", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
     }
 }

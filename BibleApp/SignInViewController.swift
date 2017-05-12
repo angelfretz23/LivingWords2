@@ -361,7 +361,6 @@ extension OtherHelpfullMethods {
         self.email.attributedPlaceholder = NSMutableAttributedString(string: "Email", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
         self.password.attributedPlaceholder = NSMutableAttributedString(string: "Password", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
         self.phone.attributedPlaceholder = NSMutableAttributedString(string: "Phone", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
-        
     }
 
 }

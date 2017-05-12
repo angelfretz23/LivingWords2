@@ -56,7 +56,7 @@ class MainTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadSampleScriptures()
+        //loadSampleScriptures()
         
         registerXib()
         
@@ -84,7 +84,7 @@ class MainTableViewController: UIViewController {
 
         if expandSearch {
             expandSearch = false
-        }else {
+        } else {
             expandSearch = true
         }
         //updateDataSourceIfNeeded()
@@ -104,7 +104,7 @@ class MainTableViewController: UIViewController {
         mainTableView.register(UINib(nibName: "ScriptureTableViewCell", bundle: nil), forCellReuseIdentifier: "ScriptureCellID")
     }
     
-    // Automatically channges the size of the row
+    // Automatically changes the size of the row
     func configureTableView(){
         mainTableView.rowHeight = UITableViewAutomaticDimension
         mainTableView.estimatedRowHeight = 45
@@ -123,8 +123,8 @@ class MainTableViewController: UIViewController {
 
 //Private
 
-extension MainTableViewController{
-    func getParametersWordsFromSearchFieldForRequest(_ searchString: String){
+extension MainTableViewController {
+    func getParametersWordsFromSearchFieldForRequest(_ searchString: String) {
         if searchString == "" {return}
         let searchParameters = searchString.components(separatedBy: " ")
         switch searchParameters.count {
@@ -144,11 +144,29 @@ extension MainTableViewController{
             book = searchParameters[0]
             chapter = searchParameters[1]
             verse = searchParameters[2]
+            
+            
+            if ((book?.isEmpty)! && (chapter?.isEmpty)! && (verse?.isEmpty)!) {
+                print("🔴 User didn't input any data to search for 🔴")
+                
+            } else {
+            
+                if let index = Int(verse!) {
+                    let index = index - 1
+                    let indePath: IndexPath = [0, index]
+                    UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseIn, animations: {
+                        self.mainTableView.scrollToRow(at: indePath, at: .top, animated: true)
+                    }, completion: nil)
+                    
+                    return
+                }
+            }
+            
         default:
             break
         }
         updateSearch()
-     
+        
     }
 }
 
@@ -255,6 +273,7 @@ extension MainTableViewController {
         }
     }
 }
+
 extension MainTableViewController: UITextFieldDelegate {
     
     func userDidPressClearButton(_ notification: NSNotification){
@@ -267,7 +286,7 @@ extension MainTableViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if searchTextField.text?.characters.count ?? 0 == 0 {
             placeholderView.isHidden = true
-        }else if searchTextField.text == "" {
+        } else if searchTextField.text == "" {
            //placeholderView.isHidden = false
         }
     

@@ -45,8 +45,8 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvt-Oe-N7F">
-                                        <rect key="frame" x="300.5" y="70.5" width="64.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="297" y="70" width="68" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -68,8 +68,8 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at least 6 characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-7a-kMM">
-                                        <rect key="frame" x="208.5" y="38.5" width="156.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="199.5" y="38" width="165.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -91,8 +91,8 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-RE-eW8">
-                                        <rect key="frame" x="257" y="6.5" width="108" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="250.5" y="6" width="114.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -176,46 +176,7 @@
                                                         <fragment content="Text is added from code!">
                                                             <attributes>
                                                                 <font key="NSFont" size="11" name="LiGothicMed"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                    <tabStops>
-                                                                        <textTab alignment="left" location="28">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="56">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="84">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="112">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="140">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="168">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="196">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="224">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="252">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="280">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="308">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="336">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                    </tabStops>
-                                                                </paragraphStyle>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -232,46 +193,7 @@
                                                         <fragment content="Text is added from code!">
                                                             <attributes>
                                                                 <font key="NSFont" size="11" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                    <tabStops>
-                                                                        <textTab alignment="left" location="28">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="56">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="84">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="112">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="140">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="168">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="196">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="224">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="252">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="280">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="308">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="336">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                    </tabStops>
-                                                                </paragraphStyle>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -348,46 +270,7 @@
                                                         <fragment content="Text is added from code!">
                                                             <attributes>
                                                                 <font key="NSFont" size="11" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                    <tabStops>
-                                                                        <textTab alignment="left" location="28">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="56">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="84">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="112">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="140">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="168">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="196">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="224">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="252">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="280">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="308">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                        <textTab alignment="left" location="336">
-                                                                            <options/>
-                                                                        </textTab>
-                                                                    </tabStops>
-                                                                </paragraphStyle>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -638,7 +521,7 @@
                                 <rect key="frame" x="0.0" y="426" width="375" height="241"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-V2-i71" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="82" width="263" height="71"/>
+                                        <rect key="frame" x="56" y="85" width="263" height="72"/>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Confirm Email">
@@ -649,7 +532,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdw-3D-flt" customClass="RoundedButton" customModule="LivingWords" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="82" width="263" height="71"/>
+                                        <rect key="frame" x="56" y="85" width="263" height="72"/>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Check">
@@ -660,19 +543,35 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfI-Ye-2qL">
-                                        <rect key="frame" x="0.0" y="153" width="375" height="81"/>
+                                        <rect key="frame" x="0.0" y="157" width="375" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYn-By-8OA">
+                                                <rect key="frame" x="158" y="12" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oYn-By-8OA" secondAttribute="height" multiplier="1:1" id="PhH-Ne-1mS"/>
+                                                </constraints>
+                                                <state key="normal" image="comeBack"/>
+                                                <connections>
+                                                    <action selector="comeBackToLogIn:" destination="OyY-YE-YIy" eventType="touchUpInside" id="BTB-7P-Kp2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="oYn-By-8OA" firstAttribute="centerY" secondItem="TfI-Ye-2qL" secondAttribute="centerY" id="osz-gS-xxG"/>
+                                            <constraint firstItem="oYn-By-8OA" firstAttribute="centerX" secondItem="TfI-Ye-2qL" secondAttribute="centerX" id="qlk-1W-9ft"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFo-Qx-RHi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4R-81-vLj">
-                                        <rect key="frame" x="319" y="82" width="56" height="71"/>
+                                        <rect key="frame" x="319" y="85" width="56" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TB1-qb-vVV">
-                                        <rect key="frame" x="0.0" y="82" width="56" height="71"/>
+                                        <rect key="frame" x="0.0" y="85" width="56" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -685,12 +584,12 @@
                                     <constraint firstItem="TfI-Ye-2qL" firstAttribute="top" secondItem="l3f-V2-i71" secondAttribute="bottom" id="9He-IH-9YT"/>
                                     <constraint firstItem="TB1-qb-vVV" firstAttribute="top" secondItem="gFo-Qx-RHi" secondAttribute="bottom" id="9gR-dN-uYW"/>
                                     <constraint firstItem="TB1-qb-vVV" firstAttribute="width" secondItem="c4R-81-vLj" secondAttribute="width" id="AQ6-mb-wrQ"/>
-                                    <constraint firstItem="TfI-Ye-2qL" firstAttribute="top" secondItem="TB1-qb-vVV" secondAttribute="bottom" constant="0.66666666666668561" id="Bq9-e6-Mnh"/>
+                                    <constraint firstItem="TfI-Ye-2qL" firstAttribute="top" secondItem="TB1-qb-vVV" secondAttribute="bottom" id="Bq9-e6-Mnh"/>
                                     <constraint firstItem="TfI-Ye-2qL" firstAttribute="leading" secondItem="6Vr-gO-JXm" secondAttribute="leading" id="ER9-md-AqY"/>
                                     <constraint firstItem="TfI-Ye-2qL" firstAttribute="top" secondItem="c4R-81-vLj" secondAttribute="bottom" constant="0.66666666666668561" id="GyI-YA-htE"/>
                                     <constraint firstAttribute="trailing" secondItem="Bdw-3D-flt" secondAttribute="trailing" constant="56" id="K4f-pz-zJ4"/>
                                     <constraint firstItem="gFo-Qx-RHi" firstAttribute="top" secondItem="6Vr-gO-JXm" secondAttribute="top" id="KK1-YZ-nUe"/>
-                                    <constraint firstItem="TfI-Ye-2qL" firstAttribute="height" secondItem="6Vr-gO-JXm" secondAttribute="height" multiplier="0.35" constant="-2.8499999999999943" id="KLb-SU-AVK"/>
+                                    <constraint firstItem="TfI-Ye-2qL" firstAttribute="height" secondItem="6Vr-gO-JXm" secondAttribute="height" multiplier="0.35" id="KLb-SU-AVK"/>
                                     <constraint firstItem="l3f-V2-i71" firstAttribute="top" secondItem="gFo-Qx-RHi" secondAttribute="bottom" id="Ks6-0c-4k4"/>
                                     <constraint firstItem="TB1-qb-vVV" firstAttribute="top" secondItem="gFo-Qx-RHi" secondAttribute="bottom" id="SEu-Fc-wJM"/>
                                     <constraint firstAttribute="trailing" secondItem="l3f-V2-i71" secondAttribute="trailing" constant="56" id="Tgp-Yz-1Mx"/>
@@ -700,7 +599,7 @@
                                     <constraint firstItem="Bdw-3D-flt" firstAttribute="top" secondItem="gFo-Qx-RHi" secondAttribute="bottom" id="iME-eU-hdG"/>
                                     <constraint firstAttribute="trailing" secondItem="TfI-Ye-2qL" secondAttribute="trailing" id="jMz-OF-xpY"/>
                                     <constraint firstAttribute="trailing" secondItem="c4R-81-vLj" secondAttribute="trailing" id="oE3-2a-Uea"/>
-                                    <constraint firstAttribute="bottom" secondItem="TfI-Ye-2qL" secondAttribute="bottom" constant="7.5" id="pba-9O-UUn"/>
+                                    <constraint firstAttribute="bottom" secondItem="TfI-Ye-2qL" secondAttribute="bottom" id="pba-9O-UUn"/>
                                     <constraint firstItem="gFo-Qx-RHi" firstAttribute="height" secondItem="TfI-Ye-2qL" secondAttribute="height" constant="1" id="qtc-69-zfn"/>
                                     <constraint firstItem="Bdw-3D-flt" firstAttribute="leading" secondItem="6Vr-gO-JXm" secondAttribute="leading" constant="56" id="rmQ-LE-SVW"/>
                                     <constraint firstItem="TfI-Ye-2qL" firstAttribute="top" secondItem="Bdw-3D-flt" secondAttribute="bottom" id="tEi-id-VUm"/>
@@ -719,23 +618,24 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UZ-V4-b6H">
-                                        <rect key="frame" x="267" y="5" width="108" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="260.5" y="5" width="114.5" height="21"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYR-F2-T91">
                                         <rect key="frame" x="8" y="0.0" width="367" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                         <connections>
                                             <outlet property="delegate" destination="OyY-YE-YIy" id="mTW-Q0-WDI"/>
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="2UZ-V4-b6H" firstAttribute="trailing" secondItem="QYR-F2-T91" secondAttribute="trailing" id="8bj-Es-BhP"/>
                                     <constraint firstAttribute="bottom" secondItem="Li5-8I-3to" secondAttribute="bottom" id="BE4-ja-y5l"/>
@@ -766,7 +666,7 @@
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="X" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-IT-nY8" customClass="RoundedTextField" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="37.5" width="71" height="71"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="71" id="6bj-Fk-Uuv"/>
                                                     <constraint firstAttribute="width" secondItem="Dhb-IT-nY8" secondAttribute="height" multiplier="1:1" id="hOD-eX-Xna"/>
@@ -777,7 +677,7 @@
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="X" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76c-vC-E5x" customClass="RoundedTextField" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="37.5" width="71" height="71"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="76c-vC-E5x" secondAttribute="height" multiplier="1:1" id="PtI-r7-xyE"/>
                                                 </constraints>
@@ -787,7 +687,7 @@
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="X" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-Ge-DJH" customClass="RoundedTextField" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="296" y="37.5" width="71" height="71"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Lfr-Ge-DJH" secondAttribute="height" multiplier="1:1" id="jQ5-mg-CRb"/>
                                                 </constraints>
@@ -797,7 +697,7 @@
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="X" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCv-Gf-5yz" customClass="RoundedTextField" customModule="LivingWords" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="37.5" width="71" height="71"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="cCv-Gf-5yz" secondAttribute="height" multiplier="1:1" id="Yn3-t7-EPz"/>
                                                 </constraints>
@@ -900,16 +800,16 @@
                                 <rect key="frame" x="0.0" y="55" width="7.5" height="109"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COz-nm-Mix">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Living Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCx-p3-8Kp">
                                 <rect key="frame" x="8.5" y="59" width="359.5" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COz-nm-Mix">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1041,40 +941,40 @@
                                 <rect key="frame" x="0.0" y="300" width="375" height="66"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPj-cI-s46">
-                                        <rect key="frame" x="3" y="0.0" width="367" height="33"/>
+                                        <rect key="frame" x="3" y="0.0" width="367" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="bzg-o0-1Vf" id="SYS-nf-7Yd"/>
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih2-9l-WmI" userLabel="SeparatorView">
-                                        <rect key="frame" x="3" y="33" width="367" height="1"/>
+                                        <rect key="frame" x="3" y="32" width="367" height="1"/>
                                         <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="I2U-Hb-XZ7"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0jJ-Dh-zYf">
-                                        <rect key="frame" x="3" y="34" width="367" height="32"/>
+                                        <rect key="frame" x="3" y="33" width="367" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="bzg-o0-1Vf" id="25f-dg-iej"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ9-8Y-My4">
-                                        <rect key="frame" x="251" y="6" width="116" height="21"/>
+                                        <rect key="frame" x="251" y="5" width="116" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr3-gX-ltS">
-                                        <rect key="frame" x="223" y="39" width="144" height="21"/>
+                                        <rect key="frame" x="223" y="38" width="144" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="144" id="UOY-Kq-ISh"/>
                                         </constraints>
@@ -1083,7 +983,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ih2-9l-WmI" firstAttribute="top" secondItem="OPj-cI-s46" secondAttribute="bottom" id="2Mq-LU-6yg"/>
                                     <constraint firstItem="OPj-cI-s46" firstAttribute="baseline" secondItem="xQ9-8Y-My4" secondAttribute="baseline" id="C2Y-a5-4Ri"/>
@@ -1119,7 +1019,23 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35b-ai-wxm">
                                         <rect key="frame" x="0.0" y="156" width="375" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-2K-kSu">
+                                                <rect key="frame" x="157" y="10" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2ZE-2K-kSu" secondAttribute="height" multiplier="1:1" id="kHZ-wt-s9D"/>
+                                                </constraints>
+                                                <state key="normal" image="comeBack"/>
+                                                <connections>
+                                                    <action selector="navigateBack:" destination="bzg-o0-1Vf" eventType="touchUpInside" id="pxg-UO-2fL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="2ZE-2K-kSu" firstAttribute="centerY" secondItem="35b-ai-wxm" secondAttribute="centerY" id="Ynf-xZ-9eU"/>
+                                            <constraint firstItem="2ZE-2K-kSu" firstAttribute="centerX" secondItem="35b-ai-wxm" secondAttribute="centerX" id="wyO-Dc-reQ"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpw-i4-QI9">
                                         <rect key="frame" x="0.0" y="5" width="375" height="82"/>
@@ -1239,7 +1155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ep-KI-bdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2190" y="-397"/>
+            <point key="canvasLocation" x="2160.8000000000002" y="-397.15142428785612"/>
         </scene>
         <!--Main-->
         <scene sceneID="iUA-Hw-K85">
@@ -1247,10 +1163,11 @@
                 <viewControllerPlaceholder storyboardName="Main" id="hz3-yP-vLq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpn-Uc-9pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2763" y="-397"/>
+            <point key="canvasLocation" x="2741" y="-398"/>
         </scene>
     </scenes>
     <resources>
+        <image name="comeBack" width="60" height="60"/>
         <image name="forest-690075_3x" width="1125" height="2001"/>
     </resources>
 </document>

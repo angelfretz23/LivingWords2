@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,64 +69,73 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KN4-m0-vSX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-Ko-ahI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBs-RJ-RiS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="33"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="All Media">
-                                                                <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1x-U7-8gf">
-                                                            <rect key="frame" x="75" y="0.0" width="75" height="33"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="Music">
-                                                                <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-TA-nlw">
-                                                            <rect key="frame" x="150" y="0.0" width="75" height="33"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="Movies">
-                                                                <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-gb-BtG">
-                                                            <rect key="frame" x="225" y="0.0" width="75" height="33"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="Sermons">
-                                                                <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKi-FK-TEa">
-                                                            <rect key="frame" x="300" y="0.0" width="75" height="33"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="Books">
-                                                                <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6p-mh-ii3">
+                                                    <rect key="frame" x="343" y="1" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="a6p-mh-ii3" secondAttribute="height" multiplier="1:1" id="xPU-JL-Aj0"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="close"/>
+                                                    <connections>
+                                                        <action selector="closeMediaView:" destination="-1" eventType="touchUpInside" id="9lE-UL-Mjb"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Bva-Ko-ahI" secondAttribute="bottom" id="25d-V9-79M"/>
-                                                <constraint firstItem="Bva-Ko-ahI" firstAttribute="top" secondItem="KN4-m0-vSX" secondAttribute="top" id="QH8-Mf-dkZ"/>
-                                                <constraint firstItem="Bva-Ko-ahI" firstAttribute="leading" secondItem="KN4-m0-vSX" secondAttribute="leading" id="uEz-e9-vfv"/>
-                                                <constraint firstAttribute="trailing" secondItem="Bva-Ko-ahI" secondAttribute="trailing" id="vg1-b4-9ZG"/>
+                                                <constraint firstAttribute="bottom" secondItem="a6p-mh-ii3" secondAttribute="bottom" constant="2" id="Kmb-xG-2Mt"/>
+                                                <constraint firstAttribute="trailing" secondItem="a6p-mh-ii3" secondAttribute="trailing" constant="2" id="p3q-eG-aSV"/>
+                                                <constraint firstItem="a6p-mh-ii3" firstAttribute="top" secondItem="KN4-m0-vSX" secondAttribute="top" constant="1" id="zFW-85-vwN"/>
                                             </constraints>
                                         </view>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BcJ-uR-QZJ">
                                             <rect key="frame" x="0.0" y="32" width="375" height="241"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-Ko-ahI">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="32"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBs-RJ-RiS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="32"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="All Media">
+                                                        <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1x-U7-8gf">
+                                                    <rect key="frame" x="69" y="0.0" width="69" height="32"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Music">
+                                                        <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-TA-nlw">
+                                                    <rect key="frame" x="138" y="0.0" width="69" height="32"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Sermons">
+                                                        <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-gb-BtG">
+                                                    <rect key="frame" x="207" y="0.0" width="69" height="32"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Movies">
+                                                        <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKi-FK-TEa">
+                                                    <rect key="frame" x="276" y="0.0" width="69" height="32"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Books">
+                                                        <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -134,10 +143,14 @@
                                         <constraint firstAttribute="trailing" secondItem="KN4-m0-vSX" secondAttribute="trailing" id="AgK-xM-qfu"/>
                                         <constraint firstItem="BcJ-uR-QZJ" firstAttribute="top" secondItem="KN4-m0-vSX" secondAttribute="bottom" constant="-1" id="X3H-d6-UXq"/>
                                         <constraint firstAttribute="trailing" secondItem="BcJ-uR-QZJ" secondAttribute="trailing" id="YmS-bU-T98"/>
+                                        <constraint firstAttribute="trailing" secondItem="Bva-Ko-ahI" secondAttribute="trailing" constant="30" id="ZbM-y1-zkX"/>
+                                        <constraint firstItem="BcJ-uR-QZJ" firstAttribute="top" secondItem="Bva-Ko-ahI" secondAttribute="bottom" id="ajo-BA-gWX"/>
                                         <constraint firstItem="KN4-m0-vSX" firstAttribute="leading" secondItem="AjD-bp-i5U" secondAttribute="leading" id="o7a-Fj-2Wj"/>
                                         <constraint firstAttribute="bottom" secondItem="BcJ-uR-QZJ" secondAttribute="bottom" id="oNN-kr-T3B"/>
                                         <constraint firstItem="KN4-m0-vSX" firstAttribute="height" secondItem="AjD-bp-i5U" secondAttribute="height" multiplier="0.12" id="pja-JD-CiJ"/>
                                         <constraint firstItem="KN4-m0-vSX" firstAttribute="top" secondItem="AjD-bp-i5U" secondAttribute="top" id="pnB-9p-3po"/>
+                                        <constraint firstItem="Bva-Ko-ahI" firstAttribute="leading" secondItem="AjD-bp-i5U" secondAttribute="leading" id="vat-lX-vdW"/>
+                                        <constraint firstItem="Bva-Ko-ahI" firstAttribute="top" secondItem="AjD-bp-i5U" secondAttribute="top" id="zHD-NE-jtK"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -316,6 +329,7 @@
     </objects>
     <resources>
         <image name="NowPlayingCollapseChevronMask" width="10" height="6"/>
+        <image name="close" width="29" height="29"/>
         <image name="fullscreen" width="30" height="30"/>
         <image name="play" width="30" height="30"/>
     </resources>
