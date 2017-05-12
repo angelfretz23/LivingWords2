@@ -137,6 +137,7 @@ class YTFViewController: UIViewController {
             videoView.isUserInteractionEnabled = false
             let playerVars = ["playsinline" : 1, "controls" : 0, "showinfo" : 0]
             videoView.load(withVideoId: videoID, playerVars: playerVars)
+        
         }
     }
     
