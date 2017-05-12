@@ -10,7 +10,7 @@ import UIKit
 
 class UploadMusicTVC: UITableViewController {
 
-    var names = ["Ivan", "Rostik", "Nazar", "Ivan", "Rostik", "Nazar"]
+    var names = ["Psalm23:4", "Genesis1:1", "Matthew14:29"]
     fileprivate var selectedIndex: IndexPath?
     fileprivate var isExpanded = false
     fileprivate var allowExpanded = false
@@ -46,8 +46,7 @@ extension TableDataSource {
         if section == 0 || section == 2 {
             return 1
         }
-        
-        
+
         return names.count
         
     }
@@ -87,7 +86,6 @@ extension TableDelegate {
             }
         }
    
-      
     }
 }
 
