@@ -23,6 +23,15 @@
 		04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */; };
 		04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */; };
 		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
+		044EEBB11EC5F9800092CFD3 /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */; };
+		044EEBB21EC5F9800092CFD3 /* UploadSermonesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */; };
+		044EEBB81EC5F9B30092CFD3 /* BottomUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */; };
+		044EEBB91EC5F9B30092CFD3 /* BottomUploadMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EEBB41EC5F9B30092CFD3 /* BottomUploadMusicCell.xib */; };
+		044EEBBA1EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBB51EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift */; };
+		044EEBBB1EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EEBB61EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib */; };
+		044EEBBE1EC5FA280092CFD3 /* UploadMusicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBBD1EC5FA280092CFD3 /* UploadMusicTVC.swift */; };
+		044EEBC11EC5FA720092CFD3 /* MusicUploadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */; };
+		044EEBC21EC5FA720092CFD3 /* MusicUploadTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */; };
 		04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */; };
 		04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */; };
 		04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */; };
@@ -109,6 +118,15 @@
 		04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
+		044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
+		044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadSermonesVC.swift; sourceTree = "<group>"; };
+		044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomUploadMusicCell.swift; sourceTree = "<group>"; };
+		044EEBB41EC5F9B30092CFD3 /* BottomUploadMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomUploadMusicCell.xib; sourceTree = "<group>"; };
+		044EEBB51EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCellUploadMusicCell.swift; sourceTree = "<group>"; };
+		044EEBB61EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopCellUploadMusicCell.xib; sourceTree = "<group>"; };
+		044EEBBD1EC5FA280092CFD3 /* UploadMusicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMusicTVC.swift; sourceTree = "<group>"; };
+		044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicUploadTVC.swift; sourceTree = "<group>"; };
+		044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicUploadTVC.xib; sourceTree = "<group>"; };
 		04F8E9C91EB0921A0034360D /* CustomProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
 		04F8E9CA1EB0921A0034360D /* YTFAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
 		04F8E9CB1EB0921A0034360D /* YTFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFPlayer.swift; sourceTree = "<group>"; };
@@ -459,6 +477,12 @@
 		7825EAF31EB3329700C1D180 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */,
+				044EEBB41EC5F9B30092CFD3 /* BottomUploadMusicCell.xib */,
+				044EEBB51EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift */,
+				044EEBB61EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib */,
+				044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */,
+				044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */,
 				7825EAF41EB333C300C1D180 /* Controllers */,
 				2B2A93EA1EA795E6007464F0 /* Main.storyboard */,
 			);
@@ -468,7 +492,10 @@
 		7825EAF41EB333C300C1D180 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				044EEBBD1EC5FA280092CFD3 /* UploadMusicTVC.swift */,
 				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
+				044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */,
+				044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */,
 				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
 			);
 			name = Controllers;
@@ -701,6 +728,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F8E9D61EB092200034360D /* YTFViewController.xib in Resources */,
+				044EEBB91EC5F9B30092CFD3 /* BottomUploadMusicCell.xib in Resources */,
 				0410187D1EAE3BE900745DED /* MediaCollectionViewCell.xib in Resources */,
 				2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */,
 				041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */,
@@ -717,7 +745,9 @@
 				7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */,
 				FC3EFCA51EC4974200C46837 /* UploadBookTableViewCell.xib in Resources */,
 				FC3EFCAA1EC49D0D00C46837 /* TagScriptureTableViewCell.xib in Resources */,
+				044EEBC21EC5FA720092CFD3 /* MusicUploadTVC.xib in Resources */,
 				FC3EFC9D1EC48CB500C46837 /* AuthorNameTableViewCell.xib in Resources */,
+				044EEBBB1EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib in Resources */,
 				FC3EFCAF1EC4A14200C46837 /* BookDescriptionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,7 +811,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		53E16F37473FACF521BF21C8 /* [CP] Copy Pods Resources */ = {
@@ -826,7 +856,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		89818798A3AB6A9A7FAC1E05 /* [CP] Copy Pods Resources */ = {
@@ -856,7 +886,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D01D7576BE308494AF2B2679 /* [CP] Embed Pods Frameworks */ = {
@@ -888,6 +918,10 @@
 				FC3EFCA31EC4972500C46837 /* UploadBookTableViewCell.swift in Sources */,
 				2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */,
 				2B4423E41EA9E6F0006AB9CF /* ScriptureTableViewCell.swift in Sources */,
+				044EEBB11EC5F9800092CFD3 /* LinkViewController.swift in Sources */,
+				044EEBBE1EC5FA280092CFD3 /* UploadMusicTVC.swift in Sources */,
+				044EEBBA1EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift in Sources */,
+				044EEBC11EC5FA720092CFD3 /* MusicUploadTVC.swift in Sources */,
 				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
 				04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */,
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,
@@ -905,9 +939,11 @@
 				FC3EFC9A1EC48C7B00C46837 /* AuthorNameTableViewCell.swift in Sources */,
 				041018831EAE47C800745DED /* MediaModel.swift in Sources */,
 				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
+				044EEBB21EC5F9800092CFD3 /* UploadSermonesVC.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
 				FC3EFCB61EC4CAAE00C46837 /* ScriptureSelectionViewController.swift in Sources */,
+				044EEBB81EC5F9B30092CFD3 /* BottomUploadMusicCell.swift in Sources */,
 				7825EAFB1EB352BA00C1D180 /* HomeViewController.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
 				04F8E9D01EB0921A0034360D /* YTFAnimation.swift in Sources */,
