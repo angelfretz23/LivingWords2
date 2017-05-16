@@ -28,6 +28,7 @@ class Search: NSObject, Mappable {
     
     }
 }
+
 extension Search {
     static func getBible(completion:@escaping (_ search: [Search]?, _ error: Error?) -> Void) {
         let api = LivingWordsAPI()

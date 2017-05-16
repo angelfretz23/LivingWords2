@@ -120,10 +120,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="lht-hg-GHy">
-                                                        <rect key="frame" x="131" y="0.0" width="40" height="30"/>
+                                                        <rect key="frame" x="139" y="0.0" width="24" height="30"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-5q-pJn">
-                                                        <rect key="frame" x="176" y="5" width="54" height="21"/>
+                                                        <rect key="frame" x="168" y="5" width="54" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.76862745099999996" green="0.76078431369999999" blue="0.78823529410000004" alpha="1" colorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -273,7 +273,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QwL-nW-9w2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Kd-eG-Gjh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1Kd-eG-Gjh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -291,7 +291,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ckW-uj-xRD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0pi-ID-8B9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0pi-ID-8B9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -324,7 +324,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="search" width="40" height="40"/>
+        <image name="search" width="24" height="24"/>
         <image name="settings" width="40" height="40"/>
     </resources>
 </document>

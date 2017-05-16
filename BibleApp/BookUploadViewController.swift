@@ -34,8 +34,8 @@ class BookUploadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     configureTableView()
+        
+        configureTableView()
         
         registerXibs()
     }
@@ -57,13 +57,13 @@ class BookUploadViewController: UIViewController {
 
 extension BookUploadViewController:  UITableViewDataSource {
     
-    public func numberOfSections(in tableView: UITableView) -> Int{
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0{
+        if section == 0 {
             return 2
         }
         return 1
@@ -139,7 +139,7 @@ extension BookUploadViewController:  UITableViewDataSource {
             }
         }
         
-        func uploadTagScriptures(){
+        func uploadTagScriptures() {
 //            let storyboard = UIStoryboard(name: "MainTableView", bundle: nil)
 //            let mainTableViewVC  = storyboard.instantiateViewController(withIdentifier: "MainTableViewControllerID")
 //            

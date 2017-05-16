@@ -151,14 +151,16 @@ extension MainTableViewController {
                 
             } else {
             
-                if let index = Int(verse!) {
-                    let index = index - 1
+                if let index = verse {
+                    let index = Int(index)! - 1
                     let indePath: IndexPath = [0, index]
                     UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseIn, animations: {
                         self.mainTableView.scrollToRow(at: indePath, at: .top, animated: true)
                     }, completion: nil)
                     
                     return
+                } else {
+                    self.displayAlert(userMessage: "Fill the search-field as in example: Book Chapter Verse!")
                 }
             }
             
@@ -242,7 +244,7 @@ extension MainTableViewController {
             if let seachResult = search {
                 self.search = seachResult
                 completion(true)
-            }else {
+            } else {
                 completion(false)
             }
         })
@@ -272,6 +274,17 @@ extension MainTableViewController {
             }
         }
     }
+    
+    fileprivate func displayAlert(userMessage: String) {
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 
 extension MainTableViewController: UITextFieldDelegate {

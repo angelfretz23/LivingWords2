@@ -25,6 +25,10 @@ class ScriptureSelectionViewController: UIViewController {
     @IBOutlet weak var tagScriptureLabel: UILabel!
     
     @IBOutlet weak var searchTextField: CustomTextField!
+    
+    var backController: UploadSermonesVC?
+
+    var sermonTags: [[String]] = []
    
     var search: [Search] = []
     
@@ -34,8 +38,10 @@ class ScriptureSelectionViewController: UIViewController {
     
     @IBAction func saveTagScriptureButtonPressed(_ sender: Any) {
         
+        backController?.tableView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
+    
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +92,8 @@ class ScriptureSelectionViewController: UIViewController {
 
 //Private
 
-extension ScriptureSelectionViewController{
-    func getParametersWordsFromSearchFieldForRequest(_ searchString: String){
+extension ScriptureSelectionViewController {
+    func getParametersWordsFromSearchFieldForRequest(_ searchString: String) {
         if searchString == "" {return}
         let searchParameters = searchString.components(separatedBy: " ")
         switch searchParameters.count {
@@ -115,6 +121,7 @@ extension ScriptureSelectionViewController{
     }
 }
 
+
 fileprivate typealias TableDataSource = ScriptureSelectionViewController
 extension TableDataSource : UITableViewDataSource {
     
@@ -138,7 +145,7 @@ extension TableDataSource : UITableViewDataSource {
         
         if indexPath.row == 0 {
             cell.firstIndexLabel.isHidden = false
-        }else {
+        } else {
             cell.firstIndexLabel.isHidden = true
         }
         
@@ -169,14 +176,31 @@ extension TableDataSource : UITableViewDataSource {
 
 extension ScriptureSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard  let cell = tableView.cellForRow(at: indexPath) as? ScriptureSelectionTableViewCell else{return}
+        guard  let cell = tableView.cellForRow(at: indexPath) as? ScriptureSelectionTableViewCell else { return }
         cell.cellIsSelected = true
         
-        let scripture = search[indexPath.row]
+        var countOfSelectedCells = [0]
         
+        if cell.isSelected {
+            countOfSelectedCells += [1]
+        }
+        
+        let scripture = search[indexPath.row]
         let index = indexPath.row + 1
         
-        tagScriptureLabel.text = book! + " " + chapter! + ":" + "\(index)"
+        scripture.bookOfBible = book
+        scripture.chapterNumberOfBook = chapter
+        scripture.verse = verse
+        
+        
+        self.sermonTags = [[scripture.bookOfBible! + " " + scripture.chapterNumberOfBook! + ": \(index + 1)"]]
+        
+        for i in sermonTags {
+            for a in i {
+                self.tagScriptureLabel.text = a
+                self.backController?.scriptureTags.text = a
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
