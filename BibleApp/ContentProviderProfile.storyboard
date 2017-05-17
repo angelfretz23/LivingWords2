@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BEv-qT-8Ob">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="22u-jz-0uL">
+            <objects>
+                <viewController id="a8A-Gj-Q7Z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="46s-cQ-pZ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="yX4-hZ-3Bl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2zF-vV-LfI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Casting Crowns" translatesAutoresizingMaskIntoConstraints="NO" id="7nQ-n1-rff" userLabel="Casting Crowns">
+                                <rect key="frame" x="0.0" y="64" width="375" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7nQ-n1-rff" secondAttribute="height" multiplier="125:36" id="4oA-LS-rRR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="On My Soul" translatesAutoresizingMaskIntoConstraints="NO" id="2ZO-2d-dY9">
+                                <rect key="frame" x="147" y="139" width="81" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2ZO-2d-dY9" secondAttribute="height" multiplier="81:65" id="4ul-tM-NwX"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-gB-YDE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P9b-gB-YDE" firstAttribute="leading" secondItem="2zF-vV-LfI" secondAttribute="leading" id="1fw-mj-s4g"/>
+                            <constraint firstItem="2ZO-2d-dY9" firstAttribute="centerY" secondItem="P9b-gB-YDE" secondAttribute="centerY" id="3EG-0m-Ywh"/>
+                            <constraint firstItem="P9b-gB-YDE" firstAttribute="width" secondItem="2zF-vV-LfI" secondAttribute="width" id="Mcv-tM-cYb"/>
+                            <constraint firstItem="P9b-gB-YDE" firstAttribute="top" secondItem="46s-cQ-pZ3" secondAttribute="bottom" id="N23-mT-1eg"/>
+                            <constraint firstItem="P9b-gB-YDE" firstAttribute="height" secondItem="2zF-vV-LfI" secondAttribute="height" multiplier="0.323838" id="PWx-Ll-YGp"/>
+                            <constraint firstItem="7nQ-n1-rff" firstAttribute="top" secondItem="46s-cQ-pZ3" secondAttribute="bottom" id="QrQ-ps-7an"/>
+                            <constraint firstItem="7nQ-n1-rff" firstAttribute="width" secondItem="2zF-vV-LfI" secondAttribute="width" id="Rci-8j-4yW"/>
+                            <constraint firstAttribute="trailing" secondItem="7nQ-n1-rff" secondAttribute="trailing" id="So8-4p-R1U"/>
+                            <constraint firstItem="7nQ-n1-rff" firstAttribute="height" secondItem="2zF-vV-LfI" secondAttribute="height" multiplier="0.161919" id="fP7-m6-fwY"/>
+                            <constraint firstItem="2ZO-2d-dY9" firstAttribute="height" secondItem="P9b-gB-YDE" secondAttribute="height" multiplier="0.3" id="jIy-Ie-Ksf"/>
+                            <constraint firstAttribute="trailing" secondItem="P9b-gB-YDE" secondAttribute="trailing" id="klK-kW-Cdl"/>
+                            <constraint firstItem="2ZO-2d-dY9" firstAttribute="centerX" secondItem="P9b-gB-YDE" secondAttribute="centerX" id="l6Z-HG-YKc"/>
+                            <constraint firstItem="7nQ-n1-rff" firstAttribute="leading" secondItem="2zF-vV-LfI" secondAttribute="leading" id="sWG-Bc-Egq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="imm-Yb-oTh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8P7-Ya-m7g">
+                            <color key="tintColor" red="0.63225448131561279" green="0.63226968050003052" blue="0.63226151466369629" alpha="1" colorSpace="deviceRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wi6-Rj-bc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999.20000000000005" y="17.541229385307346"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bfG-vc-eZu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEv-qT-8Ob" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="te0-DV-WLX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a8A-Gj-Q7Z" kind="relationship" relationship="rootViewController" id="D6R-Lq-v2Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzY-Wc-SNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="17.541229385307346"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Casting Crowns" width="187" height="54"/>
+        <image name="On My Soul" width="40" height="32"/>
+    </resources>
+</document>

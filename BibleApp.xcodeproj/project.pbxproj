@@ -60,6 +60,7 @@
 		2B4423EA1EAA502D006AB9CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423E91EAA502D006AB9CF /* User.swift */; };
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
 		2B472F121EAE2E8B004084F1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F111EAE2E8B004084F1 /* Search.swift */; };
+		3A55447B1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A55447A1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard */; };
 		3ADA61EA1EC9FC93006AB3F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA61E91EC9FC93006AB3F2 /* Post.swift */; };
 		3ADA61EC1ECB039B006AB3F2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */; };
 		7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7825EAF11EB32EF600C1D180 /* Login.storyboard */; };
@@ -165,6 +166,7 @@
 		2B4423E91EAA502D006AB9CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 		2B472F111EAE2E8B004084F1 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		3A55447A1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContentProviderProfile.storyboard; sourceTree = "<group>"; };
 		3ADA61E91EC9FC93006AB3F2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		2B2A94141EA79AA7007464F0 /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				3A5544761ECC7D41003D2EFD /* Content Provider Profile */,
 				FC3EFC941EC4894A00C46837 /* BookUpload */,
 				7825EAF31EB3329700C1D180 /* Main */,
 				041018721EAE31CB00745DED /* Media */,
@@ -492,6 +495,38 @@
 				041018701EADE30000745DED /* AlamofireObjectMapper.swift */,
 			);
 			name = ExternalLibraries;
+			sourceTree = "<group>";
+		};
+		3A5544761ECC7D41003D2EFD /* Content Provider Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3A5544771ECC7D60003D2EFD /* Models */,
+				3A5544791ECC7D79003D2EFD /* Views */,
+				3A5544781ECC7D71003D2EFD /* Controllers */,
+				3A55447A1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard */,
+			);
+			name = "Content Provider Profile";
+			sourceTree = "<group>";
+		};
+		3A5544771ECC7D60003D2EFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3A5544781ECC7D71003D2EFD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3A5544791ECC7D79003D2EFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		3ADA61ED1ECB4119006AB3F2 /* Models */ = {
@@ -765,6 +800,7 @@
 				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
 				2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */,
 				2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */,
+				3A55447B1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard in Resources */,
 				041018741EAE31E800745DED /* Media.storyboard in Resources */,
 				FC3EFCBB1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib in Resources */,
 				7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */,

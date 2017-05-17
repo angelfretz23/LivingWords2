@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To set the profile image we need access to your photo library.</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -53,6 +49,8 @@
 	<string>1438428569557624</string>
 	<key>FacebookDisplayName</key>
 	<string>Livi­n­g­W­ords</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -67,10 +65,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To set the profile image we need access to your photo library.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>ContentProviderProfile</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
