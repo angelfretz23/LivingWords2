@@ -10,6 +10,7 @@ import UIKit
 
 class TagScriptureTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tagScriptureLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
