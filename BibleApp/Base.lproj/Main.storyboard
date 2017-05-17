@@ -328,7 +328,7 @@
                         <outlet property="nameSurname" destination="4yk-4o-c3v" id="PxN-wE-ew3"/>
                         <outlet property="profileImage" destination="HYL-wl-urr" id="nEb-2d-NEQ"/>
                         <outlet property="sermon" destination="Tiv-rK-bHK" id="1uZ-QJ-Kbd"/>
-                        <outlet property="tableView" destination="b88-9a-w8c" id="XeX-Ic-JyI"/>
+                        <outlet property="tableView" destination="b88-9a-w8c" id="E6a-rH-WKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUR-bj-Db6" userLabel="First Responder" sceneMemberID="firstResponder"/>

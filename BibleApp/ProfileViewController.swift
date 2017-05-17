@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // MARK: - Properties
     let imagePicker = UIImagePickerController()
-    let obj = MainMediaViewController()
+  
     let labels = [MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Home App — Welcome Home" , youtubeID: "4nbhfrQfRRE"),
                                                       MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),
                                                       MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")], typeOfMedia: .Other),
@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "AllMediaTableViewCell", bundle: nil), forCellReuseIdentifier: "AllMediaTableViewCellIdentifier")
+        tableView.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,11 +80,11 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllMediaTableViewCellIdentifier", for: indexPath) as! AllMediaTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllMediaTVCellIdentifier", for: indexPath) as! AllMediaTVCell
         
         cell.title.text = labels[indexPath.row].title
     
-        cell.fillData(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
+        cell.fillData2(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
         
         return cell
     }

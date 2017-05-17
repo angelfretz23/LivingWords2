@@ -19,7 +19,15 @@ class AllMediaTVCell: UITableViewCell {
     
     fileprivate lazy var mediaData = [MediaModelCell]()
     fileprivate var mediaController: MainMediaViewController?
+    fileprivate var mediaForProfileController: ProfileViewController?
     fileprivate var typeOfCell = MediaCellType.Other
+
+    var currentController: UIViewController? {
+        get {
+            return self.mediaController == nil ? self.mediaForProfileController! : self.mediaController!
+        }
+    }
+
     
     // MARK:- AllMediaTVCell`s life cycle
     
@@ -99,16 +107,18 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let youTubeId = mediaData[indexPath.row].youtubeID {
-            YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: mediaController as! UITableViewDataSource)
             
-            YTFPlayer.showYTFView(viewController: mediaController!)
-            
-            mediaController?.dismiss(animated: false, completion: nil)
-            
+            if let currController = currentController {
+                
+                YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: currController as! UITableViewDataSource)
+                
+                YTFPlayer.showYTFView(viewController: currController)
+                
+                currController.dismiss(animated: false, completion: nil)
+            }
         }
-        
-
     }
+    
 }
 
 private typealias PublicMethod = AllMediaTVCell
@@ -121,4 +131,13 @@ extension PublicMethod {
         
         collectionView.reloadData()
     }
+    
+    public func fillData2(mediaData: [MediaModelCell], controller: ProfileViewController, type: MediaCellType) {
+        self.mediaData = mediaData
+        mediaForProfileController = controller
+        typeOfCell = type
+        
+        collectionView.reloadData()
+    }
+    
 }
