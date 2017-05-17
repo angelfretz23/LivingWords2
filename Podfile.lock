@@ -58,6 +58,7 @@ PODS:
   - SVProgressHUD (2.1.2)
   - youtube-ios-player-helper (0.1.6)
   - YouTubePlayer (0.4.0)
+  - YTVimeoExtractor (1.2.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.1)
   - youtube-ios-player-helper (~> 0.1)
   - YouTubePlayer (~> 0.4)
+  - YTVimeoExtractor (~> 1.2)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -90,7 +92,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
+  YTVimeoExtractor: f4ed90f43e08d33d56c1d1aff3f4f64663747966
 
-PODFILE CHECKSUM: 616cd7035d1fba3939e103124f75570d1debf416
+PODFILE CHECKSUM: ef66085d65a1064ef6f875486dcf148b88f5c0ea
 
 COCOAPODS: 1.2.1

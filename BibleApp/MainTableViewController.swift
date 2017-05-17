@@ -218,7 +218,7 @@ extension TableDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Media", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
-
+            controller.controllerScripture = self
         // show(controller, sender: self)
         present(controller, animated: true, completion: nil)
         

@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum MediaType {
+    case youTube
+    case vimeo
+}
+
 public struct YTFPlayer {
     
     public static func initYTF(with tableView: UITableView, tableCellNibName: String, tableCellReuseIdentifier: String, videoID: String) {
@@ -82,6 +87,33 @@ public struct YTFPlayer {
         
     }
     
+    public static func initWithAVPlayer (tableViewDataSource: UITableViewDataSource, type: MediaType, idMovie: String) {
+        if dragViewController == nil {
+            dragViewController = YTFViewController(nibName: "YTFViewController", bundle: nil)
+            dragViewController?.typeMedia = type
+            
+            if type == .vimeo {
+                dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/97356262")
+            } else if type == .youTube {
+                dragViewController?.youtubeId = idMovie
+            }
+            
+            dragViewController?.tableViewDataSource = tableViewDataSource
+     
+        } else {
+            
+            if type == .vimeo {
+                dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/217051213")
+            } else if type == .youTube {
+                dragViewController?.youtubeId = idMovie
+                dragViewController?.configureAVPlayerYouTube()
+            }
+            
+            dragViewController?.expandViews()
+            dragViewController?.tableViewDataSource = tableViewDataSource
+        }
+    }
+    
     public static func showYTFView(viewController: UIViewController) {
         
         if dragViewController!.isOpen == false {
@@ -99,6 +131,11 @@ public struct YTFPlayer {
                 dragViewController!.view.frame = CGRect(x: 0, y: 0, width: UIApplication.shared.keyWindow!.bounds.width, height: UIApplication.shared.keyWindow!.bounds.height)
                 
                 dragViewController!.isOpen = true
+                
+             //   myProgrammaticView.translatesAutoresizingMaskIntoConstraints = NO;
+               
+                let controller = viewController as! MainTableViewController
+                controller.dismiss(animated: true, completion: nil)
             })
         }
     }

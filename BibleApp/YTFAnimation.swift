@@ -43,7 +43,7 @@ extension YTFViewController {
             UIView.animate(withDuration: 0.6, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 self.backPlayerControlsView.alpha = 0.55
                 self.playerControlsView.alpha = 1.0
-                self.minimizeButton.alpha = 1.0
+                //self.minimizeButton.alpha = 1.0
                 
                 }, completion: nil)
             setHideTimer()
@@ -60,7 +60,7 @@ extension YTFViewController {
                 UIView.animate(withDuration: 0.6, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                     self.backPlayerControlsView.alpha = 0.0
                     self.playerControlsView.alpha = 0.0
-                    self.minimizeButton.alpha = 0.0
+                   // self.minimizeButton.alpha = 0.0
                     
                     }, completion: nil)
             }
@@ -75,7 +75,7 @@ extension YTFViewController {
         self.videoView.isHidden = true
         
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.minimizeButton.isHidden = true
+          //  self.minimizeButton.isHidden = true
             self.playerView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
             
             self.playerView.frame = CGRect(x: self.initialFirstViewFrame!.origin.x, y: self.initialFirstViewFrame!.origin.x, width: self.initialFirstViewFrame!.size.width, height: self.initialFirstViewFrame!.size.height)
@@ -125,7 +125,7 @@ extension YTFViewController {
             
             }, completion: { finished in
                 self.isFullscreen = false
-                self.minimizeButton.isHidden = false
+                //self.minimizeButton.isHidden = false
                 self.fullscreen.setImage(self.fullscreenImage, for: UIControlState.normal)
         })
     }
@@ -225,7 +225,7 @@ extension YTFViewController {
     
     func detectPanDirection(velocity: CGPoint) {
         
-        minimizeButton.isHidden = true
+        //minimizeButton.isHidden = true
         let isVerticalGesture = fabs(velocity.y) > fabs(velocity.x)
         
         if (isVerticalGesture) {
@@ -268,6 +268,7 @@ extension YTFViewController {
                 self.tableViewContainer.alpha = 0.0
                 }, completion: { finished in
                     self.isMinimized = true
+                    self.aflaViewYouTube()
             })
             recognizer.setTranslation(CGPoint(x: 0, y: 0), in: recognizer.view)
             
@@ -365,10 +366,16 @@ extension YTFViewController {
     
     func minimizeViews() {
         tableViewContainer.backgroundColor = UIColor.white
-        minimizeButton.isHidden = true
+      //  minimizeButton.isHidden = true
         hidePlayerControls(dontAnimate: true)
         let trueOffset = initialFirstViewFrame!.size.height - 100
         let xOffset = initialFirstViewFrame!.size.width - 160
+        
+        if self.typeMedia == .vimeo {
+            self.avController?.showsPlaybackControls = false
+        }else if self.typeMedia == .youTube {
+            
+        }
         
         viewMinimizedFrame!.origin.y = trueOffset - 44 //🏹
         viewMinimizedFrame!.origin.x = xOffset - 6
@@ -388,6 +395,7 @@ extension YTFViewController {
             self.transparentView?.alpha = 0.0
             }, completion: { finished in
                 self.isMinimized = true
+                self.aflaViewYouTube()
                 if let playerGesture = self.playerTapGesture {
                     self.playerView.removeGestureRecognizer(playerGesture)
                 }
@@ -397,6 +405,7 @@ extension YTFViewController {
                 
                 self.view.frame.size.height = self.playerView.frame.height
         })
+        
     }
     
     func expandViews() {
@@ -409,7 +418,7 @@ extension YTFViewController {
             self.transparentView?.alpha = 1.0
             }, completion: { finished in
                 self.isMinimized = false
-                self.minimizeButton.isHidden = false
+               // self.minimizeButton.isHidden = false
                 if let playerGesture = self.playerTapGesture {
                     self.playerView.removeGestureRecognizer(playerGesture)
                     self.playerTapGesture = nil
@@ -417,6 +426,13 @@ extension YTFViewController {
                 self.playerTapGesture = UITapGestureRecognizer(target: self, action: #selector(YTFViewController.showPlayerControls))
                 self.playerView.addGestureRecognizer(self.playerTapGesture!)
                 self.tableViewContainer.backgroundColor = UIColor.black
+                
+                if self.typeMedia == .vimeo {
+                    self.avController?.showsPlaybackControls = true
+                }else if self.typeMedia == .youTube {
+                   
+                 }
+                
                 self.showPlayerControls()
         })
     }

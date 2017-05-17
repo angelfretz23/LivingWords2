@@ -32,12 +32,10 @@ extension YTFViewController {
     }
     
     @IBAction func touchDragInsideSlider(sender: AnyObject) {
-
         resetHideTimer()
     }
     
     @IBAction func valueChangedSlider(sender: AnyObject) {
-        
         currentTimeLabel.text = timeFormatted(totalSeconds: Int(slider.value))
         videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
     }

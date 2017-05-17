@@ -15,6 +15,7 @@ class MainMediaViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     
+    var controllerScripture: MainTableViewController?
     // MARK: - IBActions
     
     @IBAction func dismissMediaView(_ sender: UIButton) {

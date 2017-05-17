@@ -79,6 +79,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>YTVimeoExtractor.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>YouTubePlayer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -98,6 +103,11 @@
 			<true/>
 		</dict>
 		<key>03151AA728F14C7633BAE7D7720B3A30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0B7E36E88B855B898FCD8BD010C16B5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,6 +147,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6ED9F5F6B8069AF9CED63476FD1A5A79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
@@ -153,6 +168,11 @@
 			<true/>
 		</dict>
 		<key>7D9F31789A3F5AA6BD1E5C6831ED97FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F98733ED77D12DE31F4571BC0A80076</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,7 +197,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A5235098E4409D74E8A7E22BB367D77A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A7A6168F14036A021EA5A9E06CCAA861</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA9648A416663CDE89B1EEAAAB7229B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -188,6 +218,11 @@
 			<true/>
 		</dict>
 		<key>B43918AB915242B851ABEFB5D70BE0AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCBB4F1F2B2E084762E733163059214D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
