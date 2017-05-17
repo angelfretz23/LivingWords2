@@ -28,7 +28,7 @@ class MainMediaViewController: UIViewController {
                                                       MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),
                                                       MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")
                     ], typeOfMedia: .Other),
-                  MediaModel(title: "Sermous", items: [MediaModelCell(imagePath: "", title: "iPhone 7 — Midnight", youtubeID: "R27KHLQ0cIU"),
+                  MediaModel(title: "Sermons", items: [MediaModelCell(imagePath: "", title: "iPhone 7 — Midnight", youtubeID: "R27KHLQ0cIU"),
                                                       MediaModelCell(imagePath: "", title: "The all-new Apple Music.", youtubeID: "CQY3KUR3VzM"),
                                                       MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", youtubeID: "")
                     ], typeOfMedia: .Other),

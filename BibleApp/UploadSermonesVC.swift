@@ -11,7 +11,7 @@ import Alamofire
 
 class UploadSermonesVC: UITableViewController {
 
-    // MARK: Properties and IBOutlets
+    // MARK: IBOutlets
     
     @IBOutlet weak var youTubeImage: UIImageView!
     @IBOutlet weak var vimeoImage: UIImageView!
@@ -19,6 +19,15 @@ class UploadSermonesVC: UITableViewController {
     @IBOutlet weak var videoSelectedName: UILabel!
     @IBOutlet weak var videoSelectedImage: UIImageView!
     
+    @IBOutlet weak var mediaURL: UILabel!
+    @IBOutlet weak var scriptureTags: UITextField!
+    @IBOutlet weak var pastor_name: UITextField!
+    @IBOutlet weak var tags: UITextField!
+    @IBOutlet weak var sermonTitle: UITextField!
+    @IBOutlet weak var descript: UITextView!
+    
+    // MARK: - Properties
+    var post: Post?
     var isYouTubeLoaded = false
     var youTubeId: String?
    
@@ -35,7 +44,8 @@ class UploadSermonesVC: UITableViewController {
         vimeoImage.addGestureRecognizer(panGestureVimeo)
         vimeoImage.isUserInteractionEnabled = true
     }
-
+    
+ 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -47,6 +57,12 @@ class UploadSermonesVC: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 9 {
+            uploadTagScriptures()
+        }
     }
     
     // MARK:- Additional helpfull methods 
@@ -62,7 +78,7 @@ class UploadSermonesVC: UITableViewController {
             }
         }).resume()
         
-        // request video getails
+        // request video details
         let videoInfoPath = "http://www.youtube.com/oembed?url=http%3A//www.youtube.com/watch?v=\(youTubeId!)&format=json"
         URLSession.shared.dataTask(with: URL(string: videoInfoPath)!, completionHandler: { (data, responce, error) in
             
@@ -87,8 +103,27 @@ class UploadSermonesVC: UITableViewController {
         present(controller, animated: true, completion: nil)
     }
     
-    // MARK:- Action
+    func uploadTagScriptures() {
+        let storyBoard = UIStoryboard(name: "BookUpload", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "ScriptureSelectionViewControllerID") as! ScriptureSelectionViewController
+        controller.backController = self
+        present(controller, animated: true, completion: nil)
+    }
     
+    // MARK:- Action
+    @IBAction func sharePost(_ sender: UIBarButtonItem) {
+        Post.sharePost(pastor_name: pastor_name.text!, sermon_title: sermonTitle.text!, descript: descript.text, tags: ["\(tags)"], verse_id_array: ["\(scriptureTags)"]) { (response, error) in
+            if let post = response {
+                self.post = post
+                print("🔴 A post was shared successfully, now you see the response from server! 🔴")
+            } else if error != nil {
+                print("An error occured while sharing the post!")
+                self.displayAlert(userMessage: "An error occured while sharing the post!")
+            }
+        }
+    }
+    
+
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -122,4 +157,16 @@ extension UploadSermonesVC {
         
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
+    fileprivate func displayAlert(userMessage: String) {
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

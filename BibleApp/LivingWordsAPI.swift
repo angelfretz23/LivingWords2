@@ -24,7 +24,11 @@ extension LivingWordsAPI {
         // User authorization
         
         case loginWithEmail(parameters: Parameters)
+        
         case getBible()
+        
+        // Post
+        case sharePost(parameters: Parameters)
         
         // Search
         case searchBible(parameters: Parameters)
@@ -75,6 +79,9 @@ extension LivingWordsAPI {
             case .loginGoogle:
                 return "users/google"
                 
+            case .sharePost:
+                return ""
+                
             }
           
 
@@ -88,7 +95,7 @@ extension LivingWordsAPI {
 
             case .loginWithEmail, .confirmEmail, .checkThePassCode,
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle:
+                 .loginFacebook, .loginGoogle, .sharePost:
 
                 return .post
                 
@@ -99,7 +106,7 @@ extension LivingWordsAPI {
             switch self {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle:
+                 .loginFacebook, .loginGoogle, .sharePost:
 
                 return ""
             }
@@ -109,7 +116,7 @@ extension LivingWordsAPI {
             switch self {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-              .loginFacebook, .loginGoogle:
+              .loginFacebook, .loginGoogle, .sharePost:
 
                 return 0
             }
@@ -151,8 +158,11 @@ extension LivingWordsAPI {
                 
             case .loginGoogle(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .sharePost(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
             }
-            
            
             return request
         }
@@ -260,7 +270,6 @@ extension LivingWordsAPI {
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
             
-            print(response.response?.statusCode ?? "No response🔴")
         })
     }
     
@@ -273,8 +282,21 @@ extension LivingWordsAPI {
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
             
-            print(response.response?.statusCode ?? "No response🔴")
-            
+        })
+    }
+    
+    @discardableResult
+    func sharePost(pastor_name: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [String], completion: @escaping (_ post: Post?, _ error:
+        Error?) -> Void) -> DataRequest {
+        let request = Router.sharePost(parameters: ["pastor_name" : pastor_name,
+                                                   "sermon_title" : sermon_title,
+                                                       "descript" : descript,
+                                                           "tags" : tags,
+                                                 "verse_id_array" : verse_id_array])
+        
+        return service.request(request: request).responseObject(completionHandler: {(response: DataResponse<Post>) in
+            completion(response.result.value, response.result.error)
+        
         })
     }
     
