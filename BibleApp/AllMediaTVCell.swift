@@ -20,14 +20,22 @@ class AllMediaTVCell: UITableViewCell {
     fileprivate lazy var mediaData = [MediaModelCell]()
     fileprivate var mediaController: MainMediaViewController?
     fileprivate var mediaForProfileController: ProfileViewController?
+    fileprivate var mediaForContentProviderProfileController: ContentProviderProfileVC?
     fileprivate var typeOfCell = MediaCellType.Other
 
     var currentController: UIViewController? {
         get {
-            return self.mediaController == nil ? self.mediaForProfileController! : self.mediaController!
+            if let MC = self.mediaController {
+                return MC
+            } else if let MFPC =  self.mediaForProfileController {
+                return MFPC
+            } else if let MFCPPC = self.mediaForContentProviderProfileController {
+                return MFCPPC
+            } else {
+                return UIViewController()
+            }
         }
     }
-
     
     // MARK:- AllMediaTVCell`s life cycle
     
@@ -110,8 +118,6 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
             
             if let currController = currentController {
                 
-                //YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: currController as! UITableViewDataSource)
-                
                 YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: .vimeo, idMovie: youTubeId)
                 
                     YTFPlayer.showYTFView(viewController: currController)
@@ -126,19 +132,19 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
 private typealias PublicMethod = AllMediaTVCell
 extension PublicMethod {
     
-    public func fillData(mediaData: [MediaModelCell], controller: MainMediaViewController, type: MediaCellType) {
-        self.mediaData = mediaData
-        mediaController = controller
-        typeOfCell = type
+    public func fillData(mediaData: [MediaModelCell], controller: UIViewController, type: MediaCellType) {
+        if let controller = controller as? MainMediaViewController {
+            self.mediaData = mediaData
+            mediaController = controller
+        } else if let controller =  controller as? ProfileViewController {
+            self.mediaData = mediaData
+            mediaForProfileController = controller
+        } else if let controller =  controller as? ContentProviderProfileVC {
+            self.mediaData = mediaData
+            mediaForContentProviderProfileController = controller
+        }
         
-        collectionView.reloadData()
-    }
-    
-    public func fillData2(mediaData: [MediaModelCell], controller: ProfileViewController, type: MediaCellType) {
-        self.mediaData = mediaData
-        mediaForProfileController = controller
         typeOfCell = type
-        
         collectionView.reloadData()
     }
     

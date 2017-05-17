@@ -61,6 +61,7 @@
 		2B4423EC1EAA54EB006AB9CF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */; };
 		2B472F121EAE2E8B004084F1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B472F111EAE2E8B004084F1 /* Search.swift */; };
 		3A55447B1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A55447A1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard */; };
+		3A55447D1ECC99D8003D2EFD /* ContentProviderProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55447C1ECC99D8003D2EFD /* ContentProviderProfileVC.swift */; };
 		3ADA61EA1EC9FC93006AB3F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA61E91EC9FC93006AB3F2 /* Post.swift */; };
 		3ADA61EC1ECB039B006AB3F2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */; };
 		7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7825EAF11EB32EF600C1D180 /* Login.storyboard */; };
@@ -167,6 +168,7 @@
 		2B4423EB1EAA54EB006AB9CF /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 		2B472F111EAE2E8B004084F1 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		3A55447A1ECC7DD8003D2EFD /* ContentProviderProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContentProviderProfile.storyboard; sourceTree = "<group>"; };
+		3A55447C1ECC99D8003D2EFD /* ContentProviderProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProviderProfileVC.swift; sourceTree = "<group>"; };
 		3ADA61E91EC9FC93006AB3F2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 		3A5544781ECC7D71003D2EFD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A55447C1ECC99D8003D2EFD /* ContentProviderProfileVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				2B472F121EAE2E8B004084F1 /* Search.swift in Sources */,
 				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
 				FC3EFCA31EC4972500C46837 /* UploadBookTableViewCell.swift in Sources */,
+				3A55447D1ECC99D8003D2EFD /* ContentProviderProfileVC.swift in Sources */,
 				2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */,
 				2B4423E41EA9E6F0006AB9CF /* ScriptureTableViewCell.swift in Sources */,
 				044EEBB11EC5F9800092CFD3 /* LinkViewController.swift in Sources */,

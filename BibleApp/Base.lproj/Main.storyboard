@@ -286,7 +286,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Jwn-QR-s5F" kind="show" id="vWg-Kk-ERe"/>
+                                    <segue destination="Jwn-QR-s5F" kind="show" identifier="UploadSermonesVCID" id="vWg-Kk-ERe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -653,7 +653,7 @@
         <!--Upload Sermones-->
         <scene sceneID="qEa-fV-cJb">
             <objects>
-                <tableViewController id="PfW-uK-kzr" customClass="UploadSermonesVC" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UploadSermonesID" id="PfW-uK-kzr" customClass="UploadSermonesVC" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f9N-Pp-nG9">
                         <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1448,7 +1448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tai-cN-jLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3526" y="1406"/>
+            <point key="canvasLocation" x="3417" y="1405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OBl-jc-LVe">
