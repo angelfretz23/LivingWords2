@@ -135,7 +135,7 @@ public struct YTFPlayer {
              //   myProgrammaticView.translatesAutoresizingMaskIntoConstraints = NO;
                
                 if let controller = viewController as? MainTableViewController {
-                controller.dismiss(animated: true, completion: nil)
+                    controller.dismiss(animated: true, completion: nil)
                 }
             })
         }

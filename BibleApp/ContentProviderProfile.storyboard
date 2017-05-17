@@ -23,6 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-gB-YDE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Casting Crowns" translatesAutoresizingMaskIntoConstraints="NO" id="7nQ-n1-rff" userLabel="Casting Crowns">
                                 <rect key="frame" x="0.0" y="64" width="375" height="108"/>
                                 <constraints>
@@ -35,10 +39,6 @@
                                     <constraint firstAttribute="width" secondItem="2ZO-2d-dY9" secondAttribute="height" multiplier="81:65" id="4ul-tM-NwX"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-gB-YDE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -72,7 +72,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEv-qT-8Ob" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="te0-DV-WLX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="te0-DV-WLX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
