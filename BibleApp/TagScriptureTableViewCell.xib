@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Scriptures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-eT-Vh1">
-                        <rect key="frame" x="18" y="11" width="111.5" height="21"/>
+                        <rect key="frame" x="18" y="11" width="112" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,6 +31,9 @@
                     <constraint firstItem="MEY-eT-Vh1" firstAttribute="centerY" secondItem="DzN-uB-1NL" secondAttribute="centerY" id="lro-W6-hXi"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="tagScriptureLabel" destination="MEY-eT-Vh1" id="Iz3-cX-29w"/>
+            </connections>
             <point key="canvasLocation" x="-86.5" y="-6"/>
         </tableViewCell>
     </objects>
