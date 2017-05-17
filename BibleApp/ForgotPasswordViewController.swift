@@ -85,7 +85,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-
     @IBAction func checkPassCodePressed(_ sender: UIButton) {
         
         if (checkPassCodeTxtFld_1.text == "" || checkPassCodeTxtFld_2.text == "" || checkPassCodeTxtFld_3.text == "" || checkPassCodeTxtFld_4.text == ""){

@@ -196,10 +196,11 @@ extension LivingWordsAPI {
         })
     }
     
-    func signUpWithEmail( email: String, password: String, phone: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
+    func signUpWithEmail( email: String, password: String, phone: String, contentType: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
         let request = Router.signUpWithEmail(parameters: ["email"   : email,
                                                          "password" : password,
-                                                         "phone"    : phone])
+                                                         "phone"    : phone,
+                                                         "content_type": contentType])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o6o-wH-CUw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,12 +25,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest" translatesAutoresizingMaskIntoConstraints="NO" id="nea-kj-PIk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nea-kj-PIk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bh4-ZL-6Li"/>
+                            <constraint firstItem="nea-kj-PIk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="bh4-ZL-6Li"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nea-kj-PIk" secondAttribute="bottom" id="uWa-00-PRh"/>
                             <constraint firstAttribute="trailing" secondItem="nea-kj-PIk" secondAttribute="trailing" id="uYk-s5-G88"/>
                             <constraint firstItem="nea-kj-PIk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wbb-hQ-a7E"/>
@@ -38,12 +38,12 @@
                     </view>
                     <connections>
                         <segue destination="XLS-Vg-2sf" kind="show" identifier="ShowLoginStoryboardSegueID" id="5LT-LS-lOd"/>
-                        <segue destination="o6o-wH-CUw" kind="show" id="cg5-ES-Jb2"/>
+                        <segue destination="o6o-wH-CUw" kind="show" identifier="ShowAppSequeID" id="cg5-ES-Jb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103" y="81"/>
+            <point key="canvasLocation" x="-103.2" y="80.50974512743629"/>
         </scene>
         <!--Login-->
         <scene sceneID="XT2-Mh-Fbr">
@@ -174,40 +174,6 @@
                                     <constraint firstItem="HYL-wl-urr" firstAttribute="leading" secondItem="m3w-W6-G83" secondAttribute="leading" constant="8" id="qiX-jx-Si0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvG-l3-5pU">
-                                <rect key="frame" x="196" y="538" width="160" height="32"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Upload Music">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="s8Y-Dv-PKo" kind="presentation" modalTransitionStyle="crossDissolve" id="GuO-Jf-r1E"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3j8-em-nd6">
-                                <rect key="frame" x="196" y="579" width="160" height="34"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Upload Book">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gLt-76-qO9" kind="show" id="GOZ-Kj-VWi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF7-j2-x5b">
-                                <rect key="frame" x="16" y="579" width="160" height="34"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="MaP-rn-blj"/>
-                                </constraints>
-                                <state key="normal" title="Upload Movies">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1j5-Vb-6iP" kind="show" id="yGx-hP-8Gv"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-RH-4tT">
                                 <rect key="frame" x="0.0" y="178" width="375" height="31"/>
                                 <subviews>
@@ -278,6 +244,40 @@
                                 <rect key="frame" x="0.0" y="202" width="375" height="416"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="deviceRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvG-l3-5pU">
+                                <rect key="frame" x="196" y="538" width="160" height="32"/>
+                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Upload Music">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s8Y-Dv-PKo" kind="presentation" modalTransitionStyle="crossDissolve" id="GuO-Jf-r1E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3j8-em-nd6">
+                                <rect key="frame" x="196" y="579" width="160" height="34"/>
+                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Upload Book">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gLt-76-qO9" kind="show" id="GOZ-Kj-VWi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF7-j2-x5b">
+                                <rect key="frame" x="16" y="579" width="160" height="34"/>
+                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="MaP-rn-blj"/>
+                                </constraints>
+                                <state key="normal" title="Upload Movies">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1j5-Vb-6iP" kind="show" id="yGx-hP-8Gv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpm-YI-8yL">
                                 <rect key="frame" x="16" y="538" width="160" height="32"/>
                                 <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -321,6 +321,9 @@
                     <navigationItem key="navigationItem" title="Living Words" id="h28-MS-hXD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nsp-RP-RtK">
                             <color key="tintColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="uploadAction:" destination="rID-MD-Gkc" id="6qt-h6-KQn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -329,6 +332,11 @@
                         <outlet property="profileImage" destination="HYL-wl-urr" id="nEb-2d-NEQ"/>
                         <outlet property="sermon" destination="Tiv-rK-bHK" id="1uZ-QJ-Kbd"/>
                         <outlet property="tableView" destination="b88-9a-w8c" id="XeX-Ic-JyI"/>
+                        <outlet property="uploadButton" destination="Nsp-RP-RtK" id="y1z-Aj-6ul"/>
+                        <segue destination="Jwn-QR-s5F" kind="show" identifier="UploadSermonesID" id="AJk-kk-rqu"/>
+                        <segue destination="s8Y-Dv-PKo" kind="show" identifier="UploadMusic" id="hwR-se-9eF"/>
+                        <segue destination="gLt-76-qO9" kind="show" identifier="BookUploadID" id="zT5-df-tU1"/>
+                        <segue destination="1j5-Vb-6iP" kind="show" identifier="UploadMoiveID" id="OxN-kD-4qX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUR-bj-Db6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -627,7 +635,7 @@
                 <viewControllerPlaceholder storyboardName="BookUpload" id="gLt-76-qO9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Twf-mC-yZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3205" y="-820"/>
+            <point key="canvasLocation" x="3162" y="-467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LFh-7j-6Zv">
@@ -650,7 +658,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZZ-an-3Pk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3377" y="-109"/>
+            <point key="canvasLocation" x="3417" y="-59"/>
         </scene>
         <!--Upload Sermones-->
         <scene sceneID="qEa-fV-cJb">
@@ -1504,4 +1512,10 @@
         <image name="saveImage" width="21" height="21"/>
         <image name="upload" width="45" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="AJk-kk-rqu"/>
+        <segue reference="hwR-se-9eF"/>
+        <segue reference="OxN-kD-4qX"/>
+        <segue reference="zT5-df-tU1"/>
+    </inferredMetricsTieBreakers>
 </document>
