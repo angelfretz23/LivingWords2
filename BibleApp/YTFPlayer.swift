@@ -65,7 +65,7 @@ public struct YTFPlayer {
         }
     }
     
-    public static func initYTF (videoID: String, tableViewDataSource: UITableViewDataSource) {
+    public static func initYTF(videoID: String, tableViewDataSource: UITableViewDataSource) {
         
         if dragViewController == nil {
             
@@ -87,7 +87,7 @@ public struct YTFPlayer {
         
     }
     
-    public static func initWithAVPlayer (tableViewDataSource: UITableViewDataSource, type: MediaType, idMovie: String) {
+    public static func initWithAVPlayer(tableViewDataSource: UITableViewDataSource, type: MediaType, idMovie: String) {
         if dragViewController == nil {
             dragViewController = YTFViewController(nibName: "YTFViewController", bundle: nil)
             dragViewController?.typeMedia = type
@@ -134,8 +134,9 @@ public struct YTFPlayer {
                 
              //   myProgrammaticView.translatesAutoresizingMaskIntoConstraints = NO;
                
-                let controller = viewController as! MainTableViewController
+                if let controller = viewController as? MainTableViewController {
                 controller.dismiss(animated: true, completion: nil)
+                }
             })
         }
     }
