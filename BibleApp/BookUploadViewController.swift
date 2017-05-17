@@ -32,6 +32,8 @@ class BookUploadViewController: UIViewController {
     //MARK: IBOutlets
     @IBOutlet weak var bookUploadTableView: UITableView!
     
+    var tagScriptureString: String = "Tag Scriptures"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +42,11 @@ class BookUploadViewController: UIViewController {
         registerXibs()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        bookUploadTableView.reloadData()
+    }
     func configureTableView(){
         bookUploadTableView.rowHeight = UITableViewAutomaticDimension
         bookUploadTableView.estimatedRowHeight = 300
@@ -81,6 +87,7 @@ extension BookUploadViewController:  UITableViewDataSource {
             return cell
         case [1,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TagScriptureTableViewCellReuseID, for: indexPath) as? TagScriptureTableViewCell else { return UITableViewCell() }
+            cell.tagScriptureLabel.text = tagScriptureString == "" ? "Tag Scriptures" : tagScriptureString
             return cell
         case [2,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.BookDescriptionTableViewCellReuseID, for: indexPath) as? BookDescriptionTableViewCell else { return UITableViewCell() }
@@ -140,12 +147,12 @@ extension BookUploadViewController:  UITableViewDataSource {
         }
         
         func uploadTagScriptures() {
-//            let storyboard = UIStoryboard(name: "MainTableView", bundle: nil)
-//            let mainTableViewVC  = storyboard.instantiateViewController(withIdentifier: "MainTableViewControllerID")
-//            
-//            self.present(mainTableViewVC, animated: true)
+            let storyboard = UIStoryboard(name: "BookUpload", bundle: nil)
+            let scriptureSelectionViewController  = storyboard.instantiateViewController(withIdentifier: "ScriptureSelectionViewControllerID") as! ScriptureSelectionViewController
+            scriptureSelectionViewController.bookUploadViewController = self
+            self.present(scriptureSelectionViewController, animated: true)
             
-            performSegue(withIdentifier: "GetTagScripturesSegueID", sender: self)
+            //performSegue(withIdentifier: "GetTagScripturesSegueID", sender: self)
         }
 }
 

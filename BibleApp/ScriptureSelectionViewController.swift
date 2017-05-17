@@ -26,7 +26,8 @@ class ScriptureSelectionViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: CustomTextField!
     
-    var backController: UploadSermonesVC?
+    var bookUploadViewController: BookUploadViewController?
+        var backController: UploadSermonesVC?
 
     var sermonTags: [[String]] = []
    
@@ -36,9 +37,17 @@ class ScriptureSelectionViewController: UIViewController {
     var chapter: String?
     var verse: String?
     
+    var  previousBook: String = ""
+    var scriptureString: String = ""
+    var tagScriptureArray: [String] = []
+    
+    var tagScriptureDictionary: [String : [String]] = [:]
+    
     @IBAction func saveTagScriptureButtonPressed(_ sender: Any) {
         
-        backController?.tableView.reloadData()
+       // backController?.tableView.reloadData()
+        
+        bookUploadViewController?.tagScriptureString = tagScriptureLabel.text!
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -52,7 +61,8 @@ class ScriptureSelectionViewController: UIViewController {
         
         registerForNotifications()
         
-        updateDataSourceIfNeeded()
+        //   updateDataSourceIfNeeded()
+        tagScriptureLabel.text = ""
 
     }
     
@@ -187,24 +197,66 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
         
         let scripture = search[indexPath.row]
         let index = indexPath.row + 1
+        if previousBook == book! {
+          
+            scriptureString += ", " + chapter! + ":" + "\(indexPath.row + 1)" + ""
+            let value =  chapter! + ":" + "\(indexPath.row + 1)"
+            tagScriptureArray.append(value)
+            tagScriptureDictionary[book!] = tagScriptureArray
+            print(tagScriptureDictionary)
+            
+        }else {
+            
+            tagScriptureArray = []
+            previousBook = book!
+            let value =  chapter! + ":" + "\(indexPath.row + 1)"
+            tagScriptureArray.append(value)
+            tagScriptureDictionary[book!] = tagScriptureArray
+            
+            
+        }
+  
+        parseTagScriptureDictionary(dictionary: tagScriptureDictionary)
+//        scripture.bookOfBible = book
+//        scripture.chapterNumberOfBook = chapter
+//        scripture.verse = verse
         
-        scripture.bookOfBible = book
-        scripture.chapterNumberOfBook = chapter
-        scripture.verse = verse
         
+       // self.sermonTags = [[scripture.bookOfBible! + " " + scripture.chapterNumberOfBook! + ": \(index + 1)"]]
         
-        self.sermonTags = [[scripture.bookOfBible! + " " + scripture.chapterNumberOfBook! + ": \(index + 1)"]]
-        
-        for i in sermonTags {
-            for a in i {
-                self.tagScriptureLabel.text = a
-                self.backController?.scriptureTags.text = a
+
+    }
+    
+      func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    
+     let array = tagScriptureDictionary[book!]
+        let string = chapter! + ":" + "\(indexPath.row + 1)"
+        var count = 0
+        for tags in array! {
+            count += 1
+            if tags.contains(string) {
+                tagScriptureArray.remove(at: count - 1)
+                tagScriptureDictionary[book!] = tagScriptureArray
+                print(tagScriptureDictionary)
+                parseTagScriptureDictionary(dictionary: tagScriptureDictionary)
+                return
+                
             }
         }
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-      
+    
+    func parseTagScriptureDictionary(dictionary: Dictionary<String, [String]>){
+        var  tagString = String()
+        for dict in dictionary.keys {
+            print(dict)
+            let array = dictionary[dict]
+            tagString += dict + " "
+            for arrayElement in array! {
+                tagString += arrayElement + ", "
+            }
+        }
+        tagScriptureLabel.text = tagString
     }
 }
 
