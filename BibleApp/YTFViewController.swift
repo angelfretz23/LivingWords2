@@ -8,9 +8,14 @@
 
 import UIKit
 import youtube_ios_player_helper
+import MediaPlayer
+import AVKit
+import SnapKit
+import YTVimeoExtractor
 
 class YTFViewController: UIViewController {
     
+    @IBOutlet weak var youTubePlayer: YTPlayerView!
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var fullscreen: UIButton!
     @IBOutlet weak var playerView: UIView!
@@ -97,6 +102,11 @@ class YTFViewController: UIViewController {
     var subviewForDetailsView: UIView?
     var helper: MainMediaViewController?
     
+    var avController: AVPlayerViewController?
+    var avPlayer: AVPlayer?
+    var typeMedia = MediaType.youTube
+    var youtubeId: String!
+    
     enum UIPanGestureRecognizerDirection {
         case Undefined
         case Up
@@ -114,10 +124,18 @@ class YTFViewController: UIViewController {
         initMediaTableView()
         
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if typeMedia == .youTube {
+            configureAVPlayerYouTube()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         calculateFrames()
     }
     
@@ -137,7 +155,6 @@ class YTFViewController: UIViewController {
             videoView.isUserInteractionEnabled = false
             let playerVars = ["playsinline" : 1, "controls" : 0, "showinfo" : 0]
             videoView.load(withVideoId: videoID, playerVars: playerVars)
-        
         }
     }
     
@@ -148,7 +165,7 @@ class YTFViewController: UIViewController {
         playerControlsView.alpha = 0.0
         backPlayerControlsView.alpha = 0.0
         self.fullscreen.setImage(fullscreenImage, for: .normal)
-        self.minimizeButton.setImage(minimizeImage, for: .normal)
+     //   self.minimizeButton.setImage(minimizeImage, for: .normal)
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(YTFViewController.panAction(recognizer:)))
         playerView.addGestureRecognizer(gesture)
         self.playerTapGesture = UITapGestureRecognizer(target: self, action: #selector(YTFViewController.showPlayerControls))
@@ -190,6 +207,46 @@ class YTFViewController: UIViewController {
         tableViewMedia.dataSource = tableViewDataSource
         
         tableViewMedia.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
+    }
+    
+    func configureAVPlayerVimeo(with url: String) {
+
+        let controller = AVPlayerViewController()
+        controller.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 375, height: 211))
+        
+        YTVimeoExtractor.shared().fetchVideo(withVimeoURL: "https://vimeo.com/97356262", withReferer: nil) { (vimeoVideo, error) in
+            
+            if let video = vimeoVideo {
+                
+                let highQualityURL = video.highestQualityStreamURL()
+                
+                self.avController = AVPlayerViewController()
+                self.avController?.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 375, height: 211))
+                
+                self.avPlayer = AVPlayer(url: highQualityURL)
+                self.avController?.player = self.avPlayer
+                
+                self.addChildViewController(self.avController!)
+                self.playerView.addSubview((self.avController?.view)!)
+                
+                self.avController?.player?.play()
+            }
+        }
+        
+    }
+    
+    func aflaViewYouTube() {
+        let view = UIView()
+            view.frame = playerView.frame
+            view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        view.alpha = 0.1
+        playerView.addSubview(view)
+    }
+    
+    func configureAVPlayerYouTube() {
+        let playerVars = ["playsinline" : 1, "controls" : 2, "showinfo" : 0]
+        youTubePlayer.load(withVideoId: youtubeId, playerVars: playerVars)
     }
     
     func calculateFrames() {

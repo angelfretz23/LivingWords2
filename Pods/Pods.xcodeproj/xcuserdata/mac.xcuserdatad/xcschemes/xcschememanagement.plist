@@ -79,6 +79,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YTVimeoExtractor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YouTubePlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,7 +97,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>021F3BCF26E6EA995E77B2CD13255436</key>
+		<key>0B7E36E88B855B898FCD8BD010C16B5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7335E9C9689F3B8A16F063A884748533</key>
+		<key>6ED9F5F6B8069AF9CED63476FD1A5A79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75C722BECC8EB6553E878EE2E4A8E610</key>
+		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,17 +147,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7F98733ED77D12DE31F4571BC0A80076</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A4CF55873163792EFE8E9EECE0F356EE</key>
+		<key>A5235098E4409D74E8A7E22BB367D77A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7A6168F14036A021EA5A9E06CCAA861</key>
+		<key>AA9648A416663CDE89B1EEAAAB7229B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,7 +172,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB4FF2539C9E37BE8CBA50559E86D850</key>
+		<key>BCBB4F1F2B2E084762E733163059214D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

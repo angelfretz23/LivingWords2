@@ -98,16 +98,16 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let youTubeId = mediaData[indexPath.row].youtubeID {
-            YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: mediaController as! UITableViewDataSource)
+        if let youTubeID = mediaData[indexPath.row].youtubeID {
             
-            YTFPlayer.showYTFView(viewController: mediaController!)
+           // YTFPlayer.initYTF(videoID: youTubeId, tableViewDataSource: mediaController as! UITableViewDataSource)
             
-            mediaController?.dismiss(animated: false, completion: nil)
+            YTFPlayer.initWithAVPlayer(tableViewDataSource: mediaController as! UITableViewDataSource, type: .vimeo, idMovie: youTubeID)
+            YTFPlayer.showYTFView(viewController: mediaController!.controllerScripture!)
             
-        }
-        
+          //  mediaController?.dismiss(animated: false, completion: nil)
 
+        }
     }
 }
 
