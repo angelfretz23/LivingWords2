@@ -70,11 +70,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-<<<<<<< HEAD
-	<string>ContentProviderProfile</string>
-=======
-	<string>BookUpload</string>
->>>>>>> c0dcd8d5e2136bec60652014ce8a6d985ca0d03f
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
