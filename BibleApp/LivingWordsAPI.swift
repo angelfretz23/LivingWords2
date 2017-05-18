@@ -123,9 +123,9 @@ extension LivingWordsAPI {
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
-            //request.setValue(token, forHTTPHeaderField: "token")
+            request.setValue("ef49c1427fb9bc7ad21171704524a39b1ed9f2cd73ea5a9274e1d9678196a840", forHTTPHeaderField: "Access-token")
             // request.setValue(String(id), forHTTPHeaderField: "user-id")
-            //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -287,7 +287,7 @@ extension LivingWordsAPI {
     }
     
     @discardableResult
-    func uploadSermon(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [Int], user_id: Int, completion: @escaping (_ post: [Post]?, _ error:
+    func uploadSermon(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [Int], user_id: Int, completion: @escaping (_ post: Post?, _ error:
         Error?) -> Void) -> DataRequest {
         let request = Router.uploadSermon(parameters: ["pastor_name" : pastor_name,
                                                        "media_url"   : media_url,
@@ -297,7 +297,7 @@ extension LivingWordsAPI {
                                                    "verse_id_arr" : verse_id_array,
                                                          "user_id": user_id])
         
-        return service.request(request: request).responseArray(completionHandler: {(response: DataResponse<[Post]>) in
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
         
         })
