@@ -17,7 +17,6 @@ class Post: NSObject, Mappable {
     var tags: [String]?
     var verse_id_array: [String]?
     
-    
     func mapping(map: Map) {
         self.pastor_name    <- map["pastor_name"]
         self.media_url      <- map["media_url"]

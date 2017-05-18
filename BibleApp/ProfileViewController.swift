@@ -59,7 +59,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    // MARK: - ProfileViewController`s live cycle
+    // MARK: - ProfileViewController`s life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -39,7 +39,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Living Words" id="Tt4-Q6-XSK">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="iBl-Eh-OsM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="iBl-Eh-OsM">
+                            <connections>
+                                <action selector="cancelAction:" destination="e7k-LS-Sby" id="C5T-zs-4d7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bookUploadTableView" destination="kHC-WF-IAB" id="1Ra-ho-6rm"/>
@@ -53,7 +57,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UhU-tq-Mgt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xgg-GB-ABt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BookNavControllerID" automaticallyAdjustsScrollViewInsets="NO" id="xgg-GB-ABt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pE5-PS-mSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -353,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kL-GX-xCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="194"/>
+            <point key="canvasLocation" x="-740" y="176"/>
         </scene>
     </scenes>
     <resources>

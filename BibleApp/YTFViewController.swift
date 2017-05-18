@@ -214,7 +214,7 @@ class YTFViewController: UIViewController {
         let controller = AVPlayerViewController()
         controller.view.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 375, height: 211))
         
-        YTVimeoExtractor.shared().fetchVideo(withVimeoURL: "https://vimeo.com/97356262", withReferer: nil) { (vimeoVideo, error) in
+        YTVimeoExtractor.shared().fetchVideo(withVimeoURL: url, withReferer: nil) { (vimeoVideo, error) in
             
             if let video = vimeoVideo {
                 

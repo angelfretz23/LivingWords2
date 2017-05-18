@@ -16,3 +16,11 @@ let userContentTypeKey = "userContentType"
 
 var userEmail = "None"
 let userEmailKey = "userEmail"
+
+enum ContentProviderType {
+    case User
+    case Pastor
+    case Artist
+    case Author_Book
+    case Author_Movie
+}

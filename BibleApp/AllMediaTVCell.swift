@@ -120,9 +120,12 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
                 
                 YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: .vimeo, idMovie: youTubeId)
                 
-                    YTFPlayer.showYTFView(viewController: currController)
-   
-                currController.dismiss(animated: false, completion: nil)
+                YTFPlayer.showYTFView(viewController: currController)
+                
+                if let media = mediaController {
+                    media.dismiss(animated: false, completion: nil)
+                }
+                
             }
         }
     }
