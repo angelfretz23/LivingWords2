@@ -60,7 +60,7 @@ class ContentProviderProfileVC: UIViewController {
 }
 
 extension ContentProviderProfileVC {
-    fileprivate func checkContentOwnerType() {
+    fileprivate func checkContentOwnerType(typeOfContentOwner: String) {
         
         switch typeOfContentOwner {
         case "artist":
