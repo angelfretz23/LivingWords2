@@ -17,6 +17,7 @@
 		041018831EAE47C800745DED /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041018821EAE47C800745DED /* MediaModel.swift */; };
 		04148D881EA899A60056D18E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148D871EA899A60056D18E /* SignInViewController.swift */; };
 		04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04148D891EA8C2140056D18E /* GoogleService-Info.plist */; };
+		041BAEC31ECC52A20010A34C /* ConstantsExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BAEC21ECC52A20010A34C /* ConstantsExtentions.swift */; };
 		0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */; };
 		04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */; };
 		04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */; };
@@ -44,7 +45,7 @@
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC81EA91EC6000CD94D /* RoundedButton.swift */; };
 		2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E61EA795E6007464F0 /* AppDelegate.swift */; };
-		2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E81EA795E6007464F0 /* ViewController.swift */; };
+		2B2A93E91EA795E6007464F0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E81EA795E6007464F0 /* SplashViewController.swift */; };
 		2B2A93EC1EA795E6007464F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93EA1EA795E6007464F0 /* Main.storyboard */; };
 		2B2A93EE1EA795E6007464F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93ED1EA795E6007464F0 /* Assets.xcassets */; };
 		2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A93EF1EA795E6007464F0 /* LaunchScreen.storyboard */; };
@@ -117,6 +118,7 @@
 		041018821EAE47C800745DED /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		04148D871EA899A60056D18E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04148D891EA8C2140056D18E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		041BAEC21ECC52A20010A34C /* ConstantsExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsExtentions.swift; sourceTree = "<group>"; };
 		0422F1471EAA3340003A0054 /* LivingWordsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingWordsAPI.swift; sourceTree = "<group>"; };
 		04405B6B1EB347D900F16687 /* BookTypeCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTypeCollectionVCell.swift; sourceTree = "<group>"; };
 		04405B6C1EB347D900F16687 /* BookTypeCollectionVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookTypeCollectionVCell.xib; sourceTree = "<group>"; };
@@ -146,7 +148,7 @@
 		2B005BC81EA91EC6000CD94D /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2B2A93E31EA795E6007464F0 /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2A93E61EA795E6007464F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B2A93E81EA795E6007464F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B2A93E81EA795E6007464F0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2B2A93EB1EA795E6007464F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B2A93ED1EA795E6007464F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B2A93F01EA795E6007464F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				2B472ED21EADD32F004084F1 /* ExternalLibraries */,
+				041BAEC21ECC52A20010A34C /* ConstantsExtentions.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -554,7 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				044EEBBD1EC5FA280092CFD3 /* UploadMusicTVC.swift */,
-				2B2A93E81EA795E6007464F0 /* ViewController.swift */,
+				2B2A93E81EA795E6007464F0 /* SplashViewController.swift */,
 				044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */,
 				044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */,
 				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
@@ -978,7 +981,7 @@
 				784D52291EB2394600A27112 /* CustomView.swift in Sources */,
 				2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */,
 				2B472F121EAE2E8B004084F1 /* Search.swift in Sources */,
-				2B2A93E91EA795E6007464F0 /* ViewController.swift in Sources */,
+				2B2A93E91EA795E6007464F0 /* SplashViewController.swift in Sources */,
 				FC3EFCA31EC4972500C46837 /* UploadBookTableViewCell.swift in Sources */,
 				3A55447D1ECC99D8003D2EFD /* ContentProviderProfileVC.swift in Sources */,
 				2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */,
@@ -991,6 +994,7 @@
 				04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */,
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
+				041BAEC31ECC52A20010A34C /* ConstantsExtentions.swift in Sources */,
 				04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */,
 				7825EAFD1EB3C50F00C1D180 /* RoundedTextField.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,

@@ -22,7 +22,7 @@ class User: NSObject, Mappable {
     var message: Int?
     var messageStr: String?
     var newPassword: String?
-    
+    var content_type: String?
     
     func mapping(map: Map) {
         self.id             <- map["id"]
@@ -36,6 +36,7 @@ class User: NSObject, Mappable {
         self.message        <- map["message"]
         self.messageStr     <- map["messageStr"]
         self.newPassword    <- map["new_password"]
+        self.content_type   <- map["content_type"]
         
     }
     
@@ -73,10 +74,10 @@ extension User {
         
     }
     
-    static func signUpWithEmail( email: String, password: String, phone: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
+    static func signUpWithEmail( email: String, password: String, phone: String, content_type: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
         let api = LivingWordsAPI()
     
-        api.signUpWithEmail(email: email, password: password, phone: phone, completion: completion)
+        api.signUpWithEmail(email: email, password: password, phone: phone, contentType: content_type, completion: completion)
     }
     
     static func loginGoogle(id: String, email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {

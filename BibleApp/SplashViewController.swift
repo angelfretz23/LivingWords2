@@ -13,9 +13,19 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        isUserLogenIn = UserDefaults.standard.bool(forKey: isUserLogenInKey)
+        
+        isUserLogenIn ? performSegue(withIdentifier: "ShowAppSequeID", sender: self) :
+                        performSegue(withIdentifier: "ShowLoginStoryboardSegueID", sender: self)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

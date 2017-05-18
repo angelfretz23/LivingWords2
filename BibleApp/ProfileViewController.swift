@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var sermon: UITextField!
     @IBOutlet weak var descript: UITextView!
     
+    @IBOutlet weak var uploadButton: UIBarButtonItem!
     
     // MARK: - Properties
     let imagePicker = UIImagePickerController()
@@ -32,6 +33,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     
     // MARK: - IBActions
+    
     @IBAction func uploadProfileImage(_ sender: UIButton) {
         self.imagePicker.allowsEditing = false
         self.imagePicker.sourceType = .photoLibrary
@@ -39,15 +41,35 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         present(self.imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func uploadAction(_ sender: UIBarButtonItem) {
+        
+        if let type = userContentType {
+            switch type {
+            case "Pastor":
+                performSegue(withIdentifier: "UploadSermonesID", sender: self)
+            case "Author (Book)":
+                performSegue(withIdentifier: "BookUploadID", sender: self)
+            case "Author (Movie)":
+                performSegue(withIdentifier: "UploadMoiveID", sender: self)
+            case "Artist":
+                performSegue(withIdentifier: "UploadMusic", sender: self)
+            default:
+                print("Content type of user is not found 🏵")
+            }
+        }
+    }
+    
+    // MARK: - ProfileViewController`s live cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        cheakContentProvider()
         // methods
         stylingFrames()
         
         // delegates
         imagePicker.delegate = self
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
@@ -57,20 +79,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
-
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -115,10 +125,19 @@ extension ProfileViewController {
     
 }
 
-// MARK: - Styling
 extension ProfileViewController {
     func stylingFrames() {
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
         self.profileImage.clipsToBounds = true;
+    }
+    
+    fileprivate func cheakContentProvider() {
+        
+        userContentType = UserDefaults.standard.object(forKey: userContentTypeKey) as? String
+        if let contentType = userContentType {
+            if contentType == "user" {
+                navigationItem.rightBarButtonItem = nil
+            }
+        }
     }
 }

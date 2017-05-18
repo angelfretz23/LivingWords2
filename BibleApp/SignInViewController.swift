@@ -17,13 +17,14 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var contentProviderView: UIView!
+    @IBOutlet weak var contentProviderText: UILabel!
     
     @IBOutlet weak var signUpByEmail: UIButton!
     @IBOutlet weak var signInbyEmail: UIButton!
     
     @IBOutlet weak var googleSignUp: RoundedButton!
     @IBOutlet weak var googleSignIn: RoundedButton!
-    
     
     @IBOutlet weak var facebookLogIn: RoundedButton!
     @IBOutlet weak var facebookSignUp: RoundedButton!
@@ -47,6 +48,7 @@ class SignInViewController: UIViewController {
     var userID: Int?
     let defaults = UserDefaults.standard
     var isUserLoginIn = true
+    fileprivate var content_type: String?
     
     let googleLoginButton: GIDSignInButton = {
         let button = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -86,6 +88,10 @@ class SignInViewController: UIViewController {
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         isUserLoginIn = false
         
+        if !signUpWithEmailView.isHidden {
+            signUpWithEmailView.isHidden = true
+        }
+        
         if email.text != "" && password.text != "" {
             signUpWithEmail()
             
@@ -111,10 +117,11 @@ class SignInViewController: UIViewController {
         
         if email.text == "" || password.text == "" {
             
-            self.displayAlert(userMessage: "Enter email adress and password to login, please")
-            
+            if !signUpWithEmailView.isHidden {
+                signUpWithEmailView.isHidden = true
+                contentProviderView.isHidden = true
+            }
         } else {
-            
             enterInSystemByEmail()
         }
         
@@ -133,6 +140,11 @@ class SignInViewController: UIViewController {
     
     @IBAction func signUpbyEmailAction(_ sender: UIButton) {
         signUpWithEmailView.isHidden = signUpWithEmailView.isHidden ? false : true
+        contentProviderView.isHidden = contentProviderView.isHidden ? false : true
+    }
+    @IBAction func signInEmailAction(_ sender: UIButton) {
+        
+        signUpWithEmailView.isHidden = signUpWithEmailView.isHidden ? false : true
     }
     
     @IBAction func facebookSignInAction(_ sender: UIButton) {
@@ -141,6 +153,50 @@ class SignInViewController: UIViewController {
     
     @IBAction func googleSignInAction(_ sender: UIButton) {
         googleLoginButton.sendActions(for: .touchUpInside)
+    }
+    
+    
+    @IBAction func isUserContentProviderAction(_ sender: UISwitch) {
+        if sender.isOn {
+            
+            let alertController = UIAlertController.init(title: "Content Provider", message: "Select type of content provider", preferredStyle: .actionSheet)
+            
+            let userProvider = UIAlertAction(title: "User (default)", style: .default, handler: { (alertAction) in
+                self.content_type = "User"
+                self.contentProviderText.text = "Content Provider: User"
+            })
+            
+            let pastorProvider = UIAlertAction(title: "Pastor", style: .default, handler: { (alertAction) in
+                self.content_type = "Pastor"
+                self.contentProviderText.text = "Content Provider: Pastor"
+            })
+            
+            let artistProvider = UIAlertAction(title: "Artist", style: .default, handler: { (alertAction) in
+                self.content_type = "Artist"
+                self.contentProviderText.text = "Content Provider: Artist"
+            })
+            
+            let authorBookProvider = UIAlertAction(title: "Author (Book)", style: .default, handler: { (alertAction) in
+                self.content_type = "Author (Book)"
+                self.contentProviderText.text = "Content Provider: Author (Book)"
+            })
+            
+            let authorMovieProvider = UIAlertAction(title: "Author (Movie)", style: .default, handler: { (alertAction) in
+                self.content_type = "Author (Movie)"
+                self.contentProviderText.text = "Content Provider: Author (Movie)"
+            })
+            
+            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(userProvider)
+            alertController.addAction(pastorProvider)
+            alertController.addAction(artistProvider)
+            alertController.addAction(authorBookProvider)
+            alertController.addAction(authorMovieProvider)
+            alertController.addAction(cancelButton)
+            
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -248,11 +304,13 @@ extension OtherHelpfullMethods {
                 self.userData = user
                 self.userID = user.id
                 
-                //let savedToken = self.defaults.string(forKey: "userToken")
-                
-            
                 if (email == self.email.text!) {
                     self.loadApp()
+                    
+                    self.defaults.set(true, forKey: isUserLogenInKey)
+                    self.defaults.set(user.email, forKey: userEmailKey)
+                    self.defaults.set(user.content_type, forKey: userContentTypeKey)
+                    
                 } else {
                     self.displayAlert(userMessage: "Password or email is incorrect!!! \n Try Once More!")
                 }
@@ -264,16 +322,25 @@ extension OtherHelpfullMethods {
     
     fileprivate func signUpWithEmail() {
         
-        User.signUpWithEmail(email: email.text!, password: password.text!, phone: phone.text ?? "00000000", completion: { (userInfo, error) in
+        let defaultContentType = "user"
+        
+        User.signUpWithEmail(email: email.text!,
+                             password: password.text!,
+                             phone: phone.text ?? "00000000",
+                             content_type: self.content_type ?? defaultContentType ,
+                             completion: { (userInfo, error) in
             if error != nil {
                 print("Sign Up with email is fail")
             }
             
             if let user = userInfo, let token = userInfo?.token {
                 self.userData = user
-                
-                
+
                 self.defaults.set(token, forKey: "userToken")
+                
+                self.defaults.set(true, forKey: isUserLogenInKey)
+                self.defaults.set(user.email, forKey: userEmailKey)
+                self.defaults.set(user.content_type, forKey: userContentTypeKey)
                 
                 self.loadApp()
             }
