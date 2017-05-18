@@ -122,10 +122,10 @@ class UploadSermonesVC: UITableViewController {
         Post.uploadSermon(pastor_name: pastorName , media_url: videoUrl ?? "", sermon_title: sermonTitle, descript: descript, tags: ["#tag"], verse_id_array: scriptureIDArray ?? [0]) { (response, error) in
             if let post = response {
                 //self.post = post
-                print("🔴 A post was shared successfully, now you see the response from server! 🔴")
+                print("🍏 A post was shared successfully, now you see the response from server! 🍏")
             } else if error != nil {
                 print("🔴 An error occured while sharing the post! 🔴")
-                
+                print(error)
             }
         }
           
