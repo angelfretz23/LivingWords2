@@ -10,6 +10,7 @@ import UIKit
 
 class MusicUploadTVC: UITableViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var textScripture: UITextView!
     @IBOutlet weak var upDownImage: UIImageView!
     @IBOutlet weak var titleScripture: UILabel!

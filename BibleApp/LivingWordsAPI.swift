@@ -277,7 +277,7 @@ extension LivingWordsAPI {
     @discardableResult
     func confirmNewPassword(user_id: Int, newPassword: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.confirmNewPassword(parameters: ["user_id" : user_id,
-                                                    "new_password": newPassword])
+                                                         "new_password": newPassword])
         
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
@@ -287,9 +287,10 @@ extension LivingWordsAPI {
     }
     
     @discardableResult
-    func sharePost(pastor_name: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [String], completion: @escaping (_ post: Post?, _ error:
+    func sharePost(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [String], completion: @escaping (_ post: Post?, _ error:
         Error?) -> Void) -> DataRequest {
         let request = Router.sharePost(parameters: ["pastor_name" : pastor_name,
+                                                    "media_url"   : media_url,
                                                    "sermon_title" : sermon_title,
                                                        "descript" : descript,
                                                            "tags" : tags,

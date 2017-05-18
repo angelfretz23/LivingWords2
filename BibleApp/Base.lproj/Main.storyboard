@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -472,6 +472,11 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ov9-Q1-g3g">
                             <connections>
                                 <action selector="cancellAction:" destination="Gcq-G4-Ggp" id="6rg-mK-7y8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="YFS-cm-Bod">
+                            <connections>
+                                <action selector="uploadMusic:" destination="Gcq-G4-Ggp" id="qV7-Uf-qIr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1513,9 +1518,9 @@
         <image name="upload" width="45" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AJk-kk-rqu"/>
+        <segue reference="vWg-Kk-ERe"/>
+        <segue reference="yGx-hP-8Gv"/>
         <segue reference="hwR-se-9eF"/>
-        <segue reference="OxN-kD-4qX"/>
         <segue reference="zT5-df-tU1"/>
     </inferredMetricsTieBreakers>
 </document>

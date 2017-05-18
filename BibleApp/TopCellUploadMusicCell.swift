@@ -10,6 +10,12 @@ import UIKit
 
 class TopCellUploadMusicCell: UITableViewCell {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var artistName: UITextField!
+    @IBOutlet weak var writerName: UITextField!
+    @IBOutlet weak var mediaURL: UILabel!
+    @IBOutlet weak var tagScriptures: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

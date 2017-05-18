@@ -112,15 +112,23 @@ class UploadSermonesVC: UITableViewController {
     
     // MARK:- Action
     @IBAction func sharePost(_ sender: UIBarButtonItem) {
-        Post.sharePost(pastor_name: pastor_name.text!, sermon_title: sermonTitle.text!, descript: descript.text, tags: ["\(tags)"], verse_id_array: ["\(scriptureTags)"]) { (response, error) in
+        let pastorName = self.pastor_name.text ?? ""
+        let mediaURL = self.mediaURL.text ?? ""
+        let sermonTitle = self.sermonTitle.text ?? ""
+        let descript = self.descript.text ?? ""
+        let tags = self.tags.text ?? ""
+        let verseID = scriptureTags.text ?? ""
+        
+        Post.sharePost(pastor_name: pastorName , media_url: mediaURL, sermon_title: sermonTitle, descript: descript, tags: [tags], verse_id_array: [verseID]) { (response, error) in
             if let post = response {
                 self.post = post
                 print("🔴 A post was shared successfully, now you see the response from server! 🔴")
             } else if error != nil {
-                print("An error occured while sharing the post!")
+                print("🔴 An error occured while sharing the post! 🔴")
                 self.displayAlert(userMessage: "An error occured while sharing the post!")
             }
         }
+        
     }
     
 

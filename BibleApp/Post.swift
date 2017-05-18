@@ -33,10 +33,10 @@ class Post: NSObject, Mappable {
 }
 
 extension Post {
-    static func sharePost(pastor_name: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [String], completion: @escaping (_ user: Post?, _ error: Error?) -> Void)  {
+    static func sharePost(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [String], completion: @escaping (_ user: Post?, _ error: Error?) -> Void)  {
         let api = LivingWordsAPI()
         
-        api.sharePost(pastor_name: pastor_name, sermon_title: sermon_title, descript: descript, tags: tags, verse_id_array: verse_id_array, completion: completion)
+        api.sharePost(pastor_name: pastor_name, media_url: media_url, sermon_title: sermon_title, descript: descript, tags: tags, verse_id_array: verse_id_array, completion: completion)
         
     }
 }

@@ -10,11 +10,18 @@ import UIKit
 
 class UploadMusicTVC: UITableViewController {
 
+
+
+    // MARK: - Properties
     var names = ["Psalm23:4", "Genesis1:1", "Matthew14:29"]
     fileprivate var selectedIndex: IndexPath?
     fileprivate var isExpanded = false
     fileprivate var allowExpanded = false
+    var cellTop: TopCellUploadMusicCell?
+    var cellExpandable: MusicUploadTVC?
+    var cellBottom: BottomUploadMusicCell?
     
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,13 +35,19 @@ class UploadMusicTVC: UITableViewController {
         tableView.reloadRows(at: [selectedIndex!], with: .automatic)
     }
     
-    // MARK: Actions
+    // MARK: IBActions
     
+    @IBAction func uploadMusic(_ sender: UIBarButtonItem) {
+        let artistName = cellTop?.artistName ?? ""
+        
+    }
     @IBAction func cancellAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
 }
 
+
+// MARK: - Extensions
 extension TableDataSource {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,11 +94,10 @@ extension TableDelegate {
             
             if isExpanded && selectedIndex == indexPath {
                 return 150
-            }else {
+            } else {
                 return 48
             }
         }
-   
     }
 }
 
@@ -93,7 +105,7 @@ extension UploadMusicCells {
     
     fileprivate func expandedCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandableCell", for: indexPath) as! MusicUploadTVC
-        
+            cellExpandable = cell
         if names[indexPath.row] != "" {
             cell.titleScripture.text = names[indexPath.row]
             cell.selectionStyle = .none
@@ -103,13 +115,16 @@ extension UploadMusicCells {
     }
 
     fileprivate func topUploadMusicCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopCellUploadMusicCellID", for: indexPath) as! TopCellUploadMusicCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopCellUploadMusicCellID", for: indexPath) as!
+        TopCellUploadMusicCell
+        cellTop = self
             cell.selectionStyle = .none
         return cell
     }
     
     fileprivate func bottomUploadMusicCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BottomUploadMusicCellID", for: indexPath) as! BottomUploadMusicCell
+        cellBottom = cell
         cell.selectionStyle = .none
         return cell
     }

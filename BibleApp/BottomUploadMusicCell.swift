@@ -9,6 +9,10 @@
 import UIKit
 
 class BottomUploadMusicCell: UITableViewCell {
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var songStory: UITextField!
+    @IBOutlet weak var descript: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

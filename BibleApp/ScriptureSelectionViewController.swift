@@ -205,7 +205,7 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
             tagScriptureDictionary[book!] = tagScriptureArray
             print(tagScriptureDictionary)
             
-        }else {
+        } else {
             
             tagScriptureArray = []
             previousBook = book!

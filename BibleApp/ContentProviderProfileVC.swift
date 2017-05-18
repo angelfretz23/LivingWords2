@@ -33,7 +33,8 @@ class ContentProviderProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkContentOwnerType()
+        // MARK: - Methods called
+        checkContentOwnerType(typeOfContentOwner)
         
         // MARK: - Delegates
         tableView.dataSource = self
@@ -60,8 +61,8 @@ class ContentProviderProfileVC: UIViewController {
 }
 
 extension ContentProviderProfileVC {
-    fileprivate func checkContentOwnerType(typeOfContentOwner: String) {
-        
+    fileprivate func checkContentOwnerType(_ typeOfContentOwner: String) {
+
         switch typeOfContentOwner {
         case "artist":
             mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Music", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
@@ -70,7 +71,7 @@ extension ContentProviderProfileVC {
         case "pastor":
             mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Sermons", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
         default:
-            break
+            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Default", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
         }
     }
     
