@@ -29,10 +29,12 @@ class BookUploadViewController: UIViewController {
         static let TagsTableViewCellReuseID = "TagsTableViewCellID"
     }
 
-    //MARK: IBOutlets
+    //MARK:- IBOutlets
     @IBOutlet weak var bookUploadTableView: UITableView!
     
     var tagScriptureString: String = "Tag Scriptures"
+    
+    //MARK:- BookUpload`s life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +43,20 @@ class BookUploadViewController: UIViewController {
         
         registerXibs()
     }
-    
+ 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
         bookUploadTableView.reloadData()
     }
+    
+    // MARK:- Action and Other helpfull methods
+    
+    
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func configureTableView(){
         bookUploadTableView.rowHeight = UITableViewAutomaticDimension
         bookUploadTableView.estimatedRowHeight = 300
@@ -129,7 +139,7 @@ extension BookUploadViewController:  UITableViewDataSource {
         header.textLabel?.textAlignment = .left
          header.textLabel?.font = UIFont(name: "Futura", size: 12.0)!
         header.textLabel?.textColor = UIColor.lightGray
-        if section == 1{
+        if section == 1 {
             header.textLabel?.text = " Scriptures"
         } else {
       
@@ -149,7 +159,8 @@ extension BookUploadViewController:  UITableViewDataSource {
         func uploadTagScriptures() {
             let storyboard = UIStoryboard(name: "BookUpload", bundle: nil)
             let scriptureSelectionViewController  = storyboard.instantiateViewController(withIdentifier: "ScriptureSelectionViewControllerID") as! ScriptureSelectionViewController
-            scriptureSelectionViewController.bookUploadViewController = self
+            scriptureSelectionViewController.backController = self
+            scriptureSelectionViewController.contentProvider_type = .Author_Book
             self.present(scriptureSelectionViewController, animated: true)
             
             //performSegue(withIdentifier: "GetTagScripturesSegueID", sender: self)

@@ -93,7 +93,7 @@ public struct YTFPlayer {
             dragViewController?.typeMedia = type
             
             if type == .vimeo {
-                dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/97356262")
+                dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/175813713")
             } else if type == .youTube {
                 dragViewController?.youtubeId = idMovie
             }
@@ -103,7 +103,7 @@ public struct YTFPlayer {
         } else {
             
             if type == .vimeo {
-                dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/217051213")
+                dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/175813713")
             } else if type == .youTube {
                 dragViewController?.youtubeId = idMovie
                 dragViewController?.configureAVPlayerYouTube()

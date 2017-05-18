@@ -10,7 +10,6 @@ import UIKit
 import SVProgressHUD
 
 class ScriptureSelectionViewController: UIViewController {
-
     
     struct Constants {
         static let ScriptureSelectionTableViewCell = "ScriptureSelectionTableViewCell"
@@ -27,28 +26,43 @@ class ScriptureSelectionViewController: UIViewController {
     @IBOutlet weak var searchTextField: CustomTextField!
     
     var bookUploadViewController: BookUploadViewController?
-        var backController: UploadSermonesVC?
-
+    var backController: UIViewController?
+    
     var sermonTags: [[String]] = []
    
     var search: [Search] = []
+    
+    var contentProvider_type = ContentProviderType.User
     
     var book: String?
     var chapter: String?
     var verse: String?
     
-    var  previousBook: String = ""
+    var previousBook: String = ""
     var scriptureString: String = ""
     var tagScriptureArray: [String] = []
     
     var tagScriptureDictionary: [String : [String]] = [:]
+    var tagScriptureIDs = [Int]()
     
     @IBAction func saveTagScriptureButtonPressed(_ sender: Any) {
         
-       // backController?.tableView.reloadData()
+        switch contentProvider_type {
+        case .Artist:
+            print("")
+        case .Pastor:
+            let pastorController = backController as! UploadSermonesVC
+            pastorController.scriptureTags.text = tagScriptureLabel.text
+        case .Author_Book:
+            let bookController = backController as! BookUploadViewController
+            bookController.tagScriptureString = tagScriptureLabel.text!
+        case .Author_Movie:
+            let movieController = backController as! UploadMovieTVC
+        default:
+            print("")
+        }
         
-        bookUploadViewController?.tagScriptureString = tagScriptureLabel.text!
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: LifeCycle
@@ -149,7 +163,6 @@ extension TableDataSource : UITableViewDataSource {
     
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ScriptureSelectionTableViewCellID, for: indexPath) as? ScriptureSelectionTableViewCell else { return UITableViewCell() }
         
-        
         let scripture = search[indexPath.row]
         cell.scriptureLabel.attributedText = setAttributedIndexForRows(indexPath: indexPath, scripture: (scripture.matchingData?.bibleBookVerse?.verse)!)
         
@@ -212,10 +225,16 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
             let value =  chapter! + ":" + "\(indexPath.row + 1)"
             tagScriptureArray.append(value)
             tagScriptureDictionary[book!] = tagScriptureArray
-            
-            
         }
   
+        let tagOptinal = search[indexPath.row].matchingData?.bibleBookVerse?.bibleBookVerseID
+        
+        if let tag = tagOptinal {
+            tagScriptureIDs.append(tag)
+        }
+        
+        print("🍏🍎 \(tagScriptureIDs)")
+        
         parseTagScriptureDictionary(dictionary: tagScriptureDictionary)
 //        scripture.bookOfBible = book
 //        scripture.chapterNumberOfBook = chapter
@@ -239,6 +258,9 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
                 tagScriptureDictionary[book!] = tagScriptureArray
                 print(tagScriptureDictionary)
                 parseTagScriptureDictionary(dictionary: tagScriptureDictionary)
+                
+                tagScriptureIDs.remove(at: count - 1)
+                print("🍏🍎 \(tagScriptureIDs)")
                 return
                 
             }

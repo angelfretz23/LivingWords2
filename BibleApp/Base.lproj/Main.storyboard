@@ -1513,9 +1513,9 @@
         <image name="upload" width="45" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AJk-kk-rqu"/>
         <segue reference="hwR-se-9eF"/>
         <segue reference="OxN-kD-4qX"/>
+        <segue reference="AJk-kk-rqu"/>
         <segue reference="zT5-df-tU1"/>
     </inferredMetricsTieBreakers>
 </document>
