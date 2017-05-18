@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ib-eW-Fh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1ib-eW-Fh8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLY-eO-4WB" userLabel="SignUpEithEmailView">
-                                <rect key="frame" x="0.0" y="231" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="238" width="375" height="96"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-Yi-CF2">
                                         <rect key="frame" x="10" y="70" width="355" height="21"/>
@@ -214,7 +214,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Log In With Email"/>
                                                 <connections>
-                                                    <action selector="signUpbyEmailAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="kjk-4J-zKJ"/>
+                                                    <action selector="signInEmailAction:" destination="1ib-eW-Fh8" eventType="touchUpInside" id="Ar6-uq-VZw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -416,9 +416,32 @@
                                     <constraint firstAttribute="trailing" secondItem="2XE-UD-O2R" secondAttribute="trailing" id="zk7-s1-f7M"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqA-YU-zWw">
-                                <rect key="frame" x="0.0" y="327" width="375" height="47"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqA-YU-zWw">
+                                <rect key="frame" x="0.0" y="334" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Content provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8Y-2X-9T9">
+                                        <rect key="frame" x="8" y="5" width="257" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yv-zQ-hsv" userLabel="SeparatorView">
+                                        <rect key="frame" x="10" y="0.0" width="355" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="01c-VX-qGd">
+                                        <rect key="frame" x="316" y="5" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.57980293035507202" green="0.58025771379470825" blue="0.57987338304519653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="isUserContentProviderAction:" destination="1ib-eW-Fh8" eventType="valueChanged" id="l0R-BW-4G8"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" red="0.87979596853256226" green="0.87698239088058472" blue="0.87989670038223267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For the world of God is alive and active. Hebrew 4:12" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx7-dg-ipG">
                                 <rect key="frame" x="37" y="154" width="300" height="48"/>
@@ -459,7 +482,7 @@
                             <constraint firstAttribute="trailing" secondItem="1Ao-qL-7Pd" secondAttribute="trailing" id="qPb-Rm-Lqj"/>
                             <constraint firstItem="aLY-eO-4WB" firstAttribute="leading" secondItem="mtv-pJ-WRp" secondAttribute="leading" id="rMr-YP-Uet"/>
                             <constraint firstItem="A5S-K2-sTK" firstAttribute="top" secondItem="cUp-tb-AL8" secondAttribute="bottom" constant="85" id="t9m-Ht-C0V"/>
-                            <constraint firstItem="fqA-YU-zWw" firstAttribute="height" secondItem="mtv-pJ-WRp" secondAttribute="height" multiplier="0.07" id="tCg-Aj-8Ov"/>
+                            <constraint firstItem="fqA-YU-zWw" firstAttribute="height" secondItem="mtv-pJ-WRp" secondAttribute="height" multiplier="0.06" id="tCg-Aj-8Ov"/>
                             <constraint firstItem="LDU-Db-yc3" firstAttribute="leading" secondItem="mtv-pJ-WRp" secondAttribute="leading" id="wil-Aw-Shr"/>
                             <constraint firstItem="9Gl-j4-Ztw" firstAttribute="top" secondItem="fqA-YU-zWw" secondAttribute="bottom" id="x4c-XS-9xY"/>
                             <constraint firstItem="6vD-td-byP" firstAttribute="top" secondItem="9Gl-j4-Ztw" secondAttribute="bottom" id="yka-id-I8Y"/>
@@ -469,6 +492,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="bluerEffectView" destination="Hoj-xL-a4f" id="TdH-ga-cuh"/>
+                        <outlet property="contentProviderText" destination="R8Y-2X-9T9" id="dvm-NM-xcV"/>
+                        <outlet property="contentProviderView" destination="fqA-YU-zWw" id="KyQ-h2-gg7"/>
                         <outlet property="email" destination="qzN-yX-3aI" id="qbE-gH-fm9"/>
                         <outlet property="facebookLogIn" destination="vKY-nY-NZs" id="W7c-50-OOk"/>
                         <outlet property="facebookSignUp" destination="EwF-b3-DfA" id="SyQ-Ce-lcp"/>
@@ -490,7 +515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwR-1t-WrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="-396"/>
+            <point key="canvasLocation" x="636" y="-396.25187406296857"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="Ac3-r3-Par">
