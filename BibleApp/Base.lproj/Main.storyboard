@@ -95,7 +95,7 @@
         <!--Living Words-->
         <scene sceneID="f37-tI-LxJ">
             <objects>
-                <viewController id="rID-MD-Gkc" customClass="ProfileViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rID-MD-Gkc" customClass="ProfileViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N4X-th-me6"/>
                         <viewControllerLayoutGuide type="bottom" id="lFL-ZC-ic8"/>
@@ -125,7 +125,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="GSq-zt-acR"/>
                                         </constraints>
-                                        <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="textColor" red="0.41960784313725491" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -134,7 +134,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="2Li-BR-JrZ"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.41960784309999999" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>

@@ -65,13 +65,13 @@ extension ContentProviderProfileVC {
 
         switch typeOfContentOwner {
         case "artist":
-            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Music", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
+            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Music", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
         case "author":
-            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Books", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
+            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Books", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
         case "pastor":
-            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Sermons", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
+            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Sermons", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
         default:
-            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Default", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 12), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
+            mediaButton.setAttributedTitle(NSMutableAttributedString(string: "Default", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15), NSForegroundColorAttributeName: UIColor.black]), for: .normal)
         }
     }
     
@@ -95,7 +95,7 @@ extension ContentProviderProfileVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let hightOther = (tableView.bounds.height) / 5
+        let hightOther = (tableView.bounds.height) / 4
         return hightOther
     }
     

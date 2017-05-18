@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 
         self.tabBarController?.tabBar.items![1].image = UIImage(named: "BookTabBarIcon")
         self.tabBarController?.tabBar.items![1].title = "Read"
+        
     }
 
     override func didReceiveMemoryWarning() {
