@@ -17,6 +17,9 @@ let userContentTypeKey = "userContentType"
 var userEmail = "None"
 let userEmailKey = "userEmail"
 
+var userID: Int?
+let userIDKey = "userID"
+
 enum ContentProviderType {
     case User
     case Pastor

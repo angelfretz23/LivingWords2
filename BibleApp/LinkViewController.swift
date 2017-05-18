@@ -75,6 +75,7 @@ class LinkViewController: UIViewController {
         backController?.isYouTubeLoaded = true
         backController?.tableView.reloadData()
         backController?.youTubeId = fetchYouTubeID()
+        backController?.videoUrl = linkTextField.text!
         dismiss(animated: true, completion: nil)
     }
 }

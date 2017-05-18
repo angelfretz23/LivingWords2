@@ -30,7 +30,8 @@ class UploadSermonesVC: UITableViewController {
     var post: Post?
     var isYouTubeLoaded = false
     var youTubeId: String?
-   
+    var videoUrl: String?
+    var scriptureIDArray: [Int]?
     // MARK: UploadSermonesVC`s view controller cycle
     
     override func viewDidLoad() {
@@ -114,22 +115,20 @@ class UploadSermonesVC: UITableViewController {
     // MARK:- Action
     @IBAction func sharePost(_ sender: UIBarButtonItem) {
         let pastorName = self.pastor_name.text ?? ""
-        let mediaURL = self.mediaURL.text ?? ""
         let sermonTitle = self.sermonTitle.text ?? ""
         let descript = self.descript.text ?? ""
         let tags = self.tags.text ?? ""
-        let verseID = scriptureTags.text ?? ""
         
-        Post.sharePost(pastor_name: pastorName , media_url: mediaURL, sermon_title: sermonTitle, descript: descript, tags: [tags], verse_id_array: [verseID]) { (response, error) in
+        Post.uploadSermon(pastor_name: pastorName , media_url: videoUrl ?? "", sermon_title: sermonTitle, descript: descript, tags: ["#tag"], verse_id_array: scriptureIDArray ?? [0]) { (response, error) in
             if let post = response {
-                self.post = post
+                //self.post = post
                 print("🔴 A post was shared successfully, now you see the response from server! 🔴")
             } else if error != nil {
                 print("🔴 An error occured while sharing the post! 🔴")
-                self.displayAlert(userMessage: "An error occured while sharing the post!")
+                
             }
         }
-        
+          
     }
     
 
@@ -173,7 +172,6 @@ extension UploadSermonesVC {
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
         alert.addAction(okAction)
-        
         
         self.present(alert, animated: true, completion: nil)
     }

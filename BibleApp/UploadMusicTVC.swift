@@ -38,7 +38,6 @@ class UploadMusicTVC: UITableViewController {
     // MARK: IBActions
     
     @IBAction func uploadMusic(_ sender: UIBarButtonItem) {
-        let artistName = cellTop?.artistName ?? ""
         
     }
     @IBAction func cancellAction(_ sender: UIBarButtonItem) {
@@ -117,7 +116,7 @@ extension UploadMusicCells {
     fileprivate func topUploadMusicCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopCellUploadMusicCellID", for: indexPath) as!
         TopCellUploadMusicCell
-        cellTop = self
+        cellTop = cell
             cell.selectionStyle = .none
         return cell
     }

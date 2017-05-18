@@ -28,7 +28,7 @@ extension LivingWordsAPI {
         case getBible()
         
         // Post
-        case sharePost(parameters: Parameters)
+        case uploadSermon(parameters: Parameters)
         
         // Search
         case searchBible(parameters: Parameters)
@@ -77,10 +77,10 @@ extension LivingWordsAPI {
                 return "/users/facebook"
                 
             case .loginGoogle:
-                return "users/google"
+                return "/users/google"
                 
-            case .sharePost:
-                return ""
+            case .uploadSermon:
+                return "/seremon"
                 
             }
           
@@ -95,7 +95,7 @@ extension LivingWordsAPI {
 
             case .loginWithEmail, .confirmEmail, .checkThePassCode,
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .sharePost:
+                 .loginFacebook, .loginGoogle, .uploadSermon:
 
                 return .post
                 
@@ -106,7 +106,7 @@ extension LivingWordsAPI {
             switch self {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .sharePost:
+                 .loginFacebook, .loginGoogle, .uploadSermon:
 
                 return ""
             }
@@ -116,7 +116,7 @@ extension LivingWordsAPI {
             switch self {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-              .loginFacebook, .loginGoogle, .sharePost:
+              .loginFacebook, .loginGoogle, .uploadSermon:
 
                 return 0
             }
@@ -159,7 +159,7 @@ extension LivingWordsAPI {
             case .loginGoogle(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
                 
-            case .sharePost(let parameters):
+            case .uploadSermon(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
                 
             }
@@ -287,16 +287,17 @@ extension LivingWordsAPI {
     }
     
     @discardableResult
-    func sharePost(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [String], completion: @escaping (_ post: Post?, _ error:
+    func uploadSermon(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [Int], user_id: Int, completion: @escaping (_ post: [Post]?, _ error:
         Error?) -> Void) -> DataRequest {
-        let request = Router.sharePost(parameters: ["pastor_name" : pastor_name,
-                                                    "media_url"   : media_url,
-                                                   "sermon_title" : sermon_title,
+        let request = Router.uploadSermon(parameters: ["pastor_name" : pastor_name,
+                                                       "media_url"   : media_url,
+                                                      "sermon_title" : sermon_title,
                                                        "descript" : descript,
                                                            "tags" : tags,
-                                                 "verse_id_array" : verse_id_array])
+                                                   "verse_id_arr" : verse_id_array,
+                                                         "user_id": user_id])
         
-        return service.request(request: request).responseObject(completionHandler: {(response: DataResponse<Post>) in
+        return service.request(request: request).responseArray(completionHandler: {(response: DataResponse<[Post]>) in
             completion(response.result.value, response.result.error)
         
         })

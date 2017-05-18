@@ -310,6 +310,7 @@ extension OtherHelpfullMethods {
                     self.defaults.set(true, forKey: isUserLogenInKey)
                     self.defaults.set(user.email, forKey: userEmailKey)
                     self.defaults.set(user.content_type, forKey: userContentTypeKey)
+                    self.defaults.set(user.id!, forKey: userIDKey)
                     
                 } else {
                     self.displayAlert(userMessage: "Password or email is incorrect!!! \n Try Once More!")
@@ -341,6 +342,7 @@ extension OtherHelpfullMethods {
                 self.defaults.set(true, forKey: isUserLogenInKey)
                 self.defaults.set(user.email, forKey: userEmailKey)
                 self.defaults.set(user.content_type, forKey: userContentTypeKey)
+                self.defaults.set(user.id!, forKey: userIDKey)
                 
                 self.loadApp()
             }

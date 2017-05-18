@@ -20,6 +20,7 @@ class SplashViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         isUserLogenIn = UserDefaults.standard.bool(forKey: isUserLogenInKey)
+        userID = UserDefaults.standard.integer(forKey: userIDKey)
         
         isUserLogenIn ? performSegue(withIdentifier: "ShowAppSequeID", sender: self) :
                         performSegue(withIdentifier: "ShowLoginStoryboardSegueID", sender: self)

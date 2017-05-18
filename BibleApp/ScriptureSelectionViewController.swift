@@ -53,6 +53,7 @@ class ScriptureSelectionViewController: UIViewController {
         case .Pastor:
             let pastorController = backController as! UploadSermonesVC
             pastorController.scriptureTags.text = tagScriptureLabel.text
+            pastorController.scriptureIDArray = tagScriptureIDs
         case .Author_Book:
             let bookController = backController as! BookUploadViewController
             bookController.tagScriptureString = tagScriptureLabel.text!
