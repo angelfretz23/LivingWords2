@@ -16,8 +16,10 @@ class LinkViewController: UIViewController {
     @IBOutlet weak var linkTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    var backController: UploadSermonesVC?
+    var backController: UIViewController?
     var pathWebView: String!
+    var typeContentProvider = ContentProviderType.User
+    
     // MARK:- LinkViewController`s life cycle
     
     override func viewDidLoad() {
@@ -72,10 +74,29 @@ class LinkViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
-        backController?.isYouTubeLoaded = true
-        backController?.tableView.reloadData()
-        backController?.youTubeId = fetchYouTubeID()
-        backController?.videoUrl = linkTextField.text!
+        
+        switch typeContentProvider {
+        case .Pastor:
+           let controller = backController as! UploadSermonesVC
+            
+            controller.isYouTubeLoaded = true
+            controller.tableView.reloadData()
+            controller.youTubeId = fetchYouTubeID()
+            controller.videoUrl = linkTextField.text!
+        case .Author_Movie:
+            
+            let controller = backController as! UploadMovieTVC
+            
+            controller.isYouTubeLoaded = true
+            controller.tableView.reloadData()
+            controller.youTubeId = fetchYouTubeID()
+            controller.videoUrl = linkTextField.text!
+        default:
+            print("")
+        }
+        
+
+
         dismiss(animated: true, completion: nil)
     }
 }

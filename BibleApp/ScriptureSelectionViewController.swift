@@ -59,6 +59,8 @@ class ScriptureSelectionViewController: UIViewController {
             bookController.tagScriptureString = tagScriptureLabel.text!
         case .Author_Movie:
             let movieController = backController as! UploadMovieTVC
+                movieController.tagScriptures.text = tagScriptureLabel.text!
+                movieController.scriptureIDArray = tagScriptureIDs
         default:
             print("")
         }

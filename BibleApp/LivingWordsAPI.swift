@@ -30,6 +30,8 @@ extension LivingWordsAPI {
         // Post
         case uploadSermon(parameters: Parameters)
         
+        case uploadMovie(parameters: Parameters)
+        
         // Search
         case searchBible(parameters: Parameters)
         
@@ -48,8 +50,7 @@ extension LivingWordsAPI {
         private var baseURLString: String {
             return "http://bible.binariks.com/api"
         }
-        
-        
+
         private var path: String {
             switch self {
             case .loginWithEmail:
@@ -82,6 +83,9 @@ extension LivingWordsAPI {
             case .uploadSermon:
                 return "/seremon"
                 
+            case .uploadMovie:
+                return "/movie"
+                
             }
           
 
@@ -95,7 +99,7 @@ extension LivingWordsAPI {
 
             case .loginWithEmail, .confirmEmail, .checkThePassCode,
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .uploadSermon:
+                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
 
                 return .post
                 
@@ -106,7 +110,7 @@ extension LivingWordsAPI {
             switch self {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .uploadSermon:
+                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
 
                 return ""
             }
@@ -116,7 +120,7 @@ extension LivingWordsAPI {
             switch self {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-              .loginFacebook, .loginGoogle, .uploadSermon:
+              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
 
                 return 0
             }
@@ -162,6 +166,8 @@ extension LivingWordsAPI {
             case .uploadSermon(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
                 
+            case .uploadMovie(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
            
             return request
@@ -300,6 +306,26 @@ extension LivingWordsAPI {
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
         
+        })
+    }
+    
+    func uploadMovie(director: String, actors: String, media_url: String,
+                      verse_id_array: [Int], movieName: String, releaseData: String,
+                      synoopsis: String , tags: [String], user_id: Int, completion: @escaping (_ post: Post?, _ error:
+        Error?) -> Void) -> DataRequest {
+        
+        let request = Router.uploadMovie(parameters: ["director" : director,
+                                                      "actors" : actors,
+                                                      "movie_link" : media_url,
+                                                      "movie_name" : movieName,
+                                                      "release_data": releaseData,
+                                                      "synoopsis": synoopsis,
+                                                      "tags": tags,
+                                                      "verse_id_arr": verse_id_array])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
+            completion(response.result.value, response.result.error)
+            
         })
     }
     
