@@ -292,10 +292,10 @@ extension LivingWordsAPI {
         let request = Router.uploadSermon(parameters: ["pastor_name" : pastor_name,
                                                        "media_url"   : media_url,
                                                       "sermon_title" : sermon_title,
-                                                       "descript" : descript,
-                                                           "tags" : tags,
-                                                   "verse_id_arr" : verse_id_array,
-                                                         "user_id": user_id])
+                                                          "descript" : descript,
+                                                              "tags" : tags,
+                                                      "verse_id_arr" : verse_id_array,
+                                                            "user_id": user_id])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)

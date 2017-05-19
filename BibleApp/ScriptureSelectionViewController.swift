@@ -213,7 +213,7 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
         let index = indexPath.row + 1
         if previousBook == book! {
           
-            scriptureString += ", " + chapter! + ":" + "\(indexPath.row + 1)" + ""
+            scriptureString += "" + chapter! + ":" + "\(indexPath.row + 1)" + ", "
             let value =  chapter! + ":" + "\(indexPath.row + 1)"
             tagScriptureArray.append(value)
             tagScriptureDictionary[book!] = tagScriptureArray

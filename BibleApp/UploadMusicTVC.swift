@@ -25,8 +25,8 @@ class UploadMusicTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib.init(nibName: "MusicUploadTVC", bundle: nil), forCellReuseIdentifier: "ExpandableCell")
         tableView.register(UINib.init(nibName: "TopCellUploadMusicCell", bundle: nil), forCellReuseIdentifier: "TopCellUploadMusicCellID")
+        tableView.register(UINib.init(nibName: "MusicUploadTVC", bundle: nil), forCellReuseIdentifier: "ExpandableCell")
         tableView.register(UINib.init(nibName: "BottomUploadMusicCell", bundle: nil), forCellReuseIdentifier: "BottomUploadMusicCellID")
     }
 
@@ -38,8 +38,12 @@ class UploadMusicTVC: UITableViewController {
     // MARK: IBActions
     
     @IBAction func uploadMusic(_ sender: UIBarButtonItem) {
+        let artistName = cellTop?.artistName.text ?? ""
+        let writerName = cellTop?.writerName.text ?? ""
+        let tagScriptures = cellExpandable?.textScripture.text ?? ""
         
     }
+    
     @IBAction func cancellAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }

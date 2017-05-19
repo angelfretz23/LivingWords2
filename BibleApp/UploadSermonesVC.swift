@@ -117,15 +117,15 @@ class UploadSermonesVC: UITableViewController {
         let pastorName = self.pastor_name.text ?? ""
         let sermonTitle = self.sermonTitle.text ?? ""
         let descript = self.descript.text ?? ""
-        let tags = self.tags.text ?? ""
+        let tags = self.makeArrayOfHashtags(incomingString: self.tags.text ?? "") ?? [""]
         
-        Post.uploadSermon(pastor_name: pastorName , media_url: videoUrl ?? "", sermon_title: sermonTitle, descript: descript, tags: ["#tag"], verse_id_array: scriptureIDArray ?? [0]) { (response, error) in
+        Post.uploadSermon(pastor_name: pastorName , media_url: videoUrl ?? "", sermon_title: sermonTitle, descript: descript, tags: tags, verse_id_array: scriptureIDArray ?? [0]) { (response, error) in
             if let post = response {
-                //self.post = post
+                self.post = post
                 print("🍏 A post was shared successfully, now you see the response from server! 🍏")
+                self.dismiss(animated: true, completion: nil)
             } else if error != nil {
-                print("🔴 An error occured while sharing the post! 🔴")
-                print(error)
+                print("🔴 An \(error) occured while sharing the post! 🔴")
             }
         }
           
@@ -144,9 +144,6 @@ class UploadSermonesVC: UITableViewController {
         loadLink(with: "https://vimeo.com")
     }
     
-    @IBAction func sharedActions(_ sender: UIBarButtonItem) {
-        
-    }
 }
 
 extension UploadSermonesVC {
@@ -176,4 +173,26 @@ extension UploadSermonesVC {
         self.present(alert, animated: true, completion: nil)
     }
     
+    fileprivate func makeArrayOfHashtags(incomingString: String) -> [String]? {
+        var tagArray1 = [String]()
+        var tagArray2 = ""
+        var tagArray3 = [String]()
+        var tagArray4 = [String]()
+        
+        tagArray1 = incomingString.components(separatedBy: " ")
+        
+        for i in tagArray1 {
+            tagArray2 += i
+        }
+        
+        tagArray3 = tagArray2.components(separatedBy: "#")
+        tagArray3.remove(at: 0)
+        
+        for i in tagArray3 {
+            tagArray4.append("#" + i)
+        }
+        
+        return tagArray4
+    }
+
 }
