@@ -66,6 +66,17 @@ class UploadMovieTVC: UITableViewController {
         let synoopsis = self.synoopsis.text ?? "synoopsis default"
         let tags = ["ff"]
         let verse_id_arr = scriptureIDArray ?? [0]
+        
+        Post.uploadMovie(director: director, actors: actors, media_url: link, verse_id_array: verse_id_arr,
+                         movieName: movie_name, releaseData: release_date,
+                         synoopsis: synoopsis, tags: tags) { (post, error) in
+                            if error != nil{
+                                print("🍎Some error occured 🍎")
+                            }else {
+                                print("🍏 Request is seccessfull 🍏")
+                            }
+        }
+        
     }
     
     func youTubeImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {

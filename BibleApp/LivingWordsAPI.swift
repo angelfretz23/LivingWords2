@@ -127,9 +127,12 @@ extension LivingWordsAPI {
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
-            request.setValue("ef49c1427fb9bc7ad21171704524a39b1ed9f2cd73ea5a9274e1d9678196a840", forHTTPHeaderField: "Access-token")
-            // request.setValue(String(id), forHTTPHeaderField: "user-id")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            if let token = userToken {
+                request.setValue(token, forHTTPHeaderField: "Access-token")
+                // request.setValue(String(id), forHTTPHeaderField: "user-id")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            }
+
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -309,6 +312,7 @@ extension LivingWordsAPI {
         })
     }
     
+    @discardableResult
     func uploadMovie(director: String, actors: String, media_url: String,
                       verse_id_array: [Int], movieName: String, releaseData: String,
                       synoopsis: String , tags: [String], user_id: Int, completion: @escaping (_ post: Post?, _ error:
@@ -318,10 +322,11 @@ extension LivingWordsAPI {
                                                       "actors" : actors,
                                                       "movie_link" : media_url,
                                                       "movie_name" : movieName,
-                                                      "release_data": releaseData,
+                                                      "release_date": releaseData,
                                                       "synoopsis": synoopsis,
                                                       "tags": tags,
-                                                      "verse_id_arr": verse_id_array])
+                                                      "verse_id_arr": verse_id_array,
+                                                      "user_id": user_id])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)

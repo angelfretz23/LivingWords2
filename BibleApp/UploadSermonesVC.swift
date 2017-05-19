@@ -116,7 +116,6 @@ extension UploadSermonesVC {
         }
     }
     
-    
     fileprivate func displayAlert(userMessage: String) {
         let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
         
