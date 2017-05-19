@@ -39,4 +39,12 @@ extension Post {
         api.uploadSermon(pastor_name: pastor_name, media_url: media_url, sermon_title: sermon_title, descript: descript, tags: tags, verse_id_array: verse_id_array, user_id: userID!, completion: completion)
         
     }
+    
+    static func uploadMovie(director: String, actors: String, media_url: String,
+                            verse_id_array: [Int], movieName: String, releaseData: String,
+                            synoopsis: String , tags: [String], completion: @escaping (_ post: Post?, _ error:Error?) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.uploadMovie(director: director, actors: actors, media_url: media_url, verse_id_array: verse_id_array, movieName: movieName, releaseData: releaseData, synoopsis: synoopsis, tags: tags, user_id: userID!, completion: completion)
+    }
 }

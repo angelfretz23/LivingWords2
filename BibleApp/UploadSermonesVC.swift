@@ -28,10 +28,7 @@ class UploadSermonesVC: UITableViewController {
     
     // MARK: - Properties
     var post: Post?
-    var isYouTubeLoaded = false
-    var youTubeId: String?
-    var videoUrl: String?
-    var scriptureIDArray: [Int]?
+
     // MARK: UploadSermonesVC`s view controller cycle
     
     override func viewDidLoad() {
@@ -51,7 +48,7 @@ class UploadSermonesVC: UITableViewController {
         super.viewWillAppear(animated)
         
         if isYouTubeLoaded {
-            fetchYouTubeVideoInfo()
+            fetchYouTubeVideoInfo(with: videoSelectedName, imageYouTube: videoSelectedImage, youTubeId: youTubeId!)
         }
     }
     
@@ -60,58 +57,7 @@ class UploadSermonesVC: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 9 {
-            uploadTagScriptures()
-        }
-    }
-    
-    // MARK:- Additional helpfull methods 
-    
-    private func fetchYouTubeVideoInfo() {
-        
-        // request image of a particular video
-        let youTubeUtlImage = "https://img.youtube.com/vi/\(youTubeId!)/maxresdefault.jpg"
-        URLSession.shared.dataTask(with: URL(string: youTubeUtlImage)!, completionHandler: { (data, responce, error) in
-            
-            DispatchQueue.main.async {
-                self.videoSelectedImage.image = UIImage(data: data!)
-            }
-        }).resume()
-        
-        // request video details
-        let videoInfoPath = "http://www.youtube.com/oembed?url=http%3A//www.youtube.com/watch?v=\(youTubeId!)&format=json"
-        URLSession.shared.dataTask(with: URL(string: videoInfoPath)!, completionHandler: { (data, responce, error) in
-            
-            let jsonFormat = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
-            
-            if let json = jsonFormat {
-                DispatchQueue.main.async {
-                    self.videoSelectedName.text = json["title"] as? String
-                }
-            }
-            
-            
-        }).resume()
-    }
-    
-    private func loadLink(with urlString: String) {
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "LinkViewControllerID") as! LinkViewController
-        controller.backController = self
-        controller.pathWebView = urlString
-        present(controller, animated: true, completion: nil)
-    }
-    
-    func uploadTagScriptures() {
-        let storyBoard = UIStoryboard(name: "BookUpload", bundle: nil)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "ScriptureSelectionViewControllerID") as! ScriptureSelectionViewController
-        controller.backController = self
-        controller.contentProvider_type = .Pastor
-        present(controller, animated: true, completion: nil)
-    }
-    
+
     // MARK:- Action
     @IBAction func sharePost(_ sender: UIBarButtonItem) {
         let pastorName = self.pastor_name.text ?? ""
@@ -121,11 +67,10 @@ class UploadSermonesVC: UITableViewController {
         
         Post.uploadSermon(pastor_name: pastorName , media_url: videoUrl ?? "", sermon_title: sermonTitle, descript: descript, tags: ["#tag"], verse_id_array: scriptureIDArray ?? [0]) { (response, error) in
             if let post = response {
-                //self.post = post
+                self.post = post
                 print("🍏 A post was shared successfully, now you see the response from server! 🍏")
             } else if error != nil {
                 print("🔴 An error occured while sharing the post! 🔴")
-                print(error)
             }
         }
           
@@ -137,11 +82,11 @@ class UploadSermonesVC: UITableViewController {
     }
 
     func youTubeImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        loadLink(with: "https://www.youtube.com")
+        loadLink(with: "https://youtube.com", contentProvider: .Pastor)
     }
     
     func vimeoImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        loadLink(with: "https://vimeo.com")
+        loadLink(with: "https://vimeo.com", contentProvider: .Pastor)
     }
     
     @IBAction func sharedActions(_ sender: UIBarButtonItem) {
@@ -165,6 +110,13 @@ extension UploadSermonesVC {
         
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 9 {
+            uploadTagScriptures(content_provider: .Pastor)
+        }
+    }
+    
     
     fileprivate func displayAlert(userMessage: String) {
         let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
