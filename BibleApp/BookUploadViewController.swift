@@ -32,10 +32,12 @@ class BookUploadViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var bookUploadTableView: UITableView!
     
+    
+    //MARK:- Properties
     var tagScriptureString: String = "Tag Scriptures"
     
-    //MARK:- BookUpload`s life cycle
     
+    //MARK:- BookUpload`s life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -118,8 +120,10 @@ extension BookUploadViewController:  UITableViewDataSource {
         }
         return ""
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section{
+        
+        switch section {
         case 0, 1:
             return 30
         case 2:
@@ -132,17 +136,17 @@ extension BookUploadViewController:  UITableViewDataSource {
         return 0
     }
     
-     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
- 
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
         let header = view as! UITableViewHeaderFooterView
-   
+        
         header.textLabel?.textAlignment = .left
-         header.textLabel?.font = UIFont(name: "Futura", size: 12.0)!
+        header.textLabel?.font = UIFont(name: "Futura", size: 12.0)!
         header.textLabel?.textColor = UIColor.lightGray
         if section == 1 {
             header.textLabel?.text = " Scriptures"
         } else {
-      
+            
         }
     }
 

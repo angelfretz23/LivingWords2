@@ -21,11 +21,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IE-tS-1Q9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="18.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="19"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJq-M3-ryI">
-                        <rect key="frame" x="0.0" y="63" width="375" height="18.5"/>
+                        <rect key="frame" x="0.0" y="63" width="375" height="19"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrX-e9-WJV">
@@ -42,7 +42,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x95-8L-oae">
-                        <rect key="frame" x="0.0" y="19" width="375" height="46.5"/>
+                        <rect key="frame" x="0.0" y="19" width="375" height="47"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Artist's Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jch-Eg-r6g">
                                 <rect key="frame" x="8" y="0.0" width="359" height="48"/>
@@ -60,10 +60,10 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-Pd-iDS">
-                        <rect key="frame" x="0.0" y="83" width="375" height="46.5"/>
+                        <rect key="frame" x="0.0" y="83" width="375" height="47"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Writer's Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-mG-VtW">
-                                <rect key="frame" x="8" y="0.0" width="359" height="46.5"/>
+                                <rect key="frame" x="8" y="0.0" width="359" height="47"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -78,17 +78,17 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8a2-m8-Tp7">
-                        <rect key="frame" x="0.0" y="164" width="375" height="60"/>
+                        <rect key="frame" x="0.0" y="164" width="375" height="61"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouTube-logo-full_color" translatesAutoresizingMaskIntoConstraints="NO" id="nDu-cb-7lq">
-                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="109" height="61"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nDu-cb-7lq" secondAttribute="height" multiplier="16:9" id="pYG-Vr-pWE"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8t-Oo-7mf">
-                                <rect key="frame" x="115" y="8" width="252" height="44"/>
+                                <rect key="frame" x="117" y="8" width="250" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,8 +105,8 @@
                             <constraint firstItem="nDu-cb-7lq" firstAttribute="leading" secondItem="8a2-m8-Tp7" secondAttribute="leading" id="uNm-QE-iX1"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dww-no-R4s">
-                        <rect key="frame" x="0.0" y="256" width="375" height="55"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dww-no-R4s" userLabel="selectionView">
+                        <rect key="frame" x="0.0" y="257" width="375" height="53"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Scriptures:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6L-7k-56z">
                                 <rect key="frame" x="8" y="0.0" width="77" height="12"/>
@@ -118,9 +118,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugv-zk-iYr">
-                                <rect key="frame" x="0.0" y="11" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="11" width="375" height="42"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag Scriptures" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dI-tb-d9V">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag Scriptures" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dI-tb-d9V">
                                         <rect key="frame" x="8" y="7" width="319" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
@@ -129,9 +129,11 @@
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="I6L-7k-56z" firstAttribute="leading" secondItem="dww-no-R4s" secondAttribute="leading" constant="8" id="8ai-hj-gXZ"/>
                             <constraint firstItem="ugv-zk-iYr" firstAttribute="top" secondItem="I6L-7k-56z" secondAttribute="bottom" constant="-1" id="9vF-bw-BXR"/>
@@ -142,8 +144,9 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgT-iL-MN7">
-                        <rect key="frame" x="0.0" y="223" width="375" height="34"/>
+                        <rect key="frame" x="0.0" y="224" width="375" height="34"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
                     </view>
                 </subviews>
                 <constraints>
@@ -182,8 +185,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="YTVSelectionView" destination="8a2-m8-Tp7" id="mGa-w4-RRS"/>
                 <outlet property="artistName" destination="Jch-Eg-r6g" id="YOH-0c-5mt"/>
+                <outlet property="imageOfVideo" destination="nDu-cb-7lq" id="Wxm-9R-XYJ"/>
                 <outlet property="mediaURL" destination="Y8t-Oo-7mf" id="Dgd-0m-mvh"/>
+                <outlet property="selectionView" destination="ugv-zk-iYr" id="ufs-Cd-iIZ"/>
                 <outlet property="tagScriptures" destination="6dI-tb-d9V" id="JNm-Bf-IjB"/>
                 <outlet property="writerName" destination="lbk-mG-VtW" id="dyM-XL-lZ4"/>
             </connections>

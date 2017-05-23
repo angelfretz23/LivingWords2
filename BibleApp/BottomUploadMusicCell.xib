@@ -118,6 +118,7 @@
             <connections>
                 <outlet property="descript" destination="jzP-Yh-O9r" id="nVG-YO-rKk"/>
                 <outlet property="songStory" destination="2es-qa-bcR" id="jJ8-2Z-Gjm"/>
+                <outlet property="tags" destination="tQ5-ql-bRc" id="AN8-of-cM8"/>
             </connections>
             <point key="canvasLocation" x="51.5" y="92.5"/>
         </tableViewCell>

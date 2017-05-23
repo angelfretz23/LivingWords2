@@ -43,7 +43,7 @@ extension Search {
     static func searchBible(book: String, chapter: String, verse: String, completion: @escaping (_ search: [Search]?, _ error: Error?) -> Void) {
         let api = LivingWordsAPI()
         
-        api.searchBible(book:book, chapter: chapter, verse: verse, completion: completion)
+        api.searchBible(book: book, chapter: chapter, verse: verse, completion: completion)
     }
 }
 //{

@@ -70,6 +70,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // delegates
         imagePicker.delegate = self
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")

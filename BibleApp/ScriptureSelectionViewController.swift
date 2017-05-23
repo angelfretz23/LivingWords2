@@ -16,6 +16,7 @@ class ScriptureSelectionViewController: UIViewController {
         static let ScriptureSelectionTableViewCellID = "ScriptureSelectionTableViewCellID"
     }
     
+    // MARK: - IBOutlets
     @IBOutlet weak var scriptureSelectionTableView: UITableView!
     
     @IBOutlet weak var placeholderView: UIView!
@@ -25,9 +26,10 @@ class ScriptureSelectionViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: CustomTextField!
     
+    
+    // MARK: - Properties
     var bookUploadViewController: BookUploadViewController?
     var backController: UIViewController?
-    
     var sermonTags: [[String]] = []
    
     var search: [Search] = []
@@ -45,11 +47,15 @@ class ScriptureSelectionViewController: UIViewController {
     var tagScriptureDictionary: [String : [String]] = [:]
     var tagScriptureIDs = [Int]()
     
+     // MARK: - IBActions
     @IBAction func saveTagScriptureButtonPressed(_ sender: Any) {
         
         switch contentProvider_type {
         case .Artist:
-            print("")
+            let musicController = backController as! UploadMusicTVC
+            musicController.cellTop?.tagScriptures.text = tagScriptureLabel.text!
+            musicController.scriptureIDArray = tagScriptureIDs
+            musicController.expandableRowCount = tagScriptureArray.count
         case .Pastor:
             let pastorController = backController as! UploadSermonesVC
             pastorController.scriptureTags.text = tagScriptureLabel.text
@@ -59,8 +65,8 @@ class ScriptureSelectionViewController: UIViewController {
             bookController.tagScriptureString = tagScriptureLabel.text!
         case .Author_Movie:
             let movieController = backController as! UploadMovieTVC
-                movieController.tagScriptures.text = tagScriptureLabel.text!
-                movieController.scriptureIDArray = tagScriptureIDs
+            movieController.tagScriptures.text = tagScriptureLabel.text!
+            movieController.scriptureIDArray = tagScriptureIDs
         default:
             print("")
         }
@@ -68,7 +74,7 @@ class ScriptureSelectionViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK: LifeCycle
+    //MARK: View Controller Life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -144,7 +150,6 @@ extension ScriptureSelectionViewController {
             break
         }
         updateSearch()
-        
     }
 }
 
@@ -213,6 +218,7 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
         
         let scripture = search[indexPath.row]
         let index = indexPath.row + 1
+        
         if previousBook == book! {
           
             scriptureString += "" + chapter! + ":" + "\(indexPath.row + 1)" + ", "
@@ -220,7 +226,6 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
             tagScriptureArray.append(value)
             tagScriptureDictionary[book!] = tagScriptureArray
             print(tagScriptureDictionary)
-            
         } else {
             
             tagScriptureArray = []
@@ -320,6 +325,7 @@ extension ScriptureSelectionViewController {
             }
         }
     }
+    
     private func fetchSearch(completion: @escaping (_ sucess: Bool)-> Void){
         Search.getBible{searchResult, error in
             if let fetchedSearch = searchResult{
@@ -349,7 +355,7 @@ extension ScriptureSelectionViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if searchTextField.text?.characters.count ?? 0 == 0 {
             placeholderView.isHidden = true
-        }else if searchTextField.text == "" {
+        } else if searchTextField.text == "" {
             //placeholderView.isHidden = false
         }
         

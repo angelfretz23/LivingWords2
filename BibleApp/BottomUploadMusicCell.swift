@@ -13,6 +13,7 @@ class BottomUploadMusicCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var songStory: UITextField!
     @IBOutlet weak var descript: UITextView!
+    @IBOutlet weak var tags: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -12,7 +12,6 @@ import Alamofire
 class UploadSermonesVC: UITableViewController {
 
     // MARK: IBOutlets
-    
     @IBOutlet weak var youTubeImage: UIImageView!
     @IBOutlet weak var vimeoImage: UIImageView!
     
@@ -26,11 +25,12 @@ class UploadSermonesVC: UITableViewController {
     @IBOutlet weak var sermonTitle: UITextField!
     @IBOutlet weak var descript: UITextView!
     
+    
     // MARK: - Properties
     var post: Post?
 
-    // MARK: UploadSermonesVC`s view controller cycle
     
+    // MARK: UploadSermonesVC`s view controller cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

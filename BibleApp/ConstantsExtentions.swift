@@ -93,6 +93,7 @@ extension UIViewController {
     }
     
     public func uploadTagScriptures(content_provider: ContentProviderType) {
+        
         let storyBoard = UIStoryboard(name: "BookUpload", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "ScriptureSelectionViewControllerID") as! ScriptureSelectionViewController
         controller.backController = self

@@ -68,7 +68,7 @@ class LinkViewController: UIViewController {
         if webView.canGoBack {
             webView.goBack()
             webView.reload()
-        }else {
+        } else {
             dismiss(animated: true, completion: nil)
         }
     }
@@ -91,12 +91,17 @@ class LinkViewController: UIViewController {
             controller.tableView.reloadData()
             controller.youTubeId = fetchYouTubeID()
             controller.videoUrl = linkTextField.text!
+        case .Artist:
+            let controller = backController as! UploadMusicTVC
+            
+            controller.isYouTubeLoaded = true
+            controller.tableView.reloadData()
+            controller.youTubeId = fetchYouTubeID()
+            controller.videoUrl = linkTextField.text!
         default:
             print("")
         }
         
-
-
         dismiss(animated: true, completion: nil)
     }
 }

@@ -15,6 +15,10 @@ class TopCellUploadMusicCell: UITableViewCell {
     @IBOutlet weak var writerName: UITextField!
     @IBOutlet weak var mediaURL: UILabel!
     @IBOutlet weak var tagScriptures: UITextField!
+    @IBOutlet weak var selectionView: UIView!
+    @IBOutlet weak var YTVSelectionView: UIView!
+    @IBOutlet weak var imageOfVideo: UIImageView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

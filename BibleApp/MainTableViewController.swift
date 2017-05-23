@@ -30,6 +30,8 @@ class MainTableViewController: UIViewController {
     var scriptures = [Scripture?]()
     var search: [Search] = []
     
+    var autocomplete = [String]()
+    
     var book: String?
     var chapter: String?
     var verse: String?
@@ -65,6 +67,10 @@ class MainTableViewController: UIViewController {
         registerForNotifications()
         
         updateDataSourceIfNeeded()
+        
+        // delegates
+        searchTextField.delegate = self
+        mainTableView.delegate = self
         
         self.tabBarController?.tabBar.items![1].image = UIImage(named: "BookTabBarIcon")
     }
@@ -145,7 +151,6 @@ extension MainTableViewController {
             chapter = searchParameters[1]
             verse = searchParameters[2]
             
-            
             if ((book?.isEmpty)! && (chapter?.isEmpty)! && (verse?.isEmpty)!) {
                 print("🔴 User didn't input any data to search for 🔴")
                 
@@ -154,6 +159,7 @@ extension MainTableViewController {
                 if let index = verse {
                     let index = Int(index)! - 1
                     let indePath: IndexPath = [0, index]
+                    
                     UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseIn, animations: {
                         self.mainTableView.scrollToRow(at: indePath, at: .top, animated: true)
                     }, completion: nil)
@@ -208,9 +214,19 @@ extension TableDataSource : UITableViewDataSource {
         
         cell.scriptureText.attributedText = attributedScriptureText
         
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.addMediaView(mediaType: "music", cell: cell as! ScriptureTableViewCell)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        searchTextField.text = selectedCell.textLabel?.text
+    }
+    
 }
 
 fileprivate typealias TableDelegate = MainTableViewController
@@ -221,9 +237,8 @@ extension TableDelegate: UITableViewDelegate {
             controller.controllerScripture = self
         // show(controller, sender: self)
         present(controller, animated: true, completion: nil)
-        
-        
     }
+    
 }
 
 extension MainTableViewController {
@@ -284,6 +299,35 @@ extension MainTableViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    fileprivate func addMediaView(mediaType: String?, cell: ScriptureTableViewCell) {
+        
+        if let mediaType = mediaType {
+            
+            var image = UIImage(named: "")
+            cell.mediaWidthConstraint.constant = 22
+            
+            switch mediaType {
+            case "music":
+                image = UIImage(named: "music")!
+            case "sermon":
+                image = UIImage(named: "sermon")!
+            case "movie":
+                image = UIImage(named: "movie")!
+            case "book":
+                image = UIImage(named: "book")!
+            default:
+                break
+            }
+            
+            
+            let imageView = UIImageView(image: image)
+            imageView.frame = cell.mediaView.frame
+            cell.mediaView.addSubview(imageView)
+        } else {
+            print("No media")
+        }
+    }
 
 }
 
@@ -295,7 +339,7 @@ extension MainTableViewController: UITextFieldDelegate {
         }
     }
 
-    
+    // Method for autocompletion
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if searchTextField.text?.characters.count ?? 0 == 0 {
             placeholderView.isHidden = true
@@ -303,6 +347,10 @@ extension MainTableViewController: UITextFieldDelegate {
            //placeholderView.isHidden = false
         }
     
+        let substring = (self.searchTextField.text! as NSString).replacingCharacters(in: range, with: string)
+        
+        searchAutocompleteEntriesWithSubstring(substring)
+
         return true
     }
     
@@ -310,4 +358,24 @@ extension MainTableViewController: UITextFieldDelegate {
         searchIconView.isHidden = true
         seseparatorView.isHidden = true
     }
+    
+    func searchAutocompleteEntriesWithSubstring(_ substring: String)
+    {
+        autocomplete.removeAll(keepingCapacity: false)
+        
+        for curString in ["\(search)"]
+        {
+            let myString:NSString! = curString as NSString
+            
+            let substringRange :NSRange! = myString.range(of: substring)
+            
+            if (substringRange.location  == 0)
+            {
+                autocomplete.append(curString)
+            }
+        }
+        
+        mainTableView.reloadData()
+    }
+
 }

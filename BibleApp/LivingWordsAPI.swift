@@ -32,6 +32,8 @@ extension LivingWordsAPI {
         
         case uploadMovie(parameters: Parameters)
         
+        case uploadMusic(parameters: Parameters)
+        
         // Search
         case searchBible(parameters: Parameters)
         
@@ -86,9 +88,11 @@ extension LivingWordsAPI {
             case .uploadMovie:
                 return "/movie"
                 
+            case .uploadMusic:
+                return "/music"
+
             }
           
-
         }
         
         private var method: HTTPMethod {
@@ -99,7 +103,8 @@ extension LivingWordsAPI {
 
             case .loginWithEmail, .confirmEmail, .checkThePassCode,
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
+                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
+                 .uploadMusic:
 
                 return .post
                 
@@ -110,7 +115,8 @@ extension LivingWordsAPI {
             switch self {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
+                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
+                 .uploadMusic:
 
                 return ""
             }
@@ -120,7 +126,8 @@ extension LivingWordsAPI {
             switch self {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
+              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
+              .uploadMusic:
 
                 return 0
             }
@@ -128,7 +135,7 @@ extension LivingWordsAPI {
         
         private func addHeadersForRequest( request: inout URLRequest) {
             request.setValue("ef49c1427fb9bc7ad21171704524a39b1ed9f2cd73ea5a9274e1d9678196a840", forHTTPHeaderField: "Access-token")
-            // request.setValue(String(id), forHTTPHeaderField: "user-id")
+            //request.setValue(String(id), forHTTPHeaderField: "user-id")
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
@@ -168,12 +175,13 @@ extension LivingWordsAPI {
                 
             case .uploadMovie(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .uploadMusic(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
            
             return request
         }
-        
-        
         
         //MARK: URLRequestConvertible
         
@@ -202,6 +210,7 @@ extension LivingWordsAPI {
         })
     }
     
+    @discardableResult
     func signUpWithEmail( email: String, password: String, phone: String, contentType: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
         let request = Router.signUpWithEmail(parameters: ["email"   : email,
                                                          "password" : password,
@@ -213,6 +222,7 @@ extension LivingWordsAPI {
         })
     }
     
+    @discardableResult
     func loginFacebook(token: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.loginFacebook(parameters: ["token" : token,
                                                          "type" : 1 ])
@@ -222,6 +232,7 @@ extension LivingWordsAPI {
         })
     }
     
+    @discardableResult
     func loginGoogle(id: String, email: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest {
         let request = Router.loginGoogle(parameters: ["id" : id,
                                                     "type" : 2,
@@ -236,7 +247,7 @@ extension LivingWordsAPI {
 extension LivingWordsAPI {
     
     @discardableResult
-    func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest {
+    func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?) -> Void) -> DataRequest {
         
         let request = Router.getBible()
         
@@ -248,7 +259,7 @@ extension LivingWordsAPI {
     
     
     @discardableResult
-    func searchBible(book: String, chapter: String, verse: String, completion: @escaping(_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest{
+    func searchBible(book: String, chapter: String, verse: String, completion: @escaping(_ search: [Search]?, _ error: Error?)-> Void) -> DataRequest {
         
         let request = Router.searchBible(parameters: ["book" : book,
                                                    "chapter" : chapter,
@@ -296,12 +307,12 @@ extension LivingWordsAPI {
     func uploadSermon(pastor_name: String, media_url: String, sermon_title: String, descript: String, tags: [String], verse_id_array: [Int], user_id: Int, completion: @escaping (_ post: Post?, _ error:
         Error?) -> Void) -> DataRequest {
         let request = Router.uploadSermon(parameters: ["pastor_name" : pastor_name,
-                                                       "media_url"   : media_url,
+                                                         "media_url" : media_url,
                                                       "sermon_title" : sermon_title,
                                                           "descript" : descript,
                                                               "tags" : tags,
                                                       "verse_id_arr" : verse_id_array,
-                                                            "user_id": user_id])
+                                                           "user_id" : user_id])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
@@ -309,19 +320,37 @@ extension LivingWordsAPI {
         })
     }
     
-    func uploadMovie(director: String, actors: String, media_url: String,
-                      verse_id_array: [Int], movieName: String, releaseData: String,
-                      synoopsis: String , tags: [String], user_id: Int, completion: @escaping (_ post: Post?, _ error:
-        Error?) -> Void) -> DataRequest {
+    @discardableResult
+    func uploadMovie(director: String, actors: String, media_url: String,verse_id_array: [Int], movieName: String, releaseData: String, synoopsis: String, tags: [String], user_id: Int, completion: @escaping (_ post: Post?, _ error: Error?) -> Void) -> DataRequest {
         
         let request = Router.uploadMovie(parameters: ["director" : director,
-                                                      "actors" : actors,
-                                                      "movie_link" : media_url,
-                                                      "movie_name" : movieName,
-                                                      "release_data": releaseData,
-                                                      "synoopsis": synoopsis,
-                                                      "tags": tags,
-                                                      "verse_id_arr": verse_id_array])
+                                                        "actors" : actors,
+                                                    "movie_link" : media_url,
+                                                    "movie_name" : movieName,
+                                                  "release_data" : releaseData,
+                                                     "synoopsis" : synoopsis,
+                                                          "tags" : tags,
+                                                  "verse_id_arr" : verse_id_array])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
+            completion(response.result.value, response.result.error)
+            
+        })
+    }
+    
+    @discardableResult
+    func uploadMusic(artist_name: String, writer_name: String, music_link: String, song_story: String, descript: String, tags: [String], tag_scripture: [String], user_id: Int, completion:
+        @escaping (_ post: Post?, _ error: Error?) -> Void) -> DataRequest {
+        
+        let request = Router.uploadMovie(parameters: ["artist_name" : artist_name,
+                                                      "writer_name" : writer_name,
+                                                        "music_link" : music_link,
+                                                       "song_story" : song_story,
+                                                         "descript" : descript,
+                                                             "tags" : tags,
+                                                    "tag_scripture" : tag_scripture,
+                                                          "user_id" : user_id
+                                                                                    ])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
