@@ -48,13 +48,11 @@ class UploadMusicTVC: UITableViewController {
     @IBAction func uploadMusic(_ sender: UIBarButtonItem) {
         let artistName = cellTop?.artistName.text ?? ""
         let writerName = cellTop?.writerName.text ?? ""
-        let music_link = videoUrl ?? "default URL"
         let songStory = cellBottom?.songStory.text ?? ""
         let descript = cellBottom?.descript.text ?? ""
         let tags = self.makeArrayOfHashtags(incomingString: cellBottom?.tags.text ?? "") ?? [""]
         
 
-        
         // This Array is created to demonstate
         // Сюди ми маємо передати текст - опис до кожного вірша:
         var arrayToDelete = [String]()
@@ -66,12 +64,15 @@ class UploadMusicTVC: UITableViewController {
         
         let specialFormat = self.combineArrays(first: scriptureIDArray!, second: arrayToDelete) ?? [""]
    
-        Post.uploadMusic(artist_name: artistName, writer_name: writerName, music_link: music_link, song_story: songStory, descript: descript, tags: tags, tag_scripture: specialFormat, user_id: 28) { (response, error) in
+        print("\(specialFormat)")
+        
+        Post.uploadMusic(artist_name: artistName, writer_name: writerName, music_link: videoUrl ?? "", song_story: songStory, descript: descript, tags: tags, tag_scripture: specialFormat, user_id: 28) { (response, error) in
+            
             if let post = response {
                 self.post = post
                 print("🍏 A post was shared successfully, now you see the response from server! 🍏")
                 self.dismiss(animated: true, completion: nil)
-            } else if let error = error {
+            } else if error != nil {
                 print("🔴 An \(error) occured while sharing the post! 🔴")
                    self.dismiss(animated: true, completion: nil)
             }

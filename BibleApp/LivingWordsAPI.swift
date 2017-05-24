@@ -334,7 +334,6 @@ extension LivingWordsAPI {
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
-            
         })
     }
     
@@ -342,9 +341,9 @@ extension LivingWordsAPI {
     func uploadMusic(artist_name: String, writer_name: String, music_link: String, song_story: String, descript: String, tags: [String], tag_scripture: [String], user_id: Int, completion:
         @escaping (_ post: Post?, _ error: Error?) -> Void) -> DataRequest {
         
-        let request = Router.uploadMovie(parameters: ["artist_name" : artist_name,
+        let request = Router.uploadMusic(parameters: ["artist_name" : artist_name,
                                                       "writer_name" : writer_name,
-                                                        "music_link" : music_link,
+                                                       "music_link" : music_link,
                                                        "song_story" : song_story,
                                                          "descript" : descript,
                                                              "tags" : tags,
@@ -354,7 +353,6 @@ extension LivingWordsAPI {
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
-            
         })
     }
     
