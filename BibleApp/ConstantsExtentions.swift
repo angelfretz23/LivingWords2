@@ -21,6 +21,9 @@ let userEmailKey = "userEmail"
 var userID: Int?
 let userIDKey = "userID"
 
+var userToken: String?
+let userTokenID = "userToken"
+
 public enum ContentProviderType {
     case User
     case Pastor

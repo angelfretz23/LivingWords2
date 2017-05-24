@@ -134,9 +134,11 @@ extension LivingWordsAPI {
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
-            request.setValue("ef49c1427fb9bc7ad21171704524a39b1ed9f2cd73ea5a9274e1d9678196a840", forHTTPHeaderField: "Access-token")
-            //request.setValue(String(id), forHTTPHeaderField: "user-id")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            if let token = userToken {
+                request.setValue(token, forHTTPHeaderField: "Access-token")
+                // request.setValue(String(id), forHTTPHeaderField: "user-id")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            }
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -350,7 +352,8 @@ extension LivingWordsAPI {
                                                     "tag_scripture" : tag_scripture,
                                                           "user_id" : user_id
                                                                                     ])
-        
+
+    
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
         })

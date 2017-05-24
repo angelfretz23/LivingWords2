@@ -45,7 +45,7 @@ class SignInViewController: UIViewController {
     
     // MARK: - Properties
     var userData: User?
-    var userID: Int?
+    var user_id: Int?
     let defaults = UserDefaults.standard
     var isUserLoginIn = true
     fileprivate var content_type: String?
@@ -203,7 +203,7 @@ class SignInViewController: UIViewController {
         if segue.identifier == "forgotPasswordID" {
             let forgotPasswordViewController = segue.destination as! ForgotPasswordViewController
             forgotPasswordViewController.userData = self.userData
-            forgotPasswordViewController.userID = self.userID
+            forgotPasswordViewController.userID = self.user_id
         }
     }
     
@@ -302,15 +302,11 @@ extension OtherHelpfullMethods {
             
             if let user = userInfo, let email = userInfo?.email  {
                 self.userData = user
-                self.userID = user.id
+                self.user_id = user.id
                 
                 if (email == self.email.text!) {
                     self.loadApp()
-                    
-                    self.defaults.set(true, forKey: isUserLogenInKey)
-                    self.defaults.set(user.email, forKey: userEmailKey)
-                    self.defaults.set(user.content_type, forKey: userContentTypeKey)
-                    self.defaults.set(user.id!, forKey: userIDKey)
+                    self.saveUserData(user: user)
                     
                 } else {
                     self.displayAlert(userMessage: "Password or email is incorrect!!! \n Try Once More!")
@@ -339,10 +335,7 @@ extension OtherHelpfullMethods {
 
                 self.defaults.set(token, forKey: "userToken")
                 
-                self.defaults.set(true, forKey: isUserLogenInKey)
-                self.defaults.set(user.email, forKey: userEmailKey)
-                self.defaults.set(user.content_type, forKey: userContentTypeKey)
-                self.defaults.set(user.id!, forKey: userIDKey)
+                self.saveUserData(user: user)
                 
                 self.loadApp()
             }
@@ -431,5 +424,14 @@ extension OtherHelpfullMethods {
         self.password.attributedPlaceholder = NSMutableAttributedString(string: "Password", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
         self.phone.attributedPlaceholder = NSMutableAttributedString(string: "Phone", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.black])
     }
-
+    
+    fileprivate func saveUserData(user: User) {
+        self.defaults.set(true, forKey: isUserLogenInKey)
+        self.defaults.set(user.email, forKey: userEmailKey)
+        self.defaults.set(user.content_type, forKey: userContentTypeKey)
+        self.defaults.set(user.id!, forKey: userIDKey)
+        self.defaults.set(user.token, forKey: userTokenID)
+        userID = user.id
+        userToken = user.token
+    }
 }
