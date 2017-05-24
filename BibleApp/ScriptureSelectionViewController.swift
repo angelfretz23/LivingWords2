@@ -101,25 +101,24 @@ class ScriptureSelectionViewController: UIViewController {
     //MARK: IBActions
 
     
-    func registerForNotifications(){
+    func registerForNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(userDidPressClearButton(_:)), name: Notification.Name("UserDidPressedClearButton"), object: nil)
     }
     
-    func unregisterFotNotifications(){
+    func unregisterFotNotifications() {
         NotificationCenter.default.removeObserver(self)
     }
     
     // Register my xib
-    func registerXib(){
+    func registerXib() {
         scriptureSelectionTableView.register(UINib(nibName: Constants.ScriptureSelectionTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.ScriptureSelectionTableViewCellID)
     }
     
     // Automatically channges the size of the row
-    func configureTableView(){
+    func configureTableView() {
         scriptureSelectionTableView.rowHeight = UITableViewAutomaticDimension
         scriptureSelectionTableView.estimatedRowHeight = 45
     }
- 
     
 }
 
@@ -201,8 +200,8 @@ extension TableDataSource : UITableViewDataSource {
             result.append(attributedIndexText)
             result.append(attributedSctipture)
             return result
-        
     }
+    
 }
 
 extension ScriptureSelectionViewController: UITableViewDelegate {
@@ -270,7 +269,6 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
                 tagScriptureIDs.remove(at: count - 1)
                 print("🍏🍎 \(tagScriptureIDs)")
                 return
-                
             }
         }
     }

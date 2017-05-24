@@ -211,14 +211,9 @@ extension TableDataSource : UITableViewDataSource {
         let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
         attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
         
-        
         cell.scriptureText.attributedText = attributedScriptureText
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.addMediaView(mediaType: "music", cell: cell as! ScriptureTableViewCell)
     }
     
     
@@ -298,35 +293,6 @@ extension MainTableViewController {
         alert.addAction(okAction)
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    fileprivate func addMediaView(mediaType: String?, cell: ScriptureTableViewCell) {
-        
-        if let mediaType = mediaType {
-            
-            var image = UIImage(named: "")
-            cell.mediaWidthConstraint.constant = 22
-            
-            switch mediaType {
-            case "music":
-                image = UIImage(named: "music")!
-            case "sermon":
-                image = UIImage(named: "sermon")!
-            case "movie":
-                image = UIImage(named: "movie")!
-            case "book":
-                image = UIImage(named: "book")!
-            default:
-                break
-            }
-            
-            
-            let imageView = UIImageView(image: image)
-            imageView.frame = cell.mediaView.frame
-            cell.mediaView.addSubview(imageView)
-        } else {
-            print("No media")
-        }
     }
 
 }
