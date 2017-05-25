@@ -81,12 +81,8 @@ class MainTableViewController: UIViewController {
     //MARK: IBActions
     
     @IBAction func searchBarButtonPresseed(_ sender: Any) {
-
-        if expandSearch {
-            expandSearch = false
-        } else {
-            expandSearch = true
-        }
+       // expandSearch = expandSearch ? false : true
+        
         //updateDataSourceIfNeeded()
         getParametersWordsFromSearchFieldForRequest(searchTextField.text ?? "")
     }
@@ -216,13 +212,28 @@ extension TableDataSource : UITableViewDataSource {
 fileprivate typealias TableDelegate = MainTableViewController
 extension TableDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Media", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
-            controller.controllerScripture = self
-        // show(controller, sender: self)
-        present(controller, animated: true, completion: nil)
+  
+        let bibleBookVerseID = search[indexPath.row].matchingData?.bibleBookVerse?.bibleBookVerseID
+        SVProgressHUD.show()
         
+        if let verseID = bibleBookVerseID {
+
+            Verse.verseMedia(verse_id: verseID, completion: { (verse, error) in
+                if error != nil {
+                    print("🍎some error ocurred with verse media🍎 \(error!)")
+                    return
+                }
         
+                let storyboard = UIStoryboard(name: "Media", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
+                controller.controllerScripture = self
+                controller.verses = verse
+                
+                SVProgressHUD.dismiss()
+                self.present(controller, animated: true, completion: nil)
+                print("🍏verse Id is here🍏")
+            })
+        }
     }
 }
 
@@ -266,7 +277,7 @@ extension MainTableViewController {
             if let fetchedSearch = searchResult{
                 self.search = fetchedSearch
             
-                    //print(self.search[0].matchingData!)
+                //print(self.search[0].matchingData!)
                 
                 completion(true)
             } else {

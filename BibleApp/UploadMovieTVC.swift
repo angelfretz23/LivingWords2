@@ -41,7 +41,7 @@ class UploadMovieTVC: UITableViewController {
         super.viewWillAppear(animated)
         
         if isYouTubeLoaded {
-            fetchYouTubeVideoInfo(with: linkText, imageYouTube: linkImage, youTubeId: youTubeId!)
+            UIViewController.fetchYouTubeVideoInfo(with: linkText, imageYouTube: linkImage, youTubeId: youTubeId!)
         }
         
     }

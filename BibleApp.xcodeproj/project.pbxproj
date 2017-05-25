@@ -24,6 +24,7 @@
 		04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */; };
 		04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */; };
 		044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044491681EB1D24E0048BB05 /* MediaModelCell.swift */; };
+		044BA0851ED462F0004C09E5 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BA0841ED462F0004C09E5 /* Verse.swift */; };
 		044EEBB11EC5F9800092CFD3 /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */; };
 		044EEBB21EC5F9800092CFD3 /* UploadSermonesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */; };
 		044EEBB81EC5F9B30092CFD3 /* BottomUploadMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */; };
@@ -125,6 +126,7 @@
 		04405B6F1EB36F8500F16687 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		04405B711EB36FAE00F16687 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		044491681EB1D24E0048BB05 /* MediaModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModelCell.swift; sourceTree = "<group>"; };
+		044BA0841ED462F0004C09E5 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		044EEBAF1EC5F9800092CFD3 /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
 		044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadSermonesVC.swift; sourceTree = "<group>"; };
 		044EEBB31EC5F9B30092CFD3 /* BottomUploadMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomUploadMusicCell.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				2B4423E91EAA502D006AB9CF /* User.swift */,
 				2B472F111EAE2E8B004084F1 /* Search.swift */,
 				3ADA61E91EC9FC93006AB3F2 /* Post.swift */,
+				044BA0841ED462F0004C09E5 /* Verse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
 				04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */,
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,
+				044BA0851ED462F0004C09E5 /* Verse.swift in Sources */,
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
 				041BAEC31ECC52A20010A34C /* ConstantsExtentions.swift in Sources */,
 				04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */,

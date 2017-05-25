@@ -32,6 +32,10 @@ extension LivingWordsAPI {
         
         case uploadMovie(parameters: Parameters)
         
+        case verseMedia(parameters: Parameters)
+        
+        case uploadBook(parameters: Parameters)
+        
         // Search
         case searchBible(parameters: Parameters)
         
@@ -85,7 +89,12 @@ extension LivingWordsAPI {
                 
             case .uploadMovie:
                 return "/movie"
-                
+             
+            case .verseMedia:
+                return "/verse/get"
+            
+            case .uploadBook:
+                return "/book"
             }
           
 
@@ -99,7 +108,8 @@ extension LivingWordsAPI {
 
             case .loginWithEmail, .confirmEmail, .checkThePassCode,
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
+                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie ,
+                 .verseMedia, .uploadBook:
 
                 return .post
                 
@@ -110,7 +120,8 @@ extension LivingWordsAPI {
             switch self {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
+                 .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
+                 .uploadBook, .verseMedia :
 
                 return ""
             }
@@ -120,7 +131,8 @@ extension LivingWordsAPI {
             switch self {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie:
+              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
+              .uploadBook,.verseMedia:
 
                 return 0
             }
@@ -170,6 +182,12 @@ extension LivingWordsAPI {
                 request = try JSONEncoding.default.encode(request, with: parameters)
                 
             case .uploadMovie(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .verseMedia(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .uploadBook(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
             }
            
@@ -334,4 +352,33 @@ extension LivingWordsAPI {
         })
     }
     
+    @discardableResult
+    func verseMedia(verse_id: Int, completion: @escaping (_ post: Verse?, _ error:
+        Error?) -> Void) -> DataRequest {
+        
+        let request = Router.verseMedia(parameters: ["verse" : verse_id])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Verse>) in
+            completion(response.result.value, response.result.error)
+            
+        })
+    }
+    @discardableResult
+    func uploadBook(author_name: String, media_link: String, tag_scripture: [String],
+                    book_name: String, publish_date: String, symmary: String, tags: [String], completion: @escaping (_ post: Post?, _ error:
+        Error?) -> Void) -> DataRequest {
+        
+        let request = Router.uploadBook(parameters: ["author_name" : author_name,
+                                                      "media_link" : media_link,
+                                                      "tag_scripture" : tag_scripture,
+                                                      "book_name" : book_name,
+                                                      "publish_date": publish_date,
+                                                      "summary": symmary,
+                                                      "tags": tags])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
+            completion(response.result.value, response.result.error)
+            
+        })
+    }
 }

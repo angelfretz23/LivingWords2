@@ -37,7 +37,7 @@ class YTFViewController: UIViewController {
     let mediaData = [MediaModel(title: "Movies", items: [MediaModelCell(imagePath: "", title: "Chris Tomlin - I Will Follow", titleBotton: ""),
                                                          MediaModelCell(imagePath: "", title: "MercyMe - I Can Only Imagine", titleBotton: ""),
                                                          MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", titleBotton: "")
-        ], typeOfMedia: .Other),
+        ], typeOfMedia: .Movie),
                      MediaModel(title: "Books", items: [MediaModelCell(imagePath: "", title: "I Will Follow", titleBotton: "Ivan"),
                                                         MediaModelCell(imagePath: "", title: "I Can Only Imagine", titleBotton: "Orest"),
                                                         MediaModelCell(imagePath: "", title: "Momentum", titleBotton: "Nazar"),
@@ -48,7 +48,7 @@ class YTFViewController: UIViewController {
                      MediaModel(title: "Sermous", items: [MediaModelCell(imagePath: "", title: "Hans Zimmer - Time", titleBotton: ""),
                                                           MediaModelCell(imagePath: "", title: "Coldplay - Paradise", titleBotton: ""),
                                                           MediaModelCell(imagePath: "", title: "In Bruge", titleBotton: "")
-                        ], typeOfMedia: .Other),
+                        ], typeOfMedia: .Sermone),
                      MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Real Madrid La Liga 17", titleBotton: ""),
                                                         MediaModelCell(imagePath: "", title: "Better Call Saul", titleBotton: ""),
                                                         MediaModelCell(imagePath: "", title: "Game of Thrones", titleBotton: "")
@@ -311,14 +311,13 @@ class YTFViewController: UIViewController {
         slider.value = currentTime
     }
     
-    
 }
 
 extension YTFViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let viewHeight = tableView.bounds.height
-        let heightOther = viewHeight / 2
+        let heightOther = viewHeight / 1.8
         
         if indexPath.row == 3 {
             return viewHeight / 1.5
@@ -330,5 +329,6 @@ extension YTFViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
+
 }
 

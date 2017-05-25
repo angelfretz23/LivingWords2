@@ -59,7 +59,7 @@ extension UIViewController {
         set { UIViewController.scripture_ID_Array = newValue}
     }
     
-    public func fetchYouTubeVideoInfo(with textField: UILabel, imageYouTube: UIImageView, youTubeId: String) {
+    public static func fetchYouTubeVideoInfo(with textField: UILabel, imageYouTube: UIImageView, youTubeId: String) {
         
         // request image of a particular video
         let youTubeUtlImage = "https://img.youtube.com/vi/\(youTubeId)/maxresdefault.jpg"
@@ -101,5 +101,27 @@ extension UIViewController {
         controller.backController = self
         controller.contentProvider_type = content_provider
         present(controller, animated: true, completion: nil)
+    }
+    
+    public static func cheakTypeOfMedia(media_url: String) -> MediaType {
+        
+        if media_url.range(of: "vimeo") != nil {
+            return .vimeo
+        } else if media_url.range(of: "youtube") != nil {
+            return .youTube
+        }
+        
+        return .other
+    }
+    
+    static func configureCellImageAndTitle(media_url: String?, cell: MediaCollectionViewCell) {
+        if let url_media = media_url {
+            let type = UIViewController.cheakTypeOfMedia(media_url: url_media)
+            
+            if type == .youTube {
+                let youTubeId = url_media.components(separatedBy: "?v=").last!
+                UIViewController.fetchYouTubeVideoInfo(with: cell.title, imageYouTube: cell.image, youTubeId: youTubeId)
+            }
+        }
     }
 }

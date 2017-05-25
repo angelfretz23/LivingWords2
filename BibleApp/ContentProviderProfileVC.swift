@@ -18,7 +18,7 @@ class ContentProviderProfileVC: UIViewController {
     // MARK: - Properties
     var typeOfContentOwner = "author"
     
-    fileprivate let labels = [MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Home App — Welcome Home", youtubeID: "4nbhfrQfRRE"), MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")], typeOfMedia: .Other)]
+    fileprivate let labels = [MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Home App — Welcome Home", youtubeID: "4nbhfrQfRRE"), MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")], typeOfMedia: .Movie)]
 
     
     // MARK: - IBActions
@@ -89,7 +89,7 @@ extension ContentProviderProfileVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.title.text = labels[indexPath.row].title
         
-        cell.fillData(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
+      //  cell.fillData(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
         
         return cell
     }

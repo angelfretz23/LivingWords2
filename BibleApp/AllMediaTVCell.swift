@@ -17,11 +17,11 @@ class AllMediaTVCell: UITableViewCell {
     
     // MARK: - Properties
     
-    fileprivate lazy var mediaData = [MediaModelCell]()
+    fileprivate var mediaData: [Verse]?
     fileprivate var mediaController: MainMediaViewController?
     fileprivate var mediaForProfileController: ProfileViewController?
     fileprivate var mediaForContentProviderProfileController: ContentProviderProfileVC?
-    fileprivate var typeOfCell = MediaCellType.Other
+    fileprivate var typeOfCell = MediaCellType.Movie
 
     var currentController: UIViewController? {
         get {
@@ -61,25 +61,31 @@ private typealias CollectionDataSource = AllMediaTVCell
 extension CollectionDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mediaData.count
+        if let count = mediaData?.count {
+             return count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if typeOfCell == .Other {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
-                cell.image.image = #imageLiteral(resourceName: "image-slider-2")
-                cell.title.text = mediaData[indexPath.row].title
-            
-                return cell
+        switch typeOfCell {
+        case .Movie:
+            return movieCell(collectionView, cellForItemAt: indexPath)
+        case .Book:
+            return bookCell(collectionView, cellForItemAt: indexPath)
+        case .Music:
+            return musicCell(collectionView, cellForItemAt: indexPath)
+        case .Sermone:
+            return sermonesCell(collectionView, cellForItemAt: indexPath)
         }
+//  
+//        if typeOfCell == .Book {
+//            return bookCell(collectionView, cellForItemAt: indexPath)
+//        }
+//        
+//        return mediaNotBookCell(collectionView, cellForItemAt: indexPath)
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookTypeCollectionVCellID", for: indexPath) as! BookTypeCollectionVCell
-                cell.title.text = mediaData[indexPath.row].title
-                cell.imageBook.image = #imageLiteral(resourceName: "great-gatsby-coverjpg")
-                cell.titleBottom.text = mediaData[indexPath.row].titleBotton
-        
-        return cell
     }
 }
 
@@ -114,11 +120,13 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let youTubeId = mediaData[indexPath.row].youtubeID {
+        if let media_url = mediaData![indexPath.row].media_url {
             
             if let currController = currentController {
                 
-                YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: .vimeo, idMovie: youTubeId)
+                let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
+                
+                YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
                 
                 YTFPlayer.showYTFView(viewController: currController)
                 
@@ -135,7 +143,7 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
 private typealias PublicMethod = AllMediaTVCell
 extension PublicMethod {
     
-    public func fillData(mediaData: [MediaModelCell], controller: UIViewController, type: MediaCellType) {
+    public func fillData(mediaData: [Verse]?, controller: UIViewController, type: MediaCellType) {
         if let controller = controller as? MainMediaViewController {
             self.mediaData = mediaData
             mediaController = controller
@@ -151,4 +159,66 @@ extension PublicMethod {
         collectionView.reloadData()
     }
     
+}
+
+private typealias Configuration = AllMediaTVCell
+extension Configuration {
+    
+    fileprivate func movieCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+        if let cellData = mediaData {
+            cell.title.text = cellData[indexPath.row].artist_name
+            
+            UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].movie_link, cell: cell)
+        }
+        
+        return cell
+    }
+    
+    fileprivate func musicCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+        if let cellData = mediaData {
+            cell.title.text = cellData[indexPath.row].artist_name
+            UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
+            
+        }
+        
+        return cell
+    }
+    
+    fileprivate func sermonesCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+        if let cellData = mediaData {
+            cell.title.text = cellData[indexPath.row].artist_name
+            UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
+        }
+        
+        return cell
+    }
+    
+    fileprivate func bookCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> BookTypeCollectionVCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookTypeCollectionVCellID", for: indexPath) as! BookTypeCollectionVCell
+        cell.title.text = "Book"
+        cell.imageBook.image = #imageLiteral(resourceName: "great-gatsby-coverjpg")
+        cell.titleBottom.text = "Rostik"
+        
+        return cell
+    }
+    
+    fileprivate func mediaNotBookCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+        if let cellData = mediaData {
+            cell.title.text = cellData[indexPath.row].artist_name
+            
+            if typeOfCell == .Movie {
+                UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].movie_link, cell: cell)
+            } else {
+                UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
+            }
+
+        }
+        
+        return cell
+    }
 }

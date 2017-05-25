@@ -44,6 +44,11 @@
                                 <action selector="cancelAction:" destination="e7k-LS-Sby" id="C5T-zs-4d7"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="uYt-Jl-rP9">
+                            <connections>
+                                <action selector="shareAction:" destination="e7k-LS-Sby" id="Xhb-cc-ikp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bookUploadTableView" destination="kHC-WF-IAB" id="1Ra-ho-6rm"/>
@@ -59,7 +64,7 @@
             <objects>
                 <navigationController storyboardIdentifier="BookNavControllerID" automaticallyAdjustsScrollViewInsets="NO" id="xgg-GB-ABt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pE5-PS-mSc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pE5-PS-mSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
