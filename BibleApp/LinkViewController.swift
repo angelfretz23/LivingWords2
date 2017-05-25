@@ -91,12 +91,17 @@ class LinkViewController: UIViewController {
             controller.tableView.reloadData()
             controller.youTubeId = fetchYouTubeID()
             controller.videoUrl = linkTextField.text!
+        case .Author_Book:
+            let controller = backController as! BookUploadViewController
+            
+            controller.isYouTubeLoaded = true
+            controller.tableView.reloadData()
+            controller.videoUrl = linkTextField.text!
+            
         default:
             print("")
         }
         
-
-
         dismiss(animated: true, completion: nil)
     }
 }
@@ -108,8 +113,7 @@ extension WebViewDelegate: UIWebViewDelegate {
 
         linkTextField.text = request.url?.absoluteString
         return true
-    }
-    
+    }   
     
     func webViewDidStartLoad(_ webView: UIWebView) {
         if webView.request!.url!.absoluteString != "" {

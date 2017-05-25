@@ -10,6 +10,7 @@ import UIKit
 
 class UploadBookTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bookImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

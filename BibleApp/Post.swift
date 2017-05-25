@@ -47,4 +47,14 @@ extension Post {
         api.uploadMovie(director: director, actors: actors, media_url: media_url, verse_id_array: verse_id_array, movieName: movieName, releaseData: releaseData, synoopsis: synoopsis, tags: tags, user_id: userID!, completion: completion)
     }
     
+    static func uploadBook(author_name: String, media_link: String, tag_scripture: [Int], book_name: String, publish_date: String,
+                           summary: String , tags: [String], completion: @escaping (_ post: Post?, _ error:Error?) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.uploadBook(author_name: author_name, media_link: media_link,
+                       tag_scripture: tag_scripture, book_name: book_name,
+                       publish_date: publish_date, symmary: summary, tags: tags, completion: completion)
+        
+    }
+    
 }

@@ -364,7 +364,7 @@ extension LivingWordsAPI {
         })
     }
     @discardableResult
-    func uploadBook(author_name: String, media_link: String, tag_scripture: [String],
+    func uploadBook(author_name: String, media_link: String, tag_scripture: [Int],
                     book_name: String, publish_date: String, symmary: String, tags: [String], completion: @escaping (_ post: Post?, _ error:
         Error?) -> Void) -> DataRequest {
         
