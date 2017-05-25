@@ -19,24 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="195"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-kf-aEy">
-                        <rect key="frame" x="18" y="21" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-O3-w73">
-                        <rect key="frame" x="18" y="50" width="116" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnT-6j-z0X">
-                        <rect key="frame" x="18" y="79" width="73" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="snA-ZW-cwb">
                         <rect key="frame" x="18" y="119" width="329" height="59"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,18 +29,44 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Book Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZd-I9-64V">
+                        <rect key="frame" x="18" y="12" width="349" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ujk-Pa-0V5"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Summary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-5r-5FI">
+                        <rect key="frame" x="18" y="79" width="97" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Published Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-v9-fId">
+                        <rect key="frame" x="18" y="47" width="349" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="snA-ZW-cwb" firstAttribute="leading" secondItem="hnT-6j-z0X" secondAttribute="leading" id="29b-uv-8jn"/>
-                    <constraint firstItem="wNm-O3-w73" firstAttribute="top" secondItem="sH9-kf-aEy" secondAttribute="bottom" constant="8" id="OMR-AC-Dpa"/>
-                    <constraint firstItem="hnT-6j-z0X" firstAttribute="top" secondItem="wNm-O3-w73" secondAttribute="bottom" constant="8" id="RFU-Ai-jU6"/>
-                    <constraint firstItem="sH9-kf-aEy" firstAttribute="leading" secondItem="Mqd-GG-1sL" secondAttribute="leadingMargin" constant="10" id="U2w-47-R0m"/>
-                    <constraint firstItem="snA-ZW-cwb" firstAttribute="top" secondItem="hnT-6j-z0X" secondAttribute="bottom" constant="19" id="Xui-8w-rfX"/>
+                    <constraint firstItem="b9Y-v9-fId" firstAttribute="leading" secondItem="Mqd-GG-1sL" secondAttribute="leadingMargin" constant="10" id="0FJ-BB-zYf"/>
+                    <constraint firstItem="AiO-5r-5FI" firstAttribute="height" secondItem="b9Y-v9-fId" secondAttribute="height" id="Dlf-ys-FBs"/>
+                    <constraint firstItem="AiO-5r-5FI" firstAttribute="leading" secondItem="snA-ZW-cwb" secondAttribute="leading" id="EVO-38-FBV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="AiO-5r-5FI" secondAttribute="trailing" constant="252" id="KEh-nM-qi1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="b9Y-v9-fId" secondAttribute="trailing" id="Nna-dL-3Dr"/>
+                    <constraint firstItem="AiO-5r-5FI" firstAttribute="top" secondItem="b9Y-v9-fId" secondAttribute="bottom" constant="2" id="QMg-x5-tf6"/>
+                    <constraint firstItem="b9Y-v9-fId" firstAttribute="top" secondItem="PZd-I9-64V" secondAttribute="bottom" constant="5" id="TbI-XM-mBs"/>
                     <constraint firstAttribute="bottomMargin" secondItem="snA-ZW-cwb" secondAttribute="bottom" constant="9.5" id="a4o-qF-WtV"/>
-                    <constraint firstItem="wNm-O3-w73" firstAttribute="leading" secondItem="sH9-kf-aEy" secondAttribute="leading" id="atF-6b-U9b"/>
-                    <constraint firstItem="sH9-kf-aEy" firstAttribute="top" secondItem="Mqd-GG-1sL" secondAttribute="topMargin" constant="13" id="gG9-Mk-SlE"/>
+                    <constraint firstItem="b9Y-v9-fId" firstAttribute="height" secondItem="PZd-I9-64V" secondAttribute="height" id="aH2-Dg-4UJ"/>
+                    <constraint firstItem="PZd-I9-64V" firstAttribute="leading" secondItem="Mqd-GG-1sL" secondAttribute="leadingMargin" constant="10" id="dvp-JW-NCK"/>
                     <constraint firstAttribute="trailingMargin" secondItem="snA-ZW-cwb" secondAttribute="trailing" constant="20" id="hOY-vU-YT7"/>
-                    <constraint firstItem="hnT-6j-z0X" firstAttribute="leading" secondItem="wNm-O3-w73" secondAttribute="leading" id="jyB-MO-yT4"/>
+                    <constraint firstItem="AiO-5r-5FI" firstAttribute="leading" secondItem="Mqd-GG-1sL" secondAttribute="leadingMargin" constant="10" id="ooX-Rj-iGI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PZd-I9-64V" secondAttribute="trailing" id="q4d-d3-qMB"/>
+                    <constraint firstItem="PZd-I9-64V" firstAttribute="top" secondItem="Mqd-GG-1sL" secondAttribute="topMargin" constant="4" id="sOs-NI-Cps"/>
+                    <constraint firstItem="snA-ZW-cwb" firstAttribute="top" secondItem="AiO-5r-5FI" secondAttribute="bottom" constant="10" id="xyp-Fm-D8o"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="-104.5" y="28"/>

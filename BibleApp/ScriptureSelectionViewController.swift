@@ -119,7 +119,7 @@ class ScriptureSelectionViewController: UIViewController {
         scriptureSelectionTableView.rowHeight = UITableViewAutomaticDimension
         scriptureSelectionTableView.estimatedRowHeight = 45
     }
-    
+
 }
 
 //Private

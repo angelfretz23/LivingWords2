@@ -35,6 +35,9 @@ class BookUploadViewController: UIViewController {
     
     //MARK:- Properties
     var tagScriptureString: String = "Tag Scriptures"
+    fileprivate var bookUploadCell: UploadBookTableViewCell?
+    fileprivate var tagScriptureCell: TagScriptureTableViewCell?
+    @IBOutlet weak var tableView: UITableView!
     
     
     //MARK:- BookUpload`s life cycle
@@ -48,18 +51,35 @@ class BookUploadViewController: UIViewController {
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
-        bookUploadTableView.reloadData()
+        
+        if isYouTubeLoaded {
+            if let cell = bookUploadCell {
+                cell.bookImage.image = #imageLiteral(resourceName: "On My Soul")
+            }
+        }
+        
+        if let tagCell = tagScriptureCell {
+            tagCell.tagScriptureLabel.text = tagScriptureString
+        }
+        
     }
     
     // MARK:- Action and Other helpfull methods
-    
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func shareAction(_ sender: UIBarButtonItem) {
+        
+        Post.uploadBook(author_name: "Test user", media_link: "amazon link", tag_scripture: [12], book_name: "Hanry Ford", publish_date: "12", summary: "12", tags: ["#testBook"]) { (post, error) in
+            if error != nil {
+                print("🍎Upload Book🍎")
+                return
+            }
+            
+            print("🍏 Upload book 🍏")
+        }
         
     }
     
@@ -83,14 +103,12 @@ extension BookUploadViewController:  UITableViewDataSource {
         return 4
     }
     
-        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 2
         }
         return 1
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -100,10 +118,12 @@ extension BookUploadViewController:  UITableViewDataSource {
             return cell
         case [0,1]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.UploadBokkTableViewCellReuseID, for: indexPath) as? UploadBookTableViewCell else { return UITableViewCell() }
+            bookUploadCell = cell
             return cell
         case [1,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TagScriptureTableViewCellReuseID, for: indexPath) as? TagScriptureTableViewCell else { return UITableViewCell() }
             cell.tagScriptureLabel.text = tagScriptureString == "" ? "Tag Scriptures" : tagScriptureString
+            tagScriptureCell = cell
             return cell
         case [2,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.BookDescriptionTableViewCellReuseID, for: indexPath) as? BookDescriptionTableViewCell else { return UITableViewCell() }
@@ -153,7 +173,6 @@ extension BookUploadViewController:  UITableViewDataSource {
             
         }
     }
-
     
 }
     
@@ -161,6 +180,10 @@ extension BookUploadViewController:  UITableViewDataSource {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.section == 1 && indexPath.row == 0 {
                 uploadTagScriptures()
+            }
+            
+            if indexPath.section == 0 && indexPath.row == 1 {
+                loadLink(with: "https://www.amazon.com", contentProvider: .Author_Book)
             }
         }
         

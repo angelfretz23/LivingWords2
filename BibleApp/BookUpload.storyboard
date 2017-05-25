@@ -52,6 +52,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bookUploadTableView" destination="kHC-WF-IAB" id="1Ra-ho-6rm"/>
+                        <outlet property="tableView" destination="kHC-WF-IAB" id="GdD-fQ-Uid"/>
                         <segue destination="kdp-bN-lQC" kind="presentation" identifier="GetTagScripturesSegueID" id="kLz-X4-Zch"/>
                     </connections>
                 </viewController>

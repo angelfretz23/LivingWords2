@@ -33,6 +33,9 @@
                     <constraint firstItem="Dgl-fF-qxU" firstAttribute="top" secondItem="TSe-RQ-OBP" secondAttribute="topMargin" constant="21" id="rbo-A1-5ao"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bookImage" destination="Dgl-fF-qxU" id="097-Ji-QWu"/>
+            </connections>
             <point key="canvasLocation" x="-85.5" y="-66.5"/>
         </tableViewCell>
     </objects>
