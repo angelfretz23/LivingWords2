@@ -71,11 +71,12 @@ extension Post {
         api.uploadMovie(director: director, actors: actors, media_url: media_url, verse_id_array: verse_id_array, movieName: movieName, releaseData: releaseData, synoopsis: synoopsis, tags: tags, user_id: userID!, completion: completion)
     }
     
+
     static func uploadMusic(artist_name: String, writer_name: String, music_link: String, song_story: String, descript: String, tags: [String], tag_scripture: [String], user_id: Int, completion: @escaping (_ post: Post?, _ error: Error?) -> Void) {
         
         let api = LivingWordsAPI()
         
         api.uploadMusic(artist_name: artist_name, writer_name: writer_name, music_link: music_link, song_story: song_story, descript: descript, tags:tags, tag_scripture: tag_scripture, user_id: userID!, completion: completion)
     }
-    
+
 }

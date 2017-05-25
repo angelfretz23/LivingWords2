@@ -34,7 +34,7 @@ class UploadMusicTVC: UITableViewController {
     
         tableView.reloadData()
         if isYouTubeLoaded {
-            fetchYouTubeVideoInfo(with: (self.cellTop?.mediaURL)!, imageYouTube: (self.cellTop?.imageOfVideo)!, youTubeId: youTubeId!)
+            UIViewController.fetchYouTubeVideoInfo(with: (self.cellTop?.mediaURL)!, imageYouTube: (self.cellTop?.imageOfVideo)!, youTubeId: youTubeId!)
         }
     }
     

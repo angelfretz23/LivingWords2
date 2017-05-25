@@ -48,7 +48,7 @@ class UploadSermonesVC: UITableViewController {
         super.viewWillAppear(animated)
         
         if isYouTubeLoaded {
-            fetchYouTubeVideoInfo(with: videoSelectedName, imageYouTube: videoSelectedImage, youTubeId: youTubeId!)
+            UIViewController.fetchYouTubeVideoInfo(with: videoSelectedName, imageYouTube: videoSelectedImage, youTubeId: youTubeId!)
         }
     }
     

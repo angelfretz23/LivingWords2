@@ -10,7 +10,9 @@ import Foundation
 
 enum MediaCellType {
     case Book
-    case Other
+    case Music
+    case Movie
+    case Sermone
 }
 
 public struct MediaModel {

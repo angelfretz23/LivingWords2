@@ -25,10 +25,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
   
     let labels = [MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Home App — Welcome Home" , youtubeID: "4nbhfrQfRRE"),
                                                      MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),
-                                                     MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")], typeOfMedia: .Other),
+                                                     MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")], typeOfMedia: .Movie),
                   MediaModel(title: "Sermons", items: [MediaModelCell(imagePath: "", title: "iPhone 7 — Midnight", youtubeID: "R27KHLQ0cIU"),
                                                        MediaModelCell(imagePath: "", title: "The all-new Apple Music.", youtubeID: "CQY3KUR3VzM"),
-                                                       MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", youtubeID: "5t21_e7_")], typeOfMedia: .Other)
+                                                       MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", youtubeID: "5t21_e7_")], typeOfMedia: .Movie)
     ]
 
     
@@ -95,7 +95,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.title.text = labels[indexPath.row].title
     
-        cell.fillData(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
+       // cell.fillData(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
         
         return cell
     }

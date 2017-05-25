@@ -11,6 +11,7 @@ import UIKit
 public enum MediaType {
     case youTube
     case vimeo
+    case other
 }
 
 public struct YTFPlayer {
@@ -87,7 +88,7 @@ public struct YTFPlayer {
         
     }
     
-    public static func initWithAVPlayer(tableViewDataSource: UITableViewDataSource, type: MediaType, idMovie: String) {
+    public static func initWithAVPlayer(tableViewDataSource: UITableViewDataSource, type: MediaType, media_url: String) {
         if dragViewController == nil {
             dragViewController = YTFViewController(nibName: "YTFViewController", bundle: nil)
             dragViewController?.typeMedia = type
@@ -95,7 +96,11 @@ public struct YTFPlayer {
             if type == .vimeo {
                 dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/175813713")
             } else if type == .youTube {
-                dragViewController?.youtubeId = idMovie
+                let idMovie = media_url.components(separatedBy: "?v=").last
+                if let id = idMovie {
+                    dragViewController?.youtubeId = id
+                }
+            
             }
             
             dragViewController?.tableViewDataSource = tableViewDataSource
@@ -105,8 +110,11 @@ public struct YTFPlayer {
             if type == .vimeo {
                 dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/175813713")
             } else if type == .youTube {
-                dragViewController?.youtubeId = idMovie
-                dragViewController?.configureAVPlayerYouTube()
+                let idMovie = media_url.components(separatedBy: "?v=").last
+                if let id = idMovie {
+                    dragViewController?.youtubeId = id
+                    dragViewController?.configureAVPlayerYouTube()
+                }
             }
             
             dragViewController?.expandViews()

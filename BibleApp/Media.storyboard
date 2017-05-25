@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ev6-gm-iUA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ev6-gm-iUA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,6 +26,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TF6-BX-YnH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-eh-1TD">
+                                        <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nyd-jc-XQg">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="298-ct-og5">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56O-Y1-NaC">
                                         <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,47 +64,62 @@
                                                         <rect key="frame" x="0.0" y="33" width="375" height="33"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-qE-M13">
-                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="33"/>
+                                                                <rect key="frame" x="33" y="0.0" width="311" height="33"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-mP-ztK">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="All Media">
-                                                                            <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="allMediaAction:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="uJa-dH-jtl"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qe-qU-o9V">
-                                                                        <rect key="frame" x="69" y="0.0" width="69" height="33"/>
+                                                                        <rect key="frame" x="62" y="0.0" width="62" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Music">
                                                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="MusicAction:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="6cn-ja-LmY"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-UA-2BL">
-                                                                        <rect key="frame" x="138" y="0.0" width="69" height="33"/>
+                                                                        <rect key="frame" x="124" y="0.0" width="63" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Sermons">
                                                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="sermoneAction:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="bxO-B2-h3a"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ol-8h-jc6">
-                                                                        <rect key="frame" x="207" y="0.0" width="69" height="33"/>
+                                                                        <rect key="frame" x="187" y="0.0" width="62" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Movies">
                                                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="MovieAction:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="s5X-8H-pvi"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yI-rH-2Pq">
-                                                                        <rect key="frame" x="276" y="0.0" width="69" height="33"/>
+                                                                        <rect key="frame" x="249" y="0.0" width="62" height="33"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Books">
                                                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="BookAction:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="mne-EO-dix"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -93,19 +128,32 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="PHB-Qr-jwZ" secondAttribute="height" multiplier="1:1" id="jeo-EA-4Oa"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Button" image="close"/>
+                                                                <state key="normal" image="cancelButton"/>
                                                                 <connections>
                                                                     <action selector="dismissMediaView:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="5cG-Pj-3hf"/>
                                                                     <segue destination="M5L-S8-r8g" kind="show" identifier="backToTheBible" id="M2u-2E-FP1"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIz-sz-ezo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="YIz-sz-ezo" secondAttribute="height" multiplier="1:1" id="0T9-2Z-ISG"/>
+                                                                </constraints>
+                                                                <state key="normal" image="lamp"/>
+                                                                <connections>
+                                                                    <action selector="dismissMediaView:" destination="Ev6-gm-iUA" eventType="touchUpInside" id="mW4-2m-cyJ"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="Koc-qE-M13" firstAttribute="leading" secondItem="YIz-sz-ezo" secondAttribute="trailing" id="80V-OW-BeP"/>
+                                                            <constraint firstItem="YIz-sz-ezo" firstAttribute="top" secondItem="MEv-zh-oli" secondAttribute="top" id="ChG-GZ-vJ0"/>
                                                             <constraint firstAttribute="trailing" secondItem="PHB-Qr-jwZ" secondAttribute="trailing" id="NMG-S1-zRH"/>
+                                                            <constraint firstItem="PHB-Qr-jwZ" firstAttribute="leading" secondItem="Koc-qE-M13" secondAttribute="trailing" id="O0W-jJ-hSA"/>
+                                                            <constraint firstItem="YIz-sz-ezo" firstAttribute="leading" secondItem="MEv-zh-oli" secondAttribute="leading" id="Q4b-VG-KVc"/>
                                                             <constraint firstItem="PHB-Qr-jwZ" firstAttribute="top" secondItem="MEv-zh-oli" secondAttribute="top" constant="1" id="VYR-Pe-Ug8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Koc-qE-M13" secondAttribute="trailing" constant="30" id="cXl-cn-wGg"/>
-                                                            <constraint firstItem="Koc-qE-M13" firstAttribute="leading" secondItem="MEv-zh-oli" secondAttribute="leading" id="hyD-pP-IOx"/>
+                                                            <constraint firstAttribute="bottom" secondItem="YIz-sz-ezo" secondAttribute="bottom" id="gsr-9H-9Kz"/>
                                                             <constraint firstItem="Koc-qE-M13" firstAttribute="top" secondItem="MEv-zh-oli" secondAttribute="top" id="ngl-b9-Ip9"/>
                                                             <constraint firstAttribute="bottom" secondItem="PHB-Qr-jwZ" secondAttribute="bottom" constant="1" id="nib-cl-Ke3"/>
                                                             <constraint firstAttribute="bottom" secondItem="Koc-qE-M13" secondAttribute="bottom" id="qJf-zk-ZmF"/>
@@ -126,12 +174,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="56O-Y1-NaC" firstAttribute="top" secondItem="XAk-IZ-HCH" secondAttribute="bottom" constant="0.5" id="8CC-fT-Gx2"/>
+                                    <constraint firstAttribute="bottom" secondItem="wqc-eh-1TD" secondAttribute="bottom" id="Bbs-LB-EWg"/>
                                     <constraint firstAttribute="bottom" secondItem="56O-Y1-NaC" secondAttribute="bottom" id="Ith-M1-KsY"/>
                                     <constraint firstItem="56O-Y1-NaC" firstAttribute="height" secondItem="TF6-BX-YnH" secondAttribute="height" multiplier="0.9" id="SUU-zH-msq"/>
+                                    <constraint firstItem="wqc-eh-1TD" firstAttribute="top" secondItem="XAk-IZ-HCH" secondAttribute="bottom" id="br1-aD-KgN"/>
                                     <constraint firstAttribute="trailing" secondItem="56O-Y1-NaC" secondAttribute="trailing" id="buj-Oj-GdV"/>
+                                    <constraint firstItem="wqc-eh-1TD" firstAttribute="leading" secondItem="TF6-BX-YnH" secondAttribute="leading" id="hek-JP-XAv"/>
                                     <constraint firstItem="XAk-IZ-HCH" firstAttribute="leading" secondItem="TF6-BX-YnH" secondAttribute="leading" id="mmH-5C-W33"/>
                                     <constraint firstAttribute="trailing" secondItem="XAk-IZ-HCH" secondAttribute="trailing" id="ru3-3S-T7H"/>
                                     <constraint firstItem="56O-Y1-NaC" firstAttribute="leading" secondItem="TF6-BX-YnH" secondAttribute="leading" id="sBC-yd-pPM"/>
+                                    <constraint firstAttribute="trailing" secondItem="wqc-eh-1TD" secondAttribute="trailing" id="t9Q-f0-Ktc"/>
                                     <constraint firstItem="XAk-IZ-HCH" firstAttribute="top" secondItem="TF6-BX-YnH" secondAttribute="top" id="xdx-Mc-rwR"/>
                                 </constraints>
                             </view>
@@ -145,7 +197,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allMedia" destination="Pze-mP-ztK" id="vMe-NO-9Dz"/>
+                        <outlet property="books" destination="5yI-rH-2Pq" id="j0h-Rv-e7b"/>
+                        <outlet property="collectionView" destination="wqc-eh-1TD" id="rSF-Jm-G36"/>
                         <outlet property="headerView" destination="XAk-IZ-HCH" id="7sL-20-koY"/>
+                        <outlet property="movies" destination="9ol-8h-jc6" id="Cr2-ea-BYD"/>
+                        <outlet property="music" destination="2qe-qU-o9V" id="KRO-gT-oc3"/>
+                        <outlet property="sermones" destination="8p3-UA-2BL" id="4e4-eM-gFi"/>
                         <outlet property="tableView" destination="56O-Y1-NaC" id="sll-dc-McX"/>
                     </connections>
                 </viewController>
@@ -163,6 +221,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="29" height="29"/>
+        <image name="cancelButton" width="14" height="14"/>
+        <image name="lamp" width="17" height="14"/>
     </resources>
 </document>

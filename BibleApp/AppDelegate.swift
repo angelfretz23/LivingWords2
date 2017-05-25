@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         UIApplication.shared.statusBarStyle = .lightContent
+        userToken = UserDefaults.standard.value(forKey: userTokenID) as? String
         
         return true
     }

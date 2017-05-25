@@ -59,6 +59,10 @@ class BookUploadViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func shareAction(_ sender: UIBarButtonItem) {
+        
+    }
+    
     func configureTableView(){
         bookUploadTableView.rowHeight = UITableViewAutomaticDimension
         bookUploadTableView.estimatedRowHeight = 300
