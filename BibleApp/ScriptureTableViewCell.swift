@@ -10,57 +10,59 @@ import UIKit
 
 class ScriptureTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var scriptureText: UILabel!
-    @IBOutlet weak var labelOne: UILabel!
+    @IBOutlet weak var scriptureText: UILabel?
+    @IBOutlet weak var labelOne: UILabel?
     @IBOutlet weak var mediaWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mediaView: UIView!
-    
-    var flag = true
-    var mediaType = "music"
+    @IBOutlet weak var mediaView: UIView?
+    @IBOutlet weak var scriptureImageView: UIImageView?
+
+    var mediaType = ScripureMediaType.book_sermone_music_movie
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
-        // this is just for test, later we'll pass flag and media type dynamically
-        if self.flag {
-            var image = UIImage()
-            self.mediaWidthConstraint.constant = 22
-            
-            switch mediaType {
-            case "music":
-                image = UIImage(named: "music")!
-            case "sermon":
-                image = UIImage(named: "sermon")!
-            case "movie":
-                image = UIImage(named: "movie")!
-            case "book":
-                image = UIImage(named: "book")!
-            default:
-                break
-            }
-            
-            let imageView: UIImageView? = UIImageView(image: image)
-            imageView?.layer.frame.size.height = self.mediaView.layer.frame.height
-            imageView?.layer.frame.size.width = 22
-            
-            if let imgVw = imageView {
-                UIView.animate(withDuration: 0.5, delay: 3, options: .curveEaseIn, animations: {
-                    self.mediaView.addSubview(imgVw)
-                }, completion: nil)
-            } else {
-                let view = UIView()
-                view.layer.frame.size.height = self.mediaView.layer.frame.height
-                view.layer.frame.size.width = 22
-                view.layer.backgroundColor = UIColor.clear.cgColor
-                self.mediaView.addSubview(view)
-            }
-        }
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    
+    func setScriptureImage(with type: String) {
+        var image: UIImage
+        
+        switch type {
+        case "book":
+            image = #imageLiteral(resourceName: "book-1")
+        case "book_sermon":
+            image = UIImage()
+        case "book_sermon_movie":
+            image = UIImage()
+        case "book_sermon_movie_music":
+            image = #imageLiteral(resourceName: "book_movie_music_sermones")
+        case "sermon_movie_music":
+            image = #imageLiteral(resourceName: "musicSermonMovies")
+        case "movie_music":
+            image = UIImage()
+        case "sermon_music":
+            image = UIImage()
+        case "book_music":
+            image = UIImage()
+        case "sermon_movie":
+            image = UIImage()
+        case "book_movie":
+            image = UIImage()
+        case "sermon":
+            image = #imageLiteral(resourceName: "bible-300")
+        case "movie":
+            image = #imageLiteral(resourceName: "movie-1")
+        case "music":
+            image = #imageLiteral(resourceName: "music-1")
+        default:
+            image = UIImage()
+        }
+        
+        scriptureImageView?.image = image
+    }
 }

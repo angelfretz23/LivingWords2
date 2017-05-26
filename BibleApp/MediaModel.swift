@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum MediaCellType {
-    case Book
-    case Music
-    case Movie
-    case Sermone
-}
-
 public struct MediaModel {
     var title: String
     var items:[MediaModelCell]

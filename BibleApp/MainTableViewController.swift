@@ -57,8 +57,6 @@ class MainTableViewController: UIViewController {
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //loadSampleScriptures()
         
         registerXib()
         
@@ -110,15 +108,6 @@ class MainTableViewController: UIViewController {
     func configureTableView(){
         mainTableView.rowHeight = UITableViewAutomaticDimension
         mainTableView.estimatedRowHeight = 45
-    }
-    
-    func loadSampleScriptures() {
-        
-        let scripture1 = Scripture(text: "In the beginning God created the heaven and the earth.")
-        let scripture2 = Scripture(text: "And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moves upon the face of the waters.")
-        let scripture3 = Scripture(text: "And God said, Let there be light: and there was light.")
-        
-        scriptures = [scripture1, scripture2, scripture3]
     }
 
 }
@@ -188,49 +177,40 @@ extension TableDataSource : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseIdentifier = "ScriptureCellID"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
-        
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScriptureCellID", for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
         
         let scripture = search[indexPath.row]
         
         var attributedScriptureText = NSMutableAttributedString()
         
+        if let typeMedia = scripture.checkedMedia {
+            cell.setScriptureImage(with: typeMedia)
+        }
+        
         if (indexPath.row == 0) {
-            cell.labelOne.isHidden = false
+            cell.labelOne?.isHidden = false
             attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
         } else {
-            cell.labelOne.isHidden = true
+            cell.labelOne?.isHidden = true
             attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
         }
         
         let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
         attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
         
-        cell.scriptureText.attributedText = attributedScriptureText
+        cell.scriptureText?.attributedText = attributedScriptureText
         
         return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
-        searchTextField.text = selectedCell.textLabel?.text
-    }
     
 }
 
 fileprivate typealias TableDelegate = MainTableViewController
 extension TableDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-//        let storyboard = UIStoryboard(name: "Media", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
-//            controller.controllerScripture = self
-//        // show(controller, sender: self)
-//        present(controller, animated: true, completion: nil)
-//
-//  
+  
         let bibleBookVerseID = search[indexPath.row].matchingData?.bibleBookVerse?.bibleBookVerseID
         SVProgressHUD.show()
         

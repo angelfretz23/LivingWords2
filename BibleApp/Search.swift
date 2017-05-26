@@ -18,6 +18,7 @@ class Search: NSObject, Mappable {
     var booksOfBibleID: Int?
     var chapterNumberOfBookID: Int?
     var bibleBookVerseID: Int?
+    var checkedMedia: String?
     
     func mapping(map: Map) {
         self.matchingData               <- map["_matchingData"]
@@ -26,6 +27,7 @@ class Search: NSObject, Mappable {
         self.bibleBookVerse             <- map["BibleBookVerse"]
         self.verse                      <- map["verse"]
         self.bibleBookVerseID           <- map["id"]
+        self.checkedMedia               <- map["checkedMedia"]
     }
     
     required init?(map: Map) {

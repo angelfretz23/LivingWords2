@@ -10,13 +10,6 @@ import UIKit
 
 class MainMediaViewController: UIViewController {
 
-    enum Media {
-        case allMedia
-        case music
-        case sermons
-        case movies
-        case books
-    }
     
     // MARK:- IBOutlets
     
@@ -32,6 +25,7 @@ class MainMediaViewController: UIViewController {
     
     var controllerScripture: MainTableViewController?
     var verses: Verse?
+    var mediaData: [Verse]?
     
     // MARK: - IBActions
     
@@ -41,7 +35,7 @@ class MainMediaViewController: UIViewController {
     }
     
     @IBAction func MusicAction(_ sender: UIButton) {
-        highlightsMedia(type: .music)
+        highlightsMedia(type: .music, allMedia: allMedia, music: music, movies: movies, sermones: sermones, books: books)
         type_media = .music
         
         collectionView.isHidden = false
@@ -51,7 +45,7 @@ class MainMediaViewController: UIViewController {
     }
     
     @IBAction func sermoneAction(_ sender: UIButton) {
-        highlightsMedia(type: .sermons)
+        highlightsMedia(type: .sermons, allMedia: allMedia, music: music, movies: movies, sermones: sermones, books: books)
         type_media = .sermons
         
         collectionView.isHidden = false
@@ -61,7 +55,7 @@ class MainMediaViewController: UIViewController {
     }
     
     @IBAction func MovieAction(_ sender: UIButton) {
-        highlightsMedia(type: .movies)
+        highlightsMedia(type: .movies, allMedia: allMedia, music: music, movies: movies, sermones: sermones, books: books)
         type_media = .movies
         
         collectionView.isHidden = false
@@ -71,7 +65,7 @@ class MainMediaViewController: UIViewController {
     }
     
     @IBAction func BookAction(_ sender: UIButton) {
-        highlightsMedia(type: .books)
+        highlightsMedia(type: .books, allMedia: allMedia, music: music, movies: movies, sermones: sermones, books: books)
         type_media = .books
         
         collectionView.isHidden = false
@@ -81,7 +75,7 @@ class MainMediaViewController: UIViewController {
     }
     
     @IBAction func allMediaAction(_ sender: UIButton) {
-        highlightsMedia(type: .allMedia)
+        highlightsMedia(type: .allMedia, allMedia: allMedia, music: music, movies: movies, sermones: sermones, books: books)
         type_media = .allMedia
         
         collectionView.isHidden = true
@@ -126,46 +120,7 @@ class MainMediaViewController: UIViewController {
         
         return false
     }
-    
-    // MARK:- Others helphull methods
-    
-    func highlightsMedia(type: Media) {
-        switch type {
-        case .allMedia:
-            allMedia.setTitleColor(.black, for: .normal)
-            music.setTitleColor(.gray, for: .normal)
-            movies.setTitleColor(.gray, for: .normal)
-            sermones.setTitleColor(.gray, for: .normal)
-            books.setTitleColor(.gray, for: .normal)
-        case .movies:
-            allMedia.setTitleColor(.gray, for: .normal)
-            music.setTitleColor(.gray, for: .normal)
-            movies.setTitleColor(.black, for: .normal)
-            sermones.setTitleColor(.gray, for: .normal)
-            books.setTitleColor(.gray, for: .normal)
-        case .music:
-            allMedia.setTitleColor(.gray, for: .normal)
-            music.setTitleColor(.black, for: .normal)
-            movies.setTitleColor(.gray, for: .normal)
-            sermones.setTitleColor(.gray, for: .normal)
-            books.setTitleColor(.gray, for: .normal)
-        case .books:
-            allMedia.setTitleColor(.gray, for: .normal)
-            music.setTitleColor(.gray, for: .normal)
-            movies.setTitleColor(.gray, for: .normal)
-            sermones.setTitleColor(.gray, for: .normal)
-            books.setTitleColor(.black, for: .normal)
-        case .sermons:
-            allMedia.setTitleColor(.gray, for: .normal)
-            music.setTitleColor(.gray, for: .normal)
-            movies.setTitleColor(.gray, for: .normal)
-            sermones.setTitleColor(.black, for: .normal)
-            books.setTitleColor(.gray, for: .normal)
 
-        }
-    }
-    
-    
 }
 
 private typealias TableViewDataSource = MainMediaViewController
@@ -185,23 +140,23 @@ extension TableViewDataSource: UITableViewDataSource {
         case "Movie":
             cell.fillData(mediaData: verses!.movie,
                           controller: self,
-                          type: .Movie)
+                          type: .movies)
         case "Sermone":
             cell.fillData(mediaData: verses!.sermon,
                           controller: self,
-                          type: .Sermone)
+                          type: .sermons)
         case "Music":
             cell.fillData(mediaData: verses!.music,
                           controller: self,
-                          type: .Music)
+                          type: .music)
         case "Book":
             cell.fillData(mediaData: verses!.book,
                           controller: self,
-                          type: .Book)
+                          type: .books)
+        
         default:
             print("")
         }
-        
         
         return cell
     }
@@ -267,6 +222,9 @@ extension CollectionDataSource : UICollectionViewDataSource {
               //  cell.image.image = #imageLiteral(resourceName: "image-slider-2")
                 UIViewController.configureCellImageAndTitle(media_url: cellData.media_url, cell: cell)
             }
+            
+            mediaData = verses?.book
+            
             return cell
         }
         
@@ -278,6 +236,9 @@ extension CollectionDataSource : UICollectionViewDataSource {
                 cell.image.image = #imageLiteral(resourceName: "image-slider-2")
                 UIViewController.configureCellImageAndTitle(media_url: cellData.movie_link, cell: cell)
             }
+            
+            mediaData = verses?.movie
+            
             return cell
             
         }
@@ -289,6 +250,9 @@ extension CollectionDataSource : UICollectionViewDataSource {
                 cell.image.image = #imageLiteral(resourceName: "image-slider-2")
                 UIViewController.configureCellImageAndTitle(media_url: cellData.media_url, cell: cell)
             }
+            
+            mediaData = verses?.music
+            
             return cell
         }
         
@@ -299,6 +263,9 @@ extension CollectionDataSource : UICollectionViewDataSource {
                 cell.image.image = #imageLiteral(resourceName: "image-slider-2")
                 UIViewController.configureCellImageAndTitle(media_url: cellData.media_url, cell: cell)
             }
+            
+            mediaData = verses?.sermon
+            
             return cell
         }
         
@@ -335,6 +302,22 @@ extension CollectionDelegate_and_Flov: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {
         return 10.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let media_url = collectionView.mediaUrlDependOnType(indexPath: indexPath, mediaData: mediaData, typeOfCell: type_media) {
+
+            let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
+                
+            YTFPlayer.initWithAVPlayer(tableViewDataSource: self as UITableViewDataSource, type: typeOfMedia, media_url: media_url)
+                
+            YTFPlayer.showYTFView(viewController: self)
+                
+            dismiss(animated: false, completion: nil)
+        
+        }
+
     }
 }
 

@@ -54,7 +54,6 @@ class CustomView: UIView {
         
         // starting point for the path (bottom left)
         
-        let xPositionOfView = self.bounds.origin.x
         let yPositionOfView = self.bounds.origin.y
         
         path.move(to: CGPoint(x: -10, y: -10))

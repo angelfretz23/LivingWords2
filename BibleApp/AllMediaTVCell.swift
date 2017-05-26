@@ -21,7 +21,7 @@ class AllMediaTVCell: UITableViewCell {
     fileprivate var mediaController: MainMediaViewController?
     fileprivate var mediaForProfileController: ProfileViewController?
     fileprivate var mediaForContentProviderProfileController: ContentProviderProfileVC?
-    fileprivate var typeOfCell = MediaCellType.Movie
+    fileprivate var typeOfCell = Media.movies
 
     var currentController: UIViewController? {
         get {
@@ -64,28 +64,27 @@ extension CollectionDataSource: UICollectionViewDataSource {
         if let count = mediaData?.count {
              return count
         }
+        
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch typeOfCell {
-        case .Movie:
+        case .movies:
             return movieCell(collectionView, cellForItemAt: indexPath)
-        case .Book:
+        case .books:
             return bookCell(collectionView, cellForItemAt: indexPath)
-        case .Music:
+        case .music:
             return musicCell(collectionView, cellForItemAt: indexPath)
-        case .Sermone:
+        case .sermons:
             return sermonesCell(collectionView, cellForItemAt: indexPath)
+            
+        default:
+            print("")
         }
-//  
-//        if typeOfCell == .Book {
-//            return bookCell(collectionView, cellForItemAt: indexPath)
-//        }
-//        
-//        return mediaNotBookCell(collectionView, cellForItemAt: indexPath)
         
+        return UICollectionViewCell()
     }
 }
 
@@ -100,7 +99,7 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
         let heightBook = heightView
         let widthBook = heightView * 0.7
   
-        if typeOfCell == .Book {
+        if typeOfCell == .books {
             return CGSize(width: widthBook, height: heightBook)
         }
         
@@ -120,7 +119,7 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let media_url = mediaData![indexPath.row].media_url {
+        if let media_url = collectionView.mediaUrlDependOnType(indexPath: indexPath, mediaData: mediaData, typeOfCell: typeOfCell) {
             
             if let currController = currentController {
                 
@@ -143,7 +142,7 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
 private typealias PublicMethod = AllMediaTVCell
 extension PublicMethod {
     
-    public func fillData(mediaData: [Verse]?, controller: UIViewController, type: MediaCellType) {
+    public func fillData(mediaData: [Verse]?, controller: UIViewController, type: Media) {
         if let controller = controller as? MainMediaViewController {
             self.mediaData = mediaData
             mediaController = controller
@@ -169,7 +168,7 @@ extension Configuration {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         if let cellData = mediaData {
             cell.title.text = cellData[indexPath.row].artist_name
-            
+            cell.image.image = #imageLiteral(resourceName: "image-slider-2")
             UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].movie_link, cell: cell)
         }
         
@@ -179,6 +178,7 @@ extension Configuration {
     fileprivate func musicCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         if let cellData = mediaData {
+             cell.image.image = #imageLiteral(resourceName: "image-slider-2")
             cell.title.text = cellData[indexPath.row].artist_name
             UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
             
@@ -190,6 +190,7 @@ extension Configuration {
     fileprivate func sermonesCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         if let cellData = mediaData {
+            cell.image.image = #imageLiteral(resourceName: "image-slider-2")
             cell.title.text = cellData[indexPath.row].artist_name
             UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
         }
@@ -211,7 +212,7 @@ extension Configuration {
         if let cellData = mediaData {
             cell.title.text = cellData[indexPath.row].artist_name
             
-            if typeOfCell == .Movie {
+            if typeOfCell == .movies {
                 UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].movie_link, cell: cell)
             } else {
                 UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
@@ -221,4 +222,6 @@ extension Configuration {
         
         return cell
     }
+    
+
 }

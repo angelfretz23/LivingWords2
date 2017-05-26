@@ -14,6 +14,8 @@ public struct MediaModelCell {
     var youtubeID: String?
     var titleBotton: String?
     
+    
+    
     init(imagePath: String, title: String, youtubeID: String? = nil, titleBotton: String? = nil) {
         self.imagePath = imagePath
         self.title = title

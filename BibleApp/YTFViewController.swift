@@ -33,31 +33,13 @@ class YTFViewController: UIViewController {
     @IBOutlet weak var descriptionView: UIView!
     @IBOutlet weak var tableViewMedia: UITableView!
     @IBOutlet weak var headerViewMedia: UIView!
-    
-    let mediaData = [MediaModel(title: "Movies", items: [MediaModelCell(imagePath: "", title: "Chris Tomlin - I Will Follow", titleBotton: ""),
-                                                         MediaModelCell(imagePath: "", title: "MercyMe - I Can Only Imagine", titleBotton: ""),
-                                                         MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", titleBotton: "")
-        ], typeOfMedia: .Movie),
-                     MediaModel(title: "Books", items: [MediaModelCell(imagePath: "", title: "I Will Follow", titleBotton: "Ivan"),
-                                                        MediaModelCell(imagePath: "", title: "I Can Only Imagine", titleBotton: "Orest"),
-                                                        MediaModelCell(imagePath: "", title: "Momentum", titleBotton: "Nazar"),
-                                                        MediaModelCell(imagePath: "", title: "I Will Follow", titleBotton: "Ivan"),
-                                                        MediaModelCell(imagePath: "", title: "I Can Only Imagine", titleBotton: "Orest"),
-                                                        MediaModelCell(imagePath: "", title: "Momentum", titleBotton: "Nazar")
-                        ], typeOfMedia: .Book),
-                     MediaModel(title: "Sermous", items: [MediaModelCell(imagePath: "", title: "Hans Zimmer - Time", titleBotton: ""),
-                                                          MediaModelCell(imagePath: "", title: "Coldplay - Paradise", titleBotton: ""),
-                                                          MediaModelCell(imagePath: "", title: "In Bruge", titleBotton: "")
-                        ], typeOfMedia: .Sermone),
-                     MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Real Madrid La Liga 17", titleBotton: ""),
-                                                        MediaModelCell(imagePath: "", title: "Better Call Saul", titleBotton: ""),
-                                                        MediaModelCell(imagePath: "", title: "Game of Thrones", titleBotton: "")
-                        ], typeOfMedia: .Book),
-                     MediaModel(title: "Rostik", items: [MediaModelCell(imagePath: "", title: "Inception", titleBotton: ""),
-                                                        MediaModelCell(imagePath: "", title: "Binariks", titleBotton: ""),
-                                                        MediaModelCell(imagePath: "", title: "Game of Thrones", titleBotton: "")
-                        ], typeOfMedia: .Book)
-    ]
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var allMediaCategory: UIButton!
+    @IBOutlet weak var musicCategory: UIButton!
+    @IBOutlet weak var sermonesCategory: UIButton!
+    @IBOutlet weak var movieCategory: UIButton!
+    @IBOutlet weak var bookCategory: UIButton!
 
     var tableViewDataSource: UITableViewDataSource?
     
@@ -122,6 +104,8 @@ class YTFViewController: UIViewController {
         initViews()
         initDetailsView()
         initMediaTableView()
+        
+        collectionView.isHidden = true
         
         super.viewDidLoad()
         
@@ -309,6 +293,57 @@ class YTFViewController: UIViewController {
         slider.minimumValue = 0.0
         slider.maximumValue = Float(duration)
         slider.value = currentTime
+    }
+    
+    
+    @IBAction func AllMediaAction(_ sender: UIButton) {
+        highlightsMedia(type: .allMedia, allMedia: allMediaCategory, music: musicCategory,
+                        movies: movieCategory, sermones: sermonesCategory, books: bookCategory)
+        
+        collectionView.isHidden = true
+        tableViewMedia.isHidden = false
+        
+        collectionView.reloadData()
+    }
+    
+    @IBAction func MusicAction(_ sender: UIButton) {
+        highlightsMedia(type: .music, allMedia: allMediaCategory, music: musicCategory,
+                        movies: movieCategory, sermones: sermonesCategory, books: bookCategory)
+    
+        collectionView.isHidden = false
+        tableViewMedia.isHidden = true
+        
+        collectionView.reloadData()
+    }
+    
+    @IBAction func SermonesAction(_ sender: UIButton) {
+        highlightsMedia(type: .sermons, allMedia: allMediaCategory, music: musicCategory,
+                        movies: movieCategory, sermones: sermonesCategory, books: bookCategory)
+        
+        collectionView.isHidden = false
+        tableViewMedia.isHidden = true
+        
+        collectionView.reloadData()
+    }
+    
+    @IBAction func MovieAction(_ sender: UIButton) {
+        highlightsMedia(type: .movies, allMedia: allMediaCategory, music: musicCategory,
+                        movies: movieCategory, sermones: sermonesCategory, books: bookCategory)
+        
+        collectionView.isHidden = false
+        tableViewMedia.isHidden = true
+        
+        collectionView.reloadData()
+    }
+    
+    @IBAction func BookAction(_ sender: UIButton) {
+        highlightsMedia(type: .books, allMedia: allMediaCategory, music: musicCategory,
+                        movies: movieCategory, sermones: sermonesCategory, books: bookCategory)
+        
+        collectionView.isHidden = false
+        tableViewMedia.isHidden = true
+        
+        collectionView.reloadData()
     }
     
 }

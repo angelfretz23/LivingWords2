@@ -24,6 +24,7 @@ class Verse : Mappable {
     var description: String?
     var user_id: String?
     var movie_link: String?
+    var media_link: String?
     
     func mapping(map: Map) {
         self.id                     <- map["id"]
@@ -38,6 +39,7 @@ class Verse : Mappable {
         self.music                  <- map["music"]
         self.book                   <- map["book"]
         self.movie_link             <- map["movie_link"]
+        self.media_link             <- map["media_link"]
     }
     
     required init?(map: Map) {

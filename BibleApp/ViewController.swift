@@ -1,36 +1,13 @@
 //
-//  ConstantsExtentions.swift
+//  ViewController.swift
 //  BibleApp
 //
-//  Created by Mac on 5/17/17.
+//  Created by Mac on 5/26/17.
 //  Copyright © 2017 Igor Makara. All rights reserved.
 //
 
 import Foundation
 import UIKit
-
-var isUserLogenIn = false
-let isUserLogenInKey = "isUserLogenIn"
-
-var userContentType: String?
-let userContentTypeKey = "userContentType"
-
-var userEmail = "None"
-let userEmailKey = "userEmail"
-
-var userID: Int?
-let userIDKey = "userID"
-
-var userToken: String?
-let userTokenID = "userToken"
-
-public enum ContentProviderType {
-    case User
-    case Pastor
-    case Artist
-    case Author_Book
-    case Author_Movie
-}
 
 extension UIViewController {
     
@@ -43,21 +20,58 @@ extension UIViewController {
     private static var youTube_id: String? = "-5vv7pvQXaY"
     var youTubeId: String? {
         get { return UIViewController.youTube_id }
-        set { UIViewController.youTube_id = newValue}
+        set { UIViewController.youTube_id = newValue }
     }
     
     private static var video_URL: String? = "default"
     var videoUrl: String? {
         get { return UIViewController.video_URL }
-        set { UIViewController.video_URL = newValue}
+        set { UIViewController.video_URL = newValue }
     }
     
     private static var scripture_ID_Array: [Int]? = [0]
     
     var scriptureIDArray: [Int]? {
         get { return UIViewController.scripture_ID_Array }
-        set { UIViewController.scripture_ID_Array = newValue}
+        set { UIViewController.scripture_ID_Array = newValue }
     }
+    
+    func highlightsMedia(type: Media, allMedia: UIButton, music: UIButton, movies: UIButton, sermones: UIButton, books: UIButton) {
+        switch type {
+        case .allMedia:
+            allMedia.setTitleColor(.black, for: .normal)
+            music.setTitleColor(.gray, for: .normal)
+            movies.setTitleColor(.gray, for: .normal)
+            sermones.setTitleColor(.gray, for: .normal)
+            books.setTitleColor(.gray, for: .normal)
+        case .movies:
+            allMedia.setTitleColor(.gray, for: .normal)
+            music.setTitleColor(.gray, for: .normal)
+            movies.setTitleColor(.black, for: .normal)
+            sermones.setTitleColor(.gray, for: .normal)
+            books.setTitleColor(.gray, for: .normal)
+        case .music:
+            allMedia.setTitleColor(.gray, for: .normal)
+            music.setTitleColor(.black, for: .normal)
+            movies.setTitleColor(.gray, for: .normal)
+            sermones.setTitleColor(.gray, for: .normal)
+            books.setTitleColor(.gray, for: .normal)
+        case .books:
+            allMedia.setTitleColor(.gray, for: .normal)
+            music.setTitleColor(.gray, for: .normal)
+            movies.setTitleColor(.gray, for: .normal)
+            sermones.setTitleColor(.gray, for: .normal)
+            books.setTitleColor(.black, for: .normal)
+        case .sermons:
+            allMedia.setTitleColor(.gray, for: .normal)
+            music.setTitleColor(.gray, for: .normal)
+            movies.setTitleColor(.gray, for: .normal)
+            sermones.setTitleColor(.black, for: .normal)
+            books.setTitleColor(.gray, for: .normal)
+            
+        }
+    }
+    
     
     public static func fetchYouTubeVideoInfo(with textField: UILabel, imageYouTube: UIImageView, youTubeId: String) {
         
@@ -125,4 +139,6 @@ extension UIViewController {
             }
         }
     }
+    
+    
 }

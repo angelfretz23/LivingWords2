@@ -216,8 +216,8 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
         }
         
 
-        let scripture = search[indexPath.row]
-        let index = indexPath.row + 1
+        _ = search[indexPath.row]
+        _ = indexPath.row + 1
         
         if previousBook == book! {
           

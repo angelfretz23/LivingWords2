@@ -14,7 +14,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTFViewController" customModule="LivingWords" customModuleProvider="target">
             <connections>
+                <outlet property="allMediaCategory" destination="SBs-RJ-RiS" id="MSe-ib-42h"/>
                 <outlet property="backPlayerControlsView" destination="b1H-qK-LSs" id="Bay-TI-Dg9"/>
+                <outlet property="bookCategory" destination="pKi-FK-TEa" id="tmt-g9-t4f"/>
+                <outlet property="collectionView" destination="hmV-ra-1hz" id="LDE-BM-EJU"/>
                 <outlet property="currentTimeLabel" destination="xST-Jd-HNU" id="fAs-RD-o0h"/>
                 <outlet property="descriptionView" destination="0vK-1j-kYO" id="kVE-oi-SOi"/>
                 <outlet property="detailsView" destination="QV0-Br-bOf" id="iOZ-sG-thV"/>
@@ -22,10 +25,13 @@
                 <outlet property="fullscreen" destination="sXu-4o-OW4" id="m3A-xg-HlK"/>
                 <outlet property="headerViewMedia" destination="KN4-m0-vSX" id="7Cm-ss-DGb"/>
                 <outlet property="minimizeButton" destination="cbJ-GH-Get" id="aP2-w8-HGy"/>
+                <outlet property="movieCategory" destination="qMN-gb-BtG" id="jd5-MJ-4p2"/>
+                <outlet property="musicCategory" destination="K1x-U7-8gf" id="hQ5-dA-dYL"/>
                 <outlet property="play" destination="tt5-IW-Rhy" id="gfw-RB-eA8"/>
                 <outlet property="playerControlsView" destination="7E7-qJ-KNO" id="20f-dH-ePo"/>
                 <outlet property="playerView" destination="GX1-CJ-qY0" id="gwh-Ch-c3K"/>
                 <outlet property="progress" destination="jeq-aK-mJg" id="FUH-c8-Rer"/>
+                <outlet property="sermonesCategory" destination="0dk-TA-nlw" id="GOp-uQ-VTY"/>
                 <outlet property="slider" destination="gMF-3a-S9d" id="OKx-AV-HWu"/>
                 <outlet property="tableViewContainer" destination="8Qe-H2-zqa" id="FAS-Gr-ki9"/>
                 <outlet property="tableViewMedia" destination="BcJ-uR-QZJ" id="5Aa-6h-k5h"/>
@@ -110,8 +116,11 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="All Media">
-                                                                <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="AllMediaAction:" destination="-1" eventType="touchUpInside" id="M07-lI-Usr"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1x-U7-8gf">
                                                             <rect key="frame" x="69.5" y="0.0" width="69.5" height="28"/>
@@ -120,6 +129,9 @@
                                                             <state key="normal" title="Music">
                                                                 <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="MusicAction:" destination="-1" eventType="touchUpInside" id="4bS-KH-xo8"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-TA-nlw">
                                                             <rect key="frame" x="139" y="0.0" width="69" height="28"/>
@@ -128,6 +140,9 @@
                                                             <state key="normal" title="Sermons">
                                                                 <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="SermonesAction:" destination="-1" eventType="touchUpInside" id="sCB-WI-ap1"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-gb-BtG">
                                                             <rect key="frame" x="208" y="0.0" width="69.5" height="28"/>
@@ -136,6 +151,9 @@
                                                             <state key="normal" title="Movies">
                                                                 <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="MovieAction:" destination="-1" eventType="touchUpInside" id="wvh-fC-7no"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKi-FK-TEa">
                                                             <rect key="frame" x="277.5" y="0.0" width="69.5" height="28"/>
@@ -144,6 +162,9 @@
                                                             <state key="normal" title="Books">
                                                                 <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="BookAction:" destination="-1" eventType="touchUpInside" id="ww4-K4-daw"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -262,13 +283,27 @@
                                             <rect key="frame" x="0.0" y="82" width="375" height="191"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-ra-1hz">
+                                            <rect key="frame" x="0.0" y="82" width="375" height="191"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pqr-WJ-7Qj">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="BcJ-uR-QZJ" firstAttribute="leading" secondItem="AjD-bp-i5U" secondAttribute="leading" id="5C4-5c-ufQ"/>
                                         <constraint firstAttribute="trailing" secondItem="KN4-m0-vSX" secondAttribute="trailing" id="AgK-xM-qfu"/>
+                                        <constraint firstAttribute="bottom" secondItem="hmV-ra-1hz" secondAttribute="bottom" id="QDK-Fc-2vG"/>
                                         <constraint firstItem="BcJ-uR-QZJ" firstAttribute="top" secondItem="KN4-m0-vSX" secondAttribute="bottom" id="X3H-d6-UXq"/>
                                         <constraint firstAttribute="trailing" secondItem="BcJ-uR-QZJ" secondAttribute="trailing" id="YmS-bU-T98"/>
+                                        <constraint firstItem="hmV-ra-1hz" firstAttribute="top" secondItem="KN4-m0-vSX" secondAttribute="bottom" id="Zm2-oz-gMF"/>
+                                        <constraint firstAttribute="trailing" secondItem="hmV-ra-1hz" secondAttribute="trailing" id="bBw-1O-H4c"/>
+                                        <constraint firstItem="hmV-ra-1hz" firstAttribute="leading" secondItem="AjD-bp-i5U" secondAttribute="leading" id="j6q-ar-mUJ"/>
                                         <constraint firstItem="KN4-m0-vSX" firstAttribute="leading" secondItem="AjD-bp-i5U" secondAttribute="leading" id="o7a-Fj-2Wj"/>
                                         <constraint firstAttribute="bottom" secondItem="BcJ-uR-QZJ" secondAttribute="bottom" id="oNN-kr-T3B"/>
                                         <constraint firstItem="KN4-m0-vSX" firstAttribute="height" secondItem="AjD-bp-i5U" secondAttribute="height" multiplier="0.3" id="pja-JD-CiJ"/>
