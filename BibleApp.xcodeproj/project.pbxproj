@@ -94,6 +94,10 @@
 		FC3EFCB61EC4CAAE00C46837 /* ScriptureSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCB51EC4CAAE00C46837 /* ScriptureSelectionViewController.swift */; };
 		FC3EFCB91EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EFCB81EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift */; };
 		FC3EFCBB1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3EFCBA1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib */; };
+		FC6470591ED70835001BB623 /* ProfileMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6470581ED70835001BB623 /* ProfileMediaTableViewCell.xib */; };
+		FC64705B1ED70B64001BB623 /* ProfileMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64705A1ED70B64001BB623 /* ProfileMediaTableViewCell.swift */; };
+		FC64705D1ED70B7A001BB623 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64705C1ED70B7A001BB623 /* ProfileCollectionViewCell.swift */; };
+		FC64705F1ED70B98001BB623 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC64705E1ED70B98001BB623 /* ProfileCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +217,10 @@
 		FC3EFCB51EC4CAAE00C46837 /* ScriptureSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureSelectionViewController.swift; sourceTree = "<group>"; };
 		FC3EFCB81EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		FC3EFCBA1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptureSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		FC6470581ED70835001BB623 /* ProfileMediaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileMediaTableViewCell.xib; sourceTree = "<group>"; };
+		FC64705A1ED70B64001BB623 /* ProfileMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMediaTableViewCell.swift; sourceTree = "<group>"; };
+		FC64705C1ED70B7A001BB623 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		FC64705E1ED70B98001BB623 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -577,6 +585,7 @@
 		7825EAF31EB3329700C1D180 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FC6470561ED705FE001BB623 /* Profile */,
 				3ADA61ED1ECB4119006AB3F2 /* Models */,
 				044EEBC31EC602440092CFD3 /* Views */,
 				7825EAF41EB333C300C1D180 /* Controllers */,
@@ -594,7 +603,6 @@
 				044EEBB01EC5F9800092CFD3 /* UploadSermonesVC.swift */,
 				7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */,
 				044EEBC61EC6034E0092CFD3 /* UploadMovieTVC.swift */,
-				3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -706,6 +714,26 @@
 				FC3EFCBA1EC4CF0100C46837 /* ScriptureSelectionTableViewCell.xib */,
 			);
 			name = ScriptureSelectionCell;
+			sourceTree = "<group>";
+		};
+		FC6470561ED705FE001BB623 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FC6470571ED70612001BB623 /* Views */,
+				3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		FC6470571ED70612001BB623 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC64705A1ED70B64001BB623 /* ProfileMediaTableViewCell.swift */,
+				FC6470581ED70835001BB623 /* ProfileMediaTableViewCell.xib */,
+				FC64705C1ED70B7A001BB623 /* ProfileCollectionViewCell.swift */,
+				FC64705E1ED70B98001BB623 /* ProfileCollectionViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -827,6 +855,7 @@
 			files = (
 				04F8E9D61EB092200034360D /* YTFViewController.xib in Resources */,
 				044EEBB91EC5F9B30092CFD3 /* BottomUploadMusicCell.xib in Resources */,
+				FC6470591ED70835001BB623 /* ProfileMediaTableViewCell.xib in Resources */,
 				0410187D1EAE3BE900745DED /* MediaCollectionViewCell.xib in Resources */,
 				2B4423DE1EA9E6D5006AB9CF /* ScriptureTableViewCell.xib in Resources */,
 				041018791EAE336100745DED /* AllMediaTVCell.xib in Resources */,
@@ -848,6 +877,7 @@
 				FC3EFC9D1EC48CB500C46837 /* AuthorNameTableViewCell.xib in Resources */,
 				044EEBBB1EC5F9B30092CFD3 /* TopCellUploadMusicCell.xib in Resources */,
 				FC3EFCAF1EC4A14200C46837 /* BookDescriptionTableViewCell.xib in Resources */,
+				FC64705F1ED70B98001BB623 /* ProfileCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,6 +1081,7 @@
 				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
 				3ADA61EC1ECB039B006AB3F2 /* ProfileViewController.swift in Sources */,
 				FC3EFCB61EC4CAAE00C46837 /* ScriptureSelectionViewController.swift in Sources */,
+				FC64705B1ED70B64001BB623 /* ProfileMediaTableViewCell.swift in Sources */,
 				044EEBB81EC5F9B30092CFD3 /* BottomUploadMusicCell.swift in Sources */,
 				7825EAFB1EB352BA00C1D180 /* HomeViewController.swift in Sources */,
 				041018711EADE30000745DED /* AlamofireObjectMapper.swift in Sources */,
@@ -1061,6 +1092,7 @@
 				0476ED1B1ED82C46006AE7E2 /* Verse_Media.swift in Sources */,
 				04F8E9CF1EB0921A0034360D /* CustomProgressSlider.swift in Sources */,
 				FC3EFCA81EC49CF000C46837 /* TagScriptureTableViewCell.swift in Sources */,
+				FC64705D1ED70B7A001BB623 /* ProfileCollectionViewCell.swift in Sources */,
 				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
 				044EEBC71EC6034E0092CFD3 /* UploadMovieTVC.swift in Sources */,
 				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,

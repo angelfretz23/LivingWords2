@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCollectionViewCellReuseID" id="FdM-tD-hDk" customClass="ProfileCollectionViewCell" customModule="LivingWords" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="255" height="191"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="255" height="191"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Casting Crowns" translatesAutoresizingMaskIntoConstraints="NO" id="nuU-il-yvH">
+                        <rect key="frame" x="0.0" y="0.0" width="255" height="153"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-Zt-h1u">
+                        <rect key="frame" x="0.0" y="139" width="31" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17s-bq-oVD">
+                        <rect key="frame" x="0.0" y="160" width="31" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="i8y-Zt-h1u" firstAttribute="leading" secondItem="nuU-il-yvH" secondAttribute="leading" id="0mw-5q-Idl"/>
+                <constraint firstItem="17s-bq-oVD" firstAttribute="leading" secondItem="i8y-Zt-h1u" secondAttribute="leading" id="26c-Yg-w0h"/>
+                <constraint firstItem="i8y-Zt-h1u" firstAttribute="top" secondItem="nuU-il-yvH" secondAttribute="bottom" id="F7W-u4-WfU"/>
+                <constraint firstItem="nuU-il-yvH" firstAttribute="leading" secondItem="FdM-tD-hDk" secondAttribute="leading" id="Mkd-YM-11Z"/>
+                <constraint firstItem="nuU-il-yvH" firstAttribute="height" secondItem="FdM-tD-hDk" secondAttribute="height" multiplier="0.8" id="PdJ-fH-ybn"/>
+                <constraint firstItem="17s-bq-oVD" firstAttribute="top" secondItem="i8y-Zt-h1u" secondAttribute="bottom" id="QgX-ty-eyn"/>
+                <constraint firstAttribute="trailing" secondItem="nuU-il-yvH" secondAttribute="trailing" id="bPi-KI-qF3"/>
+                <constraint firstItem="nuU-il-yvH" firstAttribute="top" secondItem="FdM-tD-hDk" secondAttribute="top" id="gz9-7Q-DGj"/>
+                <constraint firstAttribute="bottom" secondItem="17s-bq-oVD" secondAttribute="bottom" id="jaF-aF-8Gm"/>
+            </constraints>
+            <size key="customSize" width="255" height="191"/>
+            <connections>
+                <outlet property="itemDescriptionLabel" destination="17s-bq-oVD" id="pDL-sy-OGA"/>
+                <outlet property="itemNameLabel" destination="i8y-Zt-h1u" id="6C6-dL-Pls"/>
+            </connections>
+            <point key="canvasLocation" x="-123.5" y="41.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Casting Crowns" width="187" height="54"/>
+    </resources>
+</document>

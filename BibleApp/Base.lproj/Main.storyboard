@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -178,8 +178,11 @@
                                 <rect key="frame" x="0.0" y="178" width="375" height="31"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbl-Tc-S53">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="2"/>
+                                        <rect key="frame" x="0.0" y="22" width="375" height="1"/>
                                         <color key="backgroundColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="GwH-Cp-BaX"/>
+                                        </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-0B-0ea">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
@@ -191,131 +194,86 @@
                                                 <state key="normal" title="History">
                                                     <color key="titleColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sortingButtonPressed:" destination="rID-MD-Gkc" eventType="touchUpInside" id="9Mn-pa-o7S"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJE-an-zDo">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJE-an-zDo">
                                                 <rect key="frame" x="75" y="0.0" width="75" height="28"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="My Media">
                                                     <color key="titleColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sortingButtonPressed:" destination="rID-MD-Gkc" eventType="touchUpInside" id="dsX-TP-DKs"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3G-aL-Mmm">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3G-aL-Mmm">
                                                 <rect key="frame" x="150" y="0.0" width="75" height="28"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="Favorites">
                                                     <color key="titleColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sortingButtonPressed:" destination="rID-MD-Gkc" eventType="touchUpInside" id="amr-Ee-wDA"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-JM-TpA">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-JM-TpA">
                                                 <rect key="frame" x="225" y="0.0" width="75" height="28"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="Highlights">
                                                     <color key="titleColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sortingButtonPressed:" destination="rID-MD-Gkc" eventType="touchUpInside" id="ajN-P8-zDQ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAy-jO-7Sw">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAy-jO-7Sw">
                                                 <rect key="frame" x="300" y="0.0" width="75" height="28"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="Notes">
                                                     <color key="titleColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sortingButtonPressed:" destination="rID-MD-Gkc" eventType="touchUpInside" id="dRZ-NF-dzp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dbl-Tc-S53" secondAttribute="bottom" constant="8" id="0H6-Fx-9Nr"/>
                                     <constraint firstItem="dbl-Tc-S53" firstAttribute="leading" secondItem="fRq-0B-0ea" secondAttribute="leading" id="2LD-Dm-MLC"/>
                                     <constraint firstAttribute="trailing" secondItem="fRq-0B-0ea" secondAttribute="trailing" id="VIJ-p6-qxw"/>
-                                    <constraint firstAttribute="bottom" secondItem="dbl-Tc-S53" secondAttribute="bottom" constant="7" id="cCM-fQ-rWM"/>
                                     <constraint firstAttribute="bottom" secondItem="fRq-0B-0ea" secondAttribute="bottom" constant="3" id="hKD-m2-TIT"/>
                                     <constraint firstItem="fRq-0B-0ea" firstAttribute="width" secondItem="gYs-RH-4tT" secondAttribute="width" id="jSe-N5-h3g"/>
                                     <constraint firstItem="fRq-0B-0ea" firstAttribute="leading" secondItem="gYs-RH-4tT" secondAttribute="leading" id="mqh-iM-DjP"/>
                                     <constraint firstItem="dbl-Tc-S53" firstAttribute="trailing" secondItem="fRq-0B-0ea" secondAttribute="trailing" id="vG5-NN-lpA"/>
                                     <constraint firstItem="fRq-0B-0ea" firstAttribute="top" secondItem="gYs-RH-4tT" secondAttribute="top" id="wDH-XV-Ic9"/>
-                                    <constraint firstItem="dbl-Tc-S53" firstAttribute="top" secondItem="gYs-RH-4tT" secondAttribute="top" constant="22" id="wQB-wZ-L6v"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b88-9a-w8c">
                                 <rect key="frame" x="0.0" y="202" width="375" height="416"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="deviceRGB"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvG-l3-5pU">
-                                <rect key="frame" x="196" y="538" width="160" height="32"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Upload Music">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="s8Y-Dv-PKo" kind="presentation" modalTransitionStyle="crossDissolve" id="GuO-Jf-r1E"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3j8-em-nd6">
-                                <rect key="frame" x="196" y="579" width="160" height="34"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Upload Book">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gLt-76-qO9" kind="show" id="GOZ-Kj-VWi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF7-j2-x5b">
-                                <rect key="frame" x="16" y="579" width="160" height="34"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="MaP-rn-blj"/>
-                                </constraints>
-                                <state key="normal" title="Upload Movies">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1j5-Vb-6iP" kind="show" id="yGx-hP-8Gv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpm-YI-8yL">
-                                <rect key="frame" x="16" y="538" width="160" height="32"/>
-                                <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Upload Sermones">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Jwn-QR-s5F" kind="show" id="vWg-Kk-ERe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="b88-9a-w8c" firstAttribute="leading" secondItem="wbH-Ap-eqC" secondAttribute="leadingMargin" constant="-16" id="0HK-RL-oMj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b88-9a-w8c" secondAttribute="trailing" constant="-16" id="1dO-er-Vcq"/>
+                            <constraint firstItem="b88-9a-w8c" firstAttribute="leading" secondItem="wbH-Ap-eqC" secondAttribute="leading" id="0HK-RL-oMj"/>
+                            <constraint firstAttribute="trailing" secondItem="b88-9a-w8c" secondAttribute="trailing" id="1dO-er-Vcq"/>
                             <constraint firstItem="m3w-W6-G83" firstAttribute="top" secondItem="N4X-th-me6" secondAttribute="bottom" constant="8" id="2Jn-Me-j3D"/>
-                            <constraint firstItem="lFL-ZC-ic8" firstAttribute="top" secondItem="BF7-j2-x5b" secondAttribute="bottom" constant="5" id="6jz-wT-LdJ"/>
                             <constraint firstItem="gYs-RH-4tT" firstAttribute="width" secondItem="wbH-Ap-eqC" secondAttribute="width" id="76f-J8-0ej"/>
                             <constraint firstItem="m3w-W6-G83" firstAttribute="leading" secondItem="gYs-RH-4tT" secondAttribute="leading" id="9KN-xr-XuN"/>
-                            <constraint firstItem="bpm-YI-8yL" firstAttribute="width" secondItem="qvG-l3-5pU" secondAttribute="width" id="Gnd-ga-umD"/>
-                            <constraint firstItem="3j8-em-nd6" firstAttribute="leading" secondItem="BF7-j2-x5b" secondAttribute="trailing" constant="20" id="UvR-1n-Lhs"/>
                             <constraint firstItem="lFL-ZC-ic8" firstAttribute="top" secondItem="b88-9a-w8c" secondAttribute="bottom" id="VhB-Ul-95q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qvG-l3-5pU" secondAttribute="trailing" constant="3" id="Wug-P6-a4H"/>
-                            <constraint firstItem="BF7-j2-x5b" firstAttribute="width" secondItem="3j8-em-nd6" secondAttribute="width" id="YbN-gG-bcV"/>
                             <constraint firstItem="gYs-RH-4tT" firstAttribute="top" secondItem="m3w-W6-G83" secondAttribute="bottom" id="ZTl-cZ-E3a"/>
                             <constraint firstItem="m3w-W6-G83" firstAttribute="leading" secondItem="wbH-Ap-eqC" secondAttribute="leadingMargin" constant="-16" id="Zsf-ug-arQ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="BF7-j2-x5b" secondAttribute="leading" id="aoS-gd-THC"/>
-                            <constraint firstItem="3j8-em-nd6" firstAttribute="top" secondItem="qvG-l3-5pU" secondAttribute="bottom" constant="9" id="bad-d1-HOe"/>
                             <constraint firstItem="b88-9a-w8c" firstAttribute="top" secondItem="gYs-RH-4tT" secondAttribute="bottom" constant="-7" id="fRj-rN-rym"/>
-                            <constraint firstItem="BF7-j2-x5b" firstAttribute="top" secondItem="bpm-YI-8yL" secondAttribute="bottom" constant="9" id="gVp-pE-Zsm"/>
-                            <constraint firstItem="lFL-ZC-ic8" firstAttribute="top" secondItem="3j8-em-nd6" secondAttribute="bottom" constant="5" id="gln-gz-cpN"/>
-                            <constraint firstItem="qvG-l3-5pU" firstAttribute="leading" secondItem="bpm-YI-8yL" secondAttribute="trailing" constant="20" id="mmt-ZT-DtQ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="bpm-YI-8yL" secondAttribute="leading" id="okK-Pg-9d4"/>
-                            <constraint firstItem="bpm-YI-8yL" firstAttribute="height" secondItem="qvG-l3-5pU" secondAttribute="height" id="trC-OJ-Opa"/>
                             <constraint firstItem="m3w-W6-G83" firstAttribute="trailing" secondItem="gYs-RH-4tT" secondAttribute="trailing" id="uQJ-Ta-evP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3j8-em-nd6" secondAttribute="trailing" constant="3" id="vlf-pD-F8f"/>
-                            <constraint firstItem="BF7-j2-x5b" firstAttribute="height" secondItem="3j8-em-nd6" secondAttribute="height" id="zW4-bw-sX3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Living Words" id="h28-MS-hXD">
@@ -328,10 +286,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descript" destination="Osa-Pw-t3q" id="nWo-FO-paq"/>
+                        <outlet property="favoritesButton" destination="s3G-aL-Mmm" id="vYr-5f-JPc"/>
+                        <outlet property="highlightsButton" destination="Wvc-JM-TpA" id="pAp-kU-Z6f"/>
+                        <outlet property="historyButton" destination="N2X-mT-dme" id="IbU-q7-Ecx"/>
+                        <outlet property="myMediaButton" destination="LJE-an-zDo" id="jBz-rf-Tas"/>
                         <outlet property="nameSurname" destination="4yk-4o-c3v" id="PxN-wE-ew3"/>
+                        <outlet property="notesButton" destination="FAy-jO-7Sw" id="Nc0-p3-N9Y"/>
                         <outlet property="profileImage" destination="HYL-wl-urr" id="nEb-2d-NEQ"/>
+                        <outlet property="profileTableView" destination="b88-9a-w8c" id="vfc-Hj-Ukt"/>
                         <outlet property="sermon" destination="Tiv-rK-bHK" id="1uZ-QJ-Kbd"/>
-                        <outlet property="tableView" destination="b88-9a-w8c" id="XeX-Ic-JyI"/>
                         <outlet property="uploadButton" destination="Nsp-RP-RtK" id="y1z-Aj-6ul"/>
                         <segue destination="Jwn-QR-s5F" kind="show" identifier="UploadSermonesID" id="AJk-kk-rqu"/>
                         <segue destination="s8Y-Dv-PKo" kind="show" identifier="UploadMusic" id="hwR-se-9eF"/>
@@ -1497,7 +1460,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1j5-Vb-6iP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LnR-nN-cKg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="LnR-nN-cKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1544,10 +1507,4 @@
         <image name="saveImage" width="21" height="21"/>
         <image name="upload" width="45" height="44"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="yGx-hP-8Gv"/>
-        <segue reference="GuO-Jf-r1E"/>
-        <segue reference="vWg-Kk-ERe"/>
-        <segue reference="zT5-df-tU1"/>
-    </inferredMetricsTieBreakers>
 </document>
