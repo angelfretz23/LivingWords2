@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    struct Constants {
+        static let ProfileMediaTableViewCell = "ProfileMediaTableViewCell"
+        static let ProfileMediaTableViewCellReuseID = "ProfileMediaTableViewCellReuseID"
+    }
+    
     // MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileTableView: UITableView!
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameSurname: UITextField!
@@ -20,19 +27,39 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var uploadButton: UIBarButtonItem!
     
+    //Sorting Buttons
+    @IBOutlet weak var historyButton: UIButton!
+    @IBOutlet weak var myMediaButton: UIButton!
+    @IBOutlet weak var favoritesButton: UIButton!
+    @IBOutlet weak var highlightsButton: UIButton!
+    @IBOutlet weak var notesButton: UIButton!
+    
+    var userInfoMedia: User?
+    
+    var buttonsArray: [UIButton?] {
+        return [self.historyButton, self.myMediaButton, self.favoritesButton, self.highlightsButton, self.notesButton]
+    }
+    
+    var mediaTypes = ["Music", "Sermons", "Video", "Books"]
+    
     // MARK: - Properties
     let imagePicker = UIImagePickerController()
-  
-    let labels = [MediaModel(title: "Music", items: [MediaModelCell(imagePath: "", title: "Home App — Welcome Home" , youtubeID: "4nbhfrQfRRE"),
-                                                     MediaModelCell(imagePath: "", title: "MacBook Pro – Bulbs – Apple", youtubeID: "ROEIKn8OsGU"),
-                                                     MediaModelCell(imagePath: "", title: "Apple Watch Series 2 — Go Time", youtubeID: "5t21_e7_-cQ")], typeOfMedia: .Movie),
-                  MediaModel(title: "Sermons", items: [MediaModelCell(imagePath: "", title: "iPhone 7 — Midnight", youtubeID: "R27KHLQ0cIU"),
-                                                       MediaModelCell(imagePath: "", title: "The all-new Apple Music.", youtubeID: "CQY3KUR3VzM"),
-                                                       MediaModelCell(imagePath: "", title: "Momentum Through Hearing God", youtubeID: "5t21_e7_")], typeOfMedia: .Movie)
-    ]
-
-    
+ 
     // MARK: - IBActions
+    
+    @IBAction func sortingButtonPressed(_ sender: Any) {
+     highLightButtons(senderTag: (sender as AnyObject).tag)
+        updateDataSourceIfNeeded()
+        
+    }
+    
+    func highLightButtons(senderTag: Int){
+        for index in 0...4 {
+            buttonsArray[index]?.setTitleColor(UIColor.init(red: 120/255, green: 120/255, blue: 120/255, alpha: 1), for: .normal)
+        }
+        buttonsArray[senderTag]?.setTitleColor(.red, for: .normal)
+    }
+    
     
     @IBAction func uploadProfileImage(_ sender: UIButton) {
         self.imagePicker.allowsEditing = false
@@ -58,6 +85,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
     }
+    var profileViewController: ProfileViewController?
     
     // MARK: - ProfileViewController`s life cycle
     
@@ -71,43 +99,132 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         // delegates
         imagePicker.delegate = self
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
+        profileTableView.dataSource = self
+        profileTableView.delegate = self
+        
+        
+        registerXibs()
+        
+        configureTableView()
+        
+         buttonsArray[0]?.setTitleColor(.red, for: .normal)
+        
+        updateDataSourceIfNeeded()
+        
+        profileViewController = self
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func registerXibs() {
+        profileTableView.register(UINib(nibName: Constants.ProfileMediaTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.ProfileMediaTableViewCellReuseID)
     }
-
+    
+    func configureTableView(){
+        profileTableView.rowHeight = UITableViewAutomaticDimension
+        profileTableView.estimatedRowHeight = 200
+    }
+    
+    func mediaTypesCount() -> Int{
+        var count: Int = 0
+        let musicCount = userInfoMedia?.musicInfoArray?.count
+        let movieCount = userInfoMedia?.movieInfoArray?.count
+        let sermonCount = userInfoMedia?.sermonInfoArray?.count
+        let bookCount = userInfoMedia?.bookInfoArray?.count
+        if musicCount != nil {
+            count += 1
+        }
+        if movieCount != nil {
+            count += 1
+        }
+        if sermonCount != nil {
+            count += 1
+        }
+        if bookCount != nil {
+            count += 1
+        }
+        print(count)
+        return count
+        
+    }
+ 
+    
+    
+    func updateDataSourceIfNeeded() {
+        SVProgressHUD.show()
+        SVProgressHUD.setBackgroundColor(UIColor.init(red: 195/255, green: 194/255, blue: 201/255, alpha: 1))
+        fetchUserMedia { success in
+            if success {
+                SVProgressHUD.dismiss()
+                self.profileTableView.reloadData()
+                
+            }
+        }
+    }
+    
+    func fetchUserMedia(completion: @escaping (_ sucess: Bool)-> Void){
+        
+        User.getUserInfoMedia(filterMedia: "history", userId: 6, completion:{ userMedia, error in
+            if let userMedia  = userMedia {
+                self.userInfoMedia = userMedia
+             
+                for musix in (self.userInfoMedia?.musicInfoArray)! {
+                    print(musix.musicInfo?.descriptionMusic)
+                }
+                
+                completion(true)
+            } else {
+                completion(false)
+            }
+        })
+    }
+    
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return labels.count
+        return mediaTypesCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllMediaTVCellIdentifier", for: indexPath) as! AllMediaTVCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ProfileMediaTableViewCellReuseID, for: indexPath) as! ProfileMediaTableViewCell
         
-        cell.title.text = labels[indexPath.row].title
-    
-       // cell.fillData(mediaData: labels[indexPath.row].items, controller: self, type: labels[indexPath.row].typeOfMedia)
+       // cell.mediaForProfileController = profileViewController
         
+        if let mediaInfo = userInfoMedia {
+        
+        if userInfoMedia?.musicInfoArray?.count != 0 && indexPath.row == 0{
+            cell.mediaTypeLabel.text = "Music"
+            cell.getData(userInfo: mediaInfo.musicInfoArray, index: 0)
+        }
+        if userInfoMedia?.movieInfoArray?.count != 0  && indexPath.row == 1{
+            cell.mediaTypeLabel.text = "Movie"
+            cell.getData(userInfo: mediaInfo.movieInfoArray, index: 1)
+
+        }
+        if userInfoMedia?.sermonInfoArray?.count != 0 && indexPath.row == 2{
+            cell.mediaTypeLabel.text = "Sermon"
+            cell.getData(userInfo: mediaInfo.sermonInfoArray, index: 2)
+
+        }
+        if userInfoMedia?.musicInfoArray?.count != 0 && indexPath.row == 3{
+            cell.mediaTypeLabel.text = "Book"
+            cell.getData(userInfo: mediaInfo.bookInfoArray, index: 3)
+
+        }
+        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let hightOther = (tableView.bounds.height) / 3
+        let hightOther = (tableView.bounds.height) / 2
         return hightOther
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
+//
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 0
+//    }
 }
 
 // MARK: - Profile Image Picker

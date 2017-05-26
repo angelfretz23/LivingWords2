@@ -55,6 +55,9 @@ extension LivingWordsAPI {
         
         case loginGoogle(parameters: Parameters)
         
+        //User
+        case getUserInfoMedia(filterMedia: String, parameters: Parameters)
+        
         private var baseURLString: String {
             return "http://bible.binariks.com/api"
         }
@@ -105,6 +108,12 @@ extension LivingWordsAPI {
             
             case .uploadBook:
                 return "/book"
+                
+                //User
+            case .getUserInfoMedia(let filterMedia, _):
+                print("/profile/" + filterMedia)
+                
+                return "/profile/" + filterMedia
 
             }
           
@@ -120,7 +129,7 @@ extension LivingWordsAPI {
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
 
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-                 .uploadMusic, .verseMedia, .uploadBook:
+                 .uploadMusic, .verseMedia, .uploadBook, .getUserInfoMedia:
 
              
 
@@ -134,8 +143,7 @@ extension LivingWordsAPI {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-                 .uploadMusic, .uploadBook, .verseMedia :
-
+                 .uploadMusic, .uploadBook, .verseMedia, .getUserInfoMedia:
 
                 return ""
             }
@@ -148,15 +156,19 @@ extension LivingWordsAPI {
               .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie, .uploadMusic, .uploadBook,.verseMedia:
 
                 return 0
+            default:
+                return 6
             }
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
-            if let token = userToken {
-                request.setValue(token, forHTTPHeaderField: "Access-token")
+           // if let token = userToken {
+                
+                request.setValue("4f2d910c5bcda14fb2b577793a50b9b547fc843b3a87aa63cc9de5e15b3889ca", forHTTPHeaderField: "Access-token")
+                //request.setValue(token, forHTTPHeaderField: "Access-token")
                 // request.setValue(String(id), forHTTPHeaderField: "user-id")
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            }
+            //}
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {
@@ -205,7 +217,12 @@ extension LivingWordsAPI {
             case .uploadBook(let parameters):
 
                 request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .getUserInfoMedia(_, let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
+            
+            
            
             return request
         }
@@ -271,7 +288,22 @@ extension LivingWordsAPI {
     }
 }
 
+
 extension LivingWordsAPI {
+    //User
+    @discardableResult
+    func getUserInfoMedia(filterMedia: String, userId: Int, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
+        
+        print(filterMedia)
+        print(userId)
+        
+        let request = Router.getUserInfoMedia(filterMedia: filterMedia, parameters: ["user_id": userId])
+        
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+            completion(response.result.value, response.result.error)
+         
+        })
+    }
     
     @discardableResult
     func getBible(completion: @escaping (_ search: [Search]?, _ error: Error?) -> Void) -> DataRequest {
