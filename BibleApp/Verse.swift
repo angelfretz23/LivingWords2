@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Verse : Mappable {
+public class Verse : Mappable {
 
     var movie: [Verse]?
     var music: [Verse]?
@@ -26,7 +26,7 @@ class Verse : Mappable {
     var movie_link: String?
     var media_link: String?
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         self.id                     <- map["id"]
         self.artist_name            <- map["artist_name"]
         self.writer_name            <- map["writer_name"]
@@ -42,7 +42,7 @@ class Verse : Mappable {
         self.media_link             <- map["media_link"]
     }
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
         
     }
     

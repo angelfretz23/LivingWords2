@@ -90,7 +90,9 @@ class YTFViewController: UIViewController {
     var youtubeId: String!
     
     var mediaType = Media.allMedia
-    lazy var mediaData = [Verse]()
+    var mediaData: Verse?
+    
+    let media = ["Movie", "Sermone", "Music", "Book"]
     
     enum UIPanGestureRecognizerDirection {
         case Undefined
@@ -195,10 +197,12 @@ class YTFViewController: UIViewController {
     }
     func initCollectionView() {
         collectionView.isHidden = true
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        
         collectionView.register(UINib(nibName: "MediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MediaCell")
         collectionView.register(UINib(nibName: "BookTypeCollectionVCell", bundle: nil), forCellWithReuseIdentifier: "BookTypeCollectionVCellID")
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     func configureAVPlayerVimeo(with url: String) {
@@ -403,13 +407,44 @@ extension YTFViewController: UITableViewDelegate {
 extension YTFViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        switch mediaType {
+        case .books:
+            return mediaData!.book!.count
+            
+        case .movies:
+            return mediaData!.movie!.count
+            
+        case .music:
+            return mediaData!.music!.count
+            
+        case .sermons:
+             return mediaData!.sermon!.count
+            
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         
-        return cell
+        switch mediaType {
+        case .books:
+            return UICollectionViewCell.bookCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.book)
+            
+        case .movies:
+            return UICollectionViewCell.movieCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.movie)
+        
+        case .music:
+            return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.music)
+            
+        case .sermons:
+            return UICollectionViewCell.sermonesCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.sermon)
+            
+        default:
+            print("")
+        }
+        
+        return UICollectionViewCell()
     }
     
     // MARK:- cells depends on type media
@@ -426,14 +461,27 @@ extension YTFViewController: UICollectionViewDelegate {
 extension YTFViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        
+        let heightView = collectionView.bounds.height
+        let widthView = collectionView.bounds.width
+        let widthCell = (widthView / 2) - (0.03 * widthView)
+        let heightCell = widthCell * 0.7
+        
+        let heightBook = heightView
+        let widthBook = heightView * 0.7
+        
+        if mediaType == .books {
+            return CGSize(width: widthBook, height: heightBook)
+        }
+        
+        return CGSize(width: widthCell, height: heightCell)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 5
     }
 }

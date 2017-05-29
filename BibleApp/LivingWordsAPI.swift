@@ -162,13 +162,13 @@ extension LivingWordsAPI {
         }
         
         private func addHeadersForRequest( request: inout URLRequest) {
-           // if let token = userToken {
-                
-                request.setValue("4f2d910c5bcda14fb2b577793a50b9b547fc843b3a87aa63cc9de5e15b3889ca", forHTTPHeaderField: "Access-token")
+            if let token = userToken {
+        
+                request.setValue(token, forHTTPHeaderField: "Access-token")
                 //request.setValue(token, forHTTPHeaderField: "Access-token")
                 // request.setValue(String(id), forHTTPHeaderField: "user-id")
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            //}
+             //   request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            }
         }
         
         private func addParametersForRequest(request: URLRequest) throws -> URLRequest {

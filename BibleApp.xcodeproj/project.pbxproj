@@ -35,6 +35,7 @@
 		044EEBC11EC5FA720092CFD3 /* MusicUploadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */; };
 		044EEBC21EC5FA720092CFD3 /* MusicUploadTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */; };
 		044EEBC71EC6034E0092CFD3 /* UploadMovieTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EEBC61EC6034E0092CFD3 /* UploadMovieTVC.swift */; };
+		045B25671EDC09060019D2D6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B25661EDC09060019D2D6 /* CollectionViewCell.swift */; };
 		0476ED101ED81CF4006AE7E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476ED0F1ED81CF4006AE7E2 /* ViewController.swift */; };
 		0476ED131ED81DE7006AE7E2 /* ContentProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476ED121ED81DE7006AE7E2 /* ContentProviderType.swift */; };
 		0476ED151ED81DFC006AE7E2 /* ScripureMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476ED141ED81DFC006AE7E2 /* ScripureMediaType.swift */; };
@@ -148,6 +149,7 @@
 		044EEBBF1EC5FA720092CFD3 /* MusicUploadTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicUploadTVC.swift; sourceTree = "<group>"; };
 		044EEBC01EC5FA720092CFD3 /* MusicUploadTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicUploadTVC.xib; sourceTree = "<group>"; };
 		044EEBC61EC6034E0092CFD3 /* UploadMovieTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMovieTVC.swift; sourceTree = "<group>"; };
+		045B25661EDC09060019D2D6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		0476ED0F1ED81CF4006AE7E2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0476ED121ED81DE7006AE7E2 /* ContentProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProviderType.swift; sourceTree = "<group>"; };
 		0476ED141ED81DFC006AE7E2 /* ScripureMediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScripureMediaType.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				041BAEC21ECC52A20010A34C /* Constants.swift */,
 				0476ED0F1ED81CF4006AE7E2 /* ViewController.swift */,
 				0476ED1C1ED84455006AE7E2 /* CollectionView.swift */,
+				045B25661EDC09060019D2D6 /* CollectionViewCell.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1054,6 +1057,7 @@
 				044EEBBE1EC5FA280092CFD3 /* UploadMusicTVC.swift in Sources */,
 				044EEBBA1EC5F9B30092CFD3 /* TopCellUploadMusicCell.swift in Sources */,
 				044EEBC11EC5FA720092CFD3 /* MusicUploadTVC.swift in Sources */,
+				045B25671EDC09060019D2D6 /* CollectionViewCell.swift in Sources */,
 				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
 				04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */,
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,

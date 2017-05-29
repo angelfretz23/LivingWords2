@@ -88,10 +88,11 @@ public struct YTFPlayer {
         
     }
     
-    public static func initWithAVPlayer(tableViewDataSource: UITableViewDataSource, type: MediaType, media_url: String) {
+    public static func initWithAVPlayer(tableViewDataSource: UITableViewDataSource, type: MediaType, media_url: String, verse: Verse) {
         if dragViewController == nil {
             dragViewController = YTFViewController(nibName: "YTFViewController", bundle: nil)
             dragViewController?.typeMedia = type
+            dragViewController?.mediaData = verse
             
             if type == .vimeo {
                 dragViewController?.configureAVPlayerVimeo(with: "https://vimeo.com/175813713")

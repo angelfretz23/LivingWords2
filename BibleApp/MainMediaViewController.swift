@@ -135,6 +135,7 @@ extension TableViewDataSource: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllMediaTVCellIdentifier", for: indexPath) as! AllMediaTVCell
         
         cell.title.text = media[indexPath.row]
+        cell.verse = verses
         
         switch media[indexPath.row] {
         case "Movie":
@@ -310,7 +311,7 @@ extension CollectionDelegate_and_Flov: UICollectionViewDelegate, UICollectionVie
 
             let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
                 
-            YTFPlayer.initWithAVPlayer(tableViewDataSource: self as UITableViewDataSource, type: typeOfMedia, media_url: media_url)
+            YTFPlayer.initWithAVPlayer(tableViewDataSource: self as UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verses!)
                 
             YTFPlayer.showYTFView(viewController: self)
                 

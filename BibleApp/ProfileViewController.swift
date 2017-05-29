@@ -107,7 +107,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         configureTableView()
         
-         buttonsArray[0]?.setTitleColor(.red, for: .normal)
+        buttonsArray[0]?.setTitleColor(.red, for: .normal)
         
         updateDataSourceIfNeeded()
         
