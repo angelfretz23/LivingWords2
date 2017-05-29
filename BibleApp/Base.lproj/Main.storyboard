@@ -24,13 +24,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest" translatesAutoresizingMaskIntoConstraints="NO" id="nea-kj-PIk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest-690075_3x" translatesAutoresizingMaskIntoConstraints="NO" id="nea-kj-PIk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nea-kj-PIk" secondAttribute="bottom" id="3TV-pD-3v9"/>
+                            <constraint firstAttribute="trailing" secondItem="nea-kj-PIk" secondAttribute="trailing" id="QBn-aq-udT"/>
                             <constraint firstItem="nea-kj-PIk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="bh4-ZL-6Li"/>
+                            <constraint firstItem="nea-kj-PIk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hvx-pi-8eZ"/>
+                            <constraint firstItem="nea-kj-PIk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rve-69-GUM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nea-kj-PIk" secondAttribute="bottom" id="uWa-00-PRh"/>
                             <constraint firstAttribute="trailing" secondItem="nea-kj-PIk" secondAttribute="trailing" id="uYk-s5-G88"/>
                             <constraint firstItem="nea-kj-PIk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wbb-hQ-a7E"/>
@@ -1008,7 +1012,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s8Y-Dv-PKo" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="aFp-mw-tAr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aFp-mw-tAr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1460,7 +1464,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1j5-Vb-6iP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="LnR-nN-cKg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LnR-nN-cKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1502,7 +1506,7 @@
         <image name="ProfileTabBarIcon" width="35" height="39"/>
         <image name="SubscriptsTabBarIcon" width="35" height="35"/>
         <image name="YouTube-logo-full_color" width="773" height="481"/>
-        <image name="forest" width="960" height="540"/>
+        <image name="forest-690075_3x" width="1125" height="2001"/>
         <image name="iTunes_logo_black" width="2550" height="750"/>
         <image name="saveImage" width="21" height="21"/>
         <image name="upload" width="45" height="44"/>

@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var videoInfoImageView: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
  
     @IBOutlet weak var itemDescriptionLabel: UILabel!

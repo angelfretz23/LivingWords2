@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="255" height="191"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Casting Crowns" translatesAutoresizingMaskIntoConstraints="NO" id="nuU-il-yvH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Casting Crowns" translatesAutoresizingMaskIntoConstraints="NO" id="nuU-il-yvH">
                         <rect key="frame" x="0.0" y="0.0" width="255" height="153"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-Zt-h1u">
@@ -51,6 +51,7 @@
             <connections>
                 <outlet property="itemDescriptionLabel" destination="17s-bq-oVD" id="pDL-sy-OGA"/>
                 <outlet property="itemNameLabel" destination="i8y-Zt-h1u" id="6C6-dL-Pls"/>
+                <outlet property="videoInfoImageView" destination="nuU-il-yvH" id="hlR-cl-cZc"/>
             </connections>
             <point key="canvasLocation" x="-123.5" y="41.5"/>
         </collectionViewCell>
