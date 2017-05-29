@@ -11,42 +11,44 @@ import SVProgressHUD
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
+    //MARK: Constants
     struct Constants {
         static let ProfileMediaTableViewCell = "ProfileMediaTableViewCell"
         static let ProfileMediaTableViewCellReuseID = "ProfileMediaTableViewCellReuseID"
     }
-    
+    enum MediaFilter: String{
+        case history = "history"
+        case myMedia = "my_media"
+    }
     // MARK: - IBOutlets
     @IBOutlet weak var profileTableView: UITableView!
     
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var nameSurname: UITextField!
-    @IBOutlet weak var sermon: UITextField!
-    @IBOutlet weak var descript: UITextView!
-    
-    @IBOutlet weak var uploadButton: UIBarButtonItem!
+    @IBOutlet weak var profileImage:    UIImageView!
+    @IBOutlet weak var nameSurname:     UITextField!
+    @IBOutlet weak var sermon:          UITextField!
+    @IBOutlet weak var descript:        UITextView!
+    @IBOutlet weak var uploadButton:    UIBarButtonItem!
     
     //Sorting Buttons
-    @IBOutlet weak var historyButton: UIButton!
-    @IBOutlet weak var myMediaButton: UIButton!
-    @IBOutlet weak var favoritesButton: UIButton!
-    @IBOutlet weak var highlightsButton: UIButton!
-    @IBOutlet weak var notesButton: UIButton!
+    @IBOutlet weak var historyButton:       UIButton!
+    @IBOutlet weak var myMediaButton:       UIButton!
+    @IBOutlet weak var favoritesButton:     UIButton!
+    @IBOutlet weak var highlightsButton:    UIButton!
+    @IBOutlet weak var notesButton:         UIButton!
     
-    var userInfoMedia: User?
     
+    //MARK: Variables
     var buttonsArray: [UIButton?] {
         return [self.historyButton, self.myMediaButton, self.favoritesButton, self.highlightsButton, self.notesButton]
     }
     
-    var mediaTypes = ["Music", "Sermons", "Video", "Books"]
-    
-    // MARK: - Properties
+    var userInfoMedia: User?
+    var filterMedia: String = "history"
+
     let imagePicker = UIImagePickerController()
+    var profileViewController: ProfileViewController?
  
     // MARK: - IBActions
-    
     @IBAction func sortingButtonPressed(_ sender: Any) {
      highLightButtons(senderTag: (sender as AnyObject).tag)
         updateDataSourceIfNeeded()
@@ -58,9 +60,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             buttonsArray[index]?.setTitleColor(UIColor.init(red: 120/255, green: 120/255, blue: 120/255, alpha: 1), for: .normal)
         }
         buttonsArray[senderTag]?.setTitleColor(.red, for: .normal)
+        filterMedia = setFilterString(tag: senderTag)
     }
-    
-    
+ 
     @IBAction func uploadProfileImage(_ sender: UIButton) {
         self.imagePicker.allowsEditing = false
         self.imagePicker.sourceType = .photoLibrary
@@ -69,7 +71,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func uploadAction(_ sender: UIBarButtonItem) {
-        
         if let type = userContentType {
             switch type {
             case "Pastor":
@@ -85,10 +86,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
     }
-    var profileViewController: ProfileViewController?
     
     // MARK: - ProfileViewController`s life cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -124,6 +123,24 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         profileTableView.estimatedRowHeight = 200
     }
     
+    func setFilterString(tag: Int) -> String{
+        switch tag {
+        case 0:
+            return MediaFilter.history.rawValue
+        case 1:
+            return ""
+        case 2:
+            return "favorites"
+        case 3:
+            return ""
+        case 4:
+            return ""
+        default:
+            break
+        }
+        return ""
+    }
+    
     func mediaTypesCount() -> Int{
         var count: Int = 0
         let musicCount = userInfoMedia?.musicInfoArray?.count
@@ -142,13 +159,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         if bookCount != nil {
             count += 1
         }
-        print(count)
+       
         return count
-        
     }
  
-    
-    
     func updateDataSourceIfNeeded() {
         SVProgressHUD.show()
         SVProgressHUD.setBackgroundColor(UIColor.init(red: 195/255, green: 194/255, blue: 201/255, alpha: 1))
@@ -163,14 +177,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func fetchUserMedia(completion: @escaping (_ sucess: Bool)-> Void){
         
-        User.getUserInfoMedia(filterMedia: "history", userId: 6, completion:{ userMedia, error in
+        User.getUserInfoMedia(filterMedia: filterMedia, userId: 45, completion:{ userMedia, error in
             if let userMedia  = userMedia {
                 self.userInfoMedia = userMedia
-             
-                for musix in (self.userInfoMedia?.musicInfoArray)! {
-                    print(musix.musicInfo?.descriptionMusic)
-                }
-                
                 completion(true)
             } else {
                 completion(false)
@@ -190,7 +199,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ProfileMediaTableViewCellReuseID, for: indexPath) as! ProfileMediaTableViewCell
         
-       // cell.mediaForProfileController = profileViewController
+        cell.mediaForProfileController = profileViewController
         
         if let mediaInfo = userInfoMedia {
         

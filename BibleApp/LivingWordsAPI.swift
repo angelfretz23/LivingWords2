@@ -164,7 +164,7 @@ extension LivingWordsAPI {
         private func addHeadersForRequest( request: inout URLRequest) {
            // if let token = userToken {
                 
-                request.setValue("4f2d910c5bcda14fb2b577793a50b9b547fc843b3a87aa63cc9de5e15b3889ca", forHTTPHeaderField: "Access-token")
+                request.setValue("3031940eca475f527977a00c18e253217b76181f626fde367a93fdd1326c25aa", forHTTPHeaderField: "Access-token")
                 //request.setValue(token, forHTTPHeaderField: "Access-token")
                 // request.setValue(String(id), forHTTPHeaderField: "user-id")
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")

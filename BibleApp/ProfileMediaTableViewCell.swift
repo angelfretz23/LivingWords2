@@ -20,11 +20,11 @@ class ProfileMediaTableViewCell: UITableViewCell {
     var sermonInfoArray:    [User] = []
     var bookInfoArray:      [User] = []
     
-     var mediaForProfileController: ProfileViewController?
+    var mediaForProfileController: ProfileViewController?
     
     var currentController: UIViewController? {
         get {
-        if let MFPC =  self.mediaForProfileController {
+            if let MFPC =  self.mediaForProfileController {
                 return MFPC
             } else {
                 return UIViewController()
@@ -74,30 +74,21 @@ class ProfileMediaTableViewCell: UITableViewCell {
             break
         }
         
-        
-        
     }
     
 }
 
 extension ProfileMediaTableViewCell : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-  let media_url = "https://www.youtube.com/watch?v=gxHRZz-gZnA"
+        let media_url = "https://www.youtube.com/watch?v=g5dH_KbMzjw"
+        if let currController = currentController {
             
-           //if let currController = mediaForProfileController {
-//                
-//        if let currController = currentController {
-//            
-//            let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
-//            
-//            YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
-//            
-//            YTFPlayer.showYTFView(viewController: currController)
-//           // }
-//        
-//        }
-        
-        
+            let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
+            
+            YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
+            
+            YTFPlayer.showYTFView(viewController: currController)
+        }
     }
 }
 
@@ -106,6 +97,8 @@ extension ProfileMediaTableViewCell : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch indexNumber{
         case 0:
+            print(musicInfoArray.count)
+            
             return musicInfoArray.count
         case 1:
             return movieInfoArray.count
@@ -125,26 +118,28 @@ extension ProfileMediaTableViewCell : UICollectionViewDataSource {
         cell.itemNameLabel.text = "skdskdmfskdmfksdmfksdmfsdkfsdfs"
         //print(musicInfoArray[indexPath.row].musicInfo?.artistName)
         
-        switch indexNumber{
-        case 0:
-            cell.itemNameLabel.text = musicInfoArray[indexPath.row].musicInfo?.descriptionMusic
-            cell.itemDescriptionLabel.text = musicInfoArray[indexPath.row].musicInfo?.artistName
-            
-        case 1:
-            cell.itemNameLabel.text = movieInfoArray[indexPath.row].movieInfo?.movieName
-            cell.itemDescriptionLabel.text =  movieInfoArray[indexPath.row].movieInfo?.director
-            
-        case 2:
-            cell.itemNameLabel.text = sermonInfoArray[indexPath.row].sermonInfo?.sermonTitle
-            cell.itemDescriptionLabel.text = sermonInfoArray[indexPath.row].sermonInfo?.pastorName
-            
-        case 3:
-            cell.itemNameLabel.text = bookInfoArray[indexPath.row].bookInfo?.bookName
-            cell.itemDescriptionLabel.text = bookInfoArray[indexPath.row].bookInfo?.authorName
-            
-        default:
-            break
-        }
+                switch indexNumber{
+                case 0:
+                    cell.itemNameLabel.text = musicInfoArray[indexPath.row].musicInfo?.descriptionMusic
+                    cell.itemDescriptionLabel.text = musicInfoArray[indexPath.row].musicInfo?.artistName
+                    UIViewController.fetchYouTubeVideoInfo(with: cell.itemDescriptionLabel, imageYouTube: cell.videoInfoImageView, youTubeId: "Lf6El9jHdGg")
+        
+                case 1:
+                    cell.itemNameLabel.text = movieInfoArray[indexPath.row].movieInfo?.movieName
+                    cell.itemDescriptionLabel.text =  movieInfoArray[indexPath.row].movieInfo?.director
+        
+                case 2:
+                    cell.itemNameLabel.text = sermonInfoArray[indexPath.row].sermonInfo?.sermonTitle
+                    cell.itemDescriptionLabel.text = sermonInfoArray[indexPath.row].sermonInfo?.pastorName
+        
+                case 3:
+                    cell.itemNameLabel.text = bookInfoArray[indexPath.row].bookInfo?.bookName
+                    cell.itemDescriptionLabel.text = bookInfoArray[indexPath.row].bookInfo?.authorName
+                    UIViewController.fetchYouTubeVideoInfo(with: cell.itemDescriptionLabel, imageYouTube: cell.videoInfoImageView, youTubeId: "g5dH_KbMzjw")
+        
+                default:
+                    break
+                }
         
         
         return cell
@@ -156,8 +151,11 @@ extension ProfileMediaTableViewCell : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let heightView = collectionView.bounds.height
+        let widthCell = collectionView.bounds.width
+        let widthOfCollectionItem = widthCell * 0.5 - 5
+        
         let heightCell = heightView
-        let widthCell = heightCell * 1.1
+        //let widthCell = heightCell * 1.1
         let heightBook = heightView
         let widthBook = heightView * 0.7
         
@@ -165,7 +163,7 @@ extension ProfileMediaTableViewCell : UICollectionViewDelegateFlowLayout {
         //            return CGSize(width: widthBook, height: heightBook)
         //        }
         
-        return CGSize(width: widthCell, height: heightCell)
+        return CGSize(width: widthOfCollectionItem, height: heightCell)
     }
     
 }

@@ -207,6 +207,7 @@ class YTFViewController: UIViewController {
         tableViewMedia.dataSource = tableViewDataSource
         
         tableViewMedia.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
+        tableViewMedia.register(UINib(nibName: "ProfileMediaTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMediaTableViewCellReuseID")
     }
     
     func configureAVPlayerVimeo(with url: String) {
