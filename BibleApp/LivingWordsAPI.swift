@@ -38,6 +38,8 @@ extension LivingWordsAPI {
         case verseMedia(parameters: Parameters)
         
         case uploadBook(parameters: Parameters)
+        
+        case saveToHistory(parameters: Parameters)
 
         
         // Search
@@ -96,18 +98,18 @@ extension LivingWordsAPI {
                 
             case .uploadMovie:
                 return "/movie"
-
                 
             case .uploadMusic:
                 return "/music"
 
-
-             
             case .verseMedia:
                 return "/verse/get"
             
             case .uploadBook:
                 return "/book"
+                
+            case .saveToHistory:
+                return "/history/save"
                 
                 //User
             case .getUserInfoMedia(let filterMedia, _):
@@ -129,10 +131,9 @@ extension LivingWordsAPI {
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
 
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-                 .uploadMusic, .verseMedia, .uploadBook, .getUserInfoMedia:
-
+                 .uploadMusic, .verseMedia, .uploadBook, .getUserInfoMedia,
+                 .saveToHistory:
              
-
                 return .post
                 
             }
@@ -143,7 +144,8 @@ extension LivingWordsAPI {
             case  .confirmEmail, .checkThePassCode, .confirmNewPassword,
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-                 .uploadMusic, .uploadBook, .verseMedia, .getUserInfoMedia:
+                 .uploadMusic, .uploadBook, .verseMedia, .getUserInfoMedia,
+                 .saveToHistory:
 
                 return ""
             }
@@ -153,7 +155,8 @@ extension LivingWordsAPI {
             switch self {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
-              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie, .uploadMusic, .uploadBook,.verseMedia:
+              .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
+              .uploadMusic, .uploadBook,.verseMedia, .saveToHistory:
 
                 return 0
             default:
@@ -164,8 +167,8 @@ extension LivingWordsAPI {
         private func addHeadersForRequest( request: inout URLRequest) {
             if let token = userToken {
         
+                //request.setValue("3031940eca475f527977a00c18e253217b76181f626fde367a93fdd1326c25aa", forHTTPHeaderField: "Access-token")
                 request.setValue(token, forHTTPHeaderField: "Access-token")
-                //request.setValue(token, forHTTPHeaderField: "Access-token")
                 // request.setValue(String(id), forHTTPHeaderField: "user-id")
              //   request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             }
@@ -220,6 +223,9 @@ extension LivingWordsAPI {
                 
             case .getUserInfoMedia(_, let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .saveToHistory(let parameters):
+                 request = try JSONEncoding.default.encode(request, with: parameters)
             }
             
             
@@ -259,7 +265,7 @@ extension LivingWordsAPI {
         let request = Router.signUpWithEmail(parameters: ["email"   : email,
                                                          "password" : password,
                                                          "phone"    : phone,
-                                                         "content_type": contentType])
+                                                      "content_type": contentType])
         
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
             completion(response.result.value, response.result.error)
@@ -443,6 +449,24 @@ extension LivingWordsAPI {
         return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Post>) in
             completion(response.result.value, response.result.error)
             
+        })
+    }
+    
+    @discardableResult
+    func saveToHistory(media_id: Int, madia_type: String, user_id: Int, completion: @escaping (_ success: Bool) -> Void) -> DataRequest {
+        
+        let request = Router.saveToHistory(parameters: ["media_id" : media_id,
+                                                      "madia_type" : madia_type,
+                                                         "user_id" : user_id])
+        
+        return service.request(request: request).responseJSON(completionHandler: { response in
+            if  let code = response.response?.statusCode{
+                if code == 200 {
+                    completion(code == 200)
+                    
+                }
+                
+            }
         })
     }
 }

@@ -28,7 +28,6 @@ class ScriptureTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    
     func setScriptureImage(with type: String) {
         var image: UIImage
         

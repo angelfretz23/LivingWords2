@@ -101,7 +101,6 @@ class User: NSObject, Mappable {
         self.authorName         <- map["author_name"]
         self.bookName           <- map["book_name"]
         self.summary            <- map["summary"]
-
         
     }
     

@@ -15,3 +15,10 @@ enum Media {
     case movies
     case books
 }
+
+enum MediaTypeForRequest {
+    case music
+    case movie
+    case sermon
+    case book
+}

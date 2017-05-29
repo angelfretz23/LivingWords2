@@ -12,7 +12,6 @@ class MainMediaViewController: UIViewController {
 
     
     // MARK:- IBOutlets
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
@@ -26,7 +25,7 @@ class MainMediaViewController: UIViewController {
     var controllerScripture: MainTableViewController?
     var verses: Verse?
     var mediaData: [Verse]?
-    
+        
     // MARK: - IBActions
     
     @IBAction func dismissMediaView(_ sender: UIButton) {
@@ -154,7 +153,6 @@ extension TableViewDataSource: UITableViewDataSource {
             cell.fillData(mediaData: verses!.book,
                           controller: self,
                           type: .books)
-        
         default:
             print("")
         }
@@ -186,6 +184,7 @@ extension TableDelegate : UITableViewDelegate {
 private typealias CollectionDataSource = MainMediaViewController
 extension CollectionDataSource : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if type_media == .books {
             if let verseCount = verses?.book?.count {
                 return verseCount
@@ -220,7 +219,7 @@ extension CollectionDataSource : UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
             
             if let cellData = verses?.book?[indexPath.row] {
-              //  cell.image.image = #imageLiteral(resourceName: "image-slider-2")
+                //  cell.image.image = #imageLiteral(resourceName: "image-slider-2")
                 UIViewController.configureCellImageAndTitle(media_url: cellData.media_url, cell: cell)
             }
             
@@ -230,7 +229,7 @@ extension CollectionDataSource : UICollectionViewDataSource {
         }
         
         if type_media == .movies {
-        
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
             
             if let cellData = verses?.movie?[indexPath.row] {
@@ -241,7 +240,6 @@ extension CollectionDataSource : UICollectionViewDataSource {
             mediaData = verses?.movie
             
             return cell
-            
         }
         
         if type_media == .music {
@@ -277,8 +275,7 @@ extension CollectionDataSource : UICollectionViewDataSource {
 private typealias CollectionDelegate_and_Flov = MainMediaViewController
 extension CollectionDelegate_and_Flov: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let heightView = collectionView.bounds.height
         let widthView = collectionView.bounds.width
         let widthCell = (widthView / 2) - (0.03 * widthView)
@@ -294,31 +291,28 @@ extension CollectionDelegate_and_Flov: UICollectionViewDelegate, UICollectionVie
         return CGSize(width: widthCell, height: heightCell)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let edgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
         return edgeInsets
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let media_url = collectionView.mediaUrlDependOnType(indexPath: indexPath, mediaData: mediaData, typeOfCell: type_media) {
-
+            
             let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
-                
+            
             YTFPlayer.initWithAVPlayer(tableViewDataSource: self as UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verses!)
-                
+            
             YTFPlayer.showYTFView(viewController: self)
-                
+            
             dismiss(animated: false, completion: nil)
-        
         }
-
     }
+    
 }
 

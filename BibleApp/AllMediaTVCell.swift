@@ -7,23 +7,21 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AllMediaTVCell: UITableViewCell {
     
     // MARK:- IBOutlets
-    
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    
+    var verse: Verse?
     fileprivate var mediaData: [Verse]?
     fileprivate var mediaController: MainMediaViewController?
     fileprivate var mediaForProfileController: ProfileViewController?
     fileprivate var mediaForContentProviderProfileController: ContentProviderProfileVC?
     fileprivate var typeOfCell = Media.movies
-
-    var verse: Verse?
     
     var currentController: UIViewController? {
         get {
@@ -40,20 +38,19 @@ class AllMediaTVCell: UITableViewCell {
     }
     
     // MARK:- AllMediaTVCell`s life cycle
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         collectionView.dataSource = self
         collectionView.delegate = self
-    
+        
         collectionView.register(UINib(nibName: "MediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MediaCell")
         collectionView.register(UINib(nibName: "BookTypeCollectionVCell", bundle: nil), forCellWithReuseIdentifier: "BookTypeCollectionVCellID")
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -63,8 +60,9 @@ private typealias CollectionDataSource = AllMediaTVCell
 extension CollectionDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if let count = mediaData?.count {
-             return count
+            return count
         }
         
         return 0
@@ -78,10 +76,9 @@ extension CollectionDataSource: UICollectionViewDataSource {
         case .books:
             return UICollectionViewCell.bookCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
         case .music:
-              return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
+            return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
         case .sermons:
             return UICollectionViewCell.sermonesCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
-            
         default:
             print("")
         }
@@ -93,14 +90,13 @@ extension CollectionDataSource: UICollectionViewDataSource {
 private typealias CollectionDelegate = AllMediaTVCell
 extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let heightView = collectionView.bounds.height
         let heightCell = heightView
         let widthCell = heightCell * 1.7
         let heightBook = heightView
         let widthBook = heightView * 0.7
-  
+        
         if typeOfCell == .books {
             return CGSize(width: widthBook, height: heightBook)
         }
@@ -108,14 +104,12 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
         return CGSize(width: widthCell, height: heightCell)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let edgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 0)
         return edgeInsets
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
     }
     
@@ -135,11 +129,17 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
                     media.dismiss(animated: false, completion: nil)
                 }
                 
+                Verse.saveToHistory(media_id: (mediaData?[indexPath.row].id)!, madia_type: String(describing: typeOfCell), user_id: userID!, completion: { success in
+                    if success {
+                        SVProgressHUD.showSuccess(withStatus: "Saved")
+                    }
+                })
             }
         }
     }
     
 }
+
 
 private typealias PublicMethod = AllMediaTVCell
 extension PublicMethod {
@@ -155,7 +155,6 @@ extension PublicMethod {
             self.mediaData = mediaData
             mediaForContentProviderProfileController = controller
         }
-        
         typeOfCell = type
         collectionView.reloadData()
     }
@@ -164,7 +163,7 @@ extension PublicMethod {
 
 private typealias Configuration = AllMediaTVCell
 extension Configuration {
-
+    
     fileprivate func mediaNotBookCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> MediaCollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
         if let cellData = mediaData {
@@ -175,11 +174,8 @@ extension Configuration {
             } else {
                 UIViewController.configureCellImageAndTitle(media_url: cellData[indexPath.row].media_url, cell: cell)
             }
-
         }
-        
         return cell
     }
     
-
 }

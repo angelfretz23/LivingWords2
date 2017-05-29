@@ -85,7 +85,6 @@ extension Post {
         api.uploadBook(author_name: author_name, media_link: media_link,
                        tag_scripture: tag_scripture, book_name: book_name,
                        publish_date: publish_date, symmary: summary, tags: tags, completion: completion)
-        
     }
     
 }

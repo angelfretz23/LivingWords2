@@ -25,6 +25,7 @@ public class Verse : Mappable {
     var user_id: String?
     var movie_link: String?
     var media_link: String?
+    var message: String?
     
     public func mapping(map: Map) {
         self.id                     <- map["id"]
@@ -40,6 +41,7 @@ public class Verse : Mappable {
         self.book                   <- map["book"]
         self.movie_link             <- map["movie_link"]
         self.media_link             <- map["media_link"]
+        self.message                <- map["message"]
     }
     
     required public init?(map: Map) {
@@ -54,5 +56,11 @@ extension Verse {
         let api = LivingWordsAPI()
         
         api.verseMedia(verse_id: verse_id, completion: completion)
+    }
+    
+    static func saveToHistory(media_id: Int, madia_type: String, user_id: Int, completion: @escaping (_ success: Bool) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.saveToHistory(media_id: media_id, madia_type: madia_type, user_id: user_id, completion: completion)
     }
 }
