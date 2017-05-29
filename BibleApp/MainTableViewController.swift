@@ -85,10 +85,9 @@ class MainTableViewController: UIViewController {
     //MARK: IBActions
     
     @IBAction func searchBarButtonPresseed(_ sender: Any) {
-       // expandSearch = expandSearch ? false : true
+        expandSearch = expandSearch ? false : true
         
         //updateDataSourceIfNeeded()
-        getParametersWordsFromSearchFieldForRequest(searchTextField.text ?? "")
     }
 
     func registerForNotifications(){
@@ -109,7 +108,10 @@ class MainTableViewController: UIViewController {
         mainTableView.rowHeight = UITableViewAutomaticDimension
         mainTableView.estimatedRowHeight = 45
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.mainTableView.endEditing(true)
+    }
 }
 
 //Private
@@ -336,7 +338,7 @@ extension MainTableViewController: UITextFieldDelegate {
             
             let substringRange :NSRange! = myString.range(of: substring)
             
-            if (substringRange.location  == 0)
+            if (substringRange.location == 0)
             {
                 autocomplete.append(curString)
             }
@@ -344,5 +346,12 @@ extension MainTableViewController: UITextFieldDelegate {
         
         mainTableView.reloadData()
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        getParametersWordsFromSearchFieldForRequest(searchTextField.text ?? "")
+        textField.resignFirstResponder()
+        return true
+    }
 }
+
