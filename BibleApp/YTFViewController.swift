@@ -89,6 +89,9 @@ class YTFViewController: UIViewController {
     var typeMedia = MediaType.youTube
     var youtubeId: String!
     
+    var mediaType = Media.allMedia
+    lazy var mediaData = [Verse]()
+    
     enum UIPanGestureRecognizerDirection {
         case Undefined
         case Up
@@ -104,11 +107,9 @@ class YTFViewController: UIViewController {
         initViews()
         initDetailsView()
         initMediaTableView()
-        
-        collectionView.isHidden = true
+        initCollectionView()
         
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,6 +192,13 @@ class YTFViewController: UIViewController {
         tableViewMedia.dataSource = tableViewDataSource
         
         tableViewMedia.register(UINib(nibName: "AllMediaTVCell", bundle: nil), forCellReuseIdentifier: "AllMediaTVCellIdentifier")
+    }
+    func initCollectionView() {
+        collectionView.isHidden = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "MediaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MediaCell")
+        collectionView.register(UINib(nibName: "BookTypeCollectionVCell", bundle: nil), forCellWithReuseIdentifier: "BookTypeCollectionVCellID")
     }
     
     func configureAVPlayerVimeo(with url: String) {
@@ -278,6 +286,7 @@ class YTFViewController: UIViewController {
     
     
     // MARK: - IBActions
+    
     @IBAction func minimizeButtonTouched(sender: AnyObject) {
         
         minimizeViews()
@@ -295,6 +304,7 @@ class YTFViewController: UIViewController {
         slider.value = currentTime
     }
     
+    // MARK: - Choose media type
     
     @IBAction func AllMediaAction(_ sender: UIButton) {
         highlightsMedia(type: .allMedia, allMedia: allMediaCategory, music: musicCategory,
@@ -302,8 +312,8 @@ class YTFViewController: UIViewController {
         
         collectionView.isHidden = true
         tableViewMedia.isHidden = false
-        
-        collectionView.reloadData()
+   
+        mediaType = .allMedia
     }
     
     @IBAction func MusicAction(_ sender: UIButton) {
@@ -313,6 +323,7 @@ class YTFViewController: UIViewController {
         collectionView.isHidden = false
         tableViewMedia.isHidden = true
         
+        mediaType = .music
         collectionView.reloadData()
     }
     
@@ -323,6 +334,7 @@ class YTFViewController: UIViewController {
         collectionView.isHidden = false
         tableViewMedia.isHidden = true
         
+        mediaType = .sermons
         collectionView.reloadData()
     }
     
@@ -333,6 +345,7 @@ class YTFViewController: UIViewController {
         collectionView.isHidden = false
         tableViewMedia.isHidden = true
         
+        mediaType = .movies
         collectionView.reloadData()
     }
     
@@ -343,9 +356,30 @@ class YTFViewController: UIViewController {
         collectionView.isHidden = false
         tableViewMedia.isHidden = true
         
+        mediaType = .books
         collectionView.reloadData()
     }
     
+    fileprivate func switchTo(media_type: Media) {
+        
+        switch media_type {
+        case .allMedia:
+            mediaType = .allMedia
+            
+        case .books:
+            mediaType = .books
+            
+        case .movies:
+            mediaType = .movies
+            
+        case .music:
+            mediaType = .music
+            
+        case .sermons:
+            mediaType = .sermons
+
+        }
+    }
 }
 
 extension YTFViewController: UITableViewDelegate {
@@ -364,6 +398,42 @@ extension YTFViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
-
 }
 
+extension YTFViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MediaCell", for: indexPath) as! MediaCollectionViewCell
+        
+        return cell
+    }
+    
+    // MARK:- cells depends on type media
+    
+}
+
+extension YTFViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    }
+}
+
+extension YTFViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+}
