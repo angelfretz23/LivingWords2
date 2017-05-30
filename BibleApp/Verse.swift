@@ -62,6 +62,7 @@ public class Verse : Mappable {
     var authorName: String?
     var bookName: String?
     var summary: String?
+    var bookMediaUrl: String?
     
 
     public func mapping(map: Map) {
@@ -113,10 +114,11 @@ public class Verse : Mappable {
         
         //BookMediaInfo
         self.bookInfoArray      <- map["book"]
-        self.bookInfo          <- map["book"]
+        self.bookInfo            <- map["book"]
         self.authorName         <- map["author_name"]
         self.bookName           <- map["book_name"]
         self.summary            <- map["summary"]
+        self.bookMediaUrl       <- map["media_link"]
         
 
     }

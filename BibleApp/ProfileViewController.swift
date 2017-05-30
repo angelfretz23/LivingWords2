@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     enum MediaFilter: String{
         case history = "history"
         case myMedia = "my_media"
+        case favorities = "favorities"
     }
     // MARK: - IBOutlets
     @IBOutlet weak var profileTableView: UITableView!
@@ -130,7 +131,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         case 1:
             return ""
         case 2:
-            return "favorites"
+            return MediaFilter.favorities.rawValue
         case 3:
             return ""
         case 4:
@@ -206,21 +207,21 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         
         if userInfoMedia?.musicInfoArray?.count != 0 && indexPath.row == 0{
             cell.mediaTypeLabel.text = "Music"
-            cell.getData(userInfo: mediaInfo.musicInfoArray, index: 0)
+            cell.getData(userInfo: mediaInfo.musicInfoArray, index: 0, cellType: "music")
         }
         if userInfoMedia?.movieInfoArray?.count != 0  && indexPath.row == 1{
             cell.mediaTypeLabel.text = "Movie"
-            cell.getData(userInfo: mediaInfo.movieInfoArray, index: 1)
+            cell.getData(userInfo: mediaInfo.movieInfoArray, index: 1, cellType: "movie")
 
         }
         if userInfoMedia?.sermonInfoArray?.count != 0 && indexPath.row == 2{
             cell.mediaTypeLabel.text = "Sermon"
-            cell.getData(userInfo: mediaInfo.sermonInfoArray, index: 2)
+            cell.getData(userInfo: mediaInfo.sermonInfoArray, index: 2, cellType: "sermon")
 
         }
         if userInfoMedia?.musicInfoArray?.count != 0 && indexPath.row == 3{
             cell.mediaTypeLabel.text = "Book"
-            cell.getData(userInfo: mediaInfo.bookInfoArray, index: 3)
+            cell.getData(userInfo: mediaInfo.bookInfoArray, index: 3, cellType: "book")
 
         }
         }
@@ -228,7 +229,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let hightOther = (tableView.bounds.height) / 2
+        
+        let viewHeight = tableView.bounds.height
+        let hightOther = (viewHeight ) / 2
+        let heightBook = viewHeight * 0.3
+        
+        
         return hightOther
     }
 //
