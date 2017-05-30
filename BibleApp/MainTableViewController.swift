@@ -184,24 +184,11 @@ extension TableDataSource : UITableViewDataSource {
         
         let scripture = search[indexPath.row]
         
-        var attributedScriptureText = NSMutableAttributedString()
-        
         if let typeMedia = scripture.checkedMedia {
             cell.setScriptureImage(with: typeMedia)
         }
         
-        if (indexPath.row == 0) {
-            cell.labelOne?.isHidden = false
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
-        } else {
-            cell.labelOne?.isHidden = true
-            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
-        }
-        
-        let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
-        attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
-        
-        cell.scriptureText?.attributedText = attributedScriptureText
+        configurationScriptureText(cell: cell, scripture: scripture, indexPath: indexPath)
         
         return cell
     }
@@ -223,15 +210,8 @@ extension TableDelegate: UITableViewDelegate {
                     print("🍎some error ocurred with verse media🍎 \(error!)")
                     return
                 }
-        
-                let storyboard = UIStoryboard(name: "Media", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
-                controller.controllerScripture = self
-                controller.verses = verse
-                
-                SVProgressHUD.dismiss()
-                self.present(controller, animated: true, completion: nil)
-                print("🍏verse Id is here🍏")
+            
+                self.presentMediaController(verse: verse)
             })
         }
 
@@ -278,9 +258,6 @@ extension MainTableViewController {
         Search.getBible{searchResult, error in
             if let fetchedSearch = searchResult{
                 self.search = fetchedSearch
-            
-                //print(self.search[0].matchingData!)
-                
                 completion(true)
             } else {
                 completion(false)
@@ -351,7 +328,40 @@ extension MainTableViewController: UITextFieldDelegate {
         
         getParametersWordsFromSearchFieldForRequest(searchTextField.text ?? "")
         textField.resignFirstResponder()
+        
         return true
     }
 }
 
+extension MainTableViewController {
+    
+    fileprivate func presentMediaController(verse: Verse?) {
+        
+        let storyboard = UIStoryboard(name: "Media", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainMediaViewControllerID") as! MainMediaViewController
+        controller.controllerScripture = self
+        controller.verses = verse
+        
+        SVProgressHUD.dismiss()
+        self.present(controller, animated: true, completion: nil)
+        print("🍏verse`s Id is here🍏")
+    }
+    
+    fileprivate func configurationScriptureText( cell: ScriptureTableViewCell, scripture: Search, indexPath: IndexPath) {
+        
+        var attributedScriptureText = NSMutableAttributedString()
+        
+        if (indexPath.row == 0) {
+            cell.labelOne?.isHidden = false
+            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 2)" + " ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.clear])
+        } else {
+            cell.labelOne?.isHidden = true
+            attributedScriptureText = NSMutableAttributedString(string: "\(indexPath.row + 1)" + ". ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.blue])
+        }
+        
+        let string = " " + (scripture.matchingData?.bibleBookVerse?.verse)!
+        attributedScriptureText.append(NSAttributedString(string:string , attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.black]))
+        
+        cell.scriptureText?.attributedText = attributedScriptureText
+    }
+}

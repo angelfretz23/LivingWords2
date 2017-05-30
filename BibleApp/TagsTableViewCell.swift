@@ -10,6 +10,8 @@ import UIKit
 
 class TagsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tags: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
