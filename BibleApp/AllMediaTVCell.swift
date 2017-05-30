@@ -56,6 +56,7 @@ class AllMediaTVCell: UITableViewCell {
     
 }
 
+// MARK: - Extensions
 private typealias CollectionDataSource = AllMediaTVCell
 extension CollectionDataSource: UICollectionViewDataSource {
     

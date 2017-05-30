@@ -27,9 +27,7 @@ class MainMediaViewController: UIViewController {
     var mediaData: [Verse]?
         
     // MARK: - IBActions
-    
     @IBAction func dismissMediaView(_ sender: UIButton) {
-        
         self.dismiss(animated: true, completion: nil)
     }
     

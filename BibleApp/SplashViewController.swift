@@ -10,10 +10,9 @@ import UIKit
 
 
 class SplashViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,14 +22,11 @@ class SplashViewController: UIViewController {
         userID = UserDefaults.standard.integer(forKey: userIDKey)
         
         isUserLogenIn ? performSegue(withIdentifier: "ShowAppSequeID", sender: self) :
-                        performSegue(withIdentifier: "ShowLoginStoryboardSegueID", sender: self)
-        
+            performSegue(withIdentifier: "ShowLoginStoryboardSegueID", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
 }

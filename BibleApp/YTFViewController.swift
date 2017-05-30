@@ -96,15 +96,12 @@ class YTFViewController: UIViewController {
     
     var mediaType = Media.allMedia
     var mediaData: Verse?
-
     var mediaDataArr: [Verse]?
-
 
     var isFromProfileVC: Bool  = false
     
     var mediaId: Int?
 
-    
     let media = ["Movie", "Sermone", "Music", "Book"]
     
     enum UIPanGestureRecognizerDirection {
