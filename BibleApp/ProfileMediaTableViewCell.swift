@@ -86,11 +86,13 @@ extension ProfileMediaTableViewCell : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         let media_url = "https://www.youtube.com/watch?v=g5dH_KbMzjw"
         if let currController = currentController {
-            
-            let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
 
-            
-            YTFPlayer.showYTFView(viewController: currController)
+//            let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
+//            
+//            YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
+//            
+//            YTFPlayer.showYTFView(viewController: currController)
+
         }
     }
 }
