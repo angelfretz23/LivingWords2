@@ -101,7 +101,6 @@ public struct YTFPlayer {
                 if let id = idMovie {
                     dragViewController?.youtubeId = id
                 }
-            
             }
             
             dragViewController?.tableViewDataSource = tableViewDataSource

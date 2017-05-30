@@ -69,7 +69,6 @@ class ProfileMediaTableViewCell: UITableViewCell {
         case 3:
             bookInfoArray = userInfo!
             profileMediaCollectionView.reloadData()
-            
         default:
             break
         }
@@ -85,7 +84,7 @@ extension ProfileMediaTableViewCell : UICollectionViewDelegate {
             
             let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
             
-            YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
+            //YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
             
             YTFPlayer.showYTFView(viewController: currController)
         }
