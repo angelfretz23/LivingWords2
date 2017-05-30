@@ -10,6 +10,8 @@ import UIKit
 
 class AuthorNameTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var authorName: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

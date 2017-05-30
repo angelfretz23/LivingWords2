@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         return [self.historyButton, self.myMediaButton, self.favoritesButton, self.highlightsButton, self.notesButton]
     }
     
-    var userInfoMedia: User?
+    var userInfoMedia: Verse?
     var filterMedia: String = "history"
 
     let imagePicker = UIImagePickerController()
@@ -177,7 +177,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func fetchUserMedia(completion: @escaping (_ sucess: Bool)-> Void){
         
-        User.getUserInfoMedia(filterMedia: filterMedia, userId: 45, completion:{ userMedia, error in
+        Verse.getUserInfoMedia(filterMedia: filterMedia, userId: 45, completion:{ userMedia, error in
             if let userMedia  = userMedia {
                 self.userInfoMedia = userMedia
                 completion(true)
@@ -200,6 +200,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ProfileMediaTableViewCellReuseID, for: indexPath) as! ProfileMediaTableViewCell
         
         cell.mediaForProfileController = profileViewController
+        cell.getVerse(verseInfo: userInfoMedia!)
         
         if let mediaInfo = userInfoMedia {
         

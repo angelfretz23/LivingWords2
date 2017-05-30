@@ -96,7 +96,13 @@ class YTFViewController: UIViewController {
     
     var mediaType = Media.allMedia
     var mediaData: Verse?
+
     var mediaDataArr: [Verse]?
+
+
+    var isFromProfileVC: Bool  = false
+    
+    var mediaId: Int?
 
     
     let media = ["Movie", "Sermone", "Music", "Book"]
@@ -441,16 +447,16 @@ extension YTFViewController: UICollectionViewDataSource {
         
         switch mediaType {
         case .books:
-            return UICollectionViewCell.bookCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.book)
+            return UICollectionViewCell.bookCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.book, isFromProfileVC: isFromProfileVC)
             
         case .movies:
-            return UICollectionViewCell.movieCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.movie)
+            return UICollectionViewCell.movieCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.movie, isFromProfileVC: isFromProfileVC)
         
         case .music:
-            return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.music)
+            return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.music, isFromProfileVC: isFromProfileVC)
             
         case .sermons:
-            return UICollectionViewCell.sermonesCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.sermon)
+            return UICollectionViewCell.sermonesCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData?.sermon, isFromProfileVC: isFromProfileVC)
             
         default:
             print("")
@@ -504,11 +510,14 @@ extension YTFViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension YTFViewController {
+    
     func favoritesTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        Verse.saveToHistory(media_id: 1, madia_type: String(describing: mediaType), user_id: userID!, completion: { success in
+        
+        Verse.saveToHistory(media_id: mediaId!, madia_type: String(describing: mediaType), user_id: userID!, completion: { success in
             if success {
                 SVProgressHUD.showSuccess(withStatus: "Saved")
             }
         })
     }
+    
 }

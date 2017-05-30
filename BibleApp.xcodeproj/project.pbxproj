@@ -398,7 +398,7 @@
 				FC3EFC941EC4894A00C46837 /* BookUpload */,
 				7825EAF31EB3329700C1D180 /* Main */,
 				041018721EAE31CB00745DED /* Media */,
-				2B4423DC1EA9E6C0006AB9CF /* MainTableView */,
+				2B4423DC1EA9E6C0006AB9CF /* Reading Books */,
 				2B2A941D1EA79B6C007464F0 /* Search */,
 				2B2A94161EA79AED007464F0 /* Login */,
 			);
@@ -461,7 +461,7 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
-		2B4423DC1EA9E6C0006AB9CF /* MainTableView */ = {
+		2B4423DC1EA9E6C0006AB9CF /* Reading Books */ = {
 			isa = PBXGroup;
 			children = (
 				0476ED0E1ED81CAC006AE7E2 /* Model */,
@@ -469,7 +469,7 @@
 				2B4423E71EA9E711006AB9CF /* Controllers */,
 				2B4423DF1EA9E6E1006AB9CF /* MainTableView.storyboard */,
 			);
-			name = MainTableView;
+			name = "Reading Books";
 			sourceTree = "<group>";
 		};
 		2B4423E71EA9E711006AB9CF /* Controllers */ = {

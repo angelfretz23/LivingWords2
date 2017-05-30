@@ -70,37 +70,37 @@ class User: NSObject, Mappable {
         self.newPassword    <- map["new_password"]
         self.content_type   <- map["content_type"]
         
-        //MusicMediaInfo
-        self.musicInfoArray     <- map["music"]
-        self.musicInfo          <- map["music"]
-        self.artistName         <- map["artist_name"]
-        self.writerName         <- map["writer_name"]
-        self.mediaUrl           <- map["media_url"]
-        self.songStory          <- map["song_story"]
-        self.descriptionMusic   <- map["description"]
-        
-        //MovieMediaInfo
-        self.movieInfoArray     <- map["movie"]
-        self.movieInfo          <- map["movie"]
-        self.director           <- map["director"]
-        self.movieLink          <- map["movie_link"]
-        self.movieName          <- map["movie_name"]
-        self.actors             <- map["actors"]
-
-        
-        //SermonMediaInfo
-        self.sermonInfoArray     <- map["sermon"]
-        self.sermonInfo          <- map["sermon"]
-        self.pastorName          <- map["description"]
-        self.sermonTitle         <- map["semon_title"]
-        self.sermonDescription   <- map["description"]
-
-        //BookMediaInfo
-        self.bookInfoArray      <- map["book"]
-        self.bookInfo          <- map["book"]
-        self.authorName         <- map["author_name"]
-        self.bookName           <- map["book_name"]
-        self.summary            <- map["summary"]
+//        //MusicMediaInfo
+//        self.musicInfoArray     <- map["music"]
+//        self.musicInfo          <- map["music"]
+//        self.artistName         <- map["artist_name"]
+//        self.writerName         <- map["writer_name"]
+//        self.mediaUrl           <- map["media_url"]
+//        self.songStory          <- map["song_story"]
+//        self.descriptionMusic   <- map["description"]
+//        
+//        //MovieMediaInfo
+//        self.movieInfoArray     <- map["movie"]
+//        self.movieInfo          <- map["movie"]
+//        self.director           <- map["director"]
+//        self.movieLink          <- map["movie_link"]
+//        self.movieName          <- map["movie_name"]
+//        self.actors             <- map["actors"]
+//
+//        
+//        //SermonMediaInfo
+//        self.sermonInfoArray     <- map["sermon"]
+//        self.sermonInfo          <- map["sermon"]
+//        self.pastorName          <- map["description"]
+//        self.sermonTitle         <- map["semon_title"]
+//        self.sermonDescription   <- map["description"]
+//
+//        //BookMediaInfo
+//        self.bookInfoArray      <- map["book"]
+//        self.bookInfo          <- map["book"]
+//        self.authorName         <- map["author_name"]
+//        self.bookName           <- map["book_name"]
+//        self.summary            <- map["summary"]
         
     }
     
@@ -136,11 +136,7 @@ class User: NSObject, Mappable {
 }
 
 extension User {
-    static func getUserInfoMedia(filterMedia: String, userId: Int, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
-        let api = LivingWordsAPI()
-        
-        api.getUserInfoMedia(filterMedia: filterMedia, userId: userId, completion: completion)
-    }
+
     
     static func login(withEmail email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void)  {
         let api = LivingWordsAPI()

@@ -30,17 +30,24 @@ class BookUploadViewController: UIViewController {
     }
 
     //MARK:- IBOutlets
+    
     @IBOutlet weak var bookUploadTableView: UITableView!
     
     
     //MARK:- Properties
+    
     var tagScriptureString: String = "Tag Scriptures"
-    fileprivate var bookUploadCell: UploadBookTableViewCell?
-    fileprivate var tagScriptureCell: TagScriptureTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
+    // cells to fetch information
+    fileprivate var authorNameCell: AuthorNameTableViewCell?
+    fileprivate var bookUploadCell: UploadBookTableViewCell?
+    fileprivate var tagScriptureCell: TagScriptureTableViewCell?
+    fileprivate var bookDescriptionCell: BookDescriptionTableViewCell?
+    fileprivate var tagCell: TagsTableViewCell?
     
     //MARK:- BookUpload`s life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +79,17 @@ class BookUploadViewController: UIViewController {
     
     @IBAction func shareAction(_ sender: UIBarButtonItem) {
         
-        Post.uploadBook(author_name: "Test user", media_link: "amazon link", tag_scripture: [12], book_name: "Hanry Ford", publish_date: "12", summary: "12", tags: ["#testBook"]) { (post, error) in
+        let author_name = authorNameCell?.authorName.text ?? "test user"
+        let media_link = videoUrl ?? "amazon.com"
+        let tagscripture = scriptureIDArray ?? [1]
+        let book_name = bookDescriptionCell?.bookName.text ?? "Hanry Ford"
+        let publish_date = bookDescriptionCell?.publishDate.text ?? "24/08/1991"
+        let summary = bookDescriptionCell?.summary.text ?? "Book"
+        let tags = self.makeArrayOfHashtags(incomingString: tagCell?.tags.text ?? "") ?? ["#test"]
+        
+        Post.uploadBook(author_name: author_name, media_link: media_link, tag_scripture: tagscripture,
+                        book_name: book_name, publish_date: publish_date, summary: summary, tags: tags)
+        { (post, error) in
             if error != nil {
                 print("🍎Upload Book🍎")
                 return
@@ -115,6 +132,7 @@ extension BookUploadViewController:  UITableViewDataSource {
         switch indexPath {
         case [0,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AuthorNameTableViewcellReuseID, for: indexPath) as? AuthorNameTableViewCell else { return UITableViewCell() }
+            authorNameCell = cell
             return cell
         case [0,1]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.UploadBokkTableViewCellReuseID, for: indexPath) as? UploadBookTableViewCell else { return UITableViewCell() }
@@ -127,9 +145,11 @@ extension BookUploadViewController:  UITableViewDataSource {
             return cell
         case [2,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.BookDescriptionTableViewCellReuseID, for: indexPath) as? BookDescriptionTableViewCell else { return UITableViewCell() }
+            bookDescriptionCell = cell
             return cell
         case [3,0]:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TagsTableViewCellReuseID, for: indexPath) as? TagsTableViewCell else { return UITableViewCell() }
+            tagCell = cell
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AuthorNameTableViewcellReuseID, for: indexPath) as? AuthorNameTableViewCell else { return UITableViewCell() }

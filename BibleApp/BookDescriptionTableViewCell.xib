@@ -69,6 +69,11 @@
                     <constraint firstItem="snA-ZW-cwb" firstAttribute="top" secondItem="AiO-5r-5FI" secondAttribute="bottom" constant="10" id="xyp-Fm-D8o"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bookName" destination="PZd-I9-64V" id="HAO-C4-kV7"/>
+                <outlet property="publishDate" destination="b9Y-v9-fId" id="6ty-v7-hJ2"/>
+                <outlet property="summary" destination="AiO-5r-5FI" id="pjE-ri-mos"/>
+            </connections>
             <point key="canvasLocation" x="-104.5" y="28"/>
         </tableViewCell>
     </objects>

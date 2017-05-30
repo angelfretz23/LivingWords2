@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="#LivingWords, #BrowniesRule" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJY-P8-YyE">
-                        <rect key="frame" x="75" y="12.5" width="272" height="17"/>
+                        <rect key="frame" x="75" y="13.5" width="272" height="17"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -40,6 +40,9 @@
                     <constraint firstAttribute="trailingMargin" secondItem="FJY-P8-YyE" secondAttribute="trailing" constant="20" id="pHK-eg-UlP"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="tags" destination="FJY-P8-YyE" id="5z3-Bl-K9S"/>
+            </connections>
             <point key="canvasLocation" x="-57" y="4"/>
         </tableViewCell>
     </objects>

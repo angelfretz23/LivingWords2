@@ -72,13 +72,13 @@ extension CollectionDataSource: UICollectionViewDataSource {
         
         switch typeOfCell {
         case .movies:
-            return UICollectionViewCell.movieCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
+            return UICollectionViewCell.movieCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData, isFromProfileVC: false)
         case .books:
-            return UICollectionViewCell.bookCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
+            return UICollectionViewCell.bookCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData, isFromProfileVC: false)
         case .music:
-            return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
+            return UICollectionViewCell.musicCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData, isFromProfileVC: false)
         case .sermons:
-            return UICollectionViewCell.sermonesCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData)
+            return UICollectionViewCell.sermonesCell(collectionView, cellForItemAt: indexPath, mediaData: mediaData, isFromProfileVC: false)
         default:
             print("")
         }
@@ -121,7 +121,7 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
                 
                 let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
                 
-                YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verse!)
+                YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verse!, isFromProfileVC: false)
                 
                 YTFPlayer.showYTFView(viewController: currController)
                 
@@ -134,6 +134,8 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
                         SVProgressHUD.showSuccess(withStatus: "Saved")
                     }
                 })
+                
+                YTFPlayer.getMediaId(mediaId: (mediaData?[indexPath.row].id)!)
             }
         }
     }

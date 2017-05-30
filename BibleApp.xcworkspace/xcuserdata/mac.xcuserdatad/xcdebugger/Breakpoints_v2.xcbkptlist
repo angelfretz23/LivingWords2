@@ -298,7 +298,7 @@
                   moduleName = "LivingWords"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mac/Documents/iOS/Bible/BibleApp/MainMediaViewController.swift"
-                  timestampString = "517752973.505872"
+                  timestampString = "517826450.405176"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "310"
@@ -313,7 +313,7 @@
                   moduleName = "LivingWords"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mac/Documents/iOS/Bible/BibleApp/MainMediaViewController.swift"
-                  timestampString = "517752973.507132"
+                  timestampString = "517826450.407164"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "310"
@@ -416,22 +416,6 @@
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "initWithAVPlayer(tableViewDataSource:type:media_url:verse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BibleApp/MainTableViewController.swift"
-            timestampString = "517757518.632153"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
-            landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

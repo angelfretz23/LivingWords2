@@ -306,14 +306,14 @@ extension LivingWordsAPI {
 extension LivingWordsAPI {
     //User
     @discardableResult
-    func getUserInfoMedia(filterMedia: String, userId: Int, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> DataRequest  {
+    func getUserInfoMedia(filterMedia: String, userId: Int, completion: @escaping (_ user: Verse?, _ error: Error?) -> Void) -> DataRequest  {
         
         print(filterMedia)
         print(userId)
         
         let request = Router.getUserInfoMedia(filterMedia: filterMedia, parameters: ["user_id": userId])
         
-        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<User>) in
+        return service.request(request: request).responseObject(completionHandler: { (response: DataResponse<Verse>) in
             completion(response.result.value, response.result.error)
          
         })

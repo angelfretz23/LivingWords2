@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BZO-Os-vVj" id="ujB-G6-hnj">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D04-Ac-Orw">
@@ -40,6 +40,9 @@
                     <constraint firstItem="D04-Ac-Orw" firstAttribute="centerY" secondItem="ujB-G6-hnj" secondAttribute="centerY" id="rbp-mb-JCd"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="authorName" destination="TzK-1e-3kR" id="nKM-Zn-mSs"/>
+            </connections>
             <point key="canvasLocation" x="-95.5" y="-94"/>
         </tableViewCell>
     </objects>
