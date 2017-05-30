@@ -306,7 +306,9 @@ extension CollectionDelegate_and_Flov: UICollectionViewDelegate, UICollectionVie
             
             let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
             
-            YTFPlayer.initWithAVPlayer(tableViewDataSource: self as UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verses!)
+            YTFPlayer.initWithAVPlayer(tableViewDataSource: self as UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verses!, isFromProfileVC: false)
+            
+            YTFPlayer.getMediaId(mediaId: 23)
             
             YTFPlayer.showYTFView(viewController: self)
             

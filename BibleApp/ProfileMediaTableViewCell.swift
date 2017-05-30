@@ -15,10 +15,11 @@ class ProfileMediaTableViewCell: UITableViewCell {
         static let ProfileCollectionViewCellReuseID = "ProfileCollectionViewCellReuseID"
     }
     
-    var musicInfoArray:     [User] = []
-    var movieInfoArray:     [User] = []
-    var sermonInfoArray:    [User] = []
-    var bookInfoArray:      [User] = []
+    var musicInfoArray:     [Verse] = []
+    var movieInfoArray:     [Verse] = []
+    var sermonInfoArray:    [Verse] = []
+    var bookInfoArray:      [Verse] = []
+    var verse : Verse?
     
     var mediaForProfileController: ProfileViewController?
     
@@ -52,7 +53,11 @@ class ProfileMediaTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func getData(userInfo: [User]?, index: Int){
+    func getVerse(verseInfo: Verse){
+        verse = verseInfo
+    }
+    
+    func getData(userInfo: [Verse]?, index: Int){
         
         indexNumber = index
         
@@ -85,7 +90,7 @@ extension ProfileMediaTableViewCell : UICollectionViewDelegate {
             
             let typeOfMedia = UIViewController.cheakTypeOfMedia(media_url: media_url)
             
-            YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url)
+            YTFPlayer.initWithAVPlayer(tableViewDataSource: currController as! UITableViewDataSource, type: typeOfMedia, media_url: media_url, verse: verse!, isFromProfileVC: true)
             
             YTFPlayer.showYTFView(viewController: currController)
         }
@@ -120,6 +125,8 @@ extension ProfileMediaTableViewCell : UICollectionViewDataSource {
         
                 switch indexNumber{
                 case 0:
+                     let youTubeId = musicInfoArray[indexPath.row].musicInfo?.mediaUrl?.components(separatedBy: "?v=").last!
+                    
                     cell.itemNameLabel.text = musicInfoArray[indexPath.row].musicInfo?.descriptionMusic
                     cell.itemDescriptionLabel.text = musicInfoArray[indexPath.row].musicInfo?.artistName
                     UIViewController.fetchYouTubeVideoInfo(with: cell.itemDescriptionLabel, imageYouTube: cell.videoInfoImageView, youTubeId: "Lf6El9jHdGg")
@@ -154,7 +161,7 @@ extension ProfileMediaTableViewCell : UICollectionViewDelegateFlowLayout {
         let widthCell = collectionView.bounds.width
         let widthOfCollectionItem = widthCell * 0.5 - 5
         
-        let heightCell = heightView
+        let heightCell = heightView*0.7
         //let widthCell = heightCell * 1.1
         let heightBook = heightView
         let widthBook = heightView * 0.7

@@ -27,6 +27,37 @@ public class Verse : Mappable {
     var media_link: String?
     var message: String?
     
+    
+    //UserProfileMedia
+    var musicInfoArray: [Verse]?
+    var musicInfo: Verse?
+    var artistName: String?
+    var writerName: String?
+    var mediaUrl: String?
+    var songStory: String?
+    var descriptionMusic: String?
+    
+    
+    var movieInfoArray: [Verse]?
+    var movieInfo: Verse?
+    var director: String?
+    var movieLink: String?
+    var movieName: String?
+    var actors: String?
+    
+    var sermonInfoArray: [Verse]?
+    var sermonInfo: Verse?
+    var pastorName: String?
+    var sermonTitle: String?
+    var sermonDescription: String?
+    
+    
+    var bookInfoArray: [Verse]?
+    var bookInfo: Verse?
+    var authorName: String?
+    var bookName: String?
+    var summary: String?
+    
     public func mapping(map: Map) {
         self.id                     <- map["id"]
         self.artist_name            <- map["artist_name"]
@@ -42,6 +73,40 @@ public class Verse : Mappable {
         self.movie_link             <- map["movie_link"]
         self.media_link             <- map["media_link"]
         self.message                <- map["message"]
+        
+        
+        //MusicMediaInfo
+        self.musicInfoArray     <- map["music"]
+        self.musicInfo          <- map["music"]
+        self.artistName         <- map["artist_name"]
+        self.writerName         <- map["writer_name"]
+        self.mediaUrl           <- map["media_url"]
+        self.songStory          <- map["song_story"]
+        self.descriptionMusic   <- map["description"]
+        
+        //MovieMediaInfo
+        self.movieInfoArray     <- map["movie"]
+        self.movieInfo          <- map["movie"]
+        self.director           <- map["director"]
+        self.movieLink          <- map["movie_link"]
+        self.movieName          <- map["movie_name"]
+        self.actors             <- map["actors"]
+        
+        
+        //SermonMediaInfo
+        self.sermonInfoArray     <- map["sermon"]
+        self.sermonInfo          <- map["sermon"]
+        self.pastorName          <- map["description"]
+        self.sermonTitle         <- map["semon_title"]
+        self.sermonDescription   <- map["description"]
+        
+        //BookMediaInfo
+        self.bookInfoArray      <- map["book"]
+        self.bookInfo          <- map["book"]
+        self.authorName         <- map["author_name"]
+        self.bookName           <- map["book_name"]
+        self.summary            <- map["summary"]
+        
     }
     
     required public init?(map: Map) {
@@ -51,6 +116,12 @@ public class Verse : Mappable {
 }
 
 extension Verse {
+    
+    static func getUserInfoMedia(filterMedia: String, userId: Int, completion: @escaping (_ user: Verse?, _ error: Error?) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.getUserInfoMedia(filterMedia: filterMedia, userId: userId, completion: completion)
+    }
     
     static func verseMedia( verse_id: Int, completion: @escaping (_ post: Verse?, _ error:Error?) -> Void) {
         let api = LivingWordsAPI()
