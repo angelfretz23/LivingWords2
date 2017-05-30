@@ -11,30 +11,43 @@ import SVProgressHUD
 
 class MainTableViewController: UIViewController {
     
-
     @IBOutlet weak var switchMedia: UISwitch!
 
-    //MARK: IBoutlets
+    //MARK: IBOutlets
+    
     @IBOutlet weak var mainTableView: UITableView!
-    @IBOutlet weak var mainSearchBar: UISearchBar!
     
     @IBOutlet weak var placeholderView: UIView!
-    @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet var searchViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var searchIconView: UIView!
     @IBOutlet weak var seseparatorView: UIView!
+    
+    @IBOutlet weak var bookTextField: UITextField!
+    @IBOutlet weak var chapterTextField: UITextField!
+    @IBOutlet weak var verseTextField: UITextField!
+    
+    @IBOutlet weak var chapterLayout: NSLayoutConstraint!
+    
+    @IBOutlet weak var autocompleteView: UIView!
+    @IBOutlet weak var autocompliteHeightLayout: NSLayoutConstraint!
+    @IBOutlet weak var autocompleteTableView: UITableView!
+    
     //MARK: Variables
 
     var scriptures = [Scripture?]()
     var search: [Search] = []
     
     var autocomplete = [String]()
+    var heightAutoComplete = 0
     
     var book: String?
     var chapter: String?
     var verse: String?
+    
+    let bookNames = ["Ge", "Gen", "Genes", "Masha", "Genesis", "Masha", "Genesis"]
+    var testBookNames = [String]()
     
     var expandSearch: Bool = false {
         didSet {
@@ -66,11 +79,21 @@ class MainTableViewController: UIViewController {
         
         updateDataSourceIfNeeded()
         
+        heightAutoComplete = Int(0.45 * view.frame.height)
+        autocompliteHeightLayout.constant = 0
+        
         // delegates
-        searchTextField.delegate = self
         mainTableView.delegate = self
+        autocompleteTableView.dataSource = self
+        
+        bookTextField.delegate = self
+        chapterTextField.delegate = self
+        verseTextField.delegate = self
         
         self.tabBarController?.tabBar.items![1].image = UIImage(named: "BookTabBarIcon")
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(serchViewTapped(tapGestureRecognizer:)))
+        searchIconView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,9 +108,14 @@ class MainTableViewController: UIViewController {
     //MARK: IBActions
     
     @IBAction func searchBarButtonPresseed(_ sender: Any) {
-        expandSearch = expandSearch ? false : true
-        
-        //updateDataSourceIfNeeded()
+        expandSearch = !expandSearch
+    }
+
+    @IBAction func textFieldsEditing(_ sender: UITextField) {
+        if sender === bookTextField {
+            testBookNames = bookNames.filter {$0.contains(bookTextField.text!)}
+            autocompleteTableView.reloadData()
+        }
     }
 
     func registerForNotifications(){
@@ -101,6 +129,7 @@ class MainTableViewController: UIViewController {
     // Register my xib
     func registerXib(){
         mainTableView.register(UINib(nibName: "ScriptureTableViewCell", bundle: nil), forCellReuseIdentifier: "ScriptureCellID")
+        autocompleteTableView.register(UINib(nibName: "UITableViewCell", bundle: nil), forCellReuseIdentifier: "autoCompleteCell")
     }
     
     // Automatically changes the size of the row
@@ -112,56 +141,36 @@ class MainTableViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.mainTableView.endEditing(true)
     }
+    
+    func serchViewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        searchIconView.isHidden = true
+    }
 }
 
 //Private
 
 extension MainTableViewController {
-    func getParametersWordsFromSearchFieldForRequest(_ searchString: String) {
-        if searchString == "" {return}
-        let searchParameters = searchString.components(separatedBy: " ")
-        switch searchParameters.count {
-        case 0:
-            book = ""
-            chapter = ""
-            verse = ""
-        case 1:
-            book = searchParameters[0]
-            chapter = ""
-            verse = ""
-        case 2:
-            book = searchParameters[0]
-            chapter = searchParameters[1]
-            verse = ""
-        case 3:
-            book = searchParameters[0]
-            chapter = searchParameters[1]
-            verse = searchParameters[2]
-            
-            if ((book?.isEmpty)! && (chapter?.isEmpty)! && (verse?.isEmpty)!) {
-                print("🔴 User didn't input any data to search for 🔴")
+    
+    func makeSearch() {
+        book = bookTextField.text ?? ""
+        chapter = chapterTextField.text ?? ""
+        verse = verseTextField.text ?? ""
+        
+        if !book!.isEmpty && !chapter!.isEmpty && !verse!.isEmpty {
+            if let index = verse {
+                let index = Int(index)! - 1
+                let indePath: IndexPath = [0, index]
                 
+                UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseIn, animations: {
+                    self.mainTableView.scrollToRow(at: indePath, at: .top, animated: true)
+                }, completion: nil)
+                
+                return
             } else {
-            
-                if let index = verse {
-                    let index = Int(index)! - 1
-                    let indePath: IndexPath = [0, index]
-                    
-                    UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseIn, animations: {
-                        self.mainTableView.scrollToRow(at: indePath, at: .top, animated: true)
-                    }, completion: nil)
-                    
-                    return
-                } else {
-                    self.displayAlert(userMessage: "Fill the search-field as in example: Book Chapter Verse!")
-                }
+                self.displayAlert(userMessage: "Fill the search-field as in example: Book Chapter Verse!")
             }
-            
-        default:
-            break
         }
         updateSearch()
-        
     }
 }
 
@@ -174,23 +183,13 @@ extension TableDataSource : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return search.count
+
+        return autocompleteTableView === tableView ? testBookNames.count : search.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScriptureCellID", for: indexPath) as? ScriptureTableViewCell else { return UITableViewCell() }
-        
-        let scripture = search[indexPath.row]
-        
-        if let typeMedia = scripture.checkedMedia {
-            cell.setScriptureImage(with: typeMedia)
-        }
-        
-        configurationScriptureText(cell: cell, scripture: scripture, indexPath: indexPath)
-        
-        return cell
+        return autocompleteTableView === tableView ? autoComplete(tableView, cellForRowAt: indexPath) : scriptureCell(tableView, cellForRowAt: indexPath)
     }
     
     
@@ -280,53 +279,39 @@ extension MainTableViewController {
 extension MainTableViewController: UITextFieldDelegate {
     
     func userDidPressClearButton(_ notification: NSNotification){
-        if searchTextField.text == "" {
-            placeholderView.isHidden = false
-        }
+
     }
 
     // Method for autocompletion
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if searchTextField.text?.characters.count ?? 0 == 0 {
-            placeholderView.isHidden = true
-        } else if searchTextField.text == "" {
-           //placeholderView.isHidden = false
-        }
-    
-        let substring = (self.searchTextField.text! as NSString).replacingCharacters(in: range, with: string)
         
-        searchAutocompleteEntriesWithSubstring(substring)
-
+        UIView.animate(withDuration: 1) { 
+            textField.invalidateIntrinsicContentSize()
+        }
+        
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        searchIconView.isHidden = true
-        seseparatorView.isHidden = true
-    }
-    
-    func searchAutocompleteEntriesWithSubstring(_ substring: String)
-    {
-        autocomplete.removeAll(keepingCapacity: false)
-        
-        for curString in ["\(search)"]
-        {
-            let myString:NSString! = curString as NSString
-            
-            let substringRange :NSRange! = myString.range(of: substring)
-            
-            if (substringRange.location == 0)
-            {
-                autocomplete.append(curString)
-            }
+       // textField.placeholder = ""
+        if textField === bookTextField {
+            autocompleteViewHide(should: false)
         }
-        
-        mainTableView.reloadData()
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField === bookTextField {
+            autocompleteViewHide(should: true)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        getParametersWordsFromSearchFieldForRequest(searchTextField.text ?? "")
+        if textField === bookTextField {
+            if textField.text! == "" {
+                textField.resignFirstResponder()
+            }
+        }
+        makeSearch()
         textField.resignFirstResponder()
         
         return true
@@ -364,4 +349,37 @@ extension MainTableViewController {
         
         cell.scriptureText?.attributedText = attributedScriptureText
     }
+    
+    fileprivate func autocompleteViewHide(should hide: Bool) {
+
+        autocompliteHeightLayout.constant = CGFloat(hide ? 0 : self.heightAutoComplete)
+        
+        UIView.animate(withDuration: 0.6) {
+            self.view.layer.layoutIfNeeded()
+        }
+        
+    }
+    
+    fileprivate func scriptureCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ScriptureTableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScriptureCellID", for: indexPath) as? ScriptureTableViewCell else { return  ScriptureTableViewCell() }
+        
+        let scripture = search[indexPath.row]
+        
+        if let typeMedia = scripture.checkedMedia {
+            cell.setScriptureImage(with: typeMedia)
+        }
+        
+        configurationScriptureText(cell: cell, scripture: scripture, indexPath: indexPath)
+        
+        return cell
+    }
+    
+    fileprivate func autoComplete(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "autoCompleteCell")
+            cell.textLabel?.text = testBookNames[indexPath.row]
+        
+        return cell
+    }
+    
 }
