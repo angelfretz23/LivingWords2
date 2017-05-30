@@ -148,4 +148,11 @@ extension Verse {
         
         api.saveToHistory(media_id: media_id, madia_type: madia_type, user_id: user_id, completion: completion)
     }
+    
+    static func saveToFavorites(media_id: Int, madia_type: String, user_id: Int, completion: @escaping (_ success: Bool) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.saveToFavorites(media_id: media_id, madia_type: madia_type, user_id: user_id, completion: completion)
+    }
+    
 }

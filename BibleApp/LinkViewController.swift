@@ -10,25 +10,26 @@ import UIKit
 
 class LinkViewController: UIViewController {
     
-    // MARK:- Properties and IBOutlets
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var linkTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
+    
+    // MARK: - Properties
     var backController: UIViewController?
     var pathWebView: String!
     var typeContentProvider = ContentProviderType.User
     
-    // MARK:- LinkViewController`s life cycle
     
+    // MARK: - LinkViewController`s life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPage(with: URL(string: pathWebView)!)
-
+        
         saveButton.layer.cornerRadius = 5
         saveButton.layer.masksToBounds = true
-    
+        
         webView.delegate = self
     }
     
@@ -41,23 +42,23 @@ class LinkViewController: UIViewController {
         return true
     }
     
-    // MARK:- The other helpfull methods
     
+    // MARK: - The other helpfull methods
     fileprivate func loadPage(with url: URL) {
         let request = URLRequest(url: url)
         webView.loadRequest(request)
     }
     
     fileprivate func fetchYouTubeID() -> String? {
-
+        
         let youTubePath = linkTextField.text!
         
         let stringArray = youTubePath.components(separatedBy: "?v=")
         
         return stringArray.last
     }
-    // MARK: - Actions
     
+    // MARK: - IBActions
     @IBAction func goForwardAction(_ sender: UIButton) {
         if webView.canGoForward {
             webView.goForward()
@@ -77,7 +78,7 @@ class LinkViewController: UIViewController {
         
         switch typeContentProvider {
         case .Pastor:
-           let controller = backController as! UploadSermonesVC
+            let controller = backController as! UploadSermonesVC
             
             controller.isYouTubeLoaded = true
             controller.tableView.reloadData()
@@ -91,7 +92,7 @@ class LinkViewController: UIViewController {
             controller.tableView.reloadData()
             controller.youTubeId = fetchYouTubeID()
             controller.videoUrl = linkTextField.text!
-
+            
         case .Artist:
             let controller = backController as! UploadMusicTVC
             
@@ -114,27 +115,25 @@ class LinkViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 private typealias WebViewDelegate = LinkViewController
 extension WebViewDelegate: UIWebViewDelegate {
-
+    
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-
         linkTextField.text = request.url?.absoluteString
         return true
-    }   
+    }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
         if webView.request!.url!.absoluteString != "" {
             linkTextField.text = webView.request?.url?.absoluteString
         }
-        
     }
-
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
-    
     }
     
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-    
+    func
+        webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
     }
 }

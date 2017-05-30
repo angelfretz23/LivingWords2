@@ -56,6 +56,7 @@ class AllMediaTVCell: UITableViewCell {
     
 }
 
+// MARK: - Extensions
 private typealias CollectionDataSource = AllMediaTVCell
 extension CollectionDataSource: UICollectionViewDataSource {
     
@@ -134,6 +135,8 @@ extension CollectionDelegate: UICollectionViewDelegate, UICollectionViewDelegate
                         SVProgressHUD.showSuccess(withStatus: "Saved")
                     }
                 })
+                
+                YTFPlayer.getMediaId(mediaId: (mediaData?[indexPath.row].id)!)
             }
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class UploadMusicTVC: UITableViewController {
-
+    
     // MARK: - Properties
     fileprivate var selectedIndex: IndexPath?
     fileprivate var isExpanded = false
@@ -20,18 +20,18 @@ class UploadMusicTVC: UITableViewController {
     var post: Post?
     var expandableRowCount: Int?
     
-    // MARK: - View Controller Life Cycle
+    // MARK: - View Controller's Life Cycle
     override func viewDidLoad() {
-      
+        
         tableView.reloadData()
         tableView.register(UINib.init(nibName: "TopCellUploadMusicCell", bundle: nil), forCellReuseIdentifier: "TopCellUploadMusicCellID")
         tableView.register(UINib.init(nibName: "MusicUploadTVC", bundle: nil), forCellReuseIdentifier: "ExpandableCell")
         tableView.register(UINib.init(nibName: "BottomUploadMusicCell", bundle: nil), forCellReuseIdentifier: "BottomUploadMusicCellID")
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        
         tableView.reloadData()
         if isYouTubeLoaded {
             UIViewController.fetchYouTubeVideoInfo(with: (self.cellTop?.mediaURL)!, imageYouTube: (self.cellTop?.imageOfVideo)!, youTubeId: youTubeId!)
@@ -44,7 +44,7 @@ class UploadMusicTVC: UITableViewController {
         tableView.reloadData()
     }
     
-    // MARK: IBActions
+    // MARK: - IBActions
     @IBAction func uploadMusic(_ sender: UIBarButtonItem) {
         let artistName = cellTop?.artistName.text ?? ""
         let writerName = cellTop?.writerName.text ?? ""
@@ -52,18 +52,18 @@ class UploadMusicTVC: UITableViewController {
         let descript = cellBottom?.descript.text ?? ""
         let tags = self.makeArrayOfHashtags(incomingString: cellBottom?.tags.text ?? "") ?? [""]
         
-
+        
         // This Array is created to demonstate
         // Сюди ми маємо передати текст - опис до кожного вірша:
         var arrayToDelete = [String]()
-    
+        
         
         for _ in scriptureIDArray! {
             arrayToDelete += ["test"]
         }
         
         let specialFormat = self.combineArrays(first: scriptureIDArray!, second: arrayToDelete) ?? [""]
-   
+        
         print("\(specialFormat)")
         
         Post.uploadMusic(artist_name: artistName, writer_name: writerName, music_link: videoUrl ?? "", song_story: songStory, descript: descript, tags: tags, tag_scripture: specialFormat, user_id: 28) { (response, error) in
@@ -74,7 +74,7 @@ class UploadMusicTVC: UITableViewController {
                 self.dismiss(animated: true, completion: nil)
             } else if error != nil {
                 print("🔴 An \(error) occured while sharing the post! 🔴")
-                   self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -87,7 +87,7 @@ class UploadMusicTVC: UITableViewController {
 
 // MARK: - Extensions
 extension TableDataSource {
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -97,7 +97,7 @@ extension TableDataSource {
         if section == 0 || section == 2 {
             return 1
         }
-
+        
         if let count = expandableRowCount {
             return count
         } else { return 0 }
@@ -119,10 +119,10 @@ extension TableDataSource {
 }
 
 extension TableDelegate {
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath
-    
+        
         if indexPath.section == 0 {
             let cell = tableView.cellForRow(at: indexPath) as! TopCellUploadMusicCell
             let gesture = UITapGestureRecognizer(target: self, action:  #selector(tagTapped(tapGestureRecognizer:)))
@@ -171,7 +171,7 @@ extension UploadMusicCells {
         
         return cell
     }
-
+    
     fileprivate func topUploadMusicCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopCellUploadMusicCellID", for: indexPath) as!
         TopCellUploadMusicCell
@@ -224,9 +224,7 @@ extension UploadMusicCells {
             }
         }
         
-        
         result.removeSubrange(result.count/first.count..<result.count)
-    
         
         return result
     }

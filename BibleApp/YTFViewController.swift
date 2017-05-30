@@ -12,9 +12,11 @@ import MediaPlayer
 import AVKit
 import SnapKit
 import YTVimeoExtractor
+import SVProgressHUD
 
 class YTFViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var youTubePlayer: YTPlayerView!
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var fullscreen: UIButton!
@@ -40,7 +42,10 @@ class YTFViewController: UIViewController {
     @IBOutlet weak var sermonesCategory: UIButton!
     @IBOutlet weak var movieCategory: UIButton!
     @IBOutlet weak var bookCategory: UIButton!
-
+    
+    @IBOutlet weak var favorites: UIView!
+    
+    // MARK: - Properties
     var tableViewDataSource: UITableViewDataSource?
     
     var videoID: String?
@@ -91,10 +96,12 @@ class YTFViewController: UIViewController {
     
     var mediaType = Media.allMedia
     var mediaData: Verse?
+    var mediaDataArr: [Verse]?
+
     var isFromProfileVC: Bool  = false
     
     var mediaId: Int?
-    
+
     let media = ["Movie", "Sermone", "Music", "Book"]
     
     enum UIPanGestureRecognizerDirection {
@@ -105,7 +112,13 @@ class YTFViewController: UIViewController {
         case Right
     }
     
+    
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
+        
+        let panGestureYouTube = UITapGestureRecognizer(target: self, action: #selector(favoritesTapped(tapGestureRecognizer:)))
+        favorites.addGestureRecognizer(panGestureYouTube)
+        favorites.isUserInteractionEnabled = true
         
         initPlayerWithURLs()
         setupImageAssets()
@@ -133,6 +146,7 @@ class YTFViewController: UIViewController {
         return true
     }
     
+    // MARK: - Custom Functions
     func initPlayerWithURLs() {
         
         if (isMinimized) {
@@ -294,9 +308,7 @@ class YTFViewController: UIViewController {
     
     
     // MARK: - IBActions
-    
     @IBAction func minimizeButtonTouched(sender: AnyObject) {
-        
         minimizeViews()
     }
     
@@ -304,16 +316,13 @@ class YTFViewController: UIViewController {
         removeViews()
     }
     
-    
     func setupSlider(with duration: Double, currentTime: Float = 0.0) {
-        
         slider.minimumValue = 0.0
         slider.maximumValue = Float(duration)
         slider.value = currentTime
     }
     
     // MARK: - Choose media type
-    
     @IBAction func AllMediaAction(_ sender: UIButton) {
         highlightsMedia(type: .allMedia, allMedia: allMediaCategory, music: musicCategory,
                         movies: movieCategory, sermones: sermonesCategory, books: bookCategory)
@@ -385,11 +394,12 @@ class YTFViewController: UIViewController {
             
         case .sermons:
             mediaType = .sermons
-
         }
     }
+    
 }
 
+// MARK: - Extensions
 extension YTFViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -406,6 +416,7 @@ extension YTFViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
+    
 }
 
 extension YTFViewController: UICollectionViewDataSource {
@@ -458,7 +469,12 @@ extension YTFViewController: UICollectionViewDataSource {
 extension YTFViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+        
+//        Verse.saveToHistory(media_id: (mediaDataArr?[indexPath.row].id)!, madia_type: String(describing: mediaType), user_id: userID!, completion: { success in
+//            if success {
+//                SVProgressHUD.showSuccess(withStatus: "Saved")
+//            }
+//        })
     }
 }
 
@@ -488,4 +504,17 @@ extension YTFViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
+}
+
+extension YTFViewController {
+    
+    func favoritesTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        
+        Verse.saveToHistory(media_id: mediaId!, madia_type: String(describing: mediaType), user_id: userID!, completion: { success in
+            if success {
+                SVProgressHUD.showSuccess(withStatus: "Saved")
+            }
+        })
+    }
+    
 }

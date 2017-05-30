@@ -40,6 +40,8 @@ extension LivingWordsAPI {
         case uploadBook(parameters: Parameters)
         
         case saveToHistory(parameters: Parameters)
+        
+        case saveToFavorites(parameters: Parameters)
 
         
         // Search
@@ -111,6 +113,9 @@ extension LivingWordsAPI {
             case .saveToHistory:
                 return "/history/save"
                 
+            case .saveToFavorites:
+                return "/favorites/save"
+                
                 //User
             case .getUserInfoMedia(let filterMedia, _):
                 print("/profile/" + filterMedia)
@@ -132,7 +137,7 @@ extension LivingWordsAPI {
 
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
                  .uploadMusic, .verseMedia, .uploadBook, .getUserInfoMedia,
-                 .saveToHistory:
+                 .saveToHistory, .saveToFavorites:
              
                 return .post
                 
@@ -145,7 +150,7 @@ extension LivingWordsAPI {
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
                  .uploadMusic, .uploadBook, .verseMedia, .getUserInfoMedia,
-                 .saveToHistory:
+                 .saveToHistory, .saveToFavorites:
 
                 return ""
             }
@@ -156,7 +161,7 @@ extension LivingWordsAPI {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
               .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-              .uploadMusic, .uploadBook,.verseMedia, .saveToHistory:
+              .uploadMusic, .uploadBook,.verseMedia, .saveToHistory, .saveToFavorites:
 
                 return 0
             default:
@@ -226,6 +231,9 @@ extension LivingWordsAPI {
                 
             case .saveToHistory(let parameters):
                  request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .saveToFavorites(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
             
             
@@ -463,10 +471,25 @@ extension LivingWordsAPI {
             if  let code = response.response?.statusCode{
                 if code == 200 {
                     completion(code == 200)
-                    
                 }
-                
             }
         })
     }
+    
+    @discardableResult
+    func saveToFavorites(media_id: Int, madia_type: String, user_id: Int, completion: @escaping (_ success: Bool) -> Void) -> DataRequest {
+        
+        let request = Router.saveToFavorites(parameters: ["media_id" : media_id,
+                                                        "madia_type" : madia_type,
+                                                           "user_id" : user_id])
+        
+        return service.request(request: request).responseJSON(completionHandler: { response in
+            if  let code = response.response?.statusCode{
+                if code == 200 {
+                    completion(code == 200)
+                }
+            }
+        })
+    }
+    
 }

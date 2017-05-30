@@ -89,11 +89,9 @@ public struct YTFPlayer {
     }
     
     public static func getMediaId(mediaId: Int){
-    if dragViewController == nil {
-    dragViewController?.mediaId = mediaId
-    }
-    
-    
+        if dragViewController != nil {
+            dragViewController?.mediaId = mediaId
+        }
     }
     
     public static func initWithAVPlayer(tableViewDataSource: UITableViewDataSource, type: MediaType, media_url: String, verse: Verse, isFromProfileVC: Bool) {
@@ -110,7 +108,6 @@ public struct YTFPlayer {
                 if let id = idMovie {
                     dragViewController?.youtubeId = id
                 }
-            
             }
             
             dragViewController?.tableViewDataSource = tableViewDataSource
