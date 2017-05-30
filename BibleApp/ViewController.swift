@@ -129,6 +129,28 @@ extension UIViewController {
         return .other
     }
     
+    func makeArrayOfHashtags(incomingString: String) -> [String]? {
+        var tagArray1 = [String]()
+        var tagArray2 = ""
+        var tagArray3 = [String]()
+        var tagArray4 = [String]()
+        
+        tagArray1 = incomingString.components(separatedBy: " ")
+        
+        for i in tagArray1 {
+            tagArray2 += i
+        }
+        
+        tagArray3 = tagArray2.components(separatedBy: "#")
+        tagArray3.remove(at: 0)
+        
+        for i in tagArray3 {
+            tagArray4.append("#" + i)
+        }
+        
+        return tagArray4
+    }
+    
     static func configureCellImageAndTitle(media_url: String?, cell: MediaCollectionViewCell) {
         if let url_media = media_url {
             let type = UIViewController.cheakTypeOfMedia(media_url: url_media)

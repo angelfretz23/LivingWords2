@@ -187,28 +187,6 @@ extension UploadMusicCells {
         return cell
     }
     
-    fileprivate func makeArrayOfHashtags(incomingString: String) -> [String]? {
-        var tagArray1 = [String]()
-        var tagArray2 = ""
-        var tagArray3 = [String]()
-        var tagArray4 = [String]()
-        
-        tagArray1 = incomingString.components(separatedBy: " ")
-        
-        for i in tagArray1 {
-            tagArray2 += i
-        }
-        
-        tagArray3 = tagArray2.components(separatedBy: "#")
-        tagArray3.remove(at: 0)
-        
-        for i in tagArray3 {
-            tagArray4.append("#" + i)
-        }
-        
-        return tagArray4
-    }
-    
     fileprivate func fetch(incomingString: String) -> [String]? {
         var array = [String]()
         var string = ""

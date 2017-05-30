@@ -10,6 +10,11 @@ import UIKit
 
 class BookDescriptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bookName: UITextField!
+    @IBOutlet weak var publishDate: UITextField!
+    @IBOutlet weak var summary: UITextField!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

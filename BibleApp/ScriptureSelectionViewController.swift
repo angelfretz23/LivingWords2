@@ -214,11 +214,7 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
         if cell.isSelected {
             countOfSelectedCells += [1]
         }
-        
 
-        _ = search[indexPath.row]
-        _ = indexPath.row + 1
-        
         if previousBook == book! {
           
             scriptureString += "" + chapter! + ":" + "\(indexPath.row + 1)" + ", "
@@ -226,6 +222,7 @@ extension ScriptureSelectionViewController: UITableViewDelegate {
             tagScriptureArray.append(value)
             tagScriptureDictionary[book!] = tagScriptureArray
             print(tagScriptureDictionary)
+            
         } else {
             
             tagScriptureArray = []

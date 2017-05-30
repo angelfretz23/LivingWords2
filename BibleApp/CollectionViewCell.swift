@@ -48,9 +48,9 @@ extension UICollectionViewCell {
     
     static func bookCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath,  mediaData: [Verse]?) -> BookTypeCollectionVCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookTypeCollectionVCellID", for: indexPath) as! BookTypeCollectionVCell
-        cell.title.text = "Book"
+        cell.title.text = mediaData?[indexPath.row].book_name
         cell.imageBook.image = #imageLiteral(resourceName: "great-gatsby-coverjpg")
-        cell.titleBottom.text = "Great gatsby"
+        cell.titleBottom.text = mediaData?[indexPath.row].author_name
         
         return cell
     }
