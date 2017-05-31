@@ -202,27 +202,6 @@ extension TableDataSource : UITableViewDataSource {
 fileprivate typealias TableDelegate = MainTableViewController
 extension TableDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-  
-        let bibleBookVerseID = search[indexPath.row].matchingData?.bibleBookVerse?.bibleBookVerseID
-        SVProgressHUD.show()
-        
-        if let verseID = bibleBookVerseID {
-
-            Verse.verseMedia(verse_id: verseID, completion: { (verse, error) in
-                if error != nil {
-                    print("🍎some error ocurred with verse media🍎 \(error!)")
-                    return
-                }
-            
-                self.presentMediaController(verse: verse)
-            })
-        }
-        
-//        if let newTV = autocompleteTableView {
-//            let cell = tableView.cellForRow(at: indexPath) as! newautocompleteTableViewTV
-//            
-//            cell.
-//        }
     }
     
 }
@@ -373,6 +352,8 @@ extension MainTableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScriptureCellID", for: indexPath) as? ScriptureTableViewCell else { return  ScriptureTableViewCell() }
         
+        cell.delegate = self
+        
         let scripture = search[indexPath.row]
         
         if let typeMedia = scripture.checkedMedia {
@@ -410,5 +391,38 @@ extension MainTableViewController {
     
     fileprivate func styleTheAutompletionTable() {
         self.autocompleteTableView.layer.cornerRadius = 20
+    }
+}
+extension MainTableViewController: ScriptureTableViewCellDelegate {
+    func userDidDoubleTapScripture(cell: ScriptureTableViewCell) {
+        guard let indexPath = mainTableView.indexPath(for: cell),
+            let scriptureId = search[indexPath.row].matchingData?.bibleBookVerse?.bibleBookVerseID
+            else { return }
+        
+        Search.setHighlightsScripture(verseId: scriptureId, completion: { success in
+            if success {
+                SVProgressHUD.showSuccess(withStatus: "DoubleTap")
+            }
+        })
+    }
+    
+    func userDidSingleTapScripture(cell: ScriptureTableViewCell) {
+        
+        guard let indexPath = mainTableView.indexPath(for: cell) else {return }
+        let bibleBookVerseID = search[indexPath.row].matchingData?.bibleBookVerse?.bibleBookVerseID
+        SVProgressHUD.show()
+        
+        if let verseID = bibleBookVerseID {
+            
+            Verse.verseMedia(verse_id: verseID, completion: { (verse, error) in
+                if error != nil {
+                    print("🍎some error ocurred with verse media🍎 \(error!)")
+                    return
+                }
+                
+                self.presentMediaController(verse: verse)
+            })
+        }
+    
     }
 }

@@ -47,6 +47,9 @@ extension LivingWordsAPI {
         // Search
         case searchBible(parameters: Parameters)
         
+        case setHighlightsScripture(parameters: Parameters)
+        
+        //Authorization
         case confirmEmail(parameters: Parameters)
         
         case checkThePassCode(parameters: Parameters)
@@ -58,11 +61,14 @@ extension LivingWordsAPI {
         case loginFacebook(parameters: Parameters)
         
         case loginGoogle(parameters: Parameters)
+
         
         case requestForAutocomplete(parameters: Parameters)
         
         //User
         case getUserInfoMedia(filterMedia: String, parameters: Parameters)
+        
+        case getHighlights()
         
         private var baseURLString: String {
             return "http://bible.binariks.com/api"
@@ -124,9 +130,14 @@ extension LivingWordsAPI {
                 
                 //User
             case .getUserInfoMedia(let filterMedia, _):
-                print("/profile/" + filterMedia)
                 
                 return "/profile/" + filterMedia
+                
+            case .setHighlightsScripture:
+                return "/high-lights"
+                
+            case .getHighlights:
+                return "/get/high-lights"
 
             }
           
@@ -135,15 +146,15 @@ extension LivingWordsAPI {
         private var method: HTTPMethod {
             switch self {
 
-            case .getBible:
+            case .getBible, .getHighlights:
                 return .get
 
             case .loginWithEmail, .confirmEmail, .checkThePassCode,
                  .confirmNewPassword, .searchBible, .signUpWithEmail,
-
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
                  .uploadMusic, .verseMedia, .uploadBook, .getUserInfoMedia,
-                 .saveToHistory, .saveToFavorites, .requestForAutocomplete:
+                 .saveToHistory, .saveToFavorites, .requestForAutocomplete,
+                 .getHighlights, .setHighlightsScripture:
              
                 return .post
                 
@@ -156,7 +167,9 @@ extension LivingWordsAPI {
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
                  .uploadMusic, .uploadBook, .verseMedia, .getUserInfoMedia,
-                 .saveToHistory, .saveToFavorites, .requestForAutocomplete:
+                 .saveToHistory, .saveToFavorites, .setHighlightsScripture,
+                 .getHighlights, .requestForAutocomplete:
+
 
                 return ""
             }
@@ -167,8 +180,7 @@ extension LivingWordsAPI {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
               .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-              .uploadMusic, .uploadBook,.verseMedia, .saveToHistory, .saveToFavorites,
-              .requestForAutocomplete:
+              .requestForAutocomplete, .uploadMusic, .uploadBook,.verseMedia, .saveToHistory, .saveToFavorites, .setHighlightsScripture, .getHighlights:
 
                 return 0
             default:
@@ -241,11 +253,18 @@ extension LivingWordsAPI {
                 
             case .saveToFavorites(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
-                
+            
             case .requestForAutocomplete(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
-            }
             
+            case .setHighlightsScripture(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .getHighlights():
+                request = try URLEncoding.httpBody.encode(request, with: [:])
+            }
+   
+
             return request
         }
         
@@ -501,7 +520,6 @@ extension LivingWordsAPI {
         })
     }
     
-    
     @discardableResult
     func requestForAutocomplete(key: String, completion: @escaping (_ post: [Search]?, _ error:
         Error?) -> Void) -> DataRequest {
@@ -512,4 +530,29 @@ extension LivingWordsAPI {
             completion(response.result.value, response.result.error)
         })
     }
+
+    @discardableResult
+    func setHighlightsScripture(verseId: Int, completion: @escaping (_ success: Bool) -> Void) -> DataRequest {
+        let request = Router.setHighlightsScripture(parameters: ["verse_id" : verseId])
+        
+        return service.request(request: request).responseJSON(completionHandler: { response in
+            if  let code = response.response?.statusCode{
+                if code == 200 {
+                    completion(code == 200)
+                }
+            }
+        })
+    }
+    
+    
+    @discardableResult
+    func getHighlights(completion: @escaping (_ search: [Search]?, _ error: Error?) -> Void) -> DataRequest {
+        let request = Router.getHighlights()
+        
+        return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Search]>) in
+               completion(response.result.value, response.result.error)
+            
+               })
+    }
+    
 }

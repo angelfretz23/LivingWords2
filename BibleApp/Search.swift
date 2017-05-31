@@ -20,6 +20,8 @@ class Search: NSObject, Mappable {
     var bibleBookVerseID: Int?
     var checkedMedia: String?
     var book_name: String?
+    var bible_book_verse: Search?
+
     
     func mapping(map: Map) {
         self.matchingData               <- map["_matchingData"]
@@ -30,6 +32,7 @@ class Search: NSObject, Mappable {
         self.bibleBookVerseID           <- map["id"]
         self.checkedMedia               <- map["checkedMedia"]
         self.book_name                  <- map["book_name"]
+        self.bible_book_verse          <- map["bible_book_verse"]
     }
     
     required init?(map: Map) {
@@ -56,6 +59,17 @@ extension Search {
         api.requestForAutocomplete(key: key, completion: completion)
     }
 
+    static func setHighlightsScripture(verseId: Int, completion: @escaping (_ success: Bool) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.setHighlightsScripture(verseId: verseId, completion: completion)
+    }
+    
+    static func getHighlights(completion: @escaping (_ search: [Search]?, _ error: Error?) -> Void) {
+        let api = LivingWordsAPI()
+        
+        api.getHighlights(completion: completion)
+    }
 }
 //{
 //    "id": 59,
