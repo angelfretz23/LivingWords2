@@ -116,6 +116,7 @@ class MainTableViewController: UIViewController {
 
     @IBAction func textFieldsEditing(_ sender: UITextField) {
         if sender === bookTextField {
+             self.testBookNames = []
             requestForAutocompletion()
 //            testBookNames = bookNames.filter {$0.contains(bookTextField.text!)}
 //            autocompleteTableView.reloadData()
@@ -202,6 +203,10 @@ extension TableDataSource : UITableViewDataSource {
 fileprivate typealias TableDelegate = MainTableViewController
 extension TableDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+       self.bookTextField.text = cell?.textLabel?.text
+        
     }
     
 }
@@ -374,7 +379,6 @@ extension MainTableViewController {
     }
     
     fileprivate func requestForAutocompletion() {
-        self.testBookNames = []
         Search.requestForAutocomplete(key: bookTextField.text!, completion: { (response, error) in
             if let response = response {
                 for i in response {
