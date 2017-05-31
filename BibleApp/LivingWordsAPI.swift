@@ -59,6 +59,8 @@ extension LivingWordsAPI {
         
         case loginGoogle(parameters: Parameters)
         
+        case requestForAutocomplete(parameters: Parameters)
+        
         //User
         case getUserInfoMedia(filterMedia: String, parameters: Parameters)
         
@@ -116,6 +118,10 @@ extension LivingWordsAPI {
             case .saveToFavorites:
                 return "/favorites/save"
                 
+            case .requestForAutocomplete:
+                return "/get/book-type"
+                
+                
                 //User
             case .getUserInfoMedia(let filterMedia, _):
                 print("/profile/" + filterMedia)
@@ -137,7 +143,7 @@ extension LivingWordsAPI {
 
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
                  .uploadMusic, .verseMedia, .uploadBook, .getUserInfoMedia,
-                 .saveToHistory, .saveToFavorites:
+                 .saveToHistory, .saveToFavorites, .requestForAutocomplete:
              
                 return .post
                 
@@ -150,7 +156,7 @@ extension LivingWordsAPI {
                  .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
                  .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
                  .uploadMusic, .uploadBook, .verseMedia, .getUserInfoMedia,
-                 .saveToHistory, .saveToFavorites:
+                 .saveToHistory, .saveToFavorites, .requestForAutocomplete:
 
                 return ""
             }
@@ -161,7 +167,8 @@ extension LivingWordsAPI {
         case .confirmEmail, .checkThePassCode, .confirmNewPassword,
               .loginWithEmail, .getBible, .searchBible, .signUpWithEmail,
               .loginFacebook, .loginGoogle, .uploadSermon, .uploadMovie,
-              .uploadMusic, .uploadBook,.verseMedia, .saveToHistory, .saveToFavorites:
+              .uploadMusic, .uploadBook,.verseMedia, .saveToHistory, .saveToFavorites,
+              .requestForAutocomplete:
 
                 return 0
             default:
@@ -234,10 +241,11 @@ extension LivingWordsAPI {
                 
             case .saveToFavorites(let parameters):
                 request = try JSONEncoding.default.encode(request, with: parameters)
+                
+            case .requestForAutocomplete(let parameters):
+                request = try JSONEncoding.default.encode(request, with: parameters)
             }
             
-            
-           
             return request
         }
         
@@ -441,6 +449,7 @@ extension LivingWordsAPI {
             
         })
     }
+    
     @discardableResult
     func uploadBook(author_name: String, media_link: String, tag_scripture: [Int],
                     book_name: String, publish_date: String, symmary: String, tags: [String], completion: @escaping (_ post: Post?, _ error:
@@ -492,4 +501,15 @@ extension LivingWordsAPI {
         })
     }
     
+    
+    @discardableResult
+    func requestForAutocomplete(key: String, completion: @escaping (_ post: [Search]?, _ error:
+        Error?) -> Void) -> DataRequest {
+        
+        let request = Router.requestForAutocomplete(parameters: ["key" : key])
+        
+        return service.request(request: request).responseArray(completionHandler: { (response: DataResponse<[Search]>) in
+            completion(response.result.value, response.result.error)
+        })
+    }
 }

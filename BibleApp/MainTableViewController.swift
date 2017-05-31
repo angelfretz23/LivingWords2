@@ -48,7 +48,7 @@ class MainTableViewController: UIViewController {
     
     let bookNames = ["Ge", "Gen", "Genes", "Masha", "Genesis", "Masha", "Genesis"]
     var testBookNames = [String]()
-    
+     var arrayWithoutDuplicates = [String]()
     var expandSearch: Bool = false {
         didSet {
             if expandSearch {
@@ -79,12 +79,15 @@ class MainTableViewController: UIViewController {
         
         updateDataSourceIfNeeded()
         
+        styleTheAutompletionTable()
+        
         heightAutoComplete = Int(0.45 * view.frame.height)
         autocompliteHeightLayout.constant = 0
         
         // delegates
         mainTableView.delegate = self
         autocompleteTableView.dataSource = self
+        autocompleteTableView.delegate = self
         
         bookTextField.delegate = self
         chapterTextField.delegate = self
@@ -113,8 +116,9 @@ class MainTableViewController: UIViewController {
 
     @IBAction func textFieldsEditing(_ sender: UITextField) {
         if sender === bookTextField {
-            testBookNames = bookNames.filter {$0.contains(bookTextField.text!)}
-            autocompleteTableView.reloadData()
+            requestForAutocompletion()
+//            testBookNames = bookNames.filter {$0.contains(bookTextField.text!)}
+//            autocompleteTableView.reloadData()
         }
     }
 
@@ -184,7 +188,7 @@ extension TableDataSource : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return autocompleteTableView === tableView ? testBookNames.count : search.count
+        return autocompleteTableView === tableView ? arrayWithoutDuplicates.count : search.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -213,7 +217,12 @@ extension TableDelegate: UITableViewDelegate {
                 self.presentMediaController(verse: verse)
             })
         }
-
+        
+//        if let newTV = autocompleteTableView {
+//            let cell = tableView.cellForRow(at: indexPath) as! newautocompleteTableViewTV
+//            
+//            cell.
+//        }
     }
     
 }
@@ -255,7 +264,7 @@ extension MainTableViewController {
     }
     private func fetchSearch(completion: @escaping (_ sucess: Bool)-> Void){
         Search.getBible{searchResult, error in
-            if let fetchedSearch = searchResult{
+            if let fetchedSearch = searchResult {
                 self.search = fetchedSearch
                 completion(true)
             } else {
@@ -377,9 +386,29 @@ extension MainTableViewController {
     
     fileprivate func autoComplete(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "autoCompleteCell")
-            cell.textLabel?.text = testBookNames[indexPath.row]
+        cell.textLabel?.text = arrayWithoutDuplicates[indexPath.row]
+        cell.contentView.backgroundColor = UIColor.init(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
         
         return cell
     }
     
+    fileprivate func requestForAutocompletion() {
+        self.testBookNames = []
+        Search.requestForAutocomplete(key: bookTextField.text!, completion: { (response, error) in
+            if let response = response {
+                for i in response {
+                    self.testBookNames += [i.book_name!]
+                    self.arrayWithoutDuplicates = Array(Set(self.testBookNames.filter({ (i: String) in self.testBookNames.filter({ $0 != i }).count > 1})))
+                      self.autocompleteTableView.reloadData()
+                }
+               self.autocompleteTableView.reloadData()
+            } else if let error = error {
+                print("🔴\(error)🔴")
+            }
+        })
+    }
+    
+    fileprivate func styleTheAutompletionTable() {
+        self.autocompleteTableView.layer.cornerRadius = 20
+    }
 }

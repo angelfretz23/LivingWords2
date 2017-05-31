@@ -510,7 +510,7 @@ extension YTFViewController {
     
     func favoritesTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
-        Verse.saveToHistory(media_id: mediaId!, madia_type: String(describing: mediaType), user_id: userID!, completion: { success in
+        Verse.saveToFavorites(media_id: mediaId!, madia_type: String(describing: mediaType), user_id: userID!, completion: { success in
             if success {
                 SVProgressHUD.showSuccess(withStatus: "Saved")
             }
