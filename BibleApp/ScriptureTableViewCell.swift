@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ScriptureTableViewCellDelegate: class {
+    func userDidDoubleTapScripture(cell: ScriptureTableViewCell)
+    func userDidSingleTapScripture(cell: ScriptureTableViewCell)
+}
+
 class ScriptureTableViewCell: UITableViewCell {
 
     @IBOutlet weak var scriptureText: UILabel?
@@ -18,9 +23,15 @@ class ScriptureTableViewCell: UITableViewCell {
 
     var mediaType = ScripureMediaType.book_sermone_music_movie
     
+     var delegate: ScriptureTableViewCellDelegate?
+    
+    private var tapCounter = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        addDoubleTapGesture()
     
     }
 
@@ -63,5 +74,38 @@ class ScriptureTableViewCell: UITableViewCell {
         }
         
         scriptureImageView?.image = image
+    }
+    func tapAction() {
+        
+        if tapCounter == 0 {
+            DispatchQueue.global(qos: .background).async {
+                usleep(250000)
+                if self.tapCounter > 1 {
+                    self.userDidDoubleTap()
+                } else {
+                    self.userDidSingleTap()
+                }
+                self.tapCounter = 0
+            }
+        }
+        tapCounter += 1
+    }
+    
+}
+extension ScriptureTableViewCell {
+    func addDoubleTapGesture() {
+        let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScriptureTableViewCell.tapAction))
+        addGestureRecognizer(doubleTap)
+    }
+    
+
+}
+extension ScriptureTableViewCell {
+    
+    func userDidDoubleTap(){
+    delegate?.userDidDoubleTapScripture(cell: self)
+    }
+    func userDidSingleTap(){
+        delegate?.userDidSingleTapScripture(cell: self)
     }
 }

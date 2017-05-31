@@ -65,6 +65,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string> </string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To set the profile image we need access to your photo library.</string>
 	<key>UILaunchStoryboardName</key>
