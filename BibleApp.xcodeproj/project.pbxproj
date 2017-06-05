@@ -51,6 +51,8 @@
 		04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8E9CE1EB0921A0034360D /* YTFViewController.swift */; };
 		04F8E9D61EB092200034360D /* YTFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F8E9D51EB092200034360D /* YTFViewController.xib */; };
 		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
+		0F055EE01EE4C9E700F1B533 /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EDF1EE4C9E700F1B533 /* NewLoginViewController.swift */; };
+		0FBCB7FA1EE4BBE900DC201A /* NewLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCB7F81EE4BBE900DC201A /* NewLogIn.storyboard */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC81EA91EC6000CD94D /* RoundedButton.swift */; };
 		2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A93E61EA795E6007464F0 /* AppDelegate.swift */; };
@@ -165,6 +167,8 @@
 		04F8E9CE1EB0921A0034360D /* YTFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFViewController.swift; sourceTree = "<group>"; };
 		04F8E9D51EB092200034360D /* YTFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTFViewController.xib; sourceTree = "<group>"; };
 		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F055EDF1EE4C9E700F1B533 /* NewLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewLoginViewController.swift; path = NewLogin/Controllers/NewLoginViewController.swift; sourceTree = "<group>"; };
+		0FBCB7F91EE4BBE900DC201A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewLogIn.storyboard; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2B005BC81EA91EC6000CD94D /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -334,6 +338,23 @@
 			name = Enums;
 			sourceTree = "<group>";
 		};
+		0F055EE11EE4C9EC00F1B533 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F055EDF1EE4C9E700F1B533 /* NewLoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0FBCB7F71EE4BBBA00DC201A /* New Login */ = {
+			isa = PBXGroup;
+			children = (
+				0FBCB7F81EE4BBE900DC201A /* NewLogIn.storyboard */,
+				0F055EE11EE4C9EC00F1B533 /* Controllers */,
+			);
+			name = "New Login";
+			sourceTree = "<group>";
+		};
 		2B2A93DA1EA795E6007464F0 = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +422,7 @@
 				2B4423DC1EA9E6C0006AB9CF /* Reading Books */,
 				2B2A941D1EA79B6C007464F0 /* Search */,
 				2B2A94161EA79AED007464F0 /* Login */,
+				0FBCB7F71EE4BBBA00DC201A /* New Login */,
 			);
 			name = PresentationLogic;
 			sourceTree = "<group>";
@@ -865,6 +887,7 @@
 				FC3EFCB41EC4A21500C46837 /* TagsTableViewCell.xib in Resources */,
 				2B4423E01EA9E6E1006AB9CF /* MainTableView.storyboard in Resources */,
 				FC3EFC981EC4898000C46837 /* BookUpload.storyboard in Resources */,
+				0FBCB7FA1EE4BBE900DC201A /* NewLogIn.storyboard in Resources */,
 				2B2A93F11EA795E6007464F0 /* LaunchScreen.storyboard in Resources */,
 				04405B6E1EB347D900F16687 /* BookTypeCollectionVCell.xib in Resources */,
 				04148D8A1EA8C2140056D18E /* GoogleService-Info.plist in Resources */,
@@ -1081,6 +1104,7 @@
 				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
 				0476ED1D1ED84455006AE7E2 /* CollectionView.swift in Sources */,
 				044EEBB21EC5F9800092CFD3 /* UploadSermonesVC.swift in Sources */,
+				0F055EE01EE4C9E700F1B533 /* NewLoginViewController.swift in Sources */,
 				04148D881EA899A60056D18E /* SignInViewController.swift in Sources */,
 				784D522B1EB23E5E00A27112 /* CustomCurveView.swift in Sources */,
 				3ADA61EC1ECB039B006AB3F2 /* ProfileViewController.swift in Sources */,
@@ -1140,6 +1164,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0FBCB7F81EE4BBE900DC201A /* NewLogIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FBCB7F91EE4BBE900DC201A /* Base */,
+			);
+			name = NewLogIn.storyboard;
+			sourceTree = "<group>";
+		};
 		2B2A93EA1EA795E6007464F0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

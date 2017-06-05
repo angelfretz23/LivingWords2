@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F71b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-103.2" y="80.50974512743629"/>
         </scene>
-        <!--Login-->
+        <!--NewLogIn-->
         <scene sceneID="XT2-Mh-Fbr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="XLS-Vg-2sf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="NewLogIn" id="XLS-Vg-2sf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5i-rx-Ele" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="446" y="-396"/>
@@ -615,7 +615,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="pageSheet" id="Jwn-QR-s5F" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="TH6-G6-39v"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5ix-gf-vFG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="5ix-gf-vFG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1012,7 +1012,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s8Y-Dv-PKo" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aFp-mw-tAr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="aFp-mw-tAr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
