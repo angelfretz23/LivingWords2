@@ -152,18 +152,18 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xex-Ii-sbZ">
-                                        <rect key="frame" x="110.5" y="10.5" width="154" height="24"/>
+                                        <rect key="frame" x="107" y="10.5" width="161" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-B2-bCA">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-B2-bCA">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hI-Vh-Isg">
-                                                <rect key="frame" x="113" y="0.0" width="41" height="24"/>
+                                                <rect key="frame" x="124" y="0.0" width="37" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign up.">
+                                                <state key="normal" title="Sign In.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
@@ -240,7 +240,7 @@ inspired by each scripture.</string>
                                         <color key="backgroundColor" red="0.94591924109434722" green="0.94591924109434722" blue="0.94591924109434722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IhW-yy-EcF">
                                         <rect key="frame" x="0.0" y="90" width="303" height="59"/>
@@ -397,18 +397,18 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p2-M7-tpD">
-                                        <rect key="frame" x="110.5" y="10.5" width="154" height="24"/>
+                                        <rect key="frame" x="107" y="10.5" width="161" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COE-QX-peB">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COE-QX-peB">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-MA-Y0n">
-                                                <rect key="frame" x="113" y="0.0" width="41" height="24"/>
+                                                <rect key="frame" x="124" y="0.0" width="37" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign up.">
+                                                <state key="normal" title="Sign In.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
@@ -470,14 +470,14 @@ inspired by each scripture.</string>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAx-vv-YjA">
                                         <rect key="frame" x="0.0" y="96" width="303" height="30"/>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-sS-Uwc">
                                         <rect key="frame" x="0.0" y="141" width="303" height="30"/>
@@ -499,18 +499,18 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSt-2U-wX7">
-                                        <rect key="frame" x="110.5" y="10.5" width="154" height="24"/>
+                                        <rect key="frame" x="107" y="10.5" width="161" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OE7-PC-qih">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OE7-PC-qih">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIl-rb-J5e">
-                                                <rect key="frame" x="113" y="0.0" width="41" height="24"/>
+                                                <rect key="frame" x="124" y="0.0" width="37" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign up.">
+                                                <state key="normal" title="Sign In.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
