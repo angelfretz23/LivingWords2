@@ -52,6 +52,7 @@
 		04F8E9D61EB092200034360D /* YTFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F8E9D51EB092200034360D /* YTFViewController.xib */; };
 		08C5E7E9FFACB480AB6786CB /* Pods_BibleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */; };
 		0F055EE01EE4C9E700F1B533 /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EDF1EE4C9E700F1B533 /* NewLoginViewController.swift */; };
+		0F055EE31EEB62EE00F1B533 /* EmailVerifierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */; };
 		0FBCB7FA1EE4BBE900DC201A /* NewLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCB7F81EE4BBE900DC201A /* NewLogIn.storyboard */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC81EA91EC6000CD94D /* RoundedButton.swift */; };
@@ -168,6 +169,7 @@
 		04F8E9D51EB092200034360D /* YTFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTFViewController.xib; sourceTree = "<group>"; };
 		0C71489361770A093F5A7F13 /* Pods-BibleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F055EDF1EE4C9E700F1B533 /* NewLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewLoginViewController.swift; path = NewLogin/Controllers/NewLoginViewController.swift; sourceTree = "<group>"; };
+		0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailVerifierController.swift; path = NewLogin/Controllers/EmailVerifierController.swift; sourceTree = "<group>"; };
 		0FBCB7F91EE4BBE900DC201A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewLogIn.storyboard; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				0F055EDF1EE4C9E700F1B533 /* NewLoginViewController.swift */,
+				0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F055EE31EEB62EE00F1B533 /* EmailVerifierController.swift in Sources */,
 				784D52291EB2394600A27112 /* CustomView.swift in Sources */,
 				2B3BEC621EAF118700BD1BE0 /* CustomSearchBar.swift in Sources */,
 				2B472F121EAE2E8B004084F1 /* Search.swift in Sources */,
