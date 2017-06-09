@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Login View Controller-->
+        <!--Login Splash Screen View Controller-->
         <scene sceneID="vvh-gl-w6B">
             <objects>
-                <viewController id="BSp-is-sub" customClass="NewLoginViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BSp-is-sub" customClass="LoginSplashScreenViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NFr-72-jOK"/>
                         <viewControllerLayoutGuide type="bottom" id="zz8-u1-8JD"/>
@@ -30,6 +30,9 @@
                                 <rect key="frame" x="82.5" y="269" width="210" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" image="facebookButton"/>
+                                <connections>
+                                    <action selector="logInWithFacebookPressed:" destination="BSp-is-sub" eventType="touchUpInside" id="lN4-Xb-noy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-af-HZL">
                                 <rect key="frame" x="111.5" y="368" width="152" height="33"/>
@@ -37,6 +40,9 @@
                                 <state key="normal" title="Sign Up With Email">
                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpWithEmailPressed:" destination="BSp-is-sub" eventType="touchUpInside" id="f6a-0b-Xfm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0T-OX-jTN">
                                 <rect key="frame" x="53.5" y="120" width="268" height="61"/>
@@ -55,15 +61,22 @@ inspired by each scripture.</string>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxY-H4-Ntr">
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="30"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="JMC-nX-0o4" appends="YES" id="70o-x9-DoZ"/>
+                                        </connections>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcR-j3-JvG">
                                         <rect key="frame" x="181" y="0.0" width="51" height="30"/>
                                         <state key="normal" title="Sign In.">
                                             <color key="titleColor" red="0.4441808143137137" green="0.57538864213197971" blue="0.51970547222272734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInPressed:" destination="BSp-is-sub" eventType="touchUpInside" id="9L9-bB-ImW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -98,6 +111,11 @@ inspired by each scripture.</string>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZE-0E-tdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JMC-nX-0o4">
+                    <connections>
+                        <action selector="signInPressed:" destination="BSp-is-sub" id="R8E-nv-366"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="278" y="193"/>
         </scene>
@@ -114,7 +132,7 @@ inspired by each scripture.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QqW-NO-DNk">
-                                <rect key="frame" x="36" y="20" width="303" height="126"/>
+                                <rect key="frame" x="36" y="40" width="303" height="126"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-Ok-0Dq">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="36"/>
@@ -189,7 +207,7 @@ inspired by each scripture.</string>
                             <constraint firstItem="QqW-NO-DNk" firstAttribute="leading" secondItem="5uc-Q0-jpI" secondAttribute="leadingMargin" constant="20" id="4xH-W4-tYh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QqW-NO-DNk" secondAttribute="trailing" constant="20" id="AW4-9t-5v5"/>
                             <constraint firstItem="Von-fy-gVD" firstAttribute="leading" secondItem="5uc-Q0-jpI" secondAttribute="leading" id="F0n-jI-Wdb"/>
-                            <constraint firstItem="QqW-NO-DNk" firstAttribute="top" secondItem="OLH-Os-dqI" secondAttribute="bottom" id="XyV-Ir-4sx"/>
+                            <constraint firstItem="QqW-NO-DNk" firstAttribute="top" secondItem="OLH-Os-dqI" secondAttribute="bottom" constant="20" id="XyV-Ir-4sx"/>
                             <constraint firstItem="PHJ-yn-5Fn" firstAttribute="top" secondItem="Von-fy-gVD" secondAttribute="bottom" id="bLd-Lr-A91"/>
                             <constraint firstAttribute="trailing" secondItem="Von-fy-gVD" secondAttribute="trailing" id="xGa-jl-uB3"/>
                         </constraints>
@@ -552,7 +570,7 @@ inspired by each scripture.</string>
                 <navigationController storyboardIdentifier="singupNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oMK-oq-vCL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="A3r-ed-tjz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="A3r-ed-tjz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
