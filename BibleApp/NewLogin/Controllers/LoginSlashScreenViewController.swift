@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NewLoginViewController: UIViewController{
+final class LoginSlashScreen: UIViewController{
     
     @IBOutlet weak var backgroundBlur: UIView!
     
