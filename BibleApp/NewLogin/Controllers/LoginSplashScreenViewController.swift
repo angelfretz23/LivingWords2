@@ -11,6 +11,7 @@ import UIKit
 final class LoginSplashScreenViewController: UIViewController{
     
     override func viewDidLoad() {
+        
     }
     
     internal override var prefersStatusBarHidden: Bool{
