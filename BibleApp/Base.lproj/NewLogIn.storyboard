@@ -570,7 +570,7 @@ inspired by each scripture.</string>
                 <navigationController storyboardIdentifier="singupNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oMK-oq-vCL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="A3r-ed-tjz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="A3r-ed-tjz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

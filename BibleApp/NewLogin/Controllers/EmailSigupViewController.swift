@@ -6,4 +6,13 @@
 //  Copyright © 2017 Igor Makara. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class EmailSignUpViewController: UIViewController{
+    
+    override func viewDidLoad() {
+        
+    }
+    
+    
+}
