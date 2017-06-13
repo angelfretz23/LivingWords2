@@ -16,6 +16,7 @@ target 'BibleApp' do
     pod 'youtube-ios-player-helper', '~> 0.1'
     pod 'SVProgressHUD', '~> 2.1'
     pod 'YTVimeoExtractor', '~> 1.2'
+    pod 'KeychainSwift', '~> 8.0'
 
   target 'BibleAppTests' do
     inherit! :search_paths

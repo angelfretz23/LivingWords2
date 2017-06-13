@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A5235098E4409D74E8A7E22BB367D77A'
+               BlueprintIdentifier = '34F41BA50414C1D6C3611971B9C9153F'
                BlueprintName = 'YTVimeoExtractor'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'YTVimeoExtractor.framework'>

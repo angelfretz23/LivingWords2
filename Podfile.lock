@@ -53,6 +53,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
+  - KeychainSwift (8.0.2)
   - ObjectMapper (2.2.6)
   - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - Google/SignIn
+  - KeychainSwift (~> 8.0)
   - ObjectMapper (~> 2.2.1)
   - SnapKit (~> 3.2)
   - SVProgressHUD (~> 2.1)
@@ -87,6 +89,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
   ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
@@ -94,6 +97,6 @@ SPEC CHECKSUMS:
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
   YTVimeoExtractor: f4ed90f43e08d33d56c1d1aff3f4f64663747966
 
-PODFILE CHECKSUM: ef66085d65a1064ef6f875486dcf148b88f5c0ea
+PODFILE CHECKSUM: da4e3eb304645ce9575c4cc52fa454334e43e530
 
 COCOAPODS: 1.2.0

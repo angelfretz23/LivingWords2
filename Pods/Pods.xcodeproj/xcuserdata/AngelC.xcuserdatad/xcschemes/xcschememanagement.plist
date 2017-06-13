@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KeychainSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,12 +102,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B7E36E88B855B898FCD8BD010C16B5A</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<key>34F41BA50414C1D6C3611971B9C9153F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>38ACA430605AFB4229712A18BDDF5086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>429ADF1DE2D46836BD357B0CD4EB8D04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,7 +147,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6ED9F5F6B8069AF9CED63476FD1A5A79</key>
+		<key>6E5C992B0BD743BD6958474B681B8B09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D9F31789A3F5AA6BD1E5C6831ED97FD</key>
+		<key>79E8BB1E7F5052B768D52D6EEF469E05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F98733ED77D12DE31F4571BC0A80076</key>
+		<key>7D9F31789A3F5AA6BD1E5C6831ED97FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,12 +172,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5235098E4409D74E8A7E22BB367D77A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AA9648A416663CDE89B1EEAAAB7229B6</key>
+		<key>97D948D87212767B32DDEA0478E7E2A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,12 +182,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCBB4F1F2B2E084762E733163059214D</key>
+		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
+		<key>DD813D175616A9B6FAA08CE06D9351CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
