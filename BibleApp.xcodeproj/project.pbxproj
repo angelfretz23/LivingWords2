@@ -54,6 +54,10 @@
 		0F055EE01EE4C9E700F1B533 /* LoginSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EDF1EE4C9E700F1B533 /* LoginSplashScreenViewController.swift */; };
 		0F055EE31EEB62EE00F1B533 /* EmailVerifierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */; };
 		0F055EE51EEC55AE00F1B533 /* EmailSigupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EE41EEC55AE00F1B533 /* EmailSigupViewController.swift */; };
+		0F055EEE1EEF684400F1B533 /* UserLogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EED1EEF684400F1B533 /* UserLogInController.swift */; };
+		0F055EF31EEF695400F1B533 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EF01EEF695400F1B533 /* KeychainSwift.swift */; };
+		0F055EF41EEF695400F1B533 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EF11EEF695400F1B533 /* KeychainSwiftAccessOptions.swift */; };
+		0F055EF51EEF695400F1B533 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055EF21EEF695400F1B533 /* TegKeychainConstants.swift */; };
 		0FBCB7FA1EE4BBE900DC201A /* NewLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCB7F81EE4BBE900DC201A /* NewLogIn.storyboard */; };
 		21205B3E02A79102CF14E726 /* Pods_BibleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D061C126F7F34DDE66BB4323 /* Pods_BibleAppTests.framework */; };
 		2B005BC91EA91EC6000CD94D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B005BC81EA91EC6000CD94D /* RoundedButton.swift */; };
@@ -172,6 +176,10 @@
 		0F055EDF1EE4C9E700F1B533 /* LoginSplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSplashScreenViewController.swift; path = NewLogin/Controllers/LoginSplashScreenViewController.swift; sourceTree = "<group>"; };
 		0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailVerifierController.swift; path = NewLogin/Controllers/EmailVerifierController.swift; sourceTree = "<group>"; };
 		0F055EE41EEC55AE00F1B533 /* EmailSigupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailSigupViewController.swift; path = NewLogin/Controllers/EmailSigupViewController.swift; sourceTree = "<group>"; };
+		0F055EED1EEF684400F1B533 /* UserLogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLogInController.swift; path = NewLogin/Controllers/UserLogInController.swift; sourceTree = "<group>"; };
+		0F055EF01EEF695400F1B533 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		0F055EF11EEF695400F1B533 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
+		0F055EF21EEF695400F1B533 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
 		0FBCB7F91EE4BBE900DC201A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewLogIn.storyboard; sourceTree = "<group>"; };
 		133D04727C7164D22B26B4F6 /* Pods-BibleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1892965988D60EDD70AD9F58 /* Pods-BibleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */,
+				0F055EED1EEF684400F1B533 /* UserLogInController.swift */,
 				0F055EDF1EE4C9E700F1B533 /* LoginSplashScreenViewController.swift */,
 				0F055EE41EEC55AE00F1B533 /* EmailSigupViewController.swift */,
 			);
@@ -568,6 +577,9 @@
 		2B472ED21EADD32F004084F1 /* ExternalLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				0F055EF01EEF695400F1B533 /* KeychainSwift.swift */,
+				0F055EF11EEF695400F1B533 /* KeychainSwiftAccessOptions.swift */,
+				0F055EF21EEF695400F1B533 /* TegKeychainConstants.swift */,
 				041018701EADE30000745DED /* AlamofireObjectMapper.swift */,
 			);
 			name = ExternalLibraries;
@@ -1091,12 +1103,14 @@
 				0410187C1EAE3BE900745DED /* MediaCollectionViewCell.swift in Sources */,
 				04F8E9D41EB0921A0034360D /* YTFViewController.swift in Sources */,
 				2B4423E61EA9E6F6006AB9CF /* Scripture.swift in Sources */,
+				0F055EF31EEF695400F1B533 /* KeychainSwift.swift in Sources */,
 				044BA0851ED462F0004C09E5 /* Verse.swift in Sources */,
 				0422F1481EAA3340003A0054 /* LivingWordsAPI.swift in Sources */,
 				041BAEC31ECC52A20010A34C /* Constants.swift in Sources */,
 				04F8E9D11EB0921A0034360D /* YTFPlayer.swift in Sources */,
 				7825EAFD1EB3C50F00C1D180 /* RoundedTextField.swift in Sources */,
 				2B4423EA1EAA502D006AB9CF /* User.swift in Sources */,
+				0F055EF51EEF695400F1B533 /* TegKeychainConstants.swift in Sources */,
 				0476ED1F1ED84891006AE7E2 /* Media.swift in Sources */,
 				04405B721EB36FAE00F16687 /* NewPasswordViewController.swift in Sources */,
 				FC3EFCAD1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift in Sources */,
@@ -1108,6 +1122,7 @@
 				FC3EFC9A1EC48C7B00C46837 /* AuthorNameTableViewCell.swift in Sources */,
 				041018831EAE47C800745DED /* MediaModel.swift in Sources */,
 				3ADA61EA1EC9FC93006AB3F2 /* Post.swift in Sources */,
+				0F055EEE1EEF684400F1B533 /* UserLogInController.swift in Sources */,
 				044491691EB1D24E0048BB05 /* MediaModelCell.swift in Sources */,
 				0476ED1D1ED84455006AE7E2 /* CollectionView.swift in Sources */,
 				044EEBB21EC5F9800092CFD3 /* UploadSermonesVC.swift in Sources */,
@@ -1130,6 +1145,7 @@
 				FC64705D1ED70B7A001BB623 /* ProfileCollectionViewCell.swift in Sources */,
 				041018801EAE3DE000745DED /* MainMediaViewController.swift in Sources */,
 				044EEBC71EC6034E0092CFD3 /* UploadMovieTVC.swift in Sources */,
+				0F055EF41EEF695400F1B533 /* KeychainSwiftAccessOptions.swift in Sources */,
 				0F055EE51EEC55AE00F1B533 /* EmailSigupViewController.swift in Sources */,
 				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,
 				FC3EFCB21EC4A1E100C46837 /* TagsTableViewCell.swift in Sources */,
