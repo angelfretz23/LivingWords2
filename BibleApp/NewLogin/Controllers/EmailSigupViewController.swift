@@ -10,6 +10,8 @@ import UIKit
 
 class EmailSignUpViewController: UIViewController{
     
+    
+    
     override func viewDidLoad() {
         
     }

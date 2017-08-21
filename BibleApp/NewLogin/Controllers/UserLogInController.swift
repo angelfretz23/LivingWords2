@@ -14,15 +14,15 @@ final class UserLogInController: NSObject{
     
     private let keychainPrefixKey: String = "com.LivingWords412"
     
-    static let shared = UserController()
+    static let shared = UserLogInController()
     
     private enum KeychainKey: String {
-        case userEmailKey = "LWEmail"
+        case userEmail = "LWEmail"
         case userPassword = "LWPassword"
     }
     
-    init(){
-        keychain = KeychainSwift(keyPrefix: keychainKey)
+    override init(){
+        keychain = KeychainSwift(keyPrefix: keychainPrefixKey)
         super.init()
     }
     
@@ -31,7 +31,7 @@ final class UserLogInController: NSObject{
             return keychain.get(KeychainKey.userEmail.rawValue)
         }
         set {
-            if let unwrappedNewValue = newValue {
+            if let unwrappedNewValue = newValue{
                 keychain.set(unwrappedNewValue, forKey: KeychainKey.userEmail.rawValue, withAccess: .accessibleWhenUnlocked)
             } else {
                 keychain.delete(KeychainKey.userEmail.rawValue)
