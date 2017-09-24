@@ -8,10 +8,14 @@
 
 import UIKit
 
-final class LoginSplashScreenViewController: UIViewController{
+final class LoginSplashScreenViewController: UIViewController, UIGestureRecognizerDelegate{
     
     override func viewDidLoad() {
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     internal override var prefersStatusBarHidden: Bool{
@@ -19,26 +23,31 @@ final class LoginSplashScreenViewController: UIViewController{
     }
     
     @IBAction func signUpWithEmailPressed(_ sender: Any) {
-        self.present(fetchViewControllerWithLogin(method: .signUpWithEmail), animated: true, completion: nil)
+        self.navigationController?.pushViewController(fetchViewControllerWithLogin(method: .registerWithEmail), animated: true)
+ 
     }
     
     @IBAction func signInPressed(_ sender: Any) {
-        self.present(fetchViewControllerWithLogin(method: .logInWithAccount), animated: true)
+        self.navigationController?.pushViewController(fetchViewControllerWithLogin(method: .logInWithAccount), animated: true)
     }
     // TODO: Look at the old log in to get code
     @IBAction func logInWithFacebookPressed(_ sender: Any) {
     }
     
     enum LoginMethod: String{
-        case signUpWithEmail = "singupNavigationController"
+        case registerWithEmail = "enterEmailViewController"
         case logInWithAccount = "signinViewController"
         case logInWithFacebook = ""
     }
     
-    private func fetchViewControllerWithLogin(method: LoginMethod) -> UIViewController {
+    
+}
+
+fileprivate extension LoginSplashScreenViewController {
+    func fetchViewControllerWithLogin(method: LoginMethod) -> UIViewController {
         let storyboard = UIStoryboard(name: "NewLogIn", bundle: nil)
         
         return storyboard.instantiateViewController(withIdentifier: method.rawValue)
     }
+    
 }
-

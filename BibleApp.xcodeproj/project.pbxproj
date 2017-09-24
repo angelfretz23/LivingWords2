@@ -82,6 +82,9 @@
 		3A55447D1ECC99D8003D2EFD /* ContentProviderProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55447C1ECC99D8003D2EFD /* ContentProviderProfileVC.swift */; };
 		3ADA61EA1EC9FC93006AB3F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA61E91EC9FC93006AB3F2 /* Post.swift */; };
 		3ADA61EC1ECB039B006AB3F2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */; };
+		692946D91F73C3CE004EE456 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692946D81F73C3CE004EE456 /* FacebookButton.swift */; };
+		692946DB1F73C8C2004EE456 /* NewSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692946DA1F73C8C2004EE456 /* NewSignInViewController.swift */; };
+		692946DD1F73CE10004EE456 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692946DC1F73CE10004EE456 /* View.swift */; };
 		7825EAF21EB32EF600C1D180 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7825EAF11EB32EF600C1D180 /* Login.storyboard */; };
 		7825EAFB1EB352BA00C1D180 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */; };
 		7825EAFD1EB3C50F00C1D180 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825EAFC1EB3C50F00C1D180 /* RoundedTextField.swift */; };
@@ -213,6 +216,9 @@
 		3ADA61EB1ECB039B006AB3F2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C66193F18101901D177366C /* Pods-BibleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppUITests/Pods-BibleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6185881FF9E472B1B3C72FA9 /* Pods_BibleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		692946D81F73C3CE004EE456 /* FacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookButton.swift; sourceTree = "<group>"; };
+		692946DA1F73C8C2004EE456 /* NewSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignInViewController.swift; sourceTree = "<group>"; };
+		692946DC1F73CE10004EE456 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		75A131C28D06EEFC8C7AAC32 /* Pods-BibleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleAppTests/Pods-BibleAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7825EAF11EB32EF600C1D180 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7825EAFA1EB352BA00C1D180 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -353,10 +359,8 @@
 		0F055EE11EE4C9EC00F1B533 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */,
 				0F055EED1EEF684400F1B533 /* UserLogInController.swift */,
-				0F055EDF1EE4C9E700F1B533 /* LoginSplashScreenViewController.swift */,
-				0F055EE41EEC55AE00F1B533 /* EmailSigupViewController.swift */,
+				691EFA7C1F7325FA0050DEAD /* Helpers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -365,6 +369,10 @@
 			isa = PBXGroup;
 			children = (
 				0FBCB7F81EE4BBE900DC201A /* NewLogIn.storyboard */,
+				692946D71F73C3A8004EE456 /* CustomView */,
+				691EFA7B1F7325E10050DEAD /* Spash */,
+				691EFA7D1F7326910050DEAD /* SignIn */,
+				691EFA7E1F7326DB0050DEAD /* Register */,
 				0F055EE11EE4C9EC00F1B533 /* Controllers */,
 			);
 			name = "New Login";
@@ -487,6 +495,7 @@
 				0476ED0F1ED81CF4006AE7E2 /* ViewController.swift */,
 				0476ED1C1ED84455006AE7E2 /* CollectionView.swift */,
 				045B25661EDC09060019D2D6 /* CollectionViewCell.swift */,
+				692946DC1F73CE10004EE456 /* View.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +632,46 @@
 			children = (
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		691EFA7B1F7325E10050DEAD /* Spash */ = {
+			isa = PBXGroup;
+			children = (
+				0F055EDF1EE4C9E700F1B533 /* LoginSplashScreenViewController.swift */,
+			);
+			name = Spash;
+			sourceTree = "<group>";
+		};
+		691EFA7C1F7325FA0050DEAD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0F055EE21EEB62EE00F1B533 /* EmailVerifierController.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		691EFA7D1F7326910050DEAD /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				692946DA1F73C8C2004EE456 /* NewSignInViewController.swift */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		691EFA7E1F7326DB0050DEAD /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0F055EE41EEC55AE00F1B533 /* EmailSigupViewController.swift */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		692946D71F73C3A8004EE456 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				692946D81F73C3CE004EE456 /* FacebookButton.swift */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 		7825EAF31EB3329700C1D180 /* Main */ = {
@@ -948,9 +997,42 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YTVimeoExtractor/YTVimeoExtractor.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper/youtube_ios_player_helper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTVimeoExtractor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/youtube_ios_player_helper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -963,9 +1045,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BibleApp/Pods-BibleApp-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -978,13 +1063,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BibleApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		53E16F37473FACF521BF21C8 /* [CP] Copy Pods Resources */ = {
@@ -1023,13 +1111,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BibleAppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89818798A3AB6A9A7FAC1E05 /* [CP] Copy Pods Resources */ = {
@@ -1053,13 +1144,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BibleAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D01D7576BE308494AF2B2679 /* [CP] Embed Pods Frameworks */ = {
@@ -1116,6 +1210,7 @@
 				FC3EFCAD1EC4A12F00C46837 /* BookDescriptionTableViewCell.swift in Sources */,
 				04405B6D1EB347D900F16687 /* BookTypeCollectionVCell.swift in Sources */,
 				2B2A93E71EA795E6007464F0 /* AppDelegate.swift in Sources */,
+				692946DD1F73CE10004EE456 /* View.swift in Sources */,
 				FC3EFCB91EC4CEE600C46837 /* ScriptureSelectionTableViewCell.swift in Sources */,
 				FC3EFC9F1EC48D6100C46837 /* BookUploadViewController.swift in Sources */,
 				04F8E9D31EB0921A0034360D /* YTFPopupCloseButton.swift in Sources */,
@@ -1149,6 +1244,8 @@
 				0F055EE51EEC55AE00F1B533 /* EmailSigupViewController.swift in Sources */,
 				04405B701EB36F8500F16687 /* ForgotPasswordViewController.swift in Sources */,
 				FC3EFCB21EC4A1E100C46837 /* TagsTableViewCell.swift in Sources */,
+				692946D91F73C3CE004EE456 /* FacebookButton.swift in Sources */,
+				692946DB1F73C8C2004EE456 /* NewSignInViewController.swift in Sources */,
 				04F8E9D21EB0921A0034360D /* YTFPlayerControls.swift in Sources */,
 				2B4423E21EA9E6E9006AB9CF /* MainTableViewController.swift in Sources */,
 				0476ED131ED81DE7006AE7E2 /* ContentProviderType.swift in Sources */,

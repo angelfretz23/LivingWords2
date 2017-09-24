@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F71b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BSp-is-sub">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nK9-K9-hsg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         <!--Login Splash Screen View Controller-->
         <scene sceneID="vvh-gl-w6B">
             <objects>
-                <viewController id="BSp-is-sub" customClass="LoginSplashScreenViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginSplashVC" id="BSp-is-sub" customClass="LoginSplashScreenViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NFr-72-jOK"/>
                         <viewControllerLayoutGuide type="bottom" id="zz8-u1-8JD"/>
@@ -35,9 +35,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-af-HZL">
-                                <rect key="frame" x="111.5" y="368" width="152" height="33"/>
+                                <rect key="frame" x="109.5" y="368" width="156" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Sign Up With Email">
+                                <state key="normal" title="Register With Email">
                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0T-OX-jTN">
-                                <rect key="frame" x="53.5" y="120" width="268" height="61"/>
+                                <rect key="frame" x="53.5" y="140" width="268" height="61"/>
                                 <string key="text">Experience the bible though the
 sermons, music, movies and books
 inspired by each scripture.</string>
@@ -81,7 +81,7 @@ inspired by each scripture.</string>
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livingWordsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WkW-YM-hac">
-                                <rect key="frame" x="61.5" y="55" width="252" height="56"/>
+                                <rect key="frame" x="61.5" y="75" width="252" height="56"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -106,6 +106,7 @@ inspired by each scripture.</string>
                             <constraint firstItem="dib-4N-sFE" firstAttribute="centerX" secondItem="Xjo-aW-YvI" secondAttribute="centerX" id="xNx-RS-qan"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nj3-Ly-t09"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -117,12 +118,12 @@ inspired by each scripture.</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="278" y="193"/>
+            <point key="canvasLocation" x="616.79999999999995" y="192.95352323838082"/>
         </scene>
-        <!--View Controller-->
+        <!--Email Register View Controller-->
         <scene sceneID="BfR-eA-MYs">
             <objects>
-                <viewController storyboardIdentifier="enterEmailViewController" id="Zsv-Q1-RQm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enterEmailViewController" id="Zsv-Q1-RQm" customClass="EmailRegisterViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OLH-Os-dqI"/>
                         <viewControllerLayoutGuide type="bottom" id="PHJ-yn-5Fn"/>
@@ -140,12 +141,12 @@ inspired by each scripture.</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-24-3G4">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-24-3G4">
                                         <rect key="frame" x="0.0" y="51" width="303" height="30"/>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="light" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBE-E8-sGj">
                                         <rect key="frame" x="0.0" y="96" width="303" height="30"/>
@@ -154,7 +155,7 @@ inspired by each scripture.</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9gi-6a-vqQ" kind="show" id="GDB-Nf-lPn"/>
+                                            <action selector="nextButtonPressed:" destination="Zsv-Q1-RQm" eventType="touchUpInside" id="yzK-VM-YOV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -170,7 +171,7 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xex-Ii-sbZ">
-                                        <rect key="frame" x="107" y="10.5" width="161" height="24"/>
+                                        <rect key="frame" x="103.5" y="10.5" width="168" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-B2-bCA">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
@@ -179,11 +180,14 @@ inspired by each scripture.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hI-Vh-Isg">
-                                                <rect key="frame" x="124" y="0.0" width="37" height="24"/>
+                                                <rect key="frame" x="124" y="0.0" width="44" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign In.">
+                                                <state key="normal" title="Register.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="singInButtonPressed:" destination="Zsv-Q1-RQm" eventType="touchUpInside" id="zcq-ld-Dzk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -213,15 +217,19 @@ inspired by each scripture.</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qSp-l6-3gS"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="VcH-24-3G4" id="xzX-Ab-m0W"/>
+                        <outlet property="nextButton" destination="PBE-E8-sGj" id="pWv-Fc-xEt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0d-Dg-fhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="-215"/>
+            <point key="canvasLocation" x="2415.1999999999998" y="-215.44227886056973"/>
         </scene>
-        <!--View Controller-->
+        <!--New Sign In View Controller-->
         <scene sceneID="Neo-fE-Dsu">
             <objects>
-                <viewController storyboardIdentifier="signinViewController" id="aWa-h2-7Xe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signinViewController" id="aWa-h2-7Xe" customClass="NewSignInViewController" customModule="LivingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nLJ-Xy-8C4"/>
                         <viewControllerLayoutGuide type="bottom" id="aZo-O0-3Vx"/>
@@ -269,6 +277,9 @@ inspired by each scripture.</string>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="aWa-h2-7Xe" eventType="touchUpInside" id="tdI-QL-6Vr"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZD-Im-jE9">
                                                 <rect key="frame" x="55.5" y="35" width="192.5" height="24"/>
@@ -285,6 +296,9 @@ inspired by each scripture.</string>
                                                         <state key="normal" title="Reset Password.">
                                                             <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="resetPasswordPressed:" destination="aWa-h2-7Xe" eventType="touchUpInside" id="Jaq-ez-tJJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -306,7 +320,7 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-RE-dQt">
-                                        <rect key="frame" x="110.5" y="10.5" width="154" height="24"/>
+                                        <rect key="frame" x="109" y="10.5" width="157" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyK-0o-CHA">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="24"/>
@@ -315,11 +329,14 @@ inspired by each scripture.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iql-I2-dfb">
-                                                <rect key="frame" x="113" y="0.0" width="41" height="24"/>
+                                                <rect key="frame" x="113" y="0.0" width="44" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign up.">
+                                                <state key="normal" title="Register.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerButtonPressed:" destination="aWa-h2-7Xe" eventType="touchUpInside" id="FaD-py-i9W"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -352,10 +369,15 @@ inspired by each scripture.</string>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="w7t-Vy-kly" id="QHm-0q-h6B"/>
+                        <outlet property="passwordTextField" destination="zbC-Wx-DBc" id="UsD-gt-rPB"/>
+                        <outlet property="stackView" destination="9ZD-Im-jE9" id="Nqd-Dh-7bh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQo-ZW-LyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="561"/>
+            <point key="canvasLocation" x="1665" y="578"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="L4b-do-Mhw">
@@ -383,14 +405,14 @@ inspired by each scripture.</string>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8B-a4-9XP">
                                         <rect key="frame" x="0.0" y="96" width="303" height="30"/>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3W-uA-aTU">
                                         <rect key="frame" x="0.0" y="141" width="303" height="30"/>
@@ -398,9 +420,6 @@ inspired by each scripture.</string>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="BSu-Aw-mUI" kind="show" id="7XJ-8q-6fW"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -415,7 +434,7 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p2-M7-tpD">
-                                        <rect key="frame" x="107" y="10.5" width="161" height="24"/>
+                                        <rect key="frame" x="103.5" y="10.5" width="168" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COE-QX-peB">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
@@ -424,9 +443,9 @@ inspired by each scripture.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-MA-Y0n">
-                                                <rect key="frame" x="124" y="0.0" width="37" height="24"/>
+                                                <rect key="frame" x="124" y="0.0" width="44" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign In.">
+                                                <state key="normal" title="Register.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
@@ -460,7 +479,7 @@ inspired by each scripture.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJB-dG-Fe4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2926" y="-215"/>
+            <point key="canvasLocation" x="3264.8000000000002" y="-215.44227886056973"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lIG-Nt-7Jd">
@@ -488,14 +507,14 @@ inspired by each scripture.</string>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAx-vv-YjA">
                                         <rect key="frame" x="0.0" y="96" width="303" height="30"/>
                                         <color key="backgroundColor" red="0.94591924110000003" green="0.94591924110000003" blue="0.94591924110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-sS-Uwc">
                                         <rect key="frame" x="0.0" y="141" width="303" height="30"/>
@@ -517,7 +536,7 @@ inspired by each scripture.</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSt-2U-wX7">
-                                        <rect key="frame" x="107" y="10.5" width="161" height="24"/>
+                                        <rect key="frame" x="103.5" y="10.5" width="168" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OE7-PC-qih">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="24"/>
@@ -526,9 +545,9 @@ inspired by each scripture.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIl-rb-J5e">
-                                                <rect key="frame" x="124" y="0.0" width="37" height="24"/>
+                                                <rect key="frame" x="124" y="0.0" width="44" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                <state key="normal" title="Sign In.">
+                                                <state key="normal" title="Register.">
                                                     <color key="titleColor" red="0.2666666667" green="0.34509803919999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
@@ -562,26 +581,25 @@ inspired by each scripture.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2L-q1-bQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="-215"/>
+            <point key="canvasLocation" x="4124" y="-215.44227886056973"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="kzK-2D-QTi">
+        <scene sceneID="DoO-nD-qU5">
             <objects>
-                <navigationController storyboardIdentifier="singupNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oMK-oq-vCL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nK9-K9-hsg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="A3r-ed-tjz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="isa-sZ-FaC">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Zsv-Q1-RQm" kind="relationship" relationship="rootViewController" id="JJY-Gm-jfA"/>
+                        <segue destination="BSp-is-sub" kind="relationship" relationship="rootViewController" id="vCB-tm-TWc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wOU-6b-Vsm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FN1-mx-TeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282" y="-215"/>
+            <point key="canvasLocation" x="-94" y="193"/>
         </scene>
     </scenes>
     <resources>

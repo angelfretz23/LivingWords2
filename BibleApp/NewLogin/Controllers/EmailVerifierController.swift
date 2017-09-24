@@ -10,7 +10,10 @@ import Foundation
 
 // TODO: Make this check in the back thread
 class EmailVerifier{
-    public static func isValid(email: String, completion: ((_ valid: Bool) -> Void)) {
+    
+    static let shared = EmailVerifier()
+    
+    public func isValid(email: String, completion: ((_ valid: Bool) -> Void)) {
         let filterString = "[A-Z0-9a-z\\._%-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", argumentArray: [filterString])
         
